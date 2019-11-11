@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1>
+            Manage Healthy Start vouchers
+        </h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <p class="nhsuk-caption-l nhsuk-u-margin-bottom-5">
+            This service allows operational staff to manage Healthy Start vouchers.
+        </p>
+
+        <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p><strong>To use this service you need to be a Healthy Start team member.</strong></p>
+        </div>
+        <p><a href="ms-login" class="nhsuk-button nhsuk-u-margin-bottom-4">Sign in</a></p>
+
+        <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    I do not have an account
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <h3 class="nhsuk-heading-xs">To use this service you must:</h2>
+                    <ul>
+                        <li>be a Midwife, GP or Health Visitor</li>
+                        <li>be registered with the Nursing and Midwifery Council (NMC) or the General Medical Council
+                            (GMC) to create an account</li>
+                        <li>have an NHSmail email address</li>
+                    </ul>
+                    <p><a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
+                            href="register/what-you-need">Register to use this service</a></p>
+                    <p><a target="_blank"
+                            href="https://www.nhsbsa.nhs.uk/exemption-certificates/maternity-exemption-certificates/digital-maternity-exemption-service">Find
+                            out more on our website</a></p>
+
+
+            </div>
+        </details>
+
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    I'm pregnant or have had a baby within the last 12 months
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>To get a maternity exemption certificate contact your midwife, doctor or health visitor.</p>
+                <p><a target="_blank"
+                        href="https://www.nhsbsa.nhs.uk/exemption-certificates/maternity-exemption-certificates">Find
+                        out what you're entitled to</a></p>
+
+
+            </div>
+        </details>
+
+
+    </div>
+
+    <!-- <aside class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-related-nav">
+            <h2 class="nhsuk-related-nav__heading">
+                Help for healthcare professionals
+            </h2>
+            <nav role="navigation" class="nhsuk-related-nav__nav-section">
+                <ul class="nhsuk-related-nav__list">
+
+
+                    <li class="nhsuk-related-nav__item">
+                        <a class="nhsuk-related-nav__link" href="help">
+                            Common issues
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </nav>
+        </div>
+    </aside> -->
+
+</div>
+{% endblock %}
