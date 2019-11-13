@@ -1,0 +1,119 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-sidebar-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Vouchers - Changes
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<div class="nhsBSA-sidebar">
+    <div class="nhsBSA-navigation-container">
+
+        <div class="nhsBSA-navigation-wrapper">
+      
+
+          <h3>Home</h3>
+
+          <p><a href="home">Application list</a></p>
+    
+          <h3>Tasks</h3>
+    
+          <p><a href="applications">New applications <sup>(4)</sup></a></p>
+          <p><a href="replacements">Card replacements <sup>(2)</sup></a></p>
+          <p><a href="changes"><strong>Changes <sup>(1)</sup></strong></a></p>
+          <hr>
+          <p><a href="#">Create a new application</a></p>
+
+
+        </div>
+
+    </div>
+    <div class="nhsBSA-content-container">
+
+        <div class="nhsBSA-content-wrapper">
+      
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+            
+                    <div class="nhsuk-phase-banner nhsuk-u-margin-bottom-4">
+                        <p class="nhsuk-phase-banner__content">
+                            <strong class="nhsuk-tag nhsuk-phase-banner__content__tag discovery">
+                                discovery
+                            </strong>
+                            <span class="nhsuk-phase-banner__text">
+                                This is a new service – your <a class="nhsuk-link" href="#">feedback</a> will help us to improve it.
+                            </span>
+                        </p>
+                    </div>
+            
+                </div>
+            </div>
+
+
+
+
+
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+
+
+
+                    <div class="nhsuk-table-responsive">
+                        <table class="nhsuk-table">
+                          <caption class="nhsuk-table__caption">Healthy Start Changes</caption>
+                          <thead class="nhsuk-table__head">
+                            <tr class="nhsuk-table__row">
+                              <th class="nhsuk-table__header" scope="col">Name</th>
+                              <th class="nhsuk-table__header" scope="col">NI Number</th>
+                              <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                              <th class="nhsuk-table__header" scope="col">Submitted date</th>
+                            </tr>
+                          </thead>
+                          <tbody class="nhsuk-table__body">
+                            <tr class="nhsuk-table__row">
+                              <td class="nhsuk-table__cell">Freya Ridings</td>
+                              <td class="nhsuk-table__cell">JR808261A</td>
+                              <td class="nhsuk-table__cell">10/08/1973</td>
+                              <td class="nhsuk-table__cell">10/10/2019</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+
+
+                </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

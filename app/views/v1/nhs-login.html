@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Sign in</title>
+  </head>
+
+  <body class="body-margin">
+    <div class="grid-row">
+      <div class="bg-img">
+        <!-- Microsoft -->
+        <div class="login-box">
+          <img src="/images/nhs-logo.jpg" alt="NHS logo" class="nhslogo" />
+
+          <form action="/v1/nhs-login" method="post">
+          
+          <div class="form-group">
+            <label class="nhs-text" for="email" id="last-name-label">Sign in with your NHSmail account</label>
+            <input id="email" class="nhs-input" type="text" autocomplete="off" aria-required="false" placeholder="@nhs.net" name="nhs-mail-address" />
+            <input id="password" class="nhs-input" type="text" autocomplete="off" aria-required="false" placeholder="Password" />
+          </div>
+          <button class="next" type="submit">
+              Sign in
+          </button>
+
+          <div class="private"> 
+            <input type="checkbox" checked />
+            <span class="priv-text">This is a private computer</span>
+            <p class="priv-text">Unlock Account or Forgotten Password? <a href="#">Click here.</a></p>
+          </div>
+
+        </form>
+        </div>
+      </div>
+    </div>
+    <!--<a href="sign-in-auth"><img class="full-page" src="/public/images/nhs-login.png" /></a> -->
+  </body>
+<style>
+.full-page {
+  width: 100%;
+  position: block;
+}
+
+.body-margin {
+  margin: 0px;
+}
+.priv-text{
+  font-family: Segoe UI, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.private{
+  margin-top:20px;
+}
+
+.nhs-input{
+  width: 300px;
+  height:26px;
+  margin-bottom: 10px;
+}
+
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.next {
+  padding:5px;
+  background-color: rgb(38, 114, 236);
+  color:white;
+  font-size: 16px;
+  font-family: Segoe UI, sans-serif;
+  font-weight: 400;
+  margin:35px 0px 0px 20px;
+  width:70px;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.next:hover {
+  background-color:rgb(139, 184, 255);;
+  transition: background 0.2s ease-in-out;
+  
+}
+
+.nhslogo {
+  width:200px;
+  margin-bottom:60px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.bg-img { 
+  background: url(/images/sign-in-screen.png) no-repeat;
+  overflow:hidden;
+  width:100%;
+}
+
+.login-box{
+  margin:2% 10% 20% 0%;
+  width:300px;
+  padding:30px;
+  background-color: white;
+  float:right;
+  padding-bottom: 150px;
+}
+
+@media only screen and (max-width: 640px) {
+.login-box {
+  margin: 2% 10% 20% 5%;
+  width: 300px;
+  padding:30px;
+  background-color: white;
+  }
+}
+
+.nhs-text {
+  display:block;
+  margin-bottom:20px;
+  font-family:Segoe UI, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  color: #404040;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;  
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;
+}
+
+input[type="text"] {
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #262626;
+  font-weight: 400;
+}
+</style>
+</html>

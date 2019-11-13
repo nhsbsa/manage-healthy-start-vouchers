@@ -1,0 +1,439 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-sidebar-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Vouchers - Joe Bloggs
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<div class="nhsBSA-sidebar">
+  <div class="nhsBSA-navigation-container">
+
+    <div class="nhsBSA-navigation-wrapper">
+
+      <h3>Home</h3>
+
+      <p><a href="home">Application list</a></p>
+
+      <h3>Tasks</h3>
+
+      <p><a href="applications">New applications <sup>(4)</sup></a></p>
+      <p><a href="replacements">Card replacements <sup>(2)</sup></a></p>
+      <p><a href="changes">Changes <sup>(1)</sup></a></p>
+      <hr>
+      <p><a href="#">Create a new application</a></p>
+
+
+    </div>
+
+  </div>
+  <div class="nhsBSA-content-container">
+
+
+    <div class="nhsBSA-content-wrapper">
+
+
+
+
+
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+              <div class="nhsuk-phase-banner nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5">
+                <p class="nhsuk-phase-banner__content">
+                  <strong class="nhsuk-tag nhsuk-phase-banner__content__tag discovery">
+                    discovery
+                  </strong>
+                  <span class="nhsuk-phase-banner__text">
+                    This is a new service – your <a class="nhsuk-link" href="#">feedback</a> will help us to improve it.
+                  </span>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+              <div class="nhsuk-back-link">
+                <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                  </svg>
+                  Go back</a>
+              </div>
+
+              <h1 class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-3">Anita Bilal</h1>
+              <h2 class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5">Application status: <strong class="nhsuk-tag nhsuk-phase-banner__content__tag beta" style="
+                position: relative;
+                top: -4px;
+            ">submitted</strong></h2>
+
+<details class="nhsuk-details" nhsuk-polyfilled="true" id="nhsuk-details0">
+    <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false">
+      <span class="nhsuk-details__summary-text">
+        Update application status
+      </span>
+    </summary>
+    <div class="nhsuk-details__text" id="nhsuk-details__text0" aria-hidden="true">
+
+        <div class="nhsuk-form-group" id="details-content-e8811cd7-96e6-40b2-9ea5-05f0709df6b8" aria-hidden="false">
+
+            <fieldset class="nhsuk-fieldset">
+            
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+              Change status
+            </legend>
+            
+          
+            <div class="nhsuk-radios nhsuk-radios--inline">
+              
+              
+              
+              
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="change-application-status-1" name="change-application-status" type="radio" value="submitted" checked>
+                <label class="nhsuk-label nhsuk-radios__label" for="change-application-status-1">
+                  Submitted
+                </label>
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="change-application-status-2" name="change-application-status" type="radio" value="in progress">
+                <label class="nhsuk-label nhsuk-radios__label" for="change-application-status-2">
+                  In progress
+                </label>
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="change-application-status-3" name="change-application-status" type="radio" value="completed">
+                <label class="nhsuk-label nhsuk-radios__label" for="change-application-status-3">
+                  Completed
+                </label>
+              </div>
+              
+              
+              
+            </div>
+            </fieldset>
+
+      
+          
+          
+          </div>
+
+          <div class="nhsuk-form-group">
+
+          <button class="nhsuk-button nhsuk-u-margin-bottom-3" type="submit">
+              Update status
+            </button>
+
+          </div>
+
+
+    </div>
+  </details>
+
+
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+      
+      
+      
+      
+      
+                        <h2 class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-3">Personal details</h2>
+      
+                        <dl class="nhsuk-summary-list">
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Name
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    Joe Bloggs
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> name</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    National Insurance number
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    JR318821B
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Date of birth
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    15 March 1984
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Contact information
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    73 Roman Rd<br>Leeds<br> LS2 5ZN
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Contact details
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    <p>07700 900362</p>
+                                    <p>joe.bloggs@example.com</p>
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                        </dl>
+      
+                        <h2 class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-3">Application details</h2>
+      
+                        <dl class="nhsuk-summary-list">
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Date of application
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    10/10/2019
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> the date of application</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Eligible benefits received
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    Universal Credit
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> eligible benefits received</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Currently pregnant
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    No
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> whether they are currently
+                                            pregnant</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Number of children under 4
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    1
+                                </dd>
+      
+                                <dd class="nhsuk-summary-list__actions">
+      
+                                    <a href="#">
+                                        Change<span class="nhsuk-u-visually-hidden"> number of children under 4</span>
+                                    </a>
+      
+                                </dd>
+      
+                            </div>
+      
+      
+      
+      
+      
+                        </dl>
+      
+                    </div>
+      
+      
+      
+                </div>
+
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              
+
+
+                <h2 class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-3">Timeline of events</h2>
+             
+                <div class="timeline">
+                    <ul>
+                      <li class="action_needed">
+                          <h2>Application submitted</h2>
+                          <p class="time">10 October 2019 at 8.15pm</p>
+                          <p>Your Healthy Start application has been received (Ref: 6HWNA).</p>
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
