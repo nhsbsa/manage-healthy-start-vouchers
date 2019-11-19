@@ -1,0 +1,133 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-sidebar.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Vouchers - Joe Bloggs
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+
+
+<div class="nhsBSA-sidebar-container">
+  
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+
+
+        <div class="nhsuk-width-container-fluid">
+
+            <div class="nhsuk-main-wrapper" id="maincontent">
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+
+                                <h1>
+                                        <span role="text">
+                                          Anita Bilal
+                                          <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+                                            <span class="nhsuk-u-visually-hidden">
+                                              -
+                                            </span>
+                                            Personal details
+                                          </span>
+                                        </span>
+                                      </h1>
+                                      
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+            
+            
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="1">
+                                  Name
+                                </label>
+                                <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="Anita Bilal">
+                              </div>
+                              <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="2">
+                                      Date of birth
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-u-width-one-third" id="2" name="2" type="text" value="15/03/1984">
+                                </div>
+                              <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="3">
+                                      National Insurance number
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text" value="QQ123456C">
+                                </div>
+
+                          
+            
+                                <a href="applicant-view-personal-details">
+                                <button class="nhsuk-button nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2" type="submit">
+                                    Update details
+                                </button>
+                                </a>
+
+                                <p class="nhsuk-u-margin-top-4"><a href="applicant-view-personal-details">Cancel</a></p>
+            
+            
+            
+                        </div>
+            
+                      </div>
+            
+                    
+
+                </div>
+            
+        </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+      
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="search-results">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+              </svg>
+              Go back to search</a>
+          </div>
+
+        <div class="side-nav">
+            <ul>
+              <div id="options" class="options">
+                  <li><a class="active" href="applicant-view-personal-details">Personal details</a></li>
+                  <li><a href="applicant-view-contact-details">Contact details</a></li>
+                  <li><a href="applicant-view-dependants-details">Dependants / Carers</a></li>
+                  <li><a href="applicant-view-benefit-details">Benefit information</a></li>
+                  <li><a href="applicant-view-transaction-details">Transactions / Card</a></li>
+                  <li><a href="applicant-view-note-details">History / Notes</a></li>
+              </div>
+            </ul>
+        </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
