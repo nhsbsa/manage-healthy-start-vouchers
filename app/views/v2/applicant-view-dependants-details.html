@@ -23,7 +23,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
-
+{% set noOfChildren = 1 %}
 
 <div class="nhsBSA-sidebar-container">
   
@@ -69,12 +69,12 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                 Number of children
                                               </dt>
                                               <dd class="nhsuk-summary-list__value">
-                                                  1
+                                                  {{ noOfChildren }}
                                                 </dd>
                                           
                                               <dd class="nhsuk-summary-list__actions">
                                           
-                                                <a href="applicant-edit-contact-details#1">
+                                                <a href="applicant-edit-dependants-details#1">
                                                   Change<span class="nhsuk-u-visually-hidden"> number of children</span>
                                                 </a>
                                           
@@ -85,7 +85,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                           
                                           </dl>
 
-                                          <h2 class="nhsuk-heading-m">Child details</h2>
+                                          <h2 class="nhsuk-heading-m">{% if noOfChildren > 1 %}Children{% else %}Child{% endif %} details{% if noOfChildren > 1 %} ({{ noOfChildren }}){% else %}{% endif %}</h2>
 
                                           <dl class="nhsuk-summary-list">
       
@@ -99,7 +99,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                 
                                                     <dd class="nhsuk-summary-list__actions">
                                                 
-                                                      <a href="applicant-edit-contact-details#5">
+                                                      <a href="applicant-edit-dependants-details#5">
                                                         Change<span class="nhsuk-u-visually-hidden"> childs first name</span>
                                                       </a>
                                                 
@@ -118,7 +118,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                   
                                                       <dd class="nhsuk-summary-list__actions">
                                                   
-                                                        <a href="applicant-edit-contact-details#6">
+                                                        <a href="applicant-edit-dependants-details#6">
                                                           Change<span class="nhsuk-u-visually-hidden"> telephone number</span>
                                                         </a>
                                                   
@@ -142,7 +142,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                       
                                                           <dd class="nhsuk-summary-list__actions">
                                                       
-                                                            <a href="applicant-edit-contact-details#5">
+                                                            <a href="applicant-edit-dependants-details#5">
                                                               Change<span class="nhsuk-u-visually-hidden"> carers first name</span>
                                                             </a>
                                                       
@@ -161,7 +161,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                         
                                                             <dd class="nhsuk-summary-list__actions">
                                                         
-                                                              <a href="applicant-edit-contact-details#6">
+                                                              <a href="applicant-edit-dependants-details#6">
                                                                 Change<span class="nhsuk-u-visually-hidden"> carers date of birth</span>
                                                               </a>
                                                         
@@ -179,7 +179,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                           
                                                               <dd class="nhsuk-summary-list__actions">
                                                           
-                                                                <a href="applicant-edit-contact-details#6">
+                                                                <a href="applicant-edit-dependants-details#6">
                                                                   Change<span class="nhsuk-u-visually-hidden"> carers national insurance number</span>
                                                                 </a>
                                                           
@@ -197,7 +197,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                                             
                                                                 <dd class="nhsuk-summary-list__actions">
                                                             
-                                                                  <a href="applicant-edit-contact-details#6">
+                                                                  <a href="applicant-edit-dependants-details#6">
                                                                     Change<span class="nhsuk-u-visually-hidden"> carers contact details</span>
                                                                   </a>
                                                             
