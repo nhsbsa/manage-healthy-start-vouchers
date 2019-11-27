@@ -23,6 +23,9 @@ Manage Healthy Start Vouchers - Changes
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+<div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
@@ -109,5 +112,8 @@ Manage Healthy Start Vouchers - Changes
 
     </div>
   </div>
+
+  </main>
+</div>
 
 {% endblock %}

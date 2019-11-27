@@ -589,6 +589,7 @@ TIMELINE
     color: #005EB8;
     font-size: 18px;
     text-decoration: none;
+    border-top: #ccc 1px solid;
     border-bottom: #ccc 1px solid;
     padding: 16px;
     @media (min-width: 48.0525em) {
@@ -599,7 +600,9 @@ TIMELINE
   li a.active {
     background-color:#005EB8;
     color: white;
-    font-weight: 600;;
+    font-weight: 600;
+    border-top: #005EB8 1px solid;
+    border-bottom: #005EB8 1px solid;
   }
 
   li a:hover:not(.active) {
@@ -623,3 +626,13 @@ TIMELINE
 }
 
 
+.nhsBSA-align-right {
+  text-align: left;
+  @media (min-width: 48.0525em) {
+    text-align: right;
+  }
+}
+
+.nhsBSA-breadcrumb {
+  border-bottom: #ccc 1px solid;
+}

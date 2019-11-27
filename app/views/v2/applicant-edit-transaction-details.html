@@ -23,6 +23,24 @@ Manage Healthy Start Vouchers - Joe Bloggs
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+      
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-results">Search results</a></li>
+      <li class="nhsuk-breadcrumb__item">Anita Bilal</li>
+          </ol>
+
+        </div>
+      </div>
+  
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to search results</a></p>
+
+    </div>
+</nav>
 
 
 <div class="nhsBSA-sidebar-container">
@@ -47,7 +65,7 @@ Manage Healthy Start Vouchers - Joe Bloggs
                                             <span class="nhsuk-u-visually-hidden">
                                               -
                                             </span>
-                                            Transactions / Card details
+                                            Payment details
                                           </span>
                                         </span>
                                       </h1>
@@ -151,24 +169,22 @@ Manage Healthy Start Vouchers - Joe Bloggs
 
     </div>
     <div class="nhsBSA-sidebar-nav">
-      
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="search-results">
-              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-              </svg>
-              Go back to search</a>
-          </div>
 
         <div class="side-nav">
+
+            <h3>Anita Bilal<span class="nhsuk-caption-m nhsuk-caption--bottom">
+                <span class="nhsuk-u-visually-hidden">
+                  -
+                </span>NI No. AB123456C</span></h3>
+
             <ul>
               <div id="options" class="options">
                   <li><a href="applicant-view-personal-details">Personal details</a></li>
                   <li><a href="applicant-view-contact-details">Contact details</a></li>
-                  <li><a href="applicant-view-dependants-details">Dependants / Carers</a></li>
+                  <li><a href="applicant-view-dependants-details">Relationships</a></li>
                   <li><a href="applicant-view-benefit-details">Benefit information</a></li>
-                  <li><a class="active" href="applicant-view-transaction-details">Transactions / Card</a></li>
-                  <li><a href="applicant-view-note-details">History / Notes</a></li>
+                  <li><a class="active" href="applicant-view-transaction-details">Payment details</a></li>
+                  <li><a href="applicant-view-note-details">Case history</a></li>
               </div>
             </ul>
         </div>

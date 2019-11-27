@@ -23,6 +23,27 @@ Manage Healthy Start Vouchers - Changes
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+      
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item">Search results</li>
+          </ol>
+
+        </div>
+      </div>
+  
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to home</a></p>
+
+    </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
@@ -159,5 +180,8 @@ Manage Healthy Start Vouchers - Changes
 
     </div>
   </div>
+
+</main>
+</div>
 
 {% endblock %}
