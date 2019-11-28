@@ -1,0 +1,136 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Vouchers - Changes
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+      
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item">Add an applicant (Step 1 of 2)</li>
+          </ol>
+
+        </div>
+      </div>
+  
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+
+    </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+              </svg>
+              Go back</a>
+          </div>
+
+        <h1 class="nhsuk-u-margin-bottom-4">
+            <span role="text">
+              Add an applicant
+              <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+                <span class="nhsuk-u-visually-hidden">
+                  -
+                </span>
+                Step 1 of 2
+              </span>
+            </span>
+          </h1>
+
+          <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="1">
+                Name
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="{{ data['1'] }}">
+            </div>
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="2">
+                    Date of birth
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-one-third" id="2" name="2" type="text" value="{{ data['2'] }}">
+              </div>
+              <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="3">
+                      National Insurance number (optional)
+                  </label>
+                  <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text" value="{{ data['3'] }}">
+                </div>
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="addressline1">
+                        House number or name
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-one-third" id="addressline1" name="addressline1" type="text" autocomplete="address-line1" value="{{ data['4'] }}">
+                </div>
+    
+                <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="addressline2">
+                        Address line 2
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-one-third" id="addressline2" name="addressline2" type="text" autocomplete="address-line2">
+                </div>
+    
+                <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="towncity">
+                        Town or city
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-one-third" id="towncity" name="towncity" type="text" autocomplete="address-level1">
+                </div>
+    
+                <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="postcode">
+                        Postcode
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text" autocomplete="postal-code" value="{{ data['5'] }}">
+                </div>
+
+                <p><a href="add-applicant-step1">This is not their address</a></p>
+
+                <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+        
+
+              <a href="add-applicant-step2">
+              <button class="nhsuk-button nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2" type="submit">
+                  Continue
+              </button>
+              </a>
+
+              <p class="nhsuk-u-margin-top-4"><a href="javascript:history.go(-2)">Cancel</a></p>
+
+
+    </div>
+  </div>
+
+  </main>
+</div>
+
+{% endblock %}

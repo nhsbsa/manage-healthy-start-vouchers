@@ -636,3 +636,25 @@ TIMELINE
 .nhsBSA-breadcrumb {
   border-bottom: #ccc 1px solid;
 }
+
+.nhsuk-button-red {
+    background-color: $color_nhsuk-red;
+    box-shadow: 0 4px 0 shade($color_nhsuk-red, 40%);
+  &:hover {
+    background-color: shade($color_nhsuk-red, 20%);
+  }
+  &:active {
+    background: shade($color_nhsuk-red, 20%);
+    box-shadow: none;
+    color: #ffffff !important;
+    top: 4px;
+  }
+}
+
+.nhsuk-button--secondary {
+
+&:active {
+
+  color: #ffffff !important;
+}
+}

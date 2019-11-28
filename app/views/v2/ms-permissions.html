@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+	 	<title>Sign in</title>
+	  	<style>
+	  		.full-page {
+	  			width: 100%;
+	  			position: block;
+	  		}
+
+	  		.body-margin {
+	  			margin: 0px;
+	  		}
+			 .flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: center;
+}
+.buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: center;
+}
+.box {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+	  	</style>
+	</head>
+
+	<body class="body-margin">
+		<div class="grid-row">
+			<div class="bg-img">
+				<!-- Microsoft -->
+				<div class="box">
+				<div class="login-box">
+					<div style="padding: 45px;">
+					<img src="/images/microsoft_logo.svg" alt="microsoft logo" class="mslogo" />
+
+					<p>{{ data['nhs-mail-address'] }}</p>
+					<p class="faux-micro">Review permissions</p>
+
+					<div class="flex">
+					<div style="width: 50px;">
+							<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+								<path fill="#005eb8" d="M0 0h40v16H0z"></path>
+								<path fill="#fff" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+								<image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+							</svg>
+
+					</div>
+					<div style="font-family: Arial, Helvetica, sans-serif; padding-left: 20px"><strong>NHS Business Services Authority</strong></div>
+					</div>
+
+<p style="font-family: Arial, Helvetica, sans-serif;">The organisation NHS Business Services Authority would like to:</p>
+
+		<div class="flex">
+		<div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>assets</title><path d="M15.284,3.642,16,4.358l-8,8-8-8,.716-.716L8,10.925Z" fill="#404040"/></svg></div>
+		<div style="font-family: Arial, Helvetica, sans-serif; padding-left: 10px;">Sign you in</div>
+		</div>
+
+		<div class="flex">
+				<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>assets</title><path d="M15.284,3.642,16,4.358l-8,8-8-8,.716-.716L8,10.925Z" fill="#404040"/></svg></div>
+				<div style="font-family: Arial, Helvetica, sans-serif; padding-left: 10px;">Read your profile info</div>
+				</div>
+
+				<p style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;">You should only accept if you trust NHS Business Services Authority. By accepting, you allow this organisation to access and process your data to create, control and administer an account according to their policies. NHS Business Services Authority has not provided a link to their privacy statement for you to review. NHS Business Services Authority may log information about your access. You can remove these permissions at https://myapps.microsoft.com.</p>
+
+				<div class="buttons">
+					<div><a href="ms-signed-out"><div class="cancel">Cancel</div></a></div>
+					<div><a href="signed-in/start"><div class="next">Next</div></a></div>
+				</div>
+
+
+					</div>
+				</div>
+
+			</div>
+
+
+
+			</div>
+		</div>
+		<!--<a href="sign-in-auth"><img class="full-page" src="/public/images/nhs-login.png" /></a> -->
+	</body>
+<style>
+a:-webkit-any-link {
+	text-decoration: none;
+}
+.next {
+	padding:10px;
+	background-color: #005DA6;
+	color:white;
+	font-size: 16px;
+	font-family: Segoe UI, sans-serif;
+	font-weight: 600;
+	margin:50px 0px 0px 0px;
+	width:100px;
+	text-align: center;
+}
+
+.next:hover {
+	background-color:#004780;
+	transition: background 0.2s ease-in-out;
+	
+}
+.cancel {
+	padding:10px;
+	background-color: #cccccc;
+	color:black;
+	font-size: 16px;
+	font-family: Segoe UI, sans-serif;
+	margin:50px 0px 0px 0px;
+	width:100px;
+	text-align: center;
+}
+
+.cancel:hover {
+	background-color:#bfbfbf;
+	transition: background 0.2s ease-in-out;
+	
+}
+
+.mslogo {
+    max-width: 256px;
+    height: 24px;
+	margin-bottom:10px;
+}
+.micro-link {
+	font-size:13px;
+	font-family:Segoe UI, sans-serif;
+	color: #0066ff;
+	display: block;
+}
+
+.micro-link:hover {
+	text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.bg-img {
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6); 
+	background: url(/images/hills-bg.jpg) no-repeat;
+	overflow:hidden;
+	width:100%;
+	height:100vh;
+}
+
+.login-box{
+	width:440px;
+	background-color: white;
+}
+
+@media only screen and (max-width: 640px) {
+.login-box {
+	margin: 10% 10%;
+	width:440px;
+	background-color: white;
+	}
+}
+
+.micro-input {
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom:2px solid silver;
+	width: 100%;
+	outline: none;
+	padding-bottom: 5px;
+}
+
+.micro-input:focus {
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom:2px solid #0066ff;
+	width: 100%;
+	outline: none;
+	padding-bottom: 5px;
+}
+
+.faux-micro {
+	display:block;
+	margin-bottom:20px;
+	font-family:Segoe UI, sans-serif;
+	font-weight:600;
+	font-size: 24px;
+	line-height: 28px;
+	color: #404040;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;  
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-family: Segoe UI, sans-serif;
+  font-size: 15px;
+  color: #737373;
+  font-weight: 400;
+}
+
+input[type="text"] {
+	font-family: Segoe UI, sans-serif;
+    font-size: 15px;
+  color: #262626;
+  font-weight: 400;
+}
+</style>
+</html>
