@@ -23,8 +23,6 @@ Manage Healthy Start Vouchers - Changes
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
       <div class="nhsuk-grid-row">
@@ -57,6 +55,19 @@ Manage Healthy Start Vouchers - Changes
                       Go back</a>
                   </div>
 
+                  <div class="nhsuk-error-summary nhsuk-u-margin-bottom-5" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                      <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                        There is a problem
+                      </h2>
+                      <div class="nhsuk-error-summary__body">
+                        <ul class="nhsuk-list nhsuk-error-summary__list">
+                          <li>
+                            <a href="#example-error-1">Applicant must be at least 10 weeks pregnant to apply</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
                   <h1 class="nhsuk-u-margin-bottom-4">
                       <span role="text">
                           <span class="nhsuk-caption-xl nhsuk-caption--top">
@@ -65,7 +76,7 @@ Manage Healthy Start Vouchers - Changes
                               </span>
                               Eligibility
                           </span>
-                      Are they pregnant or have any children under 4 years old?
+                      What is their due date?
                       </span>
                     </h1>
 
@@ -79,42 +90,39 @@ Manage Healthy Start Vouchers - Changes
             <div class="nhsuk-grid-column-two-thirds">
 
               
-                <form action="/v2/pregnant-or-children" method="post">
+                <form action="/v2/due-date" method="post">
 
                   <div class="nhsuk-form-group">
-      
-                          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                        
-                            <span class="nhsuk-hint">
-                              Select all that apply.
+                          <fieldset class="nhsuk-fieldset" aria-describedby="hint" role="group">
+                            <span class="nhsuk-hint" id="hint">
+                              For example, 21 8 2020
                             </span>
                         
-                            <div class="nhsuk-checkboxes">
-                        
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input" id="pregnant" name="pregnant-or-children" type="checkbox" value="pregnant">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="pregnant">
-                                  Pregnant
-                                </label>
+                            <div class="nhsuk-date-input">
+                              <div class="nhsuk-date-input__item">
+                                <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
+                                    Day
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday" name="duedateday" type="number" pattern="[0-9]*">
+                                </div>
                               </div>
-                        
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input" id="children" name="pregnant-or-children" type="checkbox" value="children">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="children">
-                                  Children under 4 years old
-                                </label>
+                              <div class="nhsuk-date-input__item">
+                                <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
+                                    Month
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*">
+                                </div>
                               </div>
-                        
-                              <div class="nhsuk-radios__divider">or</div>
-                        
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input deselect" id="NONE" name="pregnant-or-children" type="checkbox" value="NONE">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="NONE">
-                                  None of these
-                                </label>
+                              <div class="nhsuk-date-input__item">
+                                <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
+                                    Year
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*">
+                                </div>
                               </div>
-                        
-                        
                             </div>
                           </fieldset>
                         
@@ -124,21 +132,7 @@ Manage Healthy Start Vouchers - Changes
                       Continue
                   </button>
       
-              </form>
-              <script>
-              var $others = $('input[name="pregnant-or-children"]').not('#NONE')
-              $('#NONE').change(function () {
-                if (this.checked) {
-                  $others.prop('checked', false)
-                }
-              });
-              $others.change(function () {
-                if (this.checked) {
-                  $('#NONE').prop('checked', false)
-                }
-              })
-              </script>
-              
+              </form>              
 
 
             </div>

@@ -55,51 +55,17 @@ Manage Healthy Start Vouchers - Changes
               Go back</a>
           </div>
 
-        <h1 class="nhsuk-u-margin-bottom-4">
-            <span role="text">
-                <span class="nhsuk-caption-xl nhsuk-caption--top">
-                    <span class="nhsuk-u-visually-hidden">
-                      -
-                    </span>
-                    Eligibility
-                </span>
-            Do {% if data['applyingfor'] == "myself" %}you{% else %}they{% endif %} live in Scotland?
-            </span>
+          <h1 class="nhsuk-fieldset__legend--xl">
+              They cannot apply if they live in Scotland
           </h1>
-
-          <form action="/v2/do-you-live-in-scotland" method="post">
   
-              <div class="nhsuk-form-group">
+          <p>
+              They can only apply for this scheme if they live in England, Wales or Northern Ireland.
+          </p>
   
-                  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-  
-                      <div class="nhsuk-radios nhsuk-radios--inline">
-                          <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="yes" name="scotland" type="radio" value="yes">
-                              <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                                  Yes
-                              </label>
-                          </div>
-                          <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="no" name="scotland" type="radio" value="no">
-                              <label class="nhsuk-label nhsuk-radios__label" for="no">
-                                  No
-                              </label>
-                          </div>
-                      </div>
-                  </fieldset>
-  
-  
-  
-              </div>
-  
-              <button class="nhsuk-button" type="submit">
-                  Continue
-              </button>
-
-  
-          </form>
-  
+          <p>
+              If they live in Scotland they can <a href="https://www.mygov.scot/best-start-grant-new/">apply for Best Start Foods</a>.
+          </p>  
 
 
     </div>
