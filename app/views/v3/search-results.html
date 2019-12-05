@@ -1,0 +1,187 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Vouchers - Changes
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+      
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item">Search results</li>
+          </ol>
+
+        </div>
+      </div>
+  
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to home</a></p>
+
+    </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half"><h1>2,142 results found</h1></div>
+            <div class="nhsuk-grid-column-one-half">
+
+                <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" style="float: right;" type="submit">
+                    Add new applicant
+                  </button>
+                <div style="overflow: auto;"></div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption">Healthy Start Applications</caption>
+              <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="col">Name</th>
+                  <th class="nhsuk-table__header" scope="col">NI Number</th>
+                  <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                  <th class="nhsuk-table__header" scope="col">Eligibility</th>
+                  <th class="nhsuk-table__header" scope="col">Next payment date</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="applicant-view-personal-details">Anita Bilal</a></td>
+                  <td class="nhsuk-table__cell">QQ123456C</td>
+                  <td class="nhsuk-table__cell">15/03/1984</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">10/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Joe Bloggs</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">11/01/2006</td>
+                  <td class="nhsuk-table__cell">Under 18</td>
+                  <td class="nhsuk-table__cell">09/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Sarah Galloway</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">18/05/1985</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">08/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Charlotte Walker</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">24/04/1999</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">07/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Joe Bloggs</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">10/08/1973</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">10/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Anita Bilal</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">11/01/2006</td>
+                  <td class="nhsuk-table__cell">Under 18</td>
+                  <td class="nhsuk-table__cell">09/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Sarah Galloway</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">18/05/1985</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">08/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Charlotte Walker</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">24/04/1999</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">07/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Sarah Galloway</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">18/05/1985</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">08/10/2019</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Charlotte Walker</td>
+                  <td class="nhsuk-table__cell">JR318821B</td>
+                  <td class="nhsuk-table__cell">24/04/1999</td>
+                  <td class="nhsuk-table__cell">Eligible benefit</td>
+                  <td class="nhsuk-table__cell">07/10/2019</td>
+                </tr>
+
+
+              </tbody>
+            </table>
+
+
+            <nav class="nhsuk-pagination" id="pagination-label">
+
+              <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+              <ul class="nhsuk-pagination__list">
+                <li class="nhsuk-pagination__item  nhsuk-pagination__item--prev">
+                  <a class="nhsuk-pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+                      pages</span></a>
+                </li>
+
+                <li class="nhsuk-pagination__item nhsuk-pagination__item--active">1</li>
+
+                <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=2">2</a></li>
+
+                <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=3">3</a></li>
+
+                <li class="nhsuk-pagination__item  nhsuk-pagination__item--next">
+                  <a class="nhsuk-pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+                      pages</span></a>
+                </li>
+              </ul>
+              <p class="nhsuk-pagination__results">Showing <b>1</b> to <b>10</b> of <b>2,142</b> results</p>
+            </nav>
+
+          </div>
+
+
+    </div>
+  </div>
+
+</main>
+</div>
+
+{% endblock %}
