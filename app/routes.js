@@ -331,22 +331,14 @@ router.post('/v3/due-date', function (req, res) {
 
   var fourtytwoweeksfromtoday = moment().add(42, 'weeks');
 
-  console.log(duedate)
-  console.log(fourtytwoweeksfromtoday)
-
   req.session.data['preggers'] = moment(temp).format('Do MMMM YYYY');
   
-  
+  if (duedateday && duedatemonth && duedateyear) { // If a date has been entered...
 
-
-  
-
-  if (duedateday && duedatemonth && duedateyear) {
-
-    if (duedate > fourtytwoweeksfromtoday) {
-      res.redirect('/v3/due-date-42-weeks') 
+    if (duedate > fourtytwoweeksfromtoday) { // If due date is greater than 42 weeks from today...
+      res.redirect('/v3/due-date-42-weeks') // ...redirect to error screen...
     } else {
-      res.redirect('/v3/name')
+      res.redirect('/v3/name') // ...otherwise allow them to continue their journey!
     }
 
   }

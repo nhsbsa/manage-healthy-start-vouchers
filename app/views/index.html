@@ -1,233 +1,162 @@
 <!-- Use this page as the index for your project -->
-
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
-<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  {% extends 'layout.html' %} <!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
-
-<!-- Set the page title inside the pageTitle block -->
-{% block pageTitle %}
-  Manage Healthy Start Vouchers
-{% endblock %}
-
-<!-- Breadcrumb goes inside the beforeContent block -->
-{% block beforeContent %}
-{% endblock %}
-
-<!-- Your page content goes inside the content block -->
-<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
-{% block content %}
-<div class="nhsuk-grid-row">
+   <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Manage Healthy Start Vouchers {% endblock %} <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %} <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+  <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-  
       <!-- Change the page title here -->
-      <h1>
-        Manage Healthy Start Vouchers
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version 1.0</span>
-      </h1>
-  
-      <!-- Add your content here -->
+      <h1>Manage Healthy Start Vouchers <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version 1.0</span></h1><!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
-  
-      <p class="nhsuk-body-l">
-        The Healthy Start scheme allows eligible applicants to get help each week to spend on milk, plain fresh and frozen fruit and vegetables, and infant formula milk. They are also entitled to free vitamins.
-      </p>
-  
-      <p class="nhsuk-body-l">
-        The 'Manage' service allows operational staff to manage the scheme e.g. Answering queries, changing details, adding new applicants etc...
-      </p>
-
+      <p class="nhsuk-body-l">The Healthy Start scheme allows eligible applicants to get help each week to spend on milk, plain fresh and frozen fruit and vegetables, and infant formula milk. They are also entitled to free vitamins.</p>
+      <p class="nhsuk-body-l">The 'Manage' service allows operational staff to manage the scheme e.g. Answering queries, changing details, adding new applicants etc...</p>
       <details class="nhsuk-details nhsuk-expander">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">
-              Sprint 1 (Private Beta)
-            </span>
-          </summary>
-          <div class="nhsuk-details__text">
-            <h2 class="nhsuk-heading-l">Designing a 'Manage' service
-            </h2>
-  
-            <h3 class="nhsuk-heading-m">Hypothesis A</h3>
-            <p style="background: #DEE0E2; padding: 20px;"><strong>We
-                believe</strong> that providing a method for CCS agents to manage information about Healthy Start applicants
-              <strong>will
-                be a useful feature for</strong> all applicants who are not 'passported' by having an approved benefit
-              <strong>as it will</strong> not only allow current users of the scheme to be managed, but also provide new applicants with an additional route of applying via the call centre. <strong>This
-                will</strong> align with us supporting an assisted digital route.
-            </p>
-            <p>.</p>
-            <hr>
-            <h3 class="nhsuk-heading-m">What we created:</h3>
-            <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>Added the ability for a CCS agent to add an applicant who is <strong>16 - 18 and pregnant</strong>. <a target="_blank" href="/files/CMS - Add Applicant - 16 to 18 (Pregnant ONLY).pdf">View User Flow (opens in new window)</a></li>
-            </ul>
-            <h3 class="nhsuk-heading-m">What we plan to test:</h3>
-            <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
-            </ul>
-            <h3 class="nhsuk-heading-m">What we found:</h4>
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Sprint 1 (Private Beta)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h2 class="nhsuk-heading-l">Designing a 'Manage' service</h2>
+          <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+          <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that providing a method for CCS agents to manage information about Healthy Start applicants <strong>will be a useful feature for</strong> all applicants who are not
+          'passported' by having an approved benefit <strong>as it will</strong> not only allow current users of the scheme to be managed, but also provide new applicants with an additional route of applying via the call centre. <strong>This
+          will</strong> align with us supporting an assisted digital route.</p>
+          <p>.</p>
+          <hr>
+          <h3 class="nhsuk-heading-m">What we created:</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Added the ability for a CCS agent to add an applicant who is <strong>16 - 18 and pregnant</strong>. <a href="https://miro.com/welcomeonboard/BU7KhYJmVpFvobEHV3NaoCcQUEiHZF8HjaUnSsuoi5hgSPHlQRzyAfMeGTqpPF4O"
+                  target="_blank">View User Flow (opens in new window)</a>
+            </li>
+          </ul>
+          <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>...</li>
+          </ul>
+          <h3 class="nhsuk-heading-m">What we found:</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>...</li>
+          </ul>
+          <h3 class="nhsuk-heading-m">Any known issues?</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>...</li>
+          </ul>
+          <hr>
+          <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+            <a class="nhsuk-action-link__link"
+                 href="v3/start"><svg aria-hidden="true"
+                 class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                 viewbox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z"
+                  fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path></svg> <span class="nhsuk-action-link__text">Manage
+            Healthy Start Vouchers (v3)</span></a>
+          </div>
+        </div>
+      </details>
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Sprint 0 (NHS BSA Discovery)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h2 class="nhsuk-heading-l">Designing a 'Manage' service</h2>
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Version 2</span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that providing a method for CCS agents to manage information about Healthy Start applicants <strong>will be a useful feature for</strong> all applicants who are
+              not 'passported' by having an approved benefit <strong>as it will</strong> not only allow current users of the scheme to be managed, but also provide new applicants with an additional route of applying via the call centre. <strong>This
+              will</strong> align with us supporting an assisted digital route.</p>
+              <hr>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
                 <li>...</li>
               </ul>
-              <h3 class="nhsuk-heading-m">Any known issues?</h4>
-                <ul class="nhsuk-list nhsuk-list--bullet">
-                    <li>...</li>
-                  </ul>
-                <hr>
-                <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
-                  <a class="nhsuk-action-link__link" href="v3/start">
-                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M0 0h24v24H0z" fill="none"></path>
-                      <path
-                        d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
-                      </path>
-                    </svg>
-                    <span class="nhsuk-action-link__text">Manage Healthy Start Vouchers (v3)</span>
-                  </a>
-                </div>
-  
-  
-
-  
-  
-  
-  
-    
-          </div>
-        </details>
-  
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Sprint 0 (NHS BSA Discovery)
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h2 class="nhsuk-heading-l">Designing a 'Manage' service
-          </h2>
-
-          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Version 2
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-
-                
-                  <h3 class="nhsuk-heading-m">Hypothesis A</h3>
-                  <p style="background: #DEE0E2; padding: 20px;"><strong>We
-                      believe</strong> that providing a method for CCS agents to manage information about Healthy Start applicants
-                    <strong>will
-                      be a useful feature for</strong> all applicants who are not 'passported' by having an approved benefit
-                    <strong>as it will</strong> not only allow current users of the scheme to be managed, but also provide new applicants with an additional route of applying via the call centre. <strong>This
-                      will</strong> align with us supporting an assisted digital route.
-                  </p>
-                  <hr>
-                  <h3 class="nhsuk-heading-m">What we created:</h3>
-                  <ul class="nhsuk-list nhsuk-list--bullet">
-                      <li>...</li>
-                  </ul>
-                  <h3 class="nhsuk-heading-m">What we plan to test:</h3>
-                  <ul class="nhsuk-list nhsuk-list--bullet">
-                      <li>...</li>
-                  </ul>
-                  <h3 class="nhsuk-heading-m">What we found:</h4>
-                    <ul class="nhsuk-list nhsuk-list--bullet">
-                      <li>...</li>
-                    </ul>
-                    <h3 class="nhsuk-heading-m">Any known issues?</h4>
-                      <ul class="nhsuk-list nhsuk-list--bullet">
-                          <li>...</li>
-                        </ul>
-                      <hr>
-                      <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
-                        <a class="nhsuk-action-link__link" href="v2/start">
-                          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path
-                              d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
-                            </path>
-                          </svg>
-                          <span class="nhsuk-action-link__text">Manage Healthy Start Vouchers (v2)</span>
-                        </a>
-                      </div>
-        
-
-            
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link"
+                     href="v2/start"><svg aria-hidden="true"
+                     class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                     viewbox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z"
+                      fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path></svg> <span class="nhsuk-action-link__text">Manage
+                Healthy Start Vouchers (v2)</span></a>
               </div>
-            </details>
-
-
+            </div>
+          </details>
           <details class="nhsuk-details">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Version 1
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-
-                
-                  <h3 class="nhsuk-heading-m">Hypothesis A</h3>
-                  <p style="background: #DEE0E2; padding: 20px;"><strong>We
-                      believe</strong> that providing a method for CCS agents to manage information about Healthy Start applicants
-                    <strong>will
-                      be a useful feature for</strong> all applicants who are not 'passported' by having an approved benefit
-                    <strong>as it will</strong> not only allow current users of the scheme to be managed, but also provide new applicants with an additional route of applying via the call centre. <strong>This
-                      will</strong> align with us supporting an assisted digital route.
-                  </p>
-                  <hr>
-                  <h3 class="nhsuk-heading-m">What we created:</h3>
-                  <ul class="nhsuk-list nhsuk-list--bullet">
-                      <li>...</li>
-                  </ul>
-                  <h3 class="nhsuk-heading-m">What we plan to test:</h3>
-                  <ul class="nhsuk-list nhsuk-list--bullet">
-                      <li>...</li>
-                  </ul>
-                  <h3 class="nhsuk-heading-m">What we found:</h4>
-                    <ul class="nhsuk-list nhsuk-list--bullet">
-                      <li>...</li>
-                    </ul>
-                    <h3 class="nhsuk-heading-m">Any known issues?</h4>
-                      <ul class="nhsuk-list nhsuk-list--bullet">
-                          <li>...</li>
-                        </ul>
-                      <hr>
-                      <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
-                        <a class="nhsuk-action-link__link" href="v1/start">
-                          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path
-                              d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
-                            </path>
-                          </svg>
-                          <span class="nhsuk-action-link__text">Manage Healthy Start Vouchers (v1)</span>
-                        </a>
-                      </div>
-        
-
-            
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">Version 1</span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that providing a method for CCS agents to manage information about Healthy Start applicants <strong>will be a useful feature for</strong> all applicants who are
+              not 'passported' by having an approved benefit <strong>as it will</strong> not only allow current users of the scheme to be managed, but also provide new applicants with an additional route of applying via the call centre. <strong>This
+              will</strong> align with us supporting an assisted digital route.</p>
+              <hr>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link"
+                     href="v1/start"><svg aria-hidden="true"
+                     class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                     viewbox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z"
+                      fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path></svg> <span class="nhsuk-action-link__text">Manage
+                Healthy Start Vouchers (v1)</span></a>
               </div>
-            </details>
-
-
-
-
-  
+            </div>
+          </details>
         </div>
-      </details>
-  
-      <!-- End of content -->
-  
+      </details><!-- End of content -->
     </div>
-  </div>
-  {% endblock %}
+  </div>{% endblock %}
+</body>
+</html>
