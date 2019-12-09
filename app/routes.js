@@ -329,6 +329,11 @@ router.post('/v3/due-date', function (req, res) {
 
   var temp = moment(duedate).subtract(30, 'weeks');
 
+  var fourtytwoweeksfromtoday = moment().add(42, 'weeks');
+
+  console.log(duedate)
+  console.log(fourtytwoweeksfromtoday)
+
   req.session.data['preggers'] = moment(temp).format('Do MMMM YYYY');
   
   
@@ -338,12 +343,12 @@ router.post('/v3/due-date', function (req, res) {
 
   if (duedateday && duedatemonth && duedateyear) {
 
-    if (duedate > fulltermpregnancy) { // If due date is later than 30 weeks from today they are less than 10 weeks pregnant
-      res.redirect('/v3/name')
+    if (duedate > fourtytwoweeksfromtoday) {
+      res.redirect('/v3/due-date-42-weeks') 
     } else {
       res.redirect('/v3/name')
     }
-      
+
   }
   else {
     res.redirect('/v3/due-date')
