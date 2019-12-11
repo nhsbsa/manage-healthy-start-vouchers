@@ -12,7 +12,7 @@ module.exports = router;
 const today = new Date(Date.now());
 
 // ********************************
-// MANAGE HEALTHY START VOUCHERS (VERSION 1)
+// Manage Healthy Start Scheme (VERSION 1)
 // ********************************
 
 // Capture NHSMail address (Login)
@@ -34,7 +34,7 @@ router.post('/v1/nhs-login', function (req, res) {
 })
 
 // ********************************
-// MANAGE HEALTHY START VOUCHERS (VERSION 2)
+// Manage Healthy Start Scheme (VERSION 2)
 // ********************************
 
 // Capture NHSMail address (Login)
@@ -147,7 +147,7 @@ router.post('/v2/pregnant-or-children', function (req, res) {
       })
 
 // ********************************
-// MANAGE HEALTHY START VOUCHERS (VERSION 3)
+// Manage Healthy Start Scheme (VERSION 3)
 // ********************************
 
 // Capture NHSMail address (Login)
