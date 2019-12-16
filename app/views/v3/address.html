@@ -63,7 +63,7 @@ Manage Healthy Start Scheme - Changes
                     </span>
                     Application
                 </span>
-                What's their address?
+                What's your address?
             </span>
           </h1>
   
@@ -104,9 +104,9 @@ Manage Healthy Start Scheme - Changes
                     </span>
                 </summary>
                 <div class="nhsuk-details__text">
-                    <h3>If {% if data['applyingfor'] == "myself" %}you{% else %}they{% endif %} have more than one address</h3>
+                    <h3 class="nhsuk-heading-s">If {% if data['applyingfor'] == "myself" %}you{% else %}they{% endif %} have more than one address</h3 class="nhsuk-heading-s">
                     <p>{% if data['applyingfor'] == "myself" %}You{% else %}They{% endif %} should use the address that {% if data['applyingfor'] == "myself" %}your{% else %}their{% endif %} GP or dentist holds for {% if data['applyingfor'] == "myself" %}you{% else %}them{% endif %}. For example, if {% if data['applyingfor'] == "myself" %}you're{% else %}they're{% endif %} a student living away from home, this could be {% if data['applyingfor'] == "myself" %}yru{% else %}their{% endif %} home or term time address.</p>                  
-                    <h3>If {% if data['applyingfor'] == "myself" %}you{% else %}they{% endif %} don't have a permanent address</h3>
+                    <h3 class="nhsuk-heading-s">If {% if data['applyingfor'] == "myself" %}you{% else %}they{% endif %} don't have a permanent address</h3 class="nhsuk-heading-s">
                     <p>If {% if data['applyingfor'] == "myself" %}you're{% else %}they're{% endif %} homeless and living in temporary accommodation (for example, a long term hostel), {% if data['applyingfor'] == "myself" %}you{% else %}they{% endif %} should use the address that {% if data['applyingfor'] == "myself" %}your{% else %}their{% endif %} GP or dentist holds for {% if data['applyingfor'] == "myself" %}you{% else %}them{% endif %}.</p>                          
                 </div>
             </details>

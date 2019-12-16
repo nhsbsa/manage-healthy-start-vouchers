@@ -52,20 +52,19 @@
                style="background: #005EB8; margin-top: 0;">
             <h1 class="nhsuk-panel__title"
                 style="color: white;">Application successful</h1><span class="nhsuk-caption-xl nhsuk-caption--bottom"
-                 style="text-align: center; color: white;">They are entitled to free vitamins</span> <!--
-                                <div class="nhsuk-panel__body">
-                                  Your reference number<br><strong>HDJ2123F</strong>
-                                </div>
-                                -->
+                 style="text-align: center; color: white;">You are entitled to free vitamins</span>
+            <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
+              Reference number:<br><strong>HDJ2123F</strong>
+            </div>
           </div>
           <h2 class="nhsuk-heading-m">What happens next</h2>{% if data['email'] == "yes" %}
-          <p>We've sent them an email with more information.</p>{% endif %}
-          <p>They will receive vitamins every 4 weeks until their baby is born.</p>
-          <p>They will receive their first batch by post within 5 to 10 working days.</p>
+          <p>We've sent you an email with more information.</p>{% endif %}
+          <p>You will receive vitamins every 4 weeks until your baby is born.</p>
+          <p>You will receive your first batch by post within 5 to 10 working days.</p>
           <h2 class="nhsuk-heading-m">What happens in the future</h2>
-          <p>Once they become 10 weeks pregnant on <strong>{{ data['preggers'] }}</strong>, we will send them a prepaid money card by post.</p>
-          <p>They will receive £3.10 a week and their first payment will be £12.40.</p>
-          <p>They must <a href="guidance-report-a-change">report any change in their circumstances or personal details</a>.</p><a href="/v3/home"><button class="nhsuk-button"
+          <p>Once you become 10 weeks pregnant on <strong>{{ data['preggers'] }}</strong>, we will send you a prepaid money card by post.</p>
+          <p>You will receive £3.10 a week and your first payment will be £12.40.</p>
+          <p>You must <a href="guidance-report-a-change">report any change in your circumstances or personal details</a>.</p><a href="/v3/home"><button class="nhsuk-button"
                   type="submit">Continue</button></a>
         </div>
       </div>
