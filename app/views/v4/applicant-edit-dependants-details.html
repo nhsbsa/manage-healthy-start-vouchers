@@ -1,0 +1,199 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-sidebar.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Scheme - Joe Bloggs
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+      
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-results">Search results</a></li>
+      <li class="nhsuk-breadcrumb__item">Anita Bilal (Relationships)</li>
+          </ol>
+
+        </div>
+      </div>
+  
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to search results</a></p>
+
+    </div>
+</nav>
+
+
+<div class="nhsBSA-sidebar-container">
+  
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+
+
+        <div class="nhsuk-width-container-fluid">
+
+            <div class="nhsuk-main-wrapper" id="maincontent">
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            
+
+
+                                <h1>
+                                        <span role="text">
+                                          Anita Bilal
+                                          <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+                                            <span class="nhsuk-u-visually-hidden">
+                                              -
+                                            </span>
+                                            Relationship details
+                                          </span>
+                                        </span>
+                                      </h1>
+
+                                      
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+            
+            
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="1">
+                                  Address line 1
+                                </label>
+                                <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="73 Roman Rd">
+                              </div>
+                              <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="2">
+                                    Address line 2
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-u-width-one-third" id="2" name="2" type="text">
+                                </div>
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label" for="3">
+                                      Town or city
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text" value="Leeds">
+                                  </div>
+                                  <div class="nhsuk-form-group">
+                                      <label class="nhsuk-label" for="4">
+                                        Postcode
+                                      </label>
+                                      <input class="nhsuk-input nhsuk-u-width-one-third" id="4" name="4" type="text" value="LS2 5ZN">
+                                    </div>
+                              <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="5">
+                                      Email address
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-u-width-one-third" id="5" name="5" type="text" value="anita.bilal@example.com">
+                                </div>
+                              <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="6">
+                                      Telephone number
+                                  </label>
+                                  <input class="nhsuk-input nhsuk-u-width-one-third" id="6" name="6" type="text" value="01234 56789">
+                                </div>
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label">
+                                        Contact preference
+                                    </label>
+                                    <div class="nhsuk-radios nhsuk-radios--inline">
+                                        <div class="nhsuk-radios__item">
+                                          <input class="nhsuk-radios__input" id="7-1" name="example-inline" type="radio" value="themselves" checked="checked">
+                                          <label class="nhsuk-label nhsuk-radios__label" for="7-1">
+                                            Themselves
+                                          </label>
+                                        </div>
+                                        <div class="nhsuk-radios__item">
+                                          <input class="nhsuk-radios__input" id="7-2" name="example-inline" type="radio" value="someone-else">
+                                          <label class="nhsuk-label nhsuk-radios__label" for="7-2">
+                                            Someone else
+                                          </label>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="nhsuk-form-group">
+                                      <label class="nhsuk-label" for="8">
+                                        Accessibility needs
+                                      </label>
+                                      <span class="nhsuk-hint" id="example-hint">
+                                        Do they have impaired vision, motor difficulties, cognitive impairments etc...
+                                      </span>
+                                      <textarea class="nhsuk-textarea nhsuk-u-width-two-thirds" id="8" name="8" rows="5" aria-describedby="example-hint">English is their second language. May require an interpreter.</textarea>
+                                    </div>
+
+                          
+            
+                                <a href="applicant-view-personal-details">
+                                <button class="nhsuk-button nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2" type="submit">
+                                    Update details
+                                </button>
+                                </a>
+
+                                <p class="nhsuk-u-margin-top-4"><a href="applicant-view-contact-details">Cancel</a></p>
+
+            
+            
+            
+                        </div>
+            
+                      </div>
+            
+                    
+
+                </div>
+            
+        </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+    
+        <div class="side-nav">
+
+            <h3>Anita Bilal<span class="nhsuk-caption-m nhsuk-caption--bottom">
+                <span class="nhsuk-u-visually-hidden">
+                  -
+                </span>NI No. QQ123456C</span></h3>
+
+            <ul>
+              <div id="options" class="options">
+                  <li><a href="applicant-view-personal-details">Personal details</a></li>
+                  <li><a href="applicant-view-contact-details">Contact details</a></li>
+                  <li><a class="active" href="applicant-view-dependants-details">Relationships</a></li>
+                  <li><a href="applicant-view-benefit-details">Benefit information</a></li>
+                  <li><a href="applicant-view-transaction-details">Payment details</a></li>
+                  <li><a href="applicant-view-note-details">Case history</a></li>
+              </div>
+            </ul>
+        </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
