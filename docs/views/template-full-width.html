@@ -76,6 +76,7 @@
   <meta name="msapplication-square150x150logo" content="/nhsuk-frontend/assets/favicons/mediumtile-150x150.png">
   <meta name="msapplication-wide310x150logo" content="/nhsuk-frontend/assets/favicons/widetile-310x150.png">
   <meta name="msapplication-square310x310logo" content="/nhsuk-frontend/assets/favicons/largetile-310x310.png">
+  <meta name="google" content="notranslate">
   {% endblock %}
 </head>
 
@@ -121,7 +122,18 @@
               <a class="nhsuk-header__navigation-link" href="#">Help</a>
             </li>
             <li class="nhsuk-header__navigation-item">
-              <a class="nhsuk-header__navigation-link" href="#">Stephen Hill</a>
+              <a class="nhsuk-header__navigation-link" href="#">
+              
+              {% if data['nhs-mail-address'] %}
+              {{ data['nhs-mail-address'] }}
+              {% else %}
+              joe.bloggs@nhs.net
+              {% endif %}
+              
+              </a>
+            </li>
+            <li class="nhsuk-header__navigation-item">
+              <a class="nhsuk-header__navigation-link" href="ms-signed-out">Logout</a>
             </li>
           </ul>
         </nav>

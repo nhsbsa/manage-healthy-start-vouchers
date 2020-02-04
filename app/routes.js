@@ -844,3 +844,87 @@ router.post('/v4/details', function (req, res) {
 
 
 })
+
+// ****************************************
+// Manage Healthy Start Scheme (VERSION 5)
+// ****************************************
+
+// Capture NHSMail address (Login)
+router.post('/v5/nhs-login', function (req, res) {
+
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === ""){
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v5/home')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v5/home')
+  }
+  else {
+    res.redirect('/v5/home')
+  }
+  
+})
+
+// Search
+router.post('/v5/search', function (req, res) {
+
+  var searchpostCode = req.session.data['searchpostcode']
+
+  // Use the postcode, 'NE15 8NY' to find a match
+
+  if (searchpostCode.includes('NE15 8NY')){
+    res.redirect('/v5/result-found')
+  } else if (searchpostCode.includes('NE158NY')) {
+    res.redirect('/v5/result-found')
+  }
+  else {
+    res.redirect('/v5/result-not-found')
+  }
+
+    
+
+})
+
+// Capture new applicant
+router.post('/v5/new-applicant', function (req, res) {
+
+  // Name
+
+  var firstName = req.session.data['firstname']
+  var lastName = req.session.data['lastname']
+
+  // Date of birth
+
+  var dateofbirthDay = req.session.data['dateofbirthday']
+  var dateofbirthMonth = req.session.data['dateofbirthmonth']
+  var dateofbirthYear = req.session.data['dateofbirthyear']
+
+  // Expected due date
+
+  var duedateDay = req.session.data['duedateday']
+  var duedateMonth = req.session.data['duedatemonth']
+  var duedateYear = req.session.data['duedateyear']
+
+  // Address
+
+  var addressLine1 = req.session.data['addressline1']
+  var addressLine2 = req.session.data['addressline2']
+  var townCity = req.session.data['towncity']
+  var postCode = req.session.data['postcode']
+
+  // National insurance number, telephone number and email address (all optional)
+
+  var nationalinsuranceNumber = req.session.data['nationalinsurancenumber']
+  var telephoneNumber = req.session.data['telephonenumber']
+  var emailAddress = req.session.data['emailaddress']
+
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+    res.redirect('/v5/confirmation-over-10-weeks')    
+  }
+  else {
+    res.redirect('/v5/new-applicant-error')
+  }
+
+})

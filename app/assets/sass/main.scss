@@ -658,3 +658,13 @@ TIMELINE
   color: #ffffff !important;
 }
 }
+
+
+.nhsuk-promo__link-wrapper:hover {
+  background-color: #fff;
+  box-shadow: 0 0 0 4px #ffb81c;
+  color: #005eb8;
+}
+.nhsuk-promo__link-wrapper:hover .nhsuk-promo__heading {
+  color: #005eb8;
+}

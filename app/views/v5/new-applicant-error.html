@@ -1,0 +1,560 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Scheme - Changes
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<style>
+  html {
+    background-color: #f0f4f5 !important;
+  }
+</style>
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+          <li class="nhsuk-breadcrumb__item">Add new applicant</li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <!--
+          <h1>
+            <span role="text">
+                <span class="nhsuk-caption-xl nhsuk-caption--top">
+                    <span class="nhsuk-u-visually-hidden">
+                      -
+                    </span>
+                    Step 1
+                </span>
+                Applicant details
+            </span>
+          </h1>
+          -->
+
+        <div class="nhsuk-error-summary nhsuk-u-margin-bottom-5" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <ul class="nhsuk-list nhsuk-error-summary__list">
+
+                    {% if not data['firstname'] %}
+                    <li>
+                        <a href="#example-error-1">Enter a first name</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not data['lastname'] %}
+                    <li>
+                        <a href="#example-error-2">Enter a last name</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not (data['dateofbirthday'] and data['dateofbirthmonth'] and data['dateofbirthyear']) %}
+                    <li>
+                        <a href="#example-error-3">Enter a date of birth</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not (data['duedateday'] and data['duedatemonth'] and data['duedateyear']) %}
+                    <li>
+                        <a href="#example-error-4">Enter an expected due date</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not data['addressline1'] %}
+                    <li>
+                        <a href="#example-error-5">Enter the first line of the address</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not data['postcode'] %}
+                    <li>
+                        <a href="#example-error-6">Enter a postcode</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+
+        <h1>Add new applicant</h1>
+
+        <form action="/v5/new-applicant" method="post">
+
+          <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h1 class="nhsuk-fieldset__heading">
+                Name
+              </h1>
+            </legend>
+
+            {% if not data['firstname'] %}
+                <div class="nhsuk-form-group nhsuk-form-group--error">
+                    <label class="nhsuk-label" for="firstname">
+                    First name (given name)
+                    </label>
+                    <span class="nhsuk-error-message" id="example-error-1">
+                        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a first name
+                    </span>
+                    <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="firstname" name="firstname" type="text">
+                </div>
+            {% else %}
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="firstname">
+                    First name (given name)
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
+                </div>
+            {% endif %}
+
+            {% if not data['lastname'] %}
+                <div class="nhsuk-form-group nhsuk-form-group--error">
+                    <label class="nhsuk-label" for="lastname">
+                    Last name (surname or family name)
+                    </label>
+                    <span class="nhsuk-error-message" id="example-error-2">
+                        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a last name
+                    </span>
+                    <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="lastname" name="lastname" type="text">
+                </div>
+            {% else %}
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="lastname">
+                    Last name (surname or family name)
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-20" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
+                </div>
+            {% endif %}
+
+          </fieldset>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Why we ask for their name
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>We use their name to confirm their identity and eligibility. Their name will also appear on their
+                prepaid card.</p>
+            </div>
+          </details>
+
+          <hr>
+
+          <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h1 class="nhsuk-fieldset__heading">
+                    Address
+                </h1>
+            </legend>
+
+            {% if not data['addressline1'] %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+                <label class="nhsuk-label" for="addressline1">
+                    Address line 1
+                </label>
+                <span class="nhsuk-error-message" id="example-error-5">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Enter the first line of the address
+                </span>
+                <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="addressline1" name="addressline1" type="text">
+            </div>
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="addressline1">
+                    Address line 1
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="addressline1" name="addressline1" type="text">
+            </div>
+
+            {% endif %}
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="addressline2">
+                    Address line 2
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="addressline2" name="addressline2" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="towncity">
+                    Town or city
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="towncity" name="towncity" type="text">
+            </div>
+
+            {% if not data['postcode'] %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+                <label class="nhsuk-label" for="postcode">
+                    Postcode
+                </label>
+                <span class="nhsuk-error-message" id="example-error-6">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Enter a postcode
+                </span>
+                <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">
+            </div>
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="postcode">
+                    Postcode
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
+            </div>
+
+            {% endif %}
+
+          </fieldset>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">They don't know what address to use</span>
+            </summary>
+            <div class="nhsuk-details__text">
+                  <p class="nhsuk-heading-xs">If they have more than one address</p>
+                  <p>They should use the address that their GP or dentist holds for them. For example, if they're a
+                      student
+                      living away from home, this could be their home or term time address.</p>
+                  <p class="nhsuk-heading-xs">If they don't have a permanent address</p>
+                  <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they
+                      should use the address that their GP or dentist holds for them.</p>
+            </div>
+          </details>
+
+          <hr>
+
+          <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h1 class="nhsuk-fieldset__heading">
+                Date of birth
+              </h1>
+            </legend>
+
+            {% if not (data['dateofbirthday'] and data['dateofbirthmonth'] and data['dateofbirthyear']) %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 1980
+            </span>
+
+            <span class="nhsuk-error-message" id="example-error-3">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter a date of birth
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthday" name="dateofbirthday" type="number" pattern="[0-9]*" value="{{ data['dateofbirthday'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthmonth" name="dateofbirthmonth" type="number" pattern="[0-9]*" value="{{ data['dateofbirthmonth'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dateofbirthyear" name="dateofbirthyear" type="number" pattern="[0-9]*" value="{{ data['dateofbirthyear'] }}">
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 1980
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthday" name="dateofbirthday" type="number" pattern="[0-9]*" value="{{ data['dateofbirthday'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthmonth" name="dateofbirthmonth" type="number" pattern="[0-9]*" value="{{ data['dateofbirthmonth'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dateofbirthyear" name="dateofbirthyear" type="number" pattern="[0-9]*" value="{{ data['dateofbirthyear'] }}">
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            {% endif %}
+
+          </fieldset>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Why we ask for their date of birth
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>We use their date of birth to work out their age. Their age could entitle them to help to buy milk, food
+                and vitamins without needing an eligible benefit.</p>
+            </div>
+          </details>
+
+          <hr>
+
+            <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h1 class="nhsuk-fieldset__heading">
+                Expected due date
+              </h1>
+            </legend>
+
+            {% if not (data['duedateday']) or (data['duedatemonth']) or (data['duedateyear']) %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 2020
+            </span>
+
+            <span class="nhsuk-error-message" id="example-error-4">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter an expected due date
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedateday" name="duedateday" type="number" pattern="[0-9]*" value="{{ data['duedateday'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*" value="{{ data['duedatemonth'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*" value="{{ data['duedateyear'] }}">
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 2020
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday" name="duedateday" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            {% endif %}
+
+            </fieldset>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">They are unsure what their due date is</span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>As part of their pregnancy (antenatal) care, their midwife will offer them a dating scan that will give
+                them a more accurate date for the birth of their baby.</p>
+              <p>If they haven't had their first scan yet, you can help them work out when they might expect their baby
+                to arrive by using the <a href="https://www.nhs.uk/conditions/pregnancy-and-baby/due-date-calculator/"
+                  target="_blank">NHS Pregnancy due date calculator<span class="nhsuk-u-visually-hidden"> (opens in a
+                    new tab)</span></a>.</p>
+            </div>
+          </details>
+
+          <hr>
+
+          <div class="nhsuk-form-group">
+              <label class="nhsuk-heading-m" for="nationalinsurancenumber">
+                  National Insurance number (optional)
+              </label>
+              <span class="nhsuk-hint" id="example-with-hint-text-hint">
+                  It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="nationalinsurancenumber"
+                  name="nationalinsurancenumber" type="text">
+          </div>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Why we ask for their national insurance number
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>We need this to check their eligibility.</p>
+            </div>
+          </details>
+
+          <hr>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-heading-m" for="telephonenumber">
+              Telephone number (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="telephonenumber" name="telephonenumber" type="tel">
+          </div>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Why do we need their telephone number?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>To prevent fraud and contact them about their application if necessary.</p>
+            </div>
+          </details>
+
+          <hr>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-heading-m" for="emailaddress">
+              Email address (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="emailaddress" name="emailaddress" type="email">
+          </div>
+
+          <details class="nhsuk-details nhsuk-u-margin-bottom-6">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Why do we need their email address?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>To send notifications about their application and their prepaid card.</p>
+            </div>
+          </details>
+
+
+
+
+
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
