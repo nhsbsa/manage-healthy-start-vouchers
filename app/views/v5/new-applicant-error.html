@@ -67,6 +67,14 @@ Manage Healthy Start Scheme - Changes
           </h1>
           -->
 
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+            </svg>
+            Go back</a>
+        </div>
+
         <div class="nhsuk-error-summary nhsuk-u-margin-bottom-5" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
             <h2 class="nhsuk-error-summary__title" id="error-summary-title">
                 There is a problem
@@ -86,18 +94,6 @@ Manage Healthy Start Scheme - Changes
                     </li>
                     {% endif %}
 
-                    {% if not (data['dateofbirthday'] and data['dateofbirthmonth'] and data['dateofbirthyear']) %}
-                    <li>
-                        <a href="#example-error-3">Enter a date of birth</a>
-                    </li>
-                    {% endif %}
-
-                    {% if not (data['duedateday'] and data['duedatemonth'] and data['duedateyear']) %}
-                    <li>
-                        <a href="#example-error-4">Enter an expected due date</a>
-                    </li>
-                    {% endif %}
-
                     {% if not data['addressline1'] %}
                     <li>
                         <a href="#example-error-5">Enter the first line of the address</a>
@@ -107,6 +103,18 @@ Manage Healthy Start Scheme - Changes
                     {% if not data['postcode'] %}
                     <li>
                         <a href="#example-error-6">Enter a postcode</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not (data['dateofbirthday'] and data['dateofbirthmonth'] and data['dateofbirthyear']) %}
+                    <li>
+                        <a href="#example-error-3">Enter a date of birth</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not (data['duedateday'] and data['duedatemonth'] and data['duedateyear']) %}
+                    <li>
+                        <a href="#example-error-4">Enter an expected due date</a>
                     </li>
                     {% endif %}
 

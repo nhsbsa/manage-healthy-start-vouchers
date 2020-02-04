@@ -99,18 +99,29 @@
             </div>
   
             <div class="nhsuk-header__content" id="content-header">
-  
-                <nav class="nhsuk-header__navigation">
-                    <ul class="nhsuk-header__navigation-list" style="border:0">
-                      <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="#">Help</a>
-                      </li>
-                      <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="#">Stephen Hill</a>
-                      </li>
-                    </ul>
-                  </nav>
-  
+
+              <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="primary navigation">
+                <ul class="nhsuk-header__navigation-list" style="border:0">
+                  <li class="nhsuk-header__navigation-item">
+                    <a class="nhsuk-header__navigation-link" href="#">Help</a>
+                  </li>
+                  <li class="nhsuk-header__navigation-item">
+                    <a class="nhsuk-header__navigation-link" href="#">
+                    
+                    {% if data['nhs-mail-address'] %}
+                    {{ data['nhs-mail-address'] }}
+                    {% else %}
+                    joe.bloggs@nhs.net
+                    {% endif %}
+                    
+                    </a>
+                  </li>
+                  <li class="nhsuk-header__navigation-item">
+                    <a class="nhsuk-header__navigation-link" href="ms-signed-out">Logout</a>
+                  </li>
+                </ul>
+              </nav>
+
             </div>
         
           </div>  
