@@ -91,14 +91,14 @@ Manage Healthy Start Scheme - Changes
               <label class="nhsuk-label" for="firstname">
                 First name (given name)
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" value="{{ data['searchfirstname'] }}">
+              <input class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" spellcheck="false" value="{{ data['searchfirstname'] }}">
             </div>
 
             <div class="nhsuk-form-group">
               <label class="nhsuk-label" for="lastname">
                 Last name (surname or family name)
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="lastname" name="lastname" type="text" value="{{ data['searchlastname'] }}">
+              <input class="nhsuk-input nhsuk-input--width-20" id="lastname" name="lastname" type="text" spellcheck="false" value="{{ data['searchlastname'] }}">
             </div>
 
           </fieldset>
@@ -300,7 +300,7 @@ Manage Healthy Start Scheme - Changes
                   It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
               </span>
               <input class="nhsuk-input nhsuk-input--width-20" id="nationalinsurancenumber"
-                  name="nationalinsurancenumber" type="text">
+                  name="nationalinsurancenumber" spellcheck="false" type="text">
           </div>
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">

@@ -63,7 +63,9 @@ Manage Healthy Start Scheme - Changes
 
     <h1 class="nhsuk-u-margin-bottom-4">0 result(s) found</h1>
 
-    <p class="nhsuk-body-l">We found no Healthy Start users with those details.</p>
+    {% if (data['searchfirstname']) and (data['searchlastname']) and (data['searchpostcode']) %}<p class="nhsuk-body-l">We found no Healthy Start users with those details.</p>{% else %}<p class="nhsuk-body-l">We found no Healthy Start users with those details. Please enter more search information.</p>{% endif %}
+
+    {% if (data['searchfirstname']) and (data['searchlastname']) and (data['searchpostcode']) %}
 
     <div class="nhsuk-table__panel-with-heading-tab nhsuk-u-margin-top-9 nhsuk-u-margin-bottom-6">
       <h3 class="nhsuk-table__heading-tab">Add this applicant</h3>
@@ -99,6 +101,14 @@ Manage Healthy Start Scheme - Changes
     <a href="/v5/new-applicant">
       <button class="nhsuk-button nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0" type="submit">Confirm and continue</button>
     </a>
+
+    {% else %}
+
+    <a href="/v5/home">
+      <button class="nhsuk-button nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0" type="submit">Search again</button>
+    </a>
+
+    {% endif %}
 
 
 

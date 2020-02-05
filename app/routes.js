@@ -870,6 +870,8 @@ router.post('/v5/nhs-login', function (req, res) {
 // Search
 router.post('/v5/search', function (req, res) {
 
+  var searchfirstName = req.session.data['searchfirstname']
+  var searchlastName = req.session.data['searchlastname']
   var searchpostCode = req.session.data['searchpostcode']
 
   // Use the postcode, 'NE15 8NY' to find a match
@@ -882,8 +884,6 @@ router.post('/v5/search', function (req, res) {
   else {
     res.redirect('/v5/result-not-found')
   }
-
-    
 
 })
 
