@@ -59,11 +59,11 @@ Manage Healthy Start Scheme - Joe Bloggs
 
                         <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
                             <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                              Are you sure you want remove 'Sunita'?
+                              Are you sure you want remove their pregnancy?
                             </h2>
                             <div class="nhsuk-error-summary__body">
                               <p>
-                                Removing a child will result in changes to their Healthy Start allowance.
+                                Removing a pregnancy will result in changes to their Healthy Start allowance.
                               </p>
                               <a href="applicant-view-dependants-details"><button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-4">Cancel</button></a>
                               <a href="applicant-view-dependants-details-removed-child"><button class="nhsuk-button nhsuk-button-red nhsuk-u-margin-bottom-2">Yes, delete</button></a>
@@ -89,6 +89,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                           </h1>
 
                     </div>
+                    <!--
                     <div class="nhsuk-grid-column-one-half nhsBSA-align-right">
                       
                         <button class="nhsuk-button" type="submit" style="margin-right: 20px;">Add pregnancy</button>
@@ -96,6 +97,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                         <button class="nhsuk-button" type="submit" disabled>Add carer</button>
 
                     </div>
+                    -->
 
                 </div>
 
@@ -114,49 +116,74 @@ Manage Healthy Start Scheme - Joe Bloggs
                     <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
 
-                                <h2 class="nhsuk-heading-m">Child details ({{ noOfChildren }})</h2>
+                                          <h2 class="nhsuk-heading-m">Pregnancy details</h2>
 
-                                <dl class="nhsuk-summary-list">
+                                          <dl class="nhsuk-summary-list">
+      
+                                                  <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                      Expected due date
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        	21/03/2020
+                                                    </dd>
+                                                
+                                                    <dd class="nhsuk-summary-list__actions">                                           
 
-                                        <div class="nhsuk-summary-list__row">
-                                          <dt class="nhsuk-summary-list__key">
-                                            Childs first name
-                                          </dt>
-                                          <dd class="nhsuk-summary-list__value">
-                                              Sunita
-                                          </dd>
-                                      
-                                          <dd class="nhsuk-summary-list__actions">                                           
+                                                      <a href="applicant-edit-dependants-details#5">Change<span class="nhsuk-u-visually-hidden"> expected due date</span></a>
+                                                      or
+                                                      <a href="applicant-view-dependants-details-remove-child">Remove<span class="nhsuk-u-visually-hidden"> pregnancy</span></a>
 
-                                            <a href="applicant-edit-dependants-details#5">Change<span class="nhsuk-u-visually-hidden"> child</span></a>
-                                            or
-                                            <a href="applicant-view-dependants-details-remove-child">Remove<span class="nhsuk-u-visually-hidden"> child</span></a>
+                                                
+                                                    </dd>
+                                                
+                                                  </div>
+                                                
+                                                </dl>
 
-                                      
-                                          </dd>
-                                      
-                                        </div>
+<!--
+                                          <h2 class="nhsuk-heading-m">Child details ({{ noOfChildren }})</h2>
 
-                                                                                  
-                                        <div class="nhsuk-summary-list__row">
-                                            <dt class="nhsuk-summary-list__key">
-                                              Childs date of birth
-                                            </dt>
-                                            <dd class="nhsuk-summary-list__value">
-                                                18/12/2018
-                                            </dd>
-                                        
-                                            <dd class="nhsuk-summary-list__actions">
-                                        
-                                                <a href="applicant-edit-dependants-details#6">Change<span class="nhsuk-u-visually-hidden"> childs date of birth</span></a>
-                                        
-                                            </dd>
-                                        
-                                          </div>
-                                      
-                                      </dl>
+                                          <dl class="nhsuk-summary-list">
+      
+                                                  <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                      Childs first name
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        Sunita
+                                                    </dd>
+                                                
+                                                    <dd class="nhsuk-summary-list__actions">                                           
 
-                              
+                                                      <a href="applicant-edit-dependants-details#5">Change<span class="nhsuk-u-visually-hidden"> child</span></a>
+                                                      or
+                                                      <a href="applicant-view-dependants-details-remove-child">Remove<span class="nhsuk-u-visually-hidden"> child</span></a>
+
+                                                
+                                                    </dd>
+                                                
+                                                  </div>
+      
+                                                                                            
+                                                  <div class="nhsuk-summary-list__row">
+                                                      <dt class="nhsuk-summary-list__key">
+                                                        Childs date of birth
+                                                      </dt>
+                                                      <dd class="nhsuk-summary-list__value">
+                                                          18/12/2018
+                                                      </dd>
+                                                  
+                                                      <dd class="nhsuk-summary-list__actions">
+                                                  
+                                                          <a href="applicant-edit-dependants-details#6">Change<span class="nhsuk-u-visually-hidden"> childs date of birth</span></a>
+                                                  
+                                                      </dd>
+                                                  
+                                                    </div>
+                                                
+                                                </dl>
+
                                                 <h2 class="nhsuk-heading-m">Carer details</h2>
 
                                                 <dl class="nhsuk-summary-list">
@@ -230,6 +257,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                                                       
                                                       </dl>
 
+                                                      -->
                                           <a href="dependants-details-add-note"><button class="nhsuk-button nhsuk-button--secondary" type="submit">Add
                   note</button></a>
 
@@ -250,15 +278,13 @@ Manage Healthy Start Scheme - Joe Bloggs
             <h3>Anita Bilal<span class="nhsuk-caption-m nhsuk-caption--bottom">
                 <span class="nhsuk-u-visually-hidden">
                   -
-                </span>NI No. QQ123456C</span></h3>
+                </span>Ref. OAM1959T</span></h3>
 
             <ul>
               <div id="options" class="options">
                 <li><a href="applicant-view-personal-details">Personal details</a></li>
                 <li><a href="applicant-view-contact-details">Contact details</a></li>
                 <li><a class="active" href="applicant-view-dependants-details">Relationships</a></li>
-                <li><a href="applicant-view-benefit-details">Benefit information</a></li>
-                <li><a href="applicant-view-transaction-details">Payment details</a></li>
                 <li><a href="applicant-view-note-details">Case history</a></li>
               </div>
             </ul>

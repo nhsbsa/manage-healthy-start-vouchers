@@ -55,16 +55,6 @@ Manage Healthy Start Scheme - Joe Bloggs
             <div class="nhsuk-main-wrapper" id="maincontent">
 
                 <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
-
-                        <div class="panel panel-border-wide alert-default">
-                            <h2 class="nhsuk-heading-s nhsuk-u-padding-top-3 nhsuk-u-margin-bottom-3">English is their second language. May require an interpreter.</h2>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-one-half">
                       
                         <h1 class="nhsuk-u-margin-bottom-4">
@@ -80,6 +70,8 @@ Manage Healthy Start Scheme - Joe Bloggs
                           </h1>
 
                     </div>
+
+                    <!--
                     <div class="nhsuk-grid-column-one-half nhsBSA-align-right">
                       
                         <button class="nhsuk-button" type="submit" style="margin-right: 20px;">Add pregnancy</button>
@@ -87,6 +79,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                         <button class="nhsuk-button" type="submit" disabled>Add carer</button>
 
                     </div>
+                    -->
 
                 </div>
 
@@ -106,8 +99,32 @@ Manage Healthy Start Scheme - Joe Bloggs
                             <div class="nhsuk-grid-column-full">
 
                               
+                                          <h2 class="nhsuk-heading-m">Pregnancy details</h2>
 
+                                          <dl class="nhsuk-summary-list">
+      
+                                                  <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                      Expected due date
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        	21/03/2020
+                                                    </dd>
+                                                
+                                                    <dd class="nhsuk-summary-list__actions">                                           
 
+                                                      <a href="applicant-edit-dependants-details#duedateday">Change<span class="nhsuk-u-visually-hidden"> expected due date</span></a>
+                                                      or
+                                                      <a href="applicant-view-dependants-details-remove-child">Remove<span class="nhsuk-u-visually-hidden"> pregnancy</span></a>
+
+                                                
+                                                    </dd>
+                                                
+                                                  </div>
+                                                
+                                                </dl>
+
+<!--
                                           <h2 class="nhsuk-heading-m">Child details ({{ noOfChildren }})</h2>
 
                                           <dl class="nhsuk-summary-list">
@@ -223,6 +240,8 @@ Manage Healthy Start Scheme - Joe Bloggs
                                                       
                                                       </dl>
 
+                                                      -->
+
                                           <a href="dependants-details-add-note"><button class="nhsuk-button nhsuk-button--secondary" type="submit">Add
                   note</button></a>
 
@@ -243,15 +262,13 @@ Manage Healthy Start Scheme - Joe Bloggs
             <h3>Anita Bilal<span class="nhsuk-caption-m nhsuk-caption--bottom">
                 <span class="nhsuk-u-visually-hidden">
                   -
-                </span>NI No. QQ123456C</span></h3>
+                </span>Ref. OAM1959T</span></h3>
 
             <ul>
               <div id="options" class="options">
                 <li><a href="applicant-view-personal-details">Personal details</a></li>
                 <li><a href="applicant-view-contact-details">Contact details</a></li>
                 <li><a class="active" href="applicant-view-dependants-details">Relationships</a></li>
-                <li><a href="applicant-view-benefit-details">Benefit information</a></li>
-                <li><a href="applicant-view-transaction-details">Payment details</a></li>
                 <li><a href="applicant-view-note-details">Case history</a></li>
               </div>
             </ul>

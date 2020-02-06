@@ -1,0 +1,198 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-sidebar.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Scheme - Joe Bloggs
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="result-found">Search results</a>
+          </li>
+          <li class="nhsuk-breadcrumb__item">Anita Bilal (Contact details)</li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="result-found">Back to search
+        results</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsBSA-sidebar-container">
+
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+
+
+      <div class="nhsuk-width-container-fluid">
+
+        <div class="nhsuk-main-wrapper" id="maincontent">
+
+<h1 class="nhsuk-u-margin-bottom-4">
+                <span role="text">
+                  Anita Bilal
+                  <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+                    <span class="nhsuk-u-visually-hidden">
+                      -
+                    </span>Add note</span>
+                </span>
+              </h1>
+
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="select-1">Source</label>
+                <select class="nhsuk-select nhsuk-u-width-full" id="select-1" name="select-1" style="width: 100%;">
+                  <option value="1" selected="">Applicant</option>
+                  <option value="2">Dependant</option>
+                  <option value="3">Third Party</option>
+                  <option value="4">NHS BSA</option>
+                  <option value="5">Complaints Team</option>
+                  <option value="6">Other</option>
+                </select>
+              </div>
+
+
+
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="select-2">Channel</label>
+                <select class="nhsuk-select nhsuk-u-width-full" id="select-2" name="select-2" style="width: 100%;">
+                  <option value="1" selected="">Phone</option>
+                  <option value="2">Email</option>
+                  <option value="3">Letter</option>
+                  <option value="4">NHS BSA</option>
+                  <option value="5">Other</option>
+                </select>
+              </div>
+
+
+
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="select-3">Reason</label>
+                <select class="nhsuk-select nhsuk-u-width-full" id="select-3" name="select-3" style="width: 100%;">
+                  <option value="1" selected="">Correction</option>
+                  <option value="2">More information</option>
+                  <option value="3">Checking status</option>
+                  <option value="4">Customer given answers</option>
+                  <option value="5">Letter generated</option>
+                  <option value="6">Email sent</option>
+                  <option value="7">Other</option>
+                </select>
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+
+          <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-grid-column-full">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="example">
+                  Note
+                </label>
+                <textarea class="nhsuk-textarea" id="example" name="example" aria-describedby="example-hint"
+                  rows="5" maxlength="375"></textarea>
+                <p class="nhsuk-hint" style="margin-top: 10px;">You have <span id="chars">375</span> characters
+                  remaining</p>
+              </div>
+
+              <a href="applicant-view-contact-details"><button class="nhsuk-button" type="submit">Save and continue</button></a>
+
+              <p class="nhsuk-u-margin-top-0"><a href="home">Cancel</a></p>
+
+
+            </div>
+
+          </div>
+
+
+
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+
+      <div class="side-nav">
+
+        <h3>Anita Bilal<span class="nhsuk-caption-m nhsuk-caption--bottom">
+            <span class="nhsuk-u-visually-hidden">
+              -
+            </span>Ref. OAM1959T</span></h3>
+
+        <ul>
+          <div id="options" class="options">
+            <li><a href="applicant-view-personal-details">Personal details</a></li>
+            <li><a class="active" href="applicant-view-contact-details">Contact details</a></li>
+            <li><a href="applicant-view-dependants-details">Relationships</a></li>
+            <li><a href="applicant-view-note-details">Case history</a></li>
+          </div>
+        </ul>
+
+        <!-- <div class="action-buttons">
+                <button class="nhsuk-button nhsuk-button--secondary" type="submit">Add note</button>
+            </div> -->
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var maxLength = 375;
+  $('textarea').keyup(function () {
+    var length = $(this).val().length;
+    var length = maxLength - length;
+    $('#chars').text(length);
+  });
+</script>
+
+
+{% endblock %}

@@ -870,16 +870,42 @@ router.post('/v5/nhs-login', function (req, res) {
 // Search
 router.post('/v5/search', function (req, res) {
 
+  var searchreferenceNumber = req.session.data['searchreferencenumber']
   var searchfirstName = req.session.data['searchfirstname']
   var searchlastName = req.session.data['searchlastname']
   var searchpostCode = req.session.data['searchpostcode']
 
-  // Use the postcode, 'NE15 8NY' to find a match
+  // To find a match search for:
+  // Reference number: OAM1959T
+  // First name: Anita
+  // Last name: Bilal
+  // Postcode: NE15 8NY / NE158NY
 
-  if (searchpostCode.includes('NE15 8NY')){
+  if (searchreferenceNumber.includes('OAM1959T')) {
+    res.redirect('/v5/result-found')
+  } else if (searchfirstName.includes('Anita')) {
+    res.redirect('/v5/result-found')
+  } else if (searchlastName.includes('Bilal')) {
+    res.redirect('/v5/result-found')
+  } else if (searchpostCode.includes('NE15 8NY')){
     res.redirect('/v5/result-found')
   } else if (searchpostCode.includes('NE158NY')) {
     res.redirect('/v5/result-found')
+  } else {
+    res.redirect('/v5/result-not-found')
+  }
+
+})
+
+// Search > Add
+router.post('/v5/search-add', function (req, res) {
+
+  var searchadd = req.session.data['searchadd']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v5/search-confirmation')
+  } else if (searchadd == 'no') {
+    res.redirect('/v5/home')
   }
   else {
     res.redirect('/v5/result-not-found')
@@ -921,7 +947,7 @@ router.post('/v5/new-applicant', function (req, res) {
   var emailAddress = req.session.data['emailaddress']
 
   if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
-    res.redirect('/v5/confirmation-over-10-weeks')    
+    res.redirect('/v5/terms-and-conditions')    
   }
   else {
     res.redirect('/v5/new-applicant-error')
