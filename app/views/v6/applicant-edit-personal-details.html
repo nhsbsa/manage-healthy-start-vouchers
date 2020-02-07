@@ -30,7 +30,9 @@ Manage Healthy Start Scheme - Joe Bloggs
 
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
-          <li class="nhsuk-breadcrumb__item">Anita Bilal (Contact details)</li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="result-found">Search results</a>
+          </li>
+          <li class="nhsuk-breadcrumb__item">Anita Bilal (Personal details)</li>
         </ol>
 
       </div>
@@ -41,7 +43,6 @@ Manage Healthy Start Scheme - Joe Bloggs
 
   </div>
 </nav>
-
 
 <div class="nhsBSA-sidebar-container">
 
@@ -56,8 +57,6 @@ Manage Healthy Start Scheme - Joe Bloggs
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
 
-
-
               <h1>
                 <span role="text">
                   Anita Bilal
@@ -65,11 +64,10 @@ Manage Healthy Start Scheme - Joe Bloggs
                     <span class="nhsuk-u-visually-hidden">
                       -
                     </span>
-                    Contact details
+                    Personal details
                   </span>
                 </span>
               </h1>
-
 
             </div>
           </div>
@@ -80,42 +78,67 @@ Manage Healthy Start Scheme - Joe Bloggs
 
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="1">
-                  Address line 1
+                  First name
                 </label>
-                <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="Stella House">
+                <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="Anita">
               </div>
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="2">
-                  Address line 2
-                </label>
-                <input class="nhsuk-input nhsuk-u-width-one-third" id="2" name="2" type="text" value="Goldcrest Way">
-              </div>
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="3">
-                  Town or city
-                </label>
-                <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text"
-                  value="Newcastle upon Tyne">
-              </div>
+
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="4">
-                  Postcode
+                  Last name
                 </label>
-                <input class="nhsuk-input nhsuk-u-width-one-third" id="4" name="4" type="text" value="NE15 8NY">
+                <input class="nhsuk-input nhsuk-u-width-one-third" id="4" name="4" type="text" value="Bilal">
               </div>
+
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="5">
-                  Email address
+
+                <label class="nhsuk-label" for="dateofbirthday">
+                  Date of birth
                 </label>
-                <input class="nhsuk-input nhsuk-u-width-one-third" id="5" name="5" type="text"
-                  value="anita.bilal@example.com">
+
+                <span class="nhsuk-hint" id="hint">
+                  For example, 31 3 1980
+                </span>
+
+                <div class="nhsuk-date-input">
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
+                        Day
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthday"
+                        name="dateofbirthday" type="number" pattern="[0-9]*" value="15">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
+                        Month
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthmonth"
+                        name="dateofbirthmonth" type="number" pattern="[0-9]*" value="03">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
+                        Year
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dateofbirthyear"
+                        name="dateofbirthyear" type="number" pattern="[0-9]*" value="2003">
+                    </div>
+                  </div>
+                </div>
+
               </div>
+
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="6">
-                  Telephone number
+                <label class="nhsuk-label" for="3">
+                  National Insurance number
                 </label>
-                <input class="nhsuk-input nhsuk-u-width-one-third" id="6" name="6" type="text" value="01234 567890">
+                <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text" value="QQ123456C">
               </div>
+
 
 
               <a href="applicant-view-personal-details">
@@ -124,8 +147,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                 </button>
               </a>
 
-              <p class="nhsuk-u-margin-top-4"><a href="applicant-view-contact-details">Cancel</a></p>
-
+              <p class="nhsuk-u-margin-top-4"><a href="applicant-view-personal-details">Cancel</a></p>
 
 
 
@@ -152,10 +174,10 @@ Manage Healthy Start Scheme - Joe Bloggs
 
         <ul>
           <div id="options" class="options">
-            <li><a href="applicant-view-personal-details">Personal details</a></li>
-            <li><a class="active" href="applicant-view-contact-details">Contact details</a></li>
+            <li><a class="active" href="applicant-view-personal-details">Personal details</a></li>
+            <li><a href="applicant-view-contact-details">Contact details</a></li>
             <li><a href="applicant-view-dependants-details">Relationships</a></li>
-            <li><a href="applicant-view-note-details">Case history / Notes</a></li>
+            <li><a href="applicant-view-note-details">Case history</a></li>
           </div>
         </ul>
       </div>

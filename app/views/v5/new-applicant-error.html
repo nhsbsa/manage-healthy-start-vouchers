@@ -214,7 +214,7 @@ Manage Healthy Start Scheme - Changes
                 <label class="nhsuk-label" for="addressline1">
                     Address line 1
                 </label>
-                <input class="nhsuk-input nhsuk-input--width-20" id="addressline1" name="addressline1" type="text">
+                <input class="nhsuk-input nhsuk-input--width-20" id="addressline1" name="addressline1" type="text" value="{{ data['addressline1'] }}">
             </div>
 
             {% endif %}
@@ -223,14 +223,14 @@ Manage Healthy Start Scheme - Changes
                 <label class="nhsuk-label" for="addressline2">
                     Address line 2
                 </label>
-                <input class="nhsuk-input nhsuk-input--width-20" id="addressline2" name="addressline2" type="text">
+                <input class="nhsuk-input nhsuk-input--width-20" id="addressline2" name="addressline2" type="text" value="{{ data['addressline2'] }}">
             </div>
 
             <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="towncity">
                     Town or city
                 </label>
-                <input class="nhsuk-input nhsuk-input--width-20" id="towncity" name="towncity" type="text">
+                <input class="nhsuk-input nhsuk-input--width-20" id="towncity" name="towncity" type="text" value="{{ data['towncity'] }}">
             </div>
 
             {% if not data['postcode'] %}
@@ -492,8 +492,7 @@ Manage Healthy Start Scheme - Changes
               <span class="nhsuk-hint" id="example-with-hint-text-hint">
                   It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
               </span>
-              <input class="nhsuk-input nhsuk-input--width-20" id="nationalinsurancenumber"
-                  name="nationalinsurancenumber" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="nationalinsurancenumber" name="nationalinsurancenumber" type="text" value="{{ data['nationalinsurancenumber'] }}">
           </div>
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
@@ -513,7 +512,7 @@ Manage Healthy Start Scheme - Changes
             <label class="nhsuk-heading-m" for="telephonenumber">
               Telephone number (optional)
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="telephonenumber" name="telephonenumber" type="tel">
+            <input class="nhsuk-input nhsuk-input--width-20" id="telephonenumber" name="telephonenumber" type="tel" value="{{ data['telephonenumber'] }}">
           </div>
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
@@ -533,7 +532,7 @@ Manage Healthy Start Scheme - Changes
             <label class="nhsuk-heading-m" for="emailaddress">
               Email address (optional)
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="emailaddress" name="emailaddress" type="email">
+            <input class="nhsuk-input nhsuk-input--width-20" id="emailaddress" name="emailaddress" type="email" value="{{ data['emailaddress'] }}">
           </div>
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-6">

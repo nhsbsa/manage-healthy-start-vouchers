@@ -61,7 +61,7 @@ Manage Healthy Start Scheme - Changes
         Go back</a>
     </div>
 
-    <h1 class="nhsuk-u-margin-bottom-4">Are these details correct?</h1>
+    <h1 class="nhsuk-u-margin-bottom-4">Check these details are correct before proceeding</h1>
 
     {% if (data['searchfirstname']) and (data['searchlastname']) and (data['searchpostcode']) %}
 
@@ -96,7 +96,7 @@ Manage Healthy Start Scheme - Changes
       </div>
     </div>
 
-    <a href="/v5/new-applicant">
+    <a href="/v5/new-applicant#address">
       <button class="nhsuk-button nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0" type="submit">Confirm and continue</button>
     </a>
 
@@ -104,7 +104,7 @@ Manage Healthy Start Scheme - Changes
 
     {% else %}
 
-    <a href="/v5/home">
+    <a href="/v5/all-results">
       <button class="nhsuk-button nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0" type="submit">Search again</button>
     </a>
 

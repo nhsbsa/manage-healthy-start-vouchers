@@ -32,7 +32,8 @@ Manage Healthy Start Scheme - Joe Bloggs
       
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item">Anita Bilal (Relationships)</li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="result-found">Search results</a></li>
+      <li class="nhsuk-breadcrumb__item">Anita Bilal (Relationships)</li>
           </ol>
 
         </div>
@@ -52,6 +53,25 @@ Manage Healthy Start Scheme - Joe Bloggs
         <div class="nhsuk-width-container-fluid">
 
             <div class="nhsuk-main-wrapper" id="maincontent">
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+
+                        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                              Are you sure you want remove their pregnancy?
+                            </h2>
+                            <div class="nhsuk-error-summary__body">
+                              <p>
+                                Removing a pregnancy will result in changes to their Healthy Start allowance.
+                              </p>
+                              <a href="applicant-view-dependants-details"><button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-4">Cancel</button></a>
+                              <a href="applicant-view-dependants-details-removed-child"><button class="nhsuk-button nhsuk-button-red nhsuk-u-margin-bottom-2">Yes, delete</button></a>
+                            </div>
+                          </div>
+
+                    </div>
+                </div>
 
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-one-half">
@@ -96,10 +116,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                     <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
 
-                              
-                                          <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-8">No relationships found</h2>
-
-<!--
+                                          <h2 class="nhsuk-heading-m">Pregnancy details</h2>
 
                                           <dl class="nhsuk-summary-list">
       
@@ -124,7 +141,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                                                 
                                                 </dl>
 
-
+<!--
                                           <h2 class="nhsuk-heading-m">Child details ({{ noOfChildren }})</h2>
 
                                           <dl class="nhsuk-summary-list">
@@ -241,7 +258,6 @@ Manage Healthy Start Scheme - Joe Bloggs
                                                       </dl>
 
                                                       -->
-
                                           <a href="dependants-details-add-note"><button class="nhsuk-button nhsuk-button--secondary" type="submit">Add
                   note</button></a>
 
