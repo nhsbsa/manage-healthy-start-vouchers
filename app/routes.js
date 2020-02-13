@@ -1,7 +1,59 @@
+// Gov Notify
+
+var NotifyClient = require('notifications-node-client').NotifyClient,
+    notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+
 // External dependencies
 const express = require('express');
 const router = express.Router();
 const moment = require('moment')
+
+// The URL here needs to match the URL of the page that the user is on
+// when they type in their email address
+router.post('/v5/terms-and-conditions', function (req, res) {
+
+  var emailAddress = req.session.data['emailaddress']
+  var telephoneNumber = req.session.data['telephonenumber']
+  var firstName = req.session.data['firstname']
+
+
+  if (emailAddress != ""){
+    notify.sendEmail(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      '93e5fbda-bc50-42c3-87cb-467cf0470862',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      emailAddress, {
+        personalisation: {
+          'firstName': firstName
+        }
+      }
+    );
+    res.redirect('/v5/confirmation-over-10-weeks') 
+  }
+  else if (telephoneNumber != "") {
+    notify.sendSms(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      '5dd2a61e-a740-4a58-a484-7fbc2b5454b7',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      telephoneNumber, {
+        personalisation: {
+          'firstName': firstName
+        }
+      }
+    );
+    res.redirect('/v5/confirmation-over-10-weeks')
+  }
+  else {
+    res.redirect('/v5/confirmation-over-10-weeks')
+  }
+
+});
 
 // Add your routes here - above the module.exports line
 
@@ -914,7 +966,7 @@ router.post('/v5/search-add', function (req, res) {
 })
 
 // Capture new applicant
-router.post('/v5/new-applicant', function (req, res) {
+router.post('/v5/personal-details', function (req, res) {
 
   // Name
 
@@ -950,7 +1002,7 @@ router.post('/v5/new-applicant', function (req, res) {
     res.redirect('/v5/terms-and-conditions')    
   }
   else {
-    res.redirect('/v5/new-applicant-error')
+    res.redirect('/v5/personal-details-error')
   }
 
 })
