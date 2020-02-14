@@ -114,7 +114,7 @@ Manage Healthy Start Scheme - Changes
 
                     {% if not (data['duedateday'] and data['duedatemonth'] and data['duedateyear']) %}
                     <li>
-                        <a href="#example-error-4">Enter an expected due date</a>
+                        <a href="#example-error-4">Enter due date</a>
                     </li>
                     {% endif %}
 
@@ -130,14 +130,14 @@ Manage Healthy Start Scheme - Changes
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
               <h1 class="nhsuk-fieldset__heading">
-                Name
+                Enter name
               </h1>
             </legend>
 
             {% if not data['firstname'] %}
                 <div class="nhsuk-form-group nhsuk-form-group--error">
                     <label class="nhsuk-label" for="firstname">
-                    First name (given name)
+                    First name
                     </label>
                     <span class="nhsuk-error-message" id="example-error-1">
                         <span class="nhsuk-u-visually-hidden">Error:</span> Enter first name
@@ -147,7 +147,7 @@ Manage Healthy Start Scheme - Changes
             {% else %}
                 <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="firstname">
-                    First name (given name)
+                    First name
                     </label>
                     <input class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" value="{{ data['firstname'] }}">
                 </div>
@@ -156,7 +156,7 @@ Manage Healthy Start Scheme - Changes
             {% if not data['lastname'] %}
                 <div class="nhsuk-form-group nhsuk-form-group--error">
                     <label class="nhsuk-label" for="lastname">
-                    Last name (surname or family name)
+                    Last name
                     </label>
                     <span class="nhsuk-error-message" id="example-error-2">
                         <span class="nhsuk-u-visually-hidden">Error:</span> Enter last name
@@ -166,7 +166,7 @@ Manage Healthy Start Scheme - Changes
             {% else %}
                 <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="lastname">
-                    Last name (surname or family name)
+                    Last name
                     </label>
                     <input class="nhsuk-input nhsuk-input--width-20" id="lastname" name="lastname" type="text" value="{{ data['lastname'] }}">
                 </div>
@@ -181,8 +181,7 @@ Manage Healthy Start Scheme - Changes
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>We use their name to confirm their identity and eligibility. Their name will also appear on their
-                prepaid card.</p>
+              <p>We use their name to confirm their identity and eligibility. Their name will also appear on their Healthy Start money card.</p>
             </div>
           </details>
 
@@ -192,7 +191,7 @@ Manage Healthy Start Scheme - Changes
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                 <h1 class="nhsuk-fieldset__heading">
-                    Address
+                    Enter address
                 </h1>
             </legend>
 
@@ -279,7 +278,7 @@ Manage Healthy Start Scheme - Changes
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
               <h1 class="nhsuk-fieldset__heading">
-                Date of birth
+                Enter date of birth
               </h1>
             </legend>
 
@@ -288,7 +287,7 @@ Manage Healthy Start Scheme - Changes
             <div class="nhsuk-form-group nhsuk-form-group--error">
 
             <span class="nhsuk-hint" id="hint">
-              For example, 31 3 1980
+              For example, 31 3 2003
             </span>
 
             <span class="nhsuk-error-message" id="example-error-3">
@@ -329,7 +328,7 @@ Manage Healthy Start Scheme - Changes
             <div class="nhsuk-form-group">
 
             <span class="nhsuk-hint" id="hint">
-              For example, 31 3 1980
+              For example, 31 3 2003
             </span>
 
             <div class="nhsuk-date-input">
@@ -383,7 +382,7 @@ Manage Healthy Start Scheme - Changes
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
               <h1 class="nhsuk-fieldset__heading">
-                Expected due date
+                Enter due date
               </h1>
             </legend>
 
@@ -396,7 +395,7 @@ Manage Healthy Start Scheme - Changes
             </span>
 
             <span class="nhsuk-error-message" id="example-error-4">
-                <span class="nhsuk-u-visually-hidden">Error:</span> Enter an expected due date
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter due date
             </span>
 
             <div class="nhsuk-date-input">
@@ -487,7 +486,7 @@ Manage Healthy Start Scheme - Changes
 
           <div class="nhsuk-form-group">
               <label class="nhsuk-heading-m" for="nationalinsurancenumber">
-                  National Insurance number (optional)
+                  Enter National Insurance number (optional)
               </label>
               <span class="nhsuk-hint" id="example-with-hint-text-hint">
                   It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
@@ -499,7 +498,7 @@ Manage Healthy Start Scheme - Changes
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
-                Why we ask for their national insurance number
+                Why we ask for their National Insurance number
               </span>
             </summary>
             <div class="nhsuk-details__text">
@@ -511,7 +510,7 @@ Manage Healthy Start Scheme - Changes
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-heading-m" for="telephonenumber">
-              Telephone number (optional)
+              Enter telephone number (optional)
             </label>
             <input class="nhsuk-input nhsuk-input--width-20" id="telephonenumber" name="telephonenumber" type="tel">
           </div>
@@ -531,7 +530,7 @@ Manage Healthy Start Scheme - Changes
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-heading-m" for="emailaddress">
-              Email address (optional)
+              Enter email address (optional)
             </label>
             <input class="nhsuk-input nhsuk-input--width-20" id="emailaddress" name="emailaddress" type="email">
           </div>
