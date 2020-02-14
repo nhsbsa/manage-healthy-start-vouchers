@@ -8,14 +8,15 @@ const express = require('express');
 const router = express.Router();
 const moment = require('moment')
 
-// The URL here needs to match the URL of the page that the user is on
-// when they type in their email address
+// ****************************************
+// NOTIFICATIONS
+// ****************************************
+
 router.post('/v5/terms-and-conditions', function (req, res) {
 
   var emailAddress = req.session.data['emailaddress']
   var telephoneNumber = req.session.data['telephonenumber']
   var firstName = req.session.data['firstname']
-
 
   if (emailAddress != ""){
     notify.sendEmail(
@@ -54,6 +55,61 @@ router.post('/v5/terms-and-conditions', function (req, res) {
   }
 
 });
+
+router.post('/v7/terms-and-conditions', function (req, res) {
+
+  var emailAddress = req.session.data['emailaddress']
+  var telephoneNumber = req.session.data['telephonenumber']
+  var firstName = req.session.data['firstname']
+
+  if (emailAddress != ""){
+    notify.sendEmail(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      '93e5fbda-bc50-42c3-87cb-467cf0470862',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      emailAddress, {
+        personalisation: {
+          'firstName': firstName
+        }
+      }
+    );
+    res.redirect('/v7/confirmation-over-10-weeks') 
+  }
+  else if (telephoneNumber != "") {
+    notify.sendSms(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      '5dd2a61e-a740-4a58-a484-7fbc2b5454b7',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      telephoneNumber, {
+        personalisation: {
+          'firstName': firstName
+        }
+      }
+    );
+    res.redirect('/v7/confirmation-over-10-weeks')
+  }
+  else {
+    res.redirect('/v7/confirmation-over-10-weeks')
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 // Add your routes here - above the module.exports line
 
@@ -1113,6 +1169,134 @@ router.post('/v6/new-applicant', function (req, res) {
   }
   else {
     res.redirect('/v6/new-applicant-error')
+  }
+
+})
+
+// ****************************************
+// Manage Healthy Start Scheme (VERSION 7)
+// ****************************************
+
+// Capture NHSMail address (Login)
+router.post('/v7/nhs-login', function (req, res) {
+
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === ""){
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v7/home')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v7/home')
+  }
+  else {
+    res.redirect('/v7/home')
+  }
+  
+})
+
+// Search
+router.post('/v7/search', function (req, res) {
+
+  var searchreferenceNumber = req.session.data['searchreferencenumber']
+  var searchfirstName = req.session.data['searchfirstname']
+  var searchlastName = req.session.data['searchlastname']
+  var searchpostCode = req.session.data['searchpostcode']
+
+  // To find a match search for:
+  // Reference number: OAM1959T
+  // First name: Anita
+  // Last name: Bilal
+  // Postcode: NE15 8NY / NE158NY
+
+  if (searchreferenceNumber.includes('OAM1959T')) {
+    res.redirect('/v7/result-found')
+  } else if (searchfirstName.includes('Anita')) {
+    res.redirect('/v7/result-found')
+  } else if (searchlastName.includes('Bilal')) {
+    res.redirect('/v7/result-found')
+  } else if (searchpostCode.includes('NE15 8NY')){
+    res.redirect('/v7/result-found')
+  } else if (searchpostCode.includes('NE158NY')) {
+    res.redirect('/v7/result-found')
+  } else {
+    res.redirect('/v7/result-not-found')
+  }
+
+})
+
+// Search > Add
+router.post('/v7/search-add', function (req, res) {
+
+  var searchadd = req.session.data['searchadd']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v7/search-confirmation')
+  } else if (searchadd == 'no') {
+    res.redirect('/v7/home')
+  }
+  else {
+    res.redirect('/v7/result-not-found')
+  }
+
+})
+
+// Capture new applicant (Personal Details)
+router.post('/v7/personal-details', function (req, res) {
+
+  // Name
+
+  var firstName = req.session.data['firstname']
+  var lastName = req.session.data['lastname']
+
+  // Date of birth
+
+  var dateofbirthDay = req.session.data['dateofbirthday']
+  var dateofbirthMonth = req.session.data['dateofbirthmonth']
+  var dateofbirthYear = req.session.data['dateofbirthyear']
+
+  // Expected due date
+
+  var duedateDay = req.session.data['duedateday']
+  var duedateMonth = req.session.data['duedatemonth']
+  var duedateYear = req.session.data['duedateyear']
+
+  // Address
+
+  var addressLine1 = req.session.data['addressline1']
+  var addressLine2 = req.session.data['addressline2']
+  var townCity = req.session.data['towncity']
+  var postCode = req.session.data['postcode']
+
+  // National insurance number, telephone number and email address (all optional)
+
+  var nationalinsuranceNumber = req.session.data['nationalinsurancenumber']
+  var telephoneNumber = req.session.data['telephonenumber']
+  var emailAddress = req.session.data['emailaddress']
+
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+    res.redirect('/v7/bank-details')    
+  }
+  else {
+    res.redirect('/v7/personal-details-error')
+  }
+
+})
+
+// Capture new applicant (Bank Details)
+router.post('/v7/bank-details', function (req, res) {
+
+  // Bank Details
+
+  var accountName = req.session.data['accountname']
+  var sortCode = req.session.data['sortcode']
+  var accountNumber = req.session.data['accountnumber']
+
+  if (accountName && sortCode && accountNumber){
+    res.redirect('/v7/terms-and-conditions')    
+  }
+  else {
+    res.redirect('/v7/bank-details-error')
   }
 
 })
