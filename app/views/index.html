@@ -93,9 +93,26 @@
             needs. <strong>This will</strong>
             ensure that nobody who needs to access the service is 'left behind'.</p>
           <hr>
+          <p>Due to procurement issues with cards, the plan is to now make direct payments into peoples bank accounts.</p>
           <h3 class="nhsuk-heading-m">What we created:</h3>
+          <h4 class="nhsuk-heading-xs">Features Descoped</h4>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Added in the collection of bank account details</li>
+            <li>Removed detailed user view in favour of applicant details on a single page.</li>
+          </ul>
+          <h4 class="nhsuk-heading-xs">Add an Applicant</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Removed link to 'NHS Pregnancy due date calculator' as this was confusing for CCS agents.</li>
+            <li>Added in error content for what an eligible due date is via feedback from CCS agents. For private beta we will accept no due dates in the past, and up to 32 weeks in the future (42 weeks full term pregancy minus 10 week pregnancy criteria).</li>
+          </ul>
+          <!--
+          <h4 class="nhsuk-heading-xs">IVR</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Amended IVR to ask: &#8220;Do you have a UK bank account in your name?&#8221;, if 'Yes' they continue, if 'No' we divert them to Serco.</li>
+          </ul>
+          -->
+          <h4 class="nhsuk-heading-xs">Collect Bank Details</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>After confirming an applicants Name, Address, Date of Birth and Due Date is valid, we collect bank account details (Name on account, Sort Code and Account Number) in line with <a href="https://design-system.service.gov.uk/patterns/bank-details/" target="_blank">GDS Guidance</a>. To be a valid claim, a match will need to take place between Applicants Name and the Name on Account.</li>
           </ul>
           <h3 class="nhsuk-heading-m">What we plan to test:</h3>
           <ul class="nhsuk-list nhsuk-list--bullet">
@@ -154,11 +171,13 @@
           </ul>
           <h3 class="nhsuk-heading-m">What we found:</h3>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>...</li>
+            <li>Potential security issue raised by SDM's with logging user activity i.e. <a href="https://docs.google.com/spreadsheets/d/1-buDs9YdlWuiVM3mmNhmM_RJvFdxpxVu8CRanYfqEeo/edit#gid=0&range=F4:F5" target="_blank">accessing certain records</a></li>
+            <li>CCS are worried about having to help calculate due dates for applicants.</li>
+            <li>No issues with content being in second person. More natural workflow for CCS.</li>
           </ul>
           <h3 class="nhsuk-heading-m">Any known issues?</h3>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>...</li>
+            <li>None</li>
           </ul>
           <hr>
           <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
@@ -213,7 +232,7 @@
           </ul>
           <h3 class="nhsuk-heading-m">Any known issues?</h3>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>...</li>
+            <li>None</li>
           </ul>
           <hr>
           <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
@@ -324,7 +343,7 @@
               </ul>
               <h3 class="nhsuk-heading-m">Any known issues?</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
+                <li>None</li>
               </ul>
               <hr>
               <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
@@ -438,7 +457,7 @@
               </ul>
               <h3 class="nhsuk-heading-m">Any known issues?</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
+                <li>None</li>
               </ul>
               <hr>
               <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
@@ -483,7 +502,7 @@
               </ul>
               <h3 class="nhsuk-heading-m">Any known issues?</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
+                <li>None</li>
               </ul>
               <hr>
               <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">

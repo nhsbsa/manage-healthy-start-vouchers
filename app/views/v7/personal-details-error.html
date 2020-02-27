@@ -29,6 +29,14 @@ Enter personal details
   }
 </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script>
+  dueDateBegin = moment().format("D MMMM YYYY");
+  dueDateEnd = moment().add(32, 'weeks').format("D MMMM YYYY");
+  example = moment().add(12, 'weeks').format("DD M YYYY");
+</script>
+
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
@@ -106,17 +114,30 @@ Enter personal details
                     </li>
                     {% endif %}
 
-                    {% if not (data['dateofbirthday'] and data['dateofbirthmonth'] and data['dateofbirthyear']) %}
+                    {% if not (data['dateofbirthday'] or not data['dateofbirthmonth'] or not data['dateofbirthyear']) %}
                     <li>
                         <a href="#example-error-3">Enter date of birth</a>
                     </li>
                     {% endif %}
 
-                    {% if not (data['duedateday'] and data['duedatemonth'] and data['duedateyear']) %}
+                    {% if (data['age'] >= "18") %}
+                    <li>
+                      <a href="#example-error-8">You must be over 18 years old to apply</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not (data['duedateday'] or not data['duedatemonth'] or not data['duedateyear']) %}
                     <li>
                         <a href="#example-error-4">Enter due date</a>
                     </li>
                     {% endif %}
+
+                    {% if data['duedateInvalid'] == "INELIGIBLE" %}
+                    <li>
+                        <a href="#example-error-7">Due date must be between <script>document.write(dueDateBegin);</script> and <script>document.write(dueDateEnd);</script>.</a>
+                    </li>
+                    {% endif %}                    
+
 
                 </ul>
             </div>
@@ -187,11 +208,11 @@ Enter personal details
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
-                Why we ask for their name
+                Why we ask for your name
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>We use their name to confirm their identity and eligibility. Their name will also appear on their Healthy Start money card.</p>
+              <p>We use your name to confirm your identity and eligibility.</p>
             </div>
           </details>
 
@@ -269,16 +290,15 @@ Enter personal details
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">They don't know what address to use</span>
+              <span class="nhsuk-details__summary-text">If you don't know what address to use</span>
             </summary>
             <div class="nhsuk-details__text">
-                  <p class="nhsuk-heading-xs">If they have more than one address</p>
-                  <p>They should use the address that their GP or dentist holds for them. For example, if they're a
-                      student
-                      living away from home, this could be their home or term time address.</p>
-                  <p class="nhsuk-heading-xs">If they don't have a permanent address</p>
-                  <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they
-                      should use the address that their GP or dentist holds for them.</p>
+                  <p class="nhsuk-heading-xs">If you have more than one address</p>
+                  <p>You should use the address that your GP or dentist holds for you. For example, if you're a
+                      student living away from home, this could be your home or term time address.</p>
+                  <p class="nhsuk-heading-xs">If you don't have a permanent address</p>
+                  <p>If you're homeless and living in temporary accommodation (for example, a long term hostel), you
+                      should use the address that your GP or dentist holds for you.</p>
             </div>
           </details>
 
@@ -292,7 +312,7 @@ Enter personal details
               </h1>
             </legend>
 
-            {% if not (data['dateofbirthday'] and data['dateofbirthmonth'] and data['dateofbirthyear']) %}
+            {% if not (data['dateofbirthday'] or not data['dateofbirthmonth'] or not data['dateofbirthyear']) %}
 
             <div class="nhsuk-form-group nhsuk-form-group--error">
 
@@ -302,6 +322,47 @@ Enter personal details
 
             <span class="nhsuk-error-message" id="example-error-3">
                 <span class="nhsuk-u-visually-hidden">Error:</span> Enter date of birth
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthday" name="dateofbirthday" type="number" pattern="[0-9]*" value="{{ data['dateofbirthday'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthmonth" name="dateofbirthmonth" type="number" pattern="[0-9]*" value="{{ data['dateofbirthmonth'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dateofbirthyear" name="dateofbirthyear" type="number" pattern="[0-9]*" value="{{ data['dateofbirthyear'] }}">
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            {% elif (data['age'] >= "18") %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 2003
+            </span>
+
+            <span class="nhsuk-error-message" id="example-error-8">
+                <span class="nhsuk-u-visually-hidden">Error:</span> You must be over 18 years old to apply
             </span>
 
             <div class="nhsuk-date-input">
@@ -377,12 +438,11 @@ Enter personal details
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
-                Why we ask for their date of birth
+                Why we ask for your date of birth
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>We use their date of birth to work out their age. Their age could entitle them to help to buy milk, food
-                and vitamins without needing an eligible benefit.</p>
+              <p>We use your date of birth to work out your age. Your age will determine whether you are allowed to apply for the new service.</p>
             </div>
           </details>
 
@@ -396,16 +456,58 @@ Enter personal details
               </h1>
             </legend>
 
-            {% if not (data['duedateday']) or (data['duedatemonth']) or (data['duedateyear']) %}
+            {% if not data['duedateday'] or not data['duedatemonth'] or not data['duedateyear'] %}
 
             <div class="nhsuk-form-group nhsuk-form-group--error">
 
             <span class="nhsuk-hint" id="hint">
-              For example, 31 3 2020
+              For example, <script>document.write(example);</script>
             </span>
 
             <span class="nhsuk-error-message" id="example-error-4">
                 <span class="nhsuk-u-visually-hidden">Error:</span> Enter due date
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedateday" name="duedateday" type="number" pattern="[0-9]*" value="{{ data['duedateday'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*" value="{{ data['duedatemonth'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*" value="{{ data['duedateyear'] }}">
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+
+            {% elif data['duedateInvalid'] == "INELIGIBLE" %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+
+            <span class="nhsuk-hint" id="hint">
+              For example, <script>document.write(example);</script>
+            </span>
+
+            <span class="nhsuk-error-message" id="example-error-7">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Due date must be between <script>document.write(dueDateBegin);</script> and <script>document.write(dueDateEnd);</script>
             </span>
 
             <div class="nhsuk-date-input">
@@ -442,7 +544,7 @@ Enter personal details
             <div class="nhsuk-form-group">
 
             <span class="nhsuk-hint" id="hint">
-              For example, 31 3 2020
+              For example, <script>document.write(example);</script>
             </span>
 
             <div class="nhsuk-date-input">
@@ -451,7 +553,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday" name="duedateday" type="number" pattern="[0-9]*">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday" name="duedateday" type="number" pattern="[0-9]*" value="{{ data['duedateday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -459,7 +561,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*" value="{{ data['duedatemonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -467,7 +569,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*" value="{{ data['duedateyear'] }}">
                 </div>
               </div>
             </div>
@@ -480,15 +582,11 @@ Enter personal details
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">They are unsure what their due date is</span>
+              <span class="nhsuk-details__summary-text">If you are unsure what your due date is</span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>As part of their pregnancy (antenatal) care, their midwife will offer them a dating scan that will give
-                them a more accurate date for the birth of their baby.</p>
-              <p>If they haven't had their first scan yet, you can help them work out when they might expect their baby
-                to arrive by using the <a href="https://www.nhs.uk/conditions/pregnancy-and-baby/due-date-calculator/"
-                  target="_blank">NHS Pregnancy due date calculator<span class="nhsuk-u-visually-hidden"> (opens in a
-                    new tab)</span></a>.</p>
+              <p>As part of your pregnancy (antenatal) care, your midwife will offer you a dating scan that will give
+                you a more accurate date for the birth of your baby.</p>
             </div>
           </details>
 
@@ -499,7 +597,7 @@ Enter personal details
                   Enter National Insurance number (optional)
               </label>
               <span class="nhsuk-hint" id="example-with-hint-text-hint">
-                  It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
+                  It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'.
               </span>
               <input class="nhsuk-input nhsuk-input--width-20" id="nationalinsurancenumber" name="nationalinsurancenumber" type="text" value="{{ data['nationalinsurancenumber'] }}">
           </div>
@@ -507,11 +605,11 @@ Enter personal details
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
-                Why we ask for their National Insurance number
+                Why we ask for your National Insurance number
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>We need this to check their eligibility.</p>
+              <p>We use this to check your eligibility.</p>
             </div>
           </details>
 
@@ -527,11 +625,11 @@ Enter personal details
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
-                Why do we need their telephone number?
+                Why do we need your telephone number?
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>To prevent fraud and contact them about their application if necessary.</p>
+              <p>We use this to prevent fraud and to send notifications about your application and ongoing payments.</p>
             </div>
           </details>
 
@@ -547,11 +645,11 @@ Enter personal details
           <details class="nhsuk-details nhsuk-u-margin-bottom-6">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
-                Why do we need their email address?
+                Why do we need your email address?
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <p>To send notifications about their application and their prepaid card.</p>
+              <p>We use this to send notifications about your application and ongoing payments.</p>
             </div>
           </details>
 

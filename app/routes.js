@@ -236,11 +236,11 @@ router.post('/v2/pregnant-or-children', function (req, res) {
           var duedateyear = req.session.data['duedateyear']
 
           var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
-          var fulltermpregnancy = moment().add(30, 'weeks'); // 40 weeks from today is a full term pregnancy - 10 weeks
+          var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
     
           if (duedateday && duedatemonth && duedateyear) {
 
-            if (duedate > fulltermpregnancy) { // If due date is later than 30 weeks from today they are less than 10 weeks pregnant
+            if (duedate > fulltermpregnancy) { // If due date is later than 32 weeks from today they are less than 10 weeks pregnant
               res.redirect('/v2/add-applicant-step3-error')
             } else {
               res.redirect('/v2/CORRECT')
@@ -433,9 +433,9 @@ router.post('/v3/due-date', function (req, res) {
   var duedateyear = req.session.data['duedateyear']
 
   var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
-  var fulltermpregnancy = moment().add(30, 'weeks'); // 40 weeks from today is a full term pregnancy - 10 weeks
+  var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
 
-  var temp = moment(duedate).subtract(30, 'weeks');
+  var temp = moment(duedate).subtract(32, 'weeks');
 
   var fourtytwoweeksfromtoday = moment().add(42, 'weeks');
 
@@ -567,7 +567,7 @@ router.post('/v3/terms-and-conditions', function (req, res) {
   var duedateyear = req.session.data['duedateyear']
 
   var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
-  var fulltermpregnancy = moment().add(30, 'weeks'); // 40 weeks from today is a full term pregnancy - 10 weeks
+  var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
 
   if (terms) {
 
@@ -764,9 +764,9 @@ router.post('/v4/due-date', function (req, res) {
   var duedateyear = req.session.data['duedateyear']
 
   var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
-  var fulltermpregnancy = moment().add(30, 'weeks'); // 40 weeks from today is a full term pregnancy - 10 weeks
+  var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
 
-  var temp = moment(duedate).subtract(30, 'weeks');
+  var temp = moment(duedate).subtract(32, 'weeks');
 
   var fourtytwoweeksfromtoday = moment().add(42, 'weeks');
 
@@ -898,7 +898,7 @@ router.post('/v4/terms-and-conditions', function (req, res) {
   var duedateyear = req.session.data['duedateyear']
 
   var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
-  var fulltermpregnancy = moment().add(30, 'weeks'); // 40 weeks from today is a full term pregnancy - 10 weeks
+  var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
 
   if (terms) {
 
@@ -1274,10 +1274,36 @@ router.post('/v7/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
+  // Calculate Age
+
+  var ageToday = new Date(Date.now());
+  var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
+  var ageDate =  new Date(ageToday - dob.getTime())
+  var temp = ageDate.getFullYear();
+  var yrs = Math.abs(temp - 1970);
+
+  req.session.data['age'] = yrs;
+  
+  console.log(yrs)
+
+  // Calculate Due Date
+
+  var today = moment();
+  var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
+  var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
+
   if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
-    res.redirect('/v7/bank-details')    
-  }
-  else {
+        
+    if (dueDate < today || dueDate > fulltermPregnancy){
+      req.session.data['duedateInvalid'] = "INELIGIBLE";
+      res.redirect('/v7/personal-details-error')
+    } else if (yrs >= "18") {
+      res.redirect('/v7/personal-details-error')
+    } else {
+      res.redirect('/v7/bank-details')
+    }
+
+  } else {
     res.redirect('/v7/personal-details-error')
   }
 

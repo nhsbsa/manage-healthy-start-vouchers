@@ -23,6 +23,12 @@ Manage Healthy Start Scheme - Joe Bloggs
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script type="text/javascript">
+window.onload=function(){document.getElementById('duedateday').value=moment().add(12, 'weeks').format("DD");document.getElementById('duedatemonth').value=moment().add(12, 'weeks').format("MM");document.getElementById('duedateyear').value=moment().add(12, 'weeks').format("YYYY");}
+</script>
+
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
       <div class="nhsuk-grid-row">
@@ -93,8 +99,11 @@ Manage Healthy Start Scheme - Joe Bloggs
                       <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
                         Day
                       </label>
+
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday"
-                        name="duedateday" type="number" pattern="[0-9]*" value="21">
+                        name="duedateday" type="number" pattern="[0-9]*">
+
+ 
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -103,7 +112,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                         Month
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth"
-                        name="duedatemonth" type="number" pattern="[0-9]*" value="03">
+                        name="duedatemonth" type="number" pattern="[0-9]*">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -112,7 +121,7 @@ Manage Healthy Start Scheme - Joe Bloggs
                         Year
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear"
-                        name="duedateyear" type="number" pattern="[0-9]*" value="2020">
+                        name="duedateyear" type="number" pattern="[0-9]*">
                     </div>
                   </div>
                 </div>

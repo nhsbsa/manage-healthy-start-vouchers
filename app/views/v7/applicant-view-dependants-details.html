@@ -23,6 +23,8 @@ Manage Healthy Start Scheme - Joe Bloggs
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 {% set noOfChildren = 1 %}
 
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
@@ -107,7 +109,10 @@ Manage Healthy Start Scheme - Joe Bloggs
                                                       Expected due date
                                                     </dt>
                                                     <dd class="nhsuk-summary-list__value">
-                                                        	21/03/2020
+                                                      <script>
+                                                        example = moment().add(12, 'weeks').format("DD / M / YYYY");
+                                                        document.write(example);
+                                                      </script>
                                                     </dd>
                                                 
                                                     <dd class="nhsuk-summary-list__actions">                                           
