@@ -1274,26 +1274,26 @@ router.post('/v7/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+
   // Calculate Age
 
-  var ageToday = new Date(Date.now());
-  var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-  var ageDate =  new Date(ageToday - dob.getTime())
-  var temp = ageDate.getFullYear();
-  var yrs = Math.abs(temp - 1970);
+    var ageToday = new Date(Date.now());
+    var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
+    var ageDate =  new Date(ageToday - dob.getTime())
+    var temp = ageDate.getFullYear();
+    var yrs = Math.abs(temp - 1970);
 
-  req.session.data['age'] = yrs;
-  
-  console.log(yrs)
+    req.session.data['age'] = yrs;
+    
+    console.log(yrs)
 
-  // Calculate Due Date
+    // Calculate Due Date
 
-  var today = moment();
-  var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
-  var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
+    var today = moment();
+    var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
+    var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
-        
     if (dueDate < today || dueDate > fulltermPregnancy){
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v7/personal-details-error')

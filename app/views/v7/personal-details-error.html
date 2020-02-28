@@ -114,19 +114,19 @@ Enter personal details
                     </li>
                     {% endif %}
 
-                    {% if not (data['dateofbirthday'] or not data['dateofbirthmonth'] or not data['dateofbirthyear']) %}
+                    {% if not data['dateofbirthday'] or not data['dateofbirthmonth'] or not data['dateofbirthyear'] %}
                     <li>
                         <a href="#example-error-3">Enter date of birth</a>
                     </li>
                     {% endif %}
 
-                    {% if (data['age'] >= "18") %}
+                    {% if data['age'] >= 18 %}
                     <li>
                       <a href="#example-error-8">You must be over 18 years old to apply</a>
                     </li>
                     {% endif %}
 
-                    {% if not (data['duedateday'] or not data['duedatemonth'] or not data['duedateyear']) %}
+                    {% if not data['duedateday'] or not data['duedatemonth'] or not data['duedateyear'] %}
                     <li>
                         <a href="#example-error-4">Enter due date</a>
                     </li>
@@ -272,7 +272,7 @@ Enter personal details
                 <span class="nhsuk-error-message" id="example-error-6">
                   <span class="nhsuk-u-visually-hidden">Error:</span> Enter a postcode
                 </span>
-                <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">
+                <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="postcode" name="postcode" type="text">
             </div>
 
             {% else %}
@@ -312,7 +312,7 @@ Enter personal details
               </h1>
             </legend>
 
-            {% if not (data['dateofbirthday'] or not data['dateofbirthmonth'] or not data['dateofbirthyear']) %}
+            {% if not data['dateofbirthday'] or not data['dateofbirthmonth'] or not data['dateofbirthyear'] %}
 
             <div class="nhsuk-form-group nhsuk-form-group--error">
 
@@ -330,7 +330,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthday" name="dateofbirthday" type="number" pattern="[0-9]*" value="{{ data['dateofbirthday'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthday" name="dateofbirthday" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -338,7 +338,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthmonth" name="dateofbirthmonth" type="number" pattern="[0-9]*" value="{{ data['dateofbirthmonth'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthmonth" name="dateofbirthmonth" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthmonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -346,14 +346,14 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dateofbirthyear" name="dateofbirthyear" type="number" pattern="[0-9]*" value="{{ data['dateofbirthyear'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dateofbirthyear" name="dateofbirthyear" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthyear'] }}">
                 </div>
               </div>
             </div>
 
             </div>
 
-            {% elif (data['age'] >= "18") %}
+            {% elif data['age'] >= "18" %}
 
             <div class="nhsuk-form-group nhsuk-form-group--error">
 
@@ -371,7 +371,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthday" name="dateofbirthday" type="number" pattern="[0-9]*" value="{{ data['dateofbirthday'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthday" name="dateofbirthday" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -379,7 +379,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthmonth" name="dateofbirthmonth" type="number" pattern="[0-9]*" value="{{ data['dateofbirthmonth'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="dateofbirthmonth" name="dateofbirthmonth" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthmonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -387,7 +387,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dateofbirthyear" name="dateofbirthyear" type="number" pattern="[0-9]*" value="{{ data['dateofbirthyear'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dateofbirthyear" name="dateofbirthyear" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthyear'] }}">
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthday" name="dateofbirthday" type="number" pattern="[0-9]*" value="{{ data['dateofbirthday'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthday" name="dateofbirthday" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -416,7 +416,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthmonth" name="dateofbirthmonth" type="number" pattern="[0-9]*" value="{{ data['dateofbirthmonth'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthmonth" name="dateofbirthmonth" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthmonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -424,7 +424,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dateofbirthyear" name="dateofbirthyear" type="number" pattern="[0-9]*" value="{{ data['dateofbirthyear'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dateofbirthyear" name="dateofbirthyear" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['dateofbirthyear'] }}">
                 </div>
               </div>
             </div>
@@ -474,7 +474,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedateday" name="duedateday" type="number" pattern="[0-9]*" value="{{ data['duedateday'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedateday" name="duedateday" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedateday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -482,7 +482,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*" value="{{ data['duedatemonth'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedatemonth" name="duedatemonth" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedatemonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -490,7 +490,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*" value="{{ data['duedateyear'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="duedateyear" name="duedateyear" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedateyear'] }}">
                 </div>
               </div>
             </div>
@@ -516,7 +516,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedateday" name="duedateday" type="number" pattern="[0-9]*" value="{{ data['duedateday'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedateday" name="duedateday" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedateday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -524,7 +524,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*" value="{{ data['duedatemonth'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="duedatemonth" name="duedatemonth" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedatemonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -532,7 +532,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*" value="{{ data['duedateyear'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="duedateyear" name="duedateyear" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedateyear'] }}">
                 </div>
               </div>
             </div>
@@ -553,7 +553,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday" name="duedateday" type="number" pattern="[0-9]*" value="{{ data['duedateday'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday" name="duedateday" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedateday'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -561,7 +561,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth" name="duedatemonth" type="number" pattern="[0-9]*" value="{{ data['duedatemonth'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth" name="duedatemonth" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedatemonth'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -569,7 +569,7 @@ Enter personal details
                   <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear" name="duedateyear" type="number" pattern="[0-9]*" value="{{ data['duedateyear'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear" name="duedateyear" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['duedateyear'] }}">
                 </div>
               </div>
             </div>
