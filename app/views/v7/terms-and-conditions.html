@@ -265,9 +265,7 @@
                 Sort code
               </dt>
               <dd class="nhsuk-summary-list__value">
-              {% set items = data['sortcode'] %}
-              {% set dash = joiner("-") %}
-              {% for item in items | batch(2) %}{{ dash() }}{% for items in item %}{{ items }}{% endfor %}{% endfor %}
+                {{ data['sortcode'] }}
               </dd>
 
               <dd class="nhsuk-summary-list__actions">
@@ -337,6 +335,9 @@
 
           <div class="nhsuk-warning-callout">
             <h3 class="nhsuk-warning-callout__label">Declaration</h3>
+
+  <!-- 
+
             <p>You confirm that this information is correct as of
               <script>
                 var today = new Date();
@@ -372,16 +373,26 @@
                 today = dd + ' ' + mm + ' ' + yyyy;
                 document.write(today);
               </script>.</p>
+
+-->
+
             <p>You confirm that:</p>
             <ul>
-              <li>you have given your permission for this application to be submitted on your behalf</li>
-              <li>you know that the information submitted will be used by the NHS Business Services Authority and shared other
-                organisations working on your behalf where necessary</li>
-              <li>you understand your data will not be transferred outside of the European Economic Area and will be deleted
-                within 24 months of the expiry date of the exemption</li>
-              <li>you are aware that this is a pilot scheme you are taking part in</li>
-              <li>you consent to your data being used to evaluate the digital pilot scheme</li>
+              <li>the information you&rsquo;ve given is correct as of today. You must tell us if your circumstances or personal details change.</li>
+              <li>you understand that you must only buy permitted items with the money you’re given.</li>
+              <li>you understand that we&rsquo;re acting on behalf of the Department of Health and Social Care.</li>
+              <li>you give us permission to submit this application on your behalf.</li>
+              <li>you know we&rsquo;ll use your information and share it with other organisations where necessary.</li>
+              <li>you understand your data will not be transferred outside the European Economic Area and will be deleted within 24 months after your eligibility ends.</li>
+              <li>you know this is a pilot scheme and consent to your data being used to evaluate it.</li>
             </ul>
+            <p>You understand and agree that the Department of Health and Social Care can:</p>
+            <ul>
+              <li>check with other organisations associated with the service that the information you’ve given is correct.</li>
+              <li>stop your payments and ask you to repay the money if you apply illegally.</li>
+            </ul>
+            <p>You can find more information at <a href="www.nhsbsa.nhs.uk/privacy" target="_blank">www.nhsbsa.nhs.uk/privacy</a>.</p>
+            <p>By continuing with your application, you&rsquo;re happy to accept the terms and conditions.</p>
           </div>
 
           <form novalidate="novalidate" action="/v7/terms-and-conditions" method="post">
