@@ -1,0 +1,143 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-full-width.html' %}
+  <!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Manage Healthy Start Scheme - Changes {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav aria-label="Breadcrumb" class="nhsuk-breadcrumb nhsBSA-breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">Add an applicant</li>
+          </ol>
+        </div>
+      </div>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+    </div>
+  </nav>
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                </path>
+              </svg>
+              Go back</a>
+          </div>
+
+
+
+
+          <h1 class="nhsuk-u-margin-bottom-5">
+            Terms and conditions
+          </h1>
+
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">Declaration</h3>
+
+  <!-- 
+
+            <p>You confirm that this information is correct as of
+              <script>
+                var today = new Date();
+                var dd = today.getDate();
+
+                var month = new Array();
+                month[0] = "January";
+                month[1] = "February";
+                month[2] = "March";
+                month[3] = "April";
+                month[4] = "May";
+                month[5] = "June";
+                month[6] = "July";
+                month[7] = "August";
+                month[8] = "September";
+                month[9] = "October";
+                month[10] = "November";
+                month[11] = "December";
+
+                var mm = month[today.getMonth()]; //January is 0!
+
+
+                var yyyy = today.getFullYear();
+
+                if (dd < 10) {
+                  dd = '0' + dd
+                }
+
+                if (mm < 10) {
+                  mm = '0' + mm
+                }
+
+                today = dd + ' ' + mm + ' ' + yyyy;
+                document.write(today);
+              </script>.</p>
+
+-->
+
+            <p>You confirm that:</p>
+            <ul>
+              <li>the information you&rsquo;ve given is correct as of today. You must tell us if your circumstances or personal details change.</li>
+              <li>you understand that you must only buy permitted items with the money you’re given.</li>
+              <li>you understand that we&rsquo;re acting on behalf of the Department of Health and Social Care.</li>
+              <li>you give us permission to submit this application on your behalf.</li>
+              <li>you know we&rsquo;ll use your information and share it with other organisations where necessary.</li>
+              <li>you understand your data will not be transferred outside the European Economic Area and will be deleted within 24 months after your eligibility ends.</li>
+              <li>you know this is a pilot scheme and consent to your data being used to evaluate it.</li>
+            </ul>
+            <p>You understand and agree that the Department of Health and Social Care can:</p>
+            <ul>
+              <li>check with other organisations associated with the service that the information you’ve given is correct.</li>
+              <li>stop your payments and ask you to repay the money if you apply illegally.</li>
+            </ul>
+            <p>You can find more information at <a href="www.nhsbsa.nhs.uk/privacy" target="_blank">www.nhsbsa.nhs.uk/privacy</a>.</p>
+            <p>By continuing with your application, you&rsquo;re happy to accept the terms and conditions.</p>
+          </div>
+
+          <form novalidate="novalidate" action="/v8/terms-and-conditions" method="post">
+              <div class="nhsuk-form-group">
+                <button class="nhsuk-button" type="submit">
+                  Confirm and submit
+                </button>
+              </div>
+          </form>
+
+          <p class="nhsuk-u-margin-top-0"><a href="home">Cancel</a></p>
+
+
+        </div>
+      </div>
+    </main>
+  </div>{% endblock %}
+</body>
+
+</html>
