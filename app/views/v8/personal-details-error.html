@@ -108,6 +108,12 @@ Enter personal details
                     </li>
                     {% endif %}
 
+                    {% if not data['towncity'] %}
+                    <li>
+                        <a href="#example-error-9">Enter town or city</a>
+                    </li>
+                    {% endif %}
+
                     {% if not data['postcode'] %}
                     <li>
                         <a href="#example-error-6">Enter a postcode</a>
@@ -256,12 +262,35 @@ Enter personal details
                 <input class="nhsuk-input nhsuk-input--width-20" id="addressline2" name="addressline2" type="text" value="{{ data['addressline2'] }}">
             </div>
 
+            {% if not data['towncity'] %}
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+                <label class="nhsuk-label" for="towncity">
+                    Town or city
+                </label>
+                <span class="nhsuk-error-message" id="example-error-9">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Enter town or city
+                </span>
+                <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="towncity" name="towncity" type="text">
+            </div>
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="addressline1">
+                    Address line 1
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="addressline1" name="addressline1" type="text" value="{{ data['addressline1'] }}">
+            </div>
+
             <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="towncity">
                     Town or city
                 </label>
                 <input class="nhsuk-input nhsuk-input--width-20" id="towncity" name="towncity" type="text" value="{{ data['towncity'] }}">
             </div>
+
+            {% endif %}
 
             {% if not data['postcode'] %}
 
