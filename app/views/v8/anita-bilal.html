@@ -241,6 +241,63 @@
 
           </dl>
 
+          <h2 class="nhsuk-heading-m">Payment schedule</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Amount received
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £12.40 every 4 weeks
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Next payment date<br><small>(week commencing)</small>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+              <script>
+                var todaysDate = moment();
+
+                var paymentDate = moment(todaysDate).startOf('week').isoWeekday(1).add(4, 'weeks');
+
+                var formattedPaymentDate = moment(paymentDate).format('DD / M / YYYY');
+
+                document.write(formattedPaymentDate);
+              </script>
+              </dd>
+
+            </div>
+
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Final payment date<br><small>(week commencing)</small>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+              <script>
+                var todaysDate = moment();
+
+                var paymentDate = moment(todaysDate).startOf('week').isoWeekday(1).add(12, 'weeks');
+
+                var formattedPaymentDate = moment(paymentDate).format('DD / M / YYYY');
+
+                document.write(formattedPaymentDate);
+              </script>
+              </dd>
+
+            </div>
+
+
+
+
+          </dl>
+
+
 
 
 

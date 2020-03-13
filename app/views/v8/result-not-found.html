@@ -59,7 +59,7 @@ Manage Healthy Start Scheme - Changes
 
     <p class="nhsuk-body-l">We found no Healthy Start applicants with those details.</p>
 
-    {% if (data['searchfirstname']) and (data['searchlastname']) and (data['searchpostcode']) %}
+    {% if (data['searchlastname']) and (data['searchpostcode']) %}
 
     <form novalidate="novalidate" action="/v8/search-add" method="post">
     <div class="nhsuk-form-group">
