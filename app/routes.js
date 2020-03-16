@@ -21,7 +21,7 @@ router.post('/v5/terms-and-conditions', function (req, res) {
   if (emailAddress != ""){
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // page in GOV.UK Notify. It's not a secret so it's fine to put it
       // in your code.
       '93e5fbda-bc50-42c3-87cb-467cf0470862',
       // `emailAddress` here needs to match the name of the form field in
@@ -37,7 +37,7 @@ router.post('/v5/terms-and-conditions', function (req, res) {
   else if (telephoneNumber != "") {
     notify.sendSms(
       // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // page in GOV.UK Notify. It's not a secret so it's fine to put it
       // in your code.
       '5dd2a61e-a740-4a58-a484-7fbc2b5454b7',
       // `emailAddress` here needs to match the name of the form field in
@@ -65,7 +65,7 @@ router.post('/v7/terms-and-conditions', function (req, res) {
   if (emailAddress != ""){
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // page in GOV.UK Notify. It's not a secret so it's fine to put it
       // in your code.
       '93e5fbda-bc50-42c3-87cb-467cf0470862',
       // `emailAddress` here needs to match the name of the form field in
@@ -81,7 +81,7 @@ router.post('/v7/terms-and-conditions', function (req, res) {
   else if (telephoneNumber != "") {
     notify.sendSms(
       // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // page in GOV.UK Notify. It's not a secret so it's fine to put it
       // in your code.
       '5dd2a61e-a740-4a58-a484-7fbc2b5454b7',
       // `emailAddress` here needs to match the name of the form field in
@@ -109,7 +109,7 @@ router.post('/v8/terms-and-conditions', function (req, res) {
   if (emailAddress != ""){
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // page in GOV.UK Notify. It's not a secret so it's fine to put it
       // in your code.
       '93e5fbda-bc50-42c3-87cb-467cf0470862',
       // `emailAddress` here needs to match the name of the form field in
@@ -125,7 +125,7 @@ router.post('/v8/terms-and-conditions', function (req, res) {
   else if (telephoneNumber != "") {
     notify.sendSms(
       // this long string is the template ID, copy it from the template
-      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // page in GOV.UK Notify. It's not a secret so it's fine to put it
       // in your code.
       '5dd2a61e-a740-4a58-a484-7fbc2b5454b7',
       // `emailAddress` here needs to match the name of the form field in
