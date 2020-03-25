@@ -672,3 +672,11 @@ TIMELINE
 .nhsuk-promo__link-wrapper:hover .nhsuk-promo__heading {
   color: #005eb8;
 }
+
+
+
+.nhsuk-button-right {
+  @media (min-width: 48.0625em) {
+    float: right;
+  }
+}

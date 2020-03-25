@@ -1,0 +1,119 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Manage Healthy Start Scheme - Changes
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item">Home</li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back">Home</p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-full nhsuk-section__content">
+          <h1>
+            <span role="text">
+              <span class="nhsuk-caption-xl nhsuk-caption--top">
+                <span class="nhsuk-u-visually-hidden">
+                  -
+                </span>Healthy Start</span>Manage Healthy Start Scheme</span>
+          </h1>
+
+
+
+
+          <div class="nhsuk-grid-row nhsuk-promo-group">
+
+            <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+
+
+
+              <div class="nhsuk-promo">
+
+
+                <a class="nhsuk-promo__link-wrapper" href="new-applicant">
+
+                  <div class="nhsuk-promo__content">
+                    <h3 class="nhsuk-promo__heading">Add new applicant</h3>
+                    <p class="nhsuk-promo__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                      sit amet augue et ipsum.</p>
+                  </div>
+
+                </a>
+
+
+              </div>
+
+            </div>
+
+            <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+
+
+
+              <div class="nhsuk-promo">
+
+
+                <a class="nhsuk-promo__link-wrapper" href="#">
+
+                  <div class="nhsuk-promo__content">
+                    <h3 class="nhsuk-promo__heading">Knowledge base</h3>
+                    <p class="nhsuk-promo__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                      sit amet augue et ipsum.</p>
+                  </div>
+                </a>
+
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

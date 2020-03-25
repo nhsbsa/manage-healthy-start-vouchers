@@ -1,0 +1,296 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-full-width.html' %}
+  <!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Manage Healthy Start Scheme - Changes {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('duedateday').value = moment().add(12, 'weeks').format("DD");
+      document.getElementById('duedatemonth').value = moment().add(12, 'weeks').format("MM");
+      document.getElementById('duedateyear').value = moment().add(12, 'weeks').format("YYYY");
+    }
+  </script>
+
+  <nav aria-label="Breadcrumb" class="nhsuk-breadcrumb nhsBSA-breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">Anita Bilal</li>
+          </ol>
+        </div>
+      </div>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+    </div>
+  </nav>
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                </path>
+              </svg>
+              Go back</a>
+          </div>
+
+
+          <h1>Anita Bilal
+            <span class="nhsuk-caption-m nhsuk-caption--bottom nhsuk-u-margin-top-2">
+              <span class="nhsuk-u-visually-hidden">
+                -
+              </span>
+
+              <span class="nhsuk-caption-l nhsuk-caption--bottom">Reference Number: OAM1959T</span><strong
+                class="nhsuk-tag active nhsuk-u-margin-top-3">STATUS: ACTIVE</strong>
+            </span>
+          </h1>
+
+          <h2 class="nhsuk-heading-m">Personal details</h2>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="1">
+              First name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="Anita">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="4">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="4" name="4" type="text" value="Bilal">
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <label class="nhsuk-label" for="dateofbirthday">
+              Date of birth
+            </label>
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 1980
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthday">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthday"
+                    name="dateofbirthday" type="number" pattern="[0-9]*" value="15">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthmonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dateofbirthmonth"
+                    name="dateofbirthmonth" type="number" pattern="[0-9]*" value="03">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dateofbirthyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dateofbirthyear"
+                    name="dateofbirthyear" type="number" pattern="[0-9]*" value="2003">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="3">
+              National Insurance number (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text" value="QQ123456C">
+          </div>
+
+          <hr>
+
+          <h2 class="nhsuk-heading-m">Contact details</h2>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="1">
+              Address line 1
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="1" name="1" type="text" value="Stella House">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="2">
+              Address line 2
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="2" name="2" type="text" value="Goldcrest Way">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="3">
+              Town or city
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="3" name="3" type="text" value="Newcastle upon Tyne">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="4">
+              Postcode
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="4" name="4" type="text" value="NE15 8NY">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="5">
+              Email address (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="5" name="5" type="text"
+              value="anita.bilal@example.com">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="6">
+              Telephone number (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-one-third" id="6" name="6" type="text" value="01234 567890">
+          </div>
+
+          <hr>
+
+          <h2 class="nhsuk-heading-m">Pregnancy details</h2>
+
+          <div class="nhsuk-form-group">
+
+            <label class="nhsuk-label" for="duedateday">
+              Expected due date
+            </label>
+
+            <span class="nhsuk-hint" id="hint">
+              For example, 31 3 1980
+            </span>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateday">
+                    Day
+                  </label>
+
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedateday"
+                    name="duedateday" type="number" pattern="[0-9]*">
+
+
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedatemonth">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="duedatemonth"
+                    name="duedatemonth" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="duedateyear">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="duedateyear"
+                    name="duedateyear" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <hr>
+
+          <h2 class="nhsuk-heading-m">Bank or building society account details</h2>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="accountname">
+              Name on account
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="accountname" name="accountname" type="text"
+              spellcheck="false" value="MRS ANITA BILAL">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sortcode">
+              Sort code
+            </label>
+            <span class="nhsuk-hint" id="sort-code-hint">
+              Must be 6 digits long
+            </span>
+            <input class="nhsuk-input nhsuk-input--width-5" id="sortcode" name="sortcode" type="text"
+              aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="123456">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="accountnumber">
+              Account number
+            </label>
+            <span class="nhsuk-hint" id="account-number-hint">
+              Must be between 6 and 8 digits long
+            </span>
+            <input class="nhsuk-input nhsuk-input--width-10" id="accountnumber" name="accountnumber" type="text"
+              aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false"
+              value="12345678">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="buildingsocietynumber">
+              Building society roll number (optional)
+            </label>
+            <span class="nhsuk-hint" id="roll-number-hint">
+              They can find it on their card, statement or passbook
+            </span>
+            <input class="nhsuk-input nhsuk-input--width-10" id="buildingsocietynumber" name="buildingsocietynumber"
+              type="text" aria-describedby="roll-number-hint" spellcheck="false"
+              value="{{ data['buildingsocietynumber'] }}">
+          </div>
+
+          <a href="anita-bilal">
+            <button class="nhsuk-button nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2" type="submit">
+              Update details
+            </button>
+          </a>
+
+          <p class="nhsuk-u-margin-top-4"><a href="anita-bilal">Cancel</a></p>
+
+        </div>
+      </div>
+    </main>
+  </div>{% endblock %}
+</body>
+
+</html>
