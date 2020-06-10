@@ -164,7 +164,7 @@ module.exports = router;
 const today = new Date(Date.now());
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 1)
+// Get help to buy food and milk (Healthy Start) (VERSION 1)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -186,7 +186,7 @@ router.post('/v1/nhs-login', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 2)
+// Get help to buy food and milk (Healthy Start) (VERSION 2)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -299,7 +299,7 @@ router.post('/v2/pregnant-or-children', function (req, res) {
       })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 3)
+// Get help to buy food and milk (Healthy Start) (VERSION 3)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -630,7 +630,7 @@ router.post('/v3/terms-and-conditions', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 4)
+// Get help to buy food and milk (Healthy Start) (VERSION 4)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -998,7 +998,7 @@ router.post('/v4/details', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 5)
+// Get help to buy food and milk (Healthy Start) (VERSION 5)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -1108,7 +1108,7 @@ router.post('/v5/personal-details', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 6)
+// Get help to buy food and milk (Healthy Start) (VERSION 6)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -1218,7 +1218,7 @@ router.post('/v6/new-applicant', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 7)
+// Get help to buy food and milk (Healthy Start) (VERSION 7)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -1372,7 +1372,7 @@ router.post('/v7/bank-details', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 8)
+// Get help to buy food and milk (Healthy Start) (VERSION 8)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -1523,7 +1523,7 @@ router.post('/v8/check-answers', function (req, res) {
 })
 
 // ****************************************
-// Manage Healthy Start Scheme (VERSION 9)
+// Get help to buy food and milk (Healthy Start) (VERSION 9)
 // ****************************************
 
 // Capture NHSMail address (Login)
@@ -1670,5 +1670,156 @@ router.post('/v9/bank-details', function (req, res) {
 router.post('/v9/check-answers', function (req, res) {
 
     res.redirect('/v9/terms-and-conditions')    
+
+})
+
+// ****************************************
+// Get help to buy food and milk (Healthy Start) (VERSION 10)
+// ****************************************
+
+// Capture NHSMail address (Login)
+router.post('/v10/nhs-login', function (req, res) {
+
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === ""){
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v10/home')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v10/home')
+  }
+  else {
+    res.redirect('/v10/home')
+  }
+  
+})
+
+// Search
+router.post('/v10/search', function (req, res) {
+
+  var searchlastName = req.session.data['searchlastname']
+  var searchpostCode = req.session.data['searchpostcode']
+
+  // To find a match search for:
+  // Last name: Bilal
+  // Postcode: NE15 8NY / NE158NY
+
+  if (!searchlastName || !searchpostCode) {
+    res.redirect('/v10/home-error')
+  } else if ((searchlastName.includes('Bilal')) && (searchpostCode.includes('NE15 8NY') || searchpostCode.includes('NE158NY'))) {
+    res.redirect('/v10/result-found')
+  } else {
+    res.redirect('/v10/result-not-found')
+  }
+
+})
+
+// Search > Add
+router.post('/v10/search-add', function (req, res) {
+
+  var searchadd = req.session.data['searchadd']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v10/personal-details')
+  } else if (searchadd == 'no') {
+    res.redirect('/v10/home')
+  }
+  else {
+    res.redirect('/v10/result-not-found')
+  }
+
+})
+
+// Capture new applicant (Personal Details)
+router.post('/v10/personal-details', function (req, res) {
+
+  // Name
+
+  var firstName = req.session.data['firstname']
+  var lastName = req.session.data['lastname']
+
+  // Date of birth
+
+  var dateofbirthDay = req.session.data['dateofbirthday']
+  var dateofbirthMonth = req.session.data['dateofbirthmonth']
+  var dateofbirthYear = req.session.data['dateofbirthyear']
+
+  // Expected due date
+
+  var duedateDay = req.session.data['duedateday']
+  var duedateMonth = req.session.data['duedatemonth']
+  var duedateYear = req.session.data['duedateyear']
+
+  // Address
+
+  var addressLine1 = req.session.data['addressline1']
+  var addressLine2 = req.session.data['addressline2']
+  var townCity = req.session.data['towncity']
+  var postCode = req.session.data['postcode']
+
+  // National insurance number, telephone number and email address (all optional)
+
+  var nationalinsuranceNumber = req.session.data['nationalinsurancenumber']
+  var telephoneNumber = req.session.data['telephonenumber']
+  var emailAddress = req.session.data['emailaddress']
+
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+
+  // Calculate Age
+
+    var ageToday = new Date(Date.now());
+    var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
+    var ageDate =  new Date(ageToday - dob.getTime())
+    var temp = ageDate.getFullYear();
+    var yrs = Math.abs(temp - 1970);
+
+    req.session.data['age'] = yrs;
+    
+    console.log(yrs)
+
+    // Calculate Due Date
+
+    var today = moment();
+    var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
+    var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
+
+    if (dueDate < today || dueDate > fulltermPregnancy){
+      req.session.data['duedateInvalid'] = "INELIGIBLE";
+      res.redirect('/v10/personal-details-error')
+    } else if (yrs >= "18") {
+      res.redirect('/v10/personal-details-error')
+    } else {
+      res.redirect('/v10/bank-details')
+    }
+
+  } else {
+    res.redirect('/v10/personal-details-error')
+  }
+
+})
+
+// Capture new applicant (Bank Details)
+router.post('/v10/bank-details', function (req, res) {
+
+  // Bank Details
+
+  var accountName = req.session.data['accountname']
+  var sortCode = req.session.data['sortcode']
+  var accountNumber = req.session.data['accountnumber']
+
+  if (accountName && sortCode && accountNumber){
+    res.redirect('/v10/check-answers')    
+  }
+  else {
+    res.redirect('/v10/bank-details-error')
+  }
+
+})
+
+// Capture new applicant (Bank Details)
+router.post('/v10/check-answers', function (req, res) {
+
+    res.redirect('/v10/terms-and-conditions')    
 
 })

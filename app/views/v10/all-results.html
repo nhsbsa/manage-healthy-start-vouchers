@@ -1,0 +1,194 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) - Changes
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item">Home</li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="result-found">Back to home</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <h1>Applicant list <small>(10)</small></h1>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+
+            <a href="/v10/new-applicant">
+
+              <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" style="float: right;"
+                type="submit">
+                Add new applicant
+              </button>
+
+            </a>
+
+            <div style="overflow: auto;"></div>
+
+
+          </div>
+        </div>
+
+
+
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Healthy Start Applications</caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Name</th>
+                <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                <th class="nhsuk-table__header" scope="col">Address line 1</th>
+                <th class="nhsuk-table__header" scope="col">Postcode</th>
+                <th class="nhsuk-table__header" scope="col">Reference number</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell"><a href="applicant-view-personal-details">Anita Bilal</a></td>
+                <td class="nhsuk-table__cell">15/03/2003</td>
+                <td class="nhsuk-table__cell">Stella House</td>
+                <td class="nhsuk-table__cell">NE15 8NY</td>
+                <td class="nhsuk-table__cell">OAM1959T</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Samantha Bloggs</td>
+                <td class="nhsuk-table__cell">11/01/2006</td>
+                <td class="nhsuk-table__cell">5 Mile Castle Road</td>
+                <td class="nhsuk-table__cell">CV31 2LY</td>
+                <td class="nhsuk-table__cell">SQL2016G</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Sarah Galloway</td>
+                <td class="nhsuk-table__cell">18/05/2004</td>
+                <td class="nhsuk-table__cell">1 Close Court</td>
+                <td class="nhsuk-table__cell">PH22 1PN</td>
+                <td class="nhsuk-table__cell">MGV2608V</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Charlotte Walker</td>
+                <td class="nhsuk-table__cell">24/04/2005</td>
+                <td class="nhsuk-table__cell">108 Botley Road</td>
+                <td class="nhsuk-table__cell">IM2 6JB</td>
+                <td class="nhsuk-table__cell">KER4659L</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Jill Swinbank</td>
+                <td class="nhsuk-table__cell">10/08/2003</td>
+                <td class="nhsuk-table__cell">38 North Road</td>
+                <td class="nhsuk-table__cell">KT10 8DP</td>
+                <td class="nhsuk-table__cell">VDE9944T</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Katie Smith</td>
+                <td class="nhsuk-table__cell">11/01/2003</td>
+                <td class="nhsuk-table__cell">25 Southend Avenue</td>
+                <td class="nhsuk-table__cell">EX19 8HH</td>
+                <td class="nhsuk-table__cell">VVB6255A</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Elizabeth Wilks</td>
+                <td class="nhsuk-table__cell">18/05/2004</td>
+                <td class="nhsuk-table__cell">100 Gloddaeth Street</td>
+                <td class="nhsuk-table__cell">NE10 0QZ</td>
+                <td class="nhsuk-table__cell">RSV0240N</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Freya Hopkins</td>
+                <td class="nhsuk-table__cell">24/04/2003</td>
+                <td class="nhsuk-table__cell">137 Botley Road</td>
+                <td class="nhsuk-table__cell">GU52 6AT</td>
+                <td class="nhsuk-table__cell">WAN3008M</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Gina Richards</td>
+                <td class="nhsuk-table__cell">18/05/2005</td>
+                <td class="nhsuk-table__cell">86 Thames Street</td>
+                <td class="nhsuk-table__cell">NN29 7SQ</td>
+                <td class="nhsuk-table__cell">OPD4312C</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Joanne Kirk</td>
+                <td class="nhsuk-table__cell">24/04/2005</td>
+                <td class="nhsuk-table__cell">100 Baldock Street</td>
+                <td class="nhsuk-table__cell">CA12 4RN</td>
+                <td class="nhsuk-table__cell">GUP0593T</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!--
+            <nav class="nhsuk-pagination" id="pagination-label">
+
+              <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+              <ul class="nhsuk-pagination__list">
+                <li class="nhsuk-pagination__item  nhsuk-pagination__item--prev">
+                  <a class="nhsuk-pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+                      pages</span></a>
+                </li>
+
+                <li class="nhsuk-pagination__item nhsuk-pagination__item--active">1</li>
+
+                <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=2">2</a></li>
+
+                <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=3">3</a></li>
+
+                <li class="nhsuk-pagination__item  nhsuk-pagination__item--next">
+                  <a class="nhsuk-pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+                      pages</span></a>
+                </li>
+              </ul>
+              <p class="nhsuk-pagination__results">Showing <b>1</b> to <b>10</b> of <b>50</b> results</p>
+            </nav>
+
+-->
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
