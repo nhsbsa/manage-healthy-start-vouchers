@@ -1,0 +1,292 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-sidebar.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) - Joe Bloggs
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+{% set noOfChildren = 1 %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+      
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="result-found">Search results</a></li>
+      <li class="nhsuk-breadcrumb__item">Anita Bilal (Pregnancy)</li>
+          </ol>
+
+        </div>
+      </div>
+  
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="result-found">Back to search results</a></p>
+
+    </div>
+</nav>
+
+<div class="nhsBSA-sidebar-container">
+  
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+
+
+        <div class="nhsuk-width-container-fluid">
+
+            <div class="nhsuk-main-wrapper" id="maincontent">
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-half">
+                      
+                        <h1 class="nhsuk-u-margin-bottom-4">
+                            <span role="text">
+                              Anita Bilal
+                              <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+                                <span class="nhsuk-u-visually-hidden">
+                                  -
+                                </span>
+                                Pregnancy details
+                              </span>
+                            </span>
+                          </h1>
+
+                    </div>
+
+                    <!--
+                    <div class="nhsuk-grid-column-one-half nhsBSA-align-right">
+                      
+                        <button class="nhsuk-button" type="submit" style="margin-right: 20px;">Add pregnancy</button>
+                        <button class="nhsuk-button" type="submit" style="margin-right: 20px;">Add child</button>
+                        <button class="nhsuk-button" type="submit" disabled>Add carer</button>
+
+                    </div>
+                    -->
+
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible nhsuk-u-margin-top-2">
+
+                    </div>
+                </div>
+
+
+
+
+
+                    <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+
+                              
+                                          <h2 class="nhsuk-heading-m">Pregnancy details</h2>
+
+                                          <dl class="nhsuk-summary-list">
+      
+                                                  <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                      Expected due date
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        	21/03/2020
+                                                    </dd>
+                                                
+                                                    <dd class="nhsuk-summary-list__actions">                                           
+
+                                                      <a href="applicant-edit-dependants-details#duedateday">Change<span class="nhsuk-u-visually-hidden"> expected due date</span></a>
+                                                      or
+                                                      <a href="applicant-view-dependants-details-remove-child">Remove<span class="nhsuk-u-visually-hidden"> pregnancy</span></a>
+
+                                                
+                                                    </dd>
+                                                
+                                                  </div>
+                                                
+                                                </dl>
+
+<!--
+                                          <h2 class="nhsuk-heading-m">Child details ({{ noOfChildren }})</h2>
+
+                                          <dl class="nhsuk-summary-list">
+      
+                                                  <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                      Childs first name
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        Sunita
+                                                    </dd>
+                                                
+                                                    <dd class="nhsuk-summary-list__actions">                                           
+
+                                                      <a href="applicant-edit-dependants-details#5">Change<span class="nhsuk-u-visually-hidden"> child</span></a>
+                                                      or
+                                                      <a href="applicant-view-dependants-details-remove-child">Remove<span class="nhsuk-u-visually-hidden"> child</span></a>
+
+                                                
+                                                    </dd>
+                                                
+                                                  </div>
+      
+                                                                                            
+                                                  <div class="nhsuk-summary-list__row">
+                                                      <dt class="nhsuk-summary-list__key">
+                                                        Childs date of birth
+                                                      </dt>
+                                                      <dd class="nhsuk-summary-list__value">
+                                                          18/12/2018
+                                                      </dd>
+                                                  
+                                                      <dd class="nhsuk-summary-list__actions">
+                                                  
+                                                          <a href="applicant-edit-dependants-details#6">Change<span class="nhsuk-u-visually-hidden"> childs date of birth</span></a>
+                                                  
+                                                      </dd>
+                                                  
+                                                    </div>
+                                                
+                                                </dl>
+
+                                                <h2 class="nhsuk-heading-m">Carer details</h2>
+
+                                                <dl class="nhsuk-summary-list">
+            
+                                                        <div class="nhsuk-summary-list__row">
+                                                          <dt class="nhsuk-summary-list__key">
+                                                            Carers first name
+                                                          </dt>
+                                                          <dd class="nhsuk-summary-list__value">
+                                                              Paul
+                                                          </dd>
+                                                      
+                                                          <dd class="nhsuk-summary-list__actions">
+                                                      
+                                                            <a href="applicant-edit-dependants-details#5">Change<span class="nhsuk-u-visually-hidden"> carers first name</span></a>
+                                                            or
+                                                            <a href="#">Remove<span class="nhsuk-u-visually-hidden"> carers first name</span></a>
+                                                      
+                                                          </dd>
+                                                      
+                                                        </div>
+            
+                                                                                                  
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                              Carers date of birth
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                03/06/1960
+                                                            </dd>
+                                                        
+                                                            <dd class="nhsuk-summary-list__actions">
+                                                        
+                                                                <a href="applicant-edit-dependants-details#6">Change<span class="nhsuk-u-visually-hidden"> carers date of birth</span></a>
+                                                        
+                                                            </dd>
+                                                        
+                                                          </div>
+
+                                                          <div class="nhsuk-summary-list__row">
+                                                              <dt class="nhsuk-summary-list__key">
+                                                                Carers national insurance number
+                                                              </dt>
+                                                              <dd class="nhsuk-summary-list__value">
+                                                                  AB123456C
+                                                              </dd>
+                                                          
+                                                              <dd class="nhsuk-summary-list__actions">
+                                                          
+                                                                  <a href="applicant-edit-dependants-details#6">Change<span class="nhsuk-u-visually-hidden"> carers national insurance number</span></a>
+                                                          
+                                                              </dd>
+                                                          
+                                                            </div>
+
+                                                            <div class="nhsuk-summary-list__row">
+                                                                <dt class="nhsuk-summary-list__key">
+                                                                  Carers contact details
+                                                                </dt>
+                                                                <dd class="nhsuk-summary-list__value">
+                                                                    email@emailaddress.com
+                                                                </dd>
+                                                            
+                                                                <dd class="nhsuk-summary-list__actions">
+                                                            
+                                                                    <a href="applicant-edit-dependants-details#6">Change<span class="nhsuk-u-visually-hidden"> carers contact details</span></a>
+                                                            
+                                                                </dd>
+                                                            
+                                                              </div>
+                                                      
+                                                      </dl>
+
+                                                      -->
+
+                                          <a href="dependants-details-add-note"><button class="nhsuk-button nhsuk-button--secondary" type="submit">Add
+                  note</button></a>
+
+                            </div>
+                    </div>
+                    
+
+                </div>
+            
+        </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+
+        <div class="side-nav">
+
+            <h3>Anita Bilal
+              <span class="nhsuk-caption-m nhsuk-caption--bottom nhsuk-u-margin-top-2">
+                <span class="nhsuk-u-visually-hidden">
+                  -
+                </span>
+                <strong class="nhsuk-tag">STATUS: ACTIVE</strong>
+              </span>
+            </h3>
+
+            <ul>
+              <div id="options" class="options">
+                <li><a href="applicant-view-personal-details">Personal details</a></li>
+                <li><a href="applicant-view-contact-details">Contact details</a></li>
+                <li><a class="active" href="applicant-view-dependants-details">Pregnancy</a></li>
+                <li><a href="applicant-view-note-details">Case history</a></li>
+              </div>
+            </ul>
+            
+            <!-- <div class="action-buttons">
+                <button class="nhsuk-button nhsuk-button--secondary" type="submit">Add note</button>
+            </div> -->
+        </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

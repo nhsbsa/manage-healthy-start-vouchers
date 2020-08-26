@@ -4,6 +4,7 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/panel-confirmation';
 @import 'components/related-nav';
+@import 'components/tag';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
@@ -74,71 +75,6 @@ HEADER - SIGNED IN
 
 .nhsuk-header__navigation-link {
     padding: 6px 16px;
-}
-
-/*
-PHASE BANNERS
-*/
-
-.nhsuk-phase-banner {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #b1b4b6;
-}
-
-@media (min-width: 40.0625em) {
-.nhsuk-phase-banner__content {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-}
-
-.nhsuk-phase-banner__content {
-    font-weight: 400;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #0b0c0c;
-    display: table;
-    margin: 0;
-}
-
-.nhsuk-phase-banner__content__tag {
-    margin-right: 10px;
-}
-
-@media (min-width: 40.0625em) {
-.nhsuk-tag {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-}
-
-.nhsuk-tag {
-    display: inline-block;
-    outline: 2px solid transparent;
-    outline-offset: -2px;
-    color: #fff;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
-    padding-top: 5px;
-    padding-right: 8px;
-    padding-bottom: 4px;
-    padding-left: 8px;
-}
-
-.discovery {
-    background-color: $color_nhsuk-black;
-}
-
-.alpha, .beta {
-    background-color: $color_nhsuk-blue;
 }
 
 /*
@@ -657,4 +593,66 @@ TIMELINE
 
   color: #ffffff !important;
 }
+}
+
+
+.nhsuk-promo__link-wrapper:hover {
+  background-color: #fff;
+  box-shadow: 0 0 0 4px #ffb81c;
+  color: #005eb8;
+}
+.nhsuk-promo__link-wrapper:hover .nhsuk-promo__heading {
+  color: #005eb8;
+}
+
+
+
+.nhsuk-button-right {
+  @media (min-width: 48.0625em) {
+    float: right;
+  }
+}
+
+// Footer
+
+.app-ogl-footer {
+  background-color: #d8dde0
+}
+
+.app-ogl-footer--text {
+  font-weight: 400;
+  font-size: 14px;
+  font-size: .875rem;
+  line-height: 1.71429;
+  padding-bottom: 24px;
+  color: #4c6272;
+  margin-bottom: 0;
+  padding-bottom: 24px
+}
+
+@media (min-width: 40.0625em) {
+  .app-ogl-footer--text {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5
+  }
+}
+
+@media print {
+  .app-ogl-footer--text {
+      font-size: 14pt;
+      line-height: 1.2
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-ogl-footer--text {
+      padding-bottom: 32px
+  }
+}
+
+.app-ogl-footer--text svg {
+  margin-right: 8px;
+  position: relative;
+  top: 2px
 }

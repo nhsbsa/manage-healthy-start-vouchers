@@ -1,0 +1,316 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-full-width.html' %}
+  <!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Get help to buy food and milk (Healthy Start) - Changes {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <nav aria-label="Breadcrumb" class="nhsuk-breadcrumb nhsBSA-breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="result-found">Search results</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">Anita Bilal</li>
+          </ol>
+        </div>
+      </div>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+    </div>
+  </nav>
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                </path>
+              </svg>
+              Go back</a>
+          </div>
+
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <h1>Anita Bilal <span class="nhsuk-caption-m nhsuk-caption--bottom nhsuk-u-margin-top-2"><span class="nhsuk-u-visually-hidden">-</span> <span class="nhsuk-caption-l nhsuk-caption--bottom">Reference Number: OAM1959T</span><strong class=
+              "nhsuk-tag nhsuk-u-margin-top-3">STATUS: ACTIVE</strong></span></h1>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <a href="anita-bilal-add-note"><button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-7 nhsuk-button-right"
+                      type="submit">Add note</button></a>
+              <div style="overflow: auto;"></div>
+            </div>
+          </div>
+
+          <h2 class="nhsuk-heading-m">Personal details</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                First name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Anita
+              </dd>
+
+            </div>
+
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Last name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Bilal
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                15 / 03 / 2003
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                National insurance number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                QQ123456C
+              </dd>
+
+            </div>
+
+
+          </dl>
+
+          <h2 class="nhsuk-heading-m">Contact details</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address line 1
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Stella House
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address line 2
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Goldcrest Way
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Town or city
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Newcastle upon Tyne
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Postcode
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                NE15 8NY
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                anita.bilal@example.com
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Telephone number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01234 567890
+              </dd>
+
+            </div>
+
+          </dl>
+
+          <h2 class="nhsuk-heading-m">Pregnancy details</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Expected due date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <script>
+                  example = moment().add(12, 'weeks').format("DD / M / YYYY");
+                  document.write(example);
+                </script>
+              </dd>
+
+            </div>
+
+
+          </dl>
+
+          <h2 class="nhsuk-heading-m">Bank or building society account details</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Name on the account
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                MRS ANITA BILAL
+              </dd>
+
+            </div>
+
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sort code
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                12-34-56
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account number ends with
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                5678
+              </dd>
+
+            </div>
+
+
+
+          </dl>
+
+          <h2 class="nhsuk-heading-m">Payment schedule</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Amount received
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £12.40 every 4 weeks
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Next payment date<br><small>(week commencing)</small>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+              <script>
+                var todaysDate = moment();
+
+                var paymentDate = moment(todaysDate).startOf('week').isoWeekday(1).add(4, 'weeks');
+
+                var formattedPaymentDate = moment(paymentDate).format('DD / M / YYYY');
+
+                document.write(formattedPaymentDate);
+              </script>
+              </dd>
+
+            </div>
+
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Final payment date<br><small>(week commencing)</small>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+              <script>
+                var todaysDate = moment();
+
+                var paymentDate = moment(todaysDate).startOf('week').isoWeekday(1).add(12, 'weeks');
+
+                var formattedPaymentDate = moment(paymentDate).format('DD / M / YYYY');
+
+                document.write(formattedPaymentDate);
+              </script>
+              </dd>
+
+            </div>
+
+
+
+
+          </dl>
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </main>
+  </div>{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-full-width.html' %}
+  <!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Get help to buy food and milk (Healthy Start) - Changes {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+  <nav aria-label="Breadcrumb" class="nhsuk-breadcrumb nhsBSA-breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">Add an applicant</li>
+          </ol>
+        </div>
+      </div>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+    </div>
+  </nav>
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <!-- <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+              </svg>
+              Go back</a>
+          </div> -->
+          <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #005EB8; margin-top: 0;">
+            <h1 class="nhsuk-panel__title" style="color: white;">Application successful</h1><span
+              class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">You&rsquo;re
+              entitled to <strong>£3.10</strong> a week.<br>
+              Your first payment will be <strong>£12.40</strong>.</span>
+            <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
+              Reference number:<br><strong>HDJ2123F</strong>
+            </div>
+
+          </div>
+          <h2 class="nhsuk-heading-m">What happens next</h2>
+          {% if data['emailaddress'] %}
+          <p>We&rsquo;ve sent you an email with more information.</p>
+          {% endif %}
+          {% if (not data['emailaddress']) and (data['telephonenumber']) %}
+          <p>We&rsquo;ve sent you a text message with more information.</p>
+          {% endif %}
+          <p>We&rsquo;ll pay £12.40 into your bank account within 7 days.</p>
+          <p>You&rsquo;ll then get a payment every 4 weeks after that.</p>
+          <p>Call us on 0300 330 7010 if you do not get your money or there&rsquo;s a change in your circumstances.</p>
+          <p><a href="/v10/home"><button class="nhsuk-button" type="submit">Continue</button></a></p>
+        </div>
+      </div>
+    </main>
+  </div>{% endblock %}
+</body>
+
+</html>

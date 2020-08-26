@@ -16,7 +16,7 @@
     - add custom CSS and JavaScript
 -->
   <!-- Set the page title inside the pageTitle block -->
-  {% block pageTitle %} Manage Healthy Start Scheme {% endblock %}
+  {% block pageTitle %} Get help to buy food and milk {% endblock %}
   <!-- Breadcrumb goes inside the beforeContent block -->
   {% block beforeContent %} {% endblock %}
   <!-- Your page content goes inside the content block -->
@@ -25,7 +25,8 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <!-- Change the page title here -->
-      <h1>Manage Healthy Start Scheme <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version 1.0</span></h1>
+      <h1>Get help to buy food and milk <span class="nhsuk-caption-xl nhsuk-caption--bottom">'Manage' Service</span>
+      </h1>
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
       <p class="nhsuk-body-l">The Healthy Start scheme allows eligible applicants to get help to buy milk, food and
@@ -33,10 +34,10 @@
       <p class="nhsuk-body-l">The 'Manage' service allows operational staff to manage the scheme e.g. Answering queries,
         changing details, adding new applicants etc...</p>
 
-<!--
+      <!--
       <details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">Private Beta <small>(Sprint X)</small></span>
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint X)</span>
         </summary>
         <div class="nhsuk-details__text">
           <h2 class="nhsuk-heading-l">Title goes here
@@ -78,43 +79,483 @@
 
       <details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">Private Beta <small>(Sprint 0)</small></span>
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint 10)</span>
         </summary>
         <div class="nhsuk-details__text">
-          <h2 class="nhsuk-heading-l">Contact Centre applications (Under 18 &amp; Pregnant ONLY)
-          <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1</span>
-          </h2>
-          <h3 class="nhsuk-heading-m">Hypothesis A</h3>
-          <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that checking an applicant's eligibility via IVR (Interactive Voice Response) before they reach a member of staff at the Contact Centre <strong>will be a useful feature for</strong> all applicants as well as Contact Centre staff <strong>as it will</strong> ensure that only applicants who meet our Private Beta criteria are passed onto the BSA, and everyone else is diverted to Serco (the current telephone route). <strong>This will</strong>
-          reduce the amount of call time which does not result in a successful claim.</p>
-          <hr>
-          <h3 class="nhsuk-heading-m">What we created:</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Drafted an <a href="/files/Under 18's (Pregnant ONLY) - IVR & APPLY.pdf" target="_blank">IVR User Flow</a> which will allow applicants who meet our Private Beta criteria (Under 18 &amp; Pregnant for the first time) to apply via the Contact Centre.</li>
-            <li>Users who do not meet this criteria will either be transferred to NHS BSA (current card users), or Serco (current / prospective voucher users).</li>
-            <li>Using this flow, an actual IVR Prototype was created using <a href="https://aws.amazon.com/connect/" target="_blank">Amazon Connect</a>.</li>
-          </ul>
-          <h3 class="nhsuk-heading-m">What we plan to test:</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Does the IVR Prototype successfully... allow eligible applicants to apply?</li>
-            <li>Does the IVR Prototype successfully... stop ineligible applicants from applying?</li>
-            <li>Does the IVR Prototype successfully... transfer current users who receive Healthy Start vouchers to Serco to manage?</li>
-            <li>Does the IVR Prototype successfully... transfer current users who receive Healthy Start cards to NHS BSA to manage?</li>
-          </ul>
-          <h3 class="nhsuk-heading-m">What we found:</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>...</li>
-          </ul>
-          <h3 class="nhsuk-heading-m">Any known issues?</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>For the purposes of the prototype we will not actually transfer eligible / ineligible users to NHS BSA or Serco, instead, they will hear the message: "You will now be transferred to NHS BSA / Serco" and the call will disconnect.</li>
-          </ul>
-          <hr>
 
-          <h3 class="nhsuk-heading-xl nhsuk-u-margin-bottom-3">
-          <span class="nhsuk-caption-m nhsuk-caption--top">To hear IVR Prototype, call:</span>
-          +44 (0) 20 3695 2708
-          </h3>
+          <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text"><small>Version 10</small></span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h2 class="nhsuk-heading-l">Contact Centre
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1<br><small>Create a new
+                    application for a user in the contact centre using a 'throw-away'
+                    UI</small></span>
+              </h2>
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that giving Under
+                18 year olds
+                the ability of applying for the scheme via the contact centre <strong>will be a useful
+                  feature
+                  for</strong> all those applicants who
+                are unable to apply online e.g. because of lack access to the internet or the necessary
+                digital skills
+                <strong>as it will</strong> ensure everyone who needs the service can use it in a way that
+                meets their
+                needs. <strong>This will</strong>
+                ensure that nobody who needs to access the service is 'left behind'.</p>
+              <hr>
+              <p>Now that the plan is to make direct payments into peoples bank accounts, it's important
+                that staff can add a 'note' to a claim (and view them also) when something like a manual
+                payment has been made.</p>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link" href="v10/start"><svg aria-hidden="true"
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg> <span class="nhsuk-action-link__text">Manage - Get help to buy food and milk
+                    (Healthy Start) (v10)</span></a>
+              </div>
+
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint 5)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text"><small>Version 9</small></span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h2 class="nhsuk-heading-l">Contact Centre applications (Under 18 &amp; Pregnant ONLY)
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1<br><small>Create a new
+                    application for a user in the contact centre using a 'throw-away'
+                    UI</small></span>
+              </h2>
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that giving Under
+                18 year olds
+                the ability of applying for the scheme via the contact centre <strong>will be a useful
+                  feature
+                  for</strong> all those applicants who
+                are unable to apply online e.g. because of lack access to the internet or the necessary
+                digital skills
+                <strong>as it will</strong> ensure everyone who needs the service can use it in a way that
+                meets their
+                needs. <strong>This will</strong>
+                ensure that nobody who needs to access the service is 'left behind'.</p>
+              <hr>
+              <p>Now that the plan is to make direct payments into peoples bank accounts, it's important
+                that staff can add a 'note' to a claim (and view them also) when something like a manual
+                payment has been made.</p>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link" href="v9/start"><svg aria-hidden="true"
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg> <span class="nhsuk-action-link__text">Manage - Get help to buy food and milk
+                    (Healthy Start) (v9)</span></a>
+              </div>
+
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint 3)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text"><small>Version 7 &amp; 8</small></span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h2 class="nhsuk-heading-l">Contact Centre applications (Under 18 &amp; Pregnant ONLY)
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1<br><small>Create a new
+                    application for a user in the contact centre using a 'throw-away'
+                    UI</small></span>
+              </h2>
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that giving Under
+                18 year olds
+                the ability of applying for the scheme via the contact centre <strong>will be a useful
+                  feature
+                  for</strong> all those applicants who
+                are unable to apply online e.g. because of lack access to the internet or the necessary
+                digital skills
+                <strong>as it will</strong> ensure everyone who needs the service can use it in a way that
+                meets their
+                needs. <strong>This will</strong>
+                ensure that nobody who needs to access the service is 'left behind'.</p>
+              <hr>
+              <p>Due to procurement issues with cards, the plan is to now make direct payments into peoples
+                bank accounts.</p>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <h4 class="nhsuk-heading-xs">Features Added / Removed</h4>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Search added back in (business decision) because of potential breach of the GDPR data
+                  minimisation principle.</li>
+                <li>Removed detailed user view in favour of applicant details on a single page (business
+                  decision).</li>
+              </ul>
+              <h4 class="nhsuk-heading-xs">Add an Applicant</h4>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Removed link to 'NHS Pregnancy due date calculator' as this was confusing for CCS
+                  agents.</li>
+                <li>Added in error content for what an eligible due date is via feedback from CCS agents.
+                  For private beta we will accept no due dates in the past, and up to 32 weeks in the
+                  future (42 weeks full term pregancy minus 10 week pregnancy criteria).</li>
+              </ul>
+              <!--
+          <h4 class="nhsuk-heading-xs">IVR</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Amended IVR to ask: &#8220;Do you have a UK bank account in your name?&#8221;, if 'Yes' they continue, if 'No' we divert them to Serco.</li>
+          </ul>
+          -->
+              <h4 class="nhsuk-heading-xs">Collect Bank Details</h4>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>After confirming an applicants Name, Address, Date of Birth and Due Date is valid, we
+                  collect bank account details (Name on account, Sort Code and Account Number) in line
+                  with <a href="https://design-system.service.gov.uk/patterns/bank-details/" target="_blank">GDS
+                    Guidance</a>. To be a valid claim, a match will need to take
+                  place between Applicants Name and the Name on Account.</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link" href="v8/start"><svg aria-hidden="true"
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg> <span class="nhsuk-action-link__text">Manage - Get help to buy food and milk
+                    (Healthy Start) (v8)</span></a>
+              </div>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link" href="v7/start"><svg aria-hidden="true"
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg> <span class="nhsuk-action-link__text">Manage - Get help to buy food and milk
+                    (Healthy Start) (v7)</span></a>
+              </div>
+
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint 2)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text"><small>Version 5</small></span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h2 class="nhsuk-heading-l">Contact Centre applications (Under 18 &amp; Pregnant ONLY)
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1<br><small>Create a new
+                    application for a user in the contact centre using a 'throw-away'
+                    UI</small></span>
+              </h2>
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that giving Under
+                18 year olds
+                the ability of applying for the scheme via the contact centre <strong>will be a useful
+                  feature
+                  for</strong> all those applicants who
+                are unable to apply online e.g. because of lack access to the internet or the necessary
+                digital skills
+                <strong>as it will</strong> ensure everyone who needs the service can use it in a way that
+                meets their
+                needs. <strong>This will</strong>
+                ensure that nobody who needs to access the service is 'left behind'.</p>
+              <hr>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <p>De-scoped a number of features e.g. entry by search, pagination etc...</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>View all records on a single page (Name, Date of Birth, 1st line of address, Postcode
+                  and Reference Number)</li>
+                <li>To help CCS find an individual record, they are ordered alphabetically by last name.
+                </li>
+                <li>View individual records (Name, Date of Birth, National Insurance Number, Address,
+                  Email Address, Telephone Number, Expected Due Date and Claim Status)</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Does the removal of certain features e.g. search, pagination etc... hinder CCS being
+                  able to deal with a phone applicant effectively?</li>
+                <li>The terms and conditions are written in second person i.e. 'You', therefore CCS can
+                  just read it out over the phone. Is this natural to them?</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Potential security issue raised by SDM's with logging user activity i.e. <a
+                    href="https://docs.google.com/spreadsheets/d/1-buDs9YdlWuiVM3mmNhmM_RJvFdxpxVu8CRanYfqEeo/edit#gid=0&range=F4:F5"
+                    target="_blank">accessing certain records</a></li>
+                <li>CCS are worried about having to help calculate due dates for applicants.</li>
+                <li>No issues with content being in second person. More natural workflow for CCS.</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>None</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link" href="v5/start"><svg aria-hidden="true"
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg> <span class="nhsuk-action-link__text">Manage - Get help to buy food and milk
+                    (Healthy Start) (v5)</span></a>
+              </div>
+          </details>
+
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint 1)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text"><small>Version 6</small></span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h2 class="nhsuk-heading-l">Contact Centre applications (Under 18 &amp; Pregnant ONLY)
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1<br><small>Create a new
+                    application for a user in the contact centre using a 'throw-away'
+                    UI</small></span>
+              </h2>
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that giving Under
+                18 year olds
+                the ability of applying for the scheme via the contact centre <strong>will be a useful
+                  feature
+                  for</strong> all those applicants who
+                are unable to apply online e.g. because of lack access to the internet or the necessary
+                digital skills
+                <strong>as it will</strong> ensure everyone who needs the service can use it in a way that
+                meets their
+                needs. <strong>This will</strong>
+                ensure that nobody who needs to access the service is 'left behind'.</p>
+              <hr>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>After confirming their eligibility via IVR, workshops with CCS staff have shown that
+                  their natural workflow is to search for a claim first (using First name, Last name and
+                  Postcode) and then if a record doesn't exist, they then add one.</li>
+                <li>Because of this, search functionality was added and if a record isn't found, the agent
+                  has the opportunity of using the search details to create a new record.</li>
+                <li>CCS staff will need to capture the following to make a successful claim; name, due
+                  date, address and date of birth. Other optional fields will include; National
+                  Insurance number, mobile phone number and email address.</li>
+                <li>If they provide us with an email address, we send them an email to confirm details of
+                  the benefit. If not, and they provide a mobile phone number instead we send them a
+                  confirmation by text. Finally, we also confirm the same details when the card is
+                  delivered.</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Does the UI hinder CCS being able to deal with a phone applicant effectively?</li>
+                <li>If an ineligible applicant gets through the IVR filtering questions, does validation
+                  stop them before
+                  they are able to make a successful claim?</li>
+                <li>Can eligible applicants recall their due dates whilst on the phone?</li>
+                <li>Are the verbal terms and conditions succinct enough to not delay an outcome? Can full
+                  terms and
+                  conditions be sent with the card?</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>...</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>None</li>
+              </ul>
+              <hr>
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                <a class="nhsuk-action-link__link" href="v6/start"><svg aria-hidden="true"
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg> <span class="nhsuk-action-link__text">Manage - Get help to buy food and milk
+                    (Healthy Start) (v6)</span></a>
+              </div>
+
+
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Private Beta (Sprint 0)</span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text"><small>IVR</small></span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h2 class="nhsuk-heading-l">Contact Centre applications (Under 18 &amp; Pregnant ONLY)
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Increment 1<br><small>Pre-check
+                    eligibility</small></span>
+              </h2>
+              <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+              <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that pre-checking
+                an applicant's
+                eligibility via IVR (Interactive Voice Response) before they reach a member of staff at
+                the Contact Centre
+                <strong>will be a useful feature for</strong> all applicants as well as Contact Centre
+                staff <strong>as it
+                  will</strong> ensure that only applicants who meet our Private Beta criteria are
+                passed onto the BSA, and
+                everyone else is diverted to Serco (the current telephone route). <strong>This
+                  will</strong>
+                reduce the amount of call time which does not result in a successful claim.</p>
+              <hr>
+              <h3 class="nhsuk-heading-m">What we created:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Drafted an <a href="/files/Under 18's (Pregnant ONLY) - IVR & APPLY.pdf" target="_blank">IVR User
+                    Flow</a> which will allow applicants who meet our Private Beta criteria (Under 18
+                  &amp; Pregnant for the
+                  first time) to apply via the Contact Centre.</li>
+                <li>Users who do not meet this criteria will either be transferred to NHS BSA (current
+                  card users), or Serco
+                  (current / prospective voucher users).</li>
+                <li>Using this flow, an actual IVR Prototype was created using <a href="https://aws.amazon.com/connect/"
+                    target="_blank">Amazon Connect</a>.</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Does the IVR Prototype successfully... allow eligible applicants to apply?</li>
+                <li>Does the IVR Prototype successfully... stop ineligible applicants from applying?</li>
+                <li>Does the IVR Prototype successfully... transfer current users who receive Healthy
+                  Start vouchers to
+                  Serco to manage?</li>
+                <li>Does the IVR Prototype successfully... transfer current users who receive Healthy
+                  Start cards to NHS BSA
+                  to manage?</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">What we found:</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>It's widely understood that the benefits system is confusing for people so it should
+                  be no surprise that people were confused with the term 'vouchers'. Consider changing
+                  to 'benefit'? i.e. Do you already receive Healthy Start benefit?</li>
+                <li>We found the cognitive load on users was quite high e.g. Are you 10 weeks pregnant or
+                  more?, so perhaps consider making the questions more generic e.g. Are you pregnant?,
+                  and try to mitigate this with promoting the eligibility criteria prior to ringing the
+                  call centre, as well as stopping ineligible people from applying via the CMS.</li>
+              </ul>
+              <h3 class="nhsuk-heading-m">Any known issues?</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>For the purposes of the prototype we will not actually transfer eligible / ineligible
+                  users to NHS BSA
+                  or Serco, instead, they will hear the message: "You will now be transferred to NHS BSA
+                  / Serco" and the
+                  call will disconnect.</li>
+              </ul>
+              <hr>
+
+              <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">
+                <span class="nhsuk-caption-m nhsuk-caption--top">To hear IVR Prototype, call:</span>
+                +44 (0) 20 3695 2708
+              </h3>
+
+            </div>
+          </details>
 
         </div>
       </details>
@@ -130,7 +571,7 @@
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">Version 4</small></span>
+              <span class="nhsuk-details__summary-text"><small>Version 4</small></span>
             </summary>
             <div class="nhsuk-details__text">
               <h3 class="nhsuk-heading-m">Hypothesis A</h3>
@@ -158,7 +599,7 @@
               </ul>
               <h3 class="nhsuk-heading-m">Any known issues?</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
+                <li>None</li>
               </ul>
               <hr>
               <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
@@ -170,14 +611,14 @@
                       d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
                     </path>
                   </svg> <span class="nhsuk-action-link__text">Manage
-                    Manage Healthy Start Scheme (v4)</span></a>
+                    Get help to buy food and milk (Healthy Start) (v4)</span></a>
               </div>
             </div>
           </details>
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">Version 3</small></span>
+              <span class="nhsuk-details__summary-text"><small>Version 3</small></span>
             </summary>
             <div class="nhsuk-details__text">
               <h3 class="nhsuk-heading-m">Hypothesis A</h3>
@@ -239,14 +680,14 @@
                       d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
                     </path>
                   </svg> <span class="nhsuk-action-link__text">Manage
-                    Manage Healthy Start Scheme (v3)</span></a>
+                    Get help to buy food and milk (Healthy Start) (v3)</span></a>
               </div>
             </div>
           </details>
 
           <details class="nhsuk-details nhsuk-u-margin-bottom-0">
             <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">Version 2</span>
+              <span class="nhsuk-details__summary-text"><small>Version 2</small></span>
             </summary>
             <div class="nhsuk-details__text">
               <h3 class="nhsuk-heading-m">Hypothesis A</h3>
@@ -272,7 +713,7 @@
               </ul>
               <h3 class="nhsuk-heading-m">Any known issues?</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
+                <li>None</li>
               </ul>
               <hr>
               <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
@@ -284,14 +725,14 @@
                       d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
                     </path>
                   </svg> <span class="nhsuk-action-link__text">Manage
-                    Manage Healthy Start Scheme (v2)</span></a>
+                    Get help to buy food and milk (Healthy Start) (v2)</span></a>
               </div>
             </div>
           </details>
 
           <details class="nhsuk-details">
             <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">Version 1</span>
+              <span class="nhsuk-details__summary-text"><small>Version 1</small></span>
             </summary>
             <div class="nhsuk-details__text">
               <h3 class="nhsuk-heading-m">Hypothesis A</h3>
@@ -317,7 +758,7 @@
               </ul>
               <h3 class="nhsuk-heading-m">Any known issues?</h3>
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>...</li>
+                <li>None</li>
               </ul>
               <hr>
               <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">

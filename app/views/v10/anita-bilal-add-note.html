@@ -1,0 +1,118 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-full-width.html' %}
+  <!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Get help to buy food and milk (Healthy Start) - Changes {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <nav aria-label="Breadcrumb" class="nhsuk-breadcrumb nhsBSA-breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="result-found">Search results</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+              <a class="nhsuk-breadcrumb__link" href="anita-bilal">Anita Bilal</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">Add note</li>
+          </ol>
+        </div>
+      </div>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home</a></p>
+    </div>
+  </nav>
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path
+                  d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                </path>
+              </svg>
+              Go back</a>
+          </div>
+
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <h1>Anita Bilal <span class="nhsuk-caption-m nhsuk-caption--bottom nhsuk-u-margin-top-2"><span
+                    class="nhsuk-u-visually-hidden">-</span> <span
+                    class="nhsuk-caption-l nhsuk-caption--bottom">Reference Number: OAM1959T</span><strong
+                    class="nhsuk-tag nhsuk-u-margin-top-3">STATUS: ACTIVE</strong></span></h1>
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-grid-column-full">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-heading-m" for="example">
+                  Add note
+                </label>
+                <textarea class="nhsuk-textarea" id="example" name="example" aria-describedby="example-hint" rows="5"
+                  maxlength="375"></textarea>
+                <p class="nhsuk-hint" style="margin-top: 10px;">You have <span id="chars">375</span> characters
+                  remaining</p>
+              </div>
+
+              <a href="anita-bilal"><button class="nhsuk-button" type="submit">Save and continue</button></a>
+
+              <p class="nhsuk-u-margin-top-0"><a href="anita-bilal">Cancel</a></p>
+
+            </div>
+
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    var maxLength = 375;
+    $('textarea').keyup(function () {
+      var length = $(this).val().length;
+      var length = maxLength - length;
+      $('#chars').text(length);
+    });
+  </script>
+
+  {% endblock %}
+</body>
+
+</html>

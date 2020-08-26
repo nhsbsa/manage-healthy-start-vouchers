@@ -13,7 +13,7 @@
     - add custom CSS and JavaScript
 -->
    <!-- Set the page title inside the pageTitle block -->
-   {% block pageTitle %} Manage Healthy Start Scheme - Changes {% endblock %} <!-- Breadcrumb goes inside the beforeContent block -->
+   {% block pageTitle %} Get help to buy food and milk (Healthy Start) - Changes {% endblock %} <!-- Breadcrumb goes inside the beforeContent block -->
    {% block beforeContent %} {% endblock %} <!-- Your page content goes inside the content block -->
    <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
    {% block content %}
@@ -64,7 +64,7 @@
             </div>
           </div>
           <h1 class="nhsuk-u-margin-bottom-4"><span role="text"><span class="nhsuk-caption-xl nhsuk-caption--top"><span class="nhsuk-u-visually-hidden">-</span> Eligibility</span> What's their due date?</span></h1>
-          <form action="/v3/due-date"
+          <form novalidate="novalidate" action="/v3/due-date"
                 method="post">
             <div class="nhsuk-form-group nhsuk-form-group--error">
               <fieldset aria-describedby="hint"
@@ -114,7 +114,7 @@
               <div class="nhsuk-details__text">
                 <p>As part of their pregnancy (antenatal) care, their midwife will offer them a dating scan that will give them a more accurate date for the birth of their baby.</p>
                 <p>If they haven't had their first scan yet, you can help them work out when they might expect their baby to arrive by using the <a href="https://www.nhs.uk/conditions/pregnancy-and-baby/due-date-calculator/"
-                   target="_blank">NHS Pregnancy due date calculator (opens in new tab)</a>.</p>
+                   target="_blank">NHS Pregnancy due date calculator<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a>.</p>
               </div>
             </details><button class="nhsuk-button"
                   type="submit">Continue</button>
