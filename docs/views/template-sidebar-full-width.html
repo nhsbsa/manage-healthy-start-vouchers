@@ -103,10 +103,10 @@
             <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="primary navigation">
               <ul class="nhsuk-header__navigation-list" style="border:0">
                 <li class="nhsuk-header__navigation-item">
-                  <a class="nhsuk-header__navigation-link" href="#">Help</a>
+                  <a class="nhsuk-header__signedin-link" href="#">Help</a>
                 </li>
                 <li class="nhsuk-header__navigation-item">
-                  <a class="nhsuk-header__navigation-link" href="#">
+                  <a class="nhsuk-header__signedin-link" href="#">
                   
                   {% if data['nhs-mail-address'] %}
                   {{ data['nhs-mail-address'] }}
@@ -117,7 +117,7 @@
                   </a>
                 </li>
                 <li class="nhsuk-header__navigation-item">
-                  <a class="nhsuk-header__navigation-link" href="ms-signed-out">Logout</a>
+                  <a class="nhsuk-header__signedin-link" href="ms-signed-out">Logout</a>
                 </li>
               </ul>
             </nav>
