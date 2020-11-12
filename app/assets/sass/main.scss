@@ -718,3 +718,21 @@ TIMELINE
   position: relative;
   top: 2px
 }
+
+//DYNAMICS SCREENS
+
+@media (min-width: 61.875em) {
+  .nhsuk-header__navigation-link:hover {
+      background-color: transparent
+  }
+}
+
+@media (min-width: 61.875em) {
+  .app-header__navigation-item__item--current {
+      box-shadow: inset 0 -4px 0 #d8dde0
+  }
+}
+
+.app-header__navigation-item__item--current .nhsuk-header__navigation-link {
+  font-weight: 600
+}
