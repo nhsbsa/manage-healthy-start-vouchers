@@ -89,7 +89,7 @@ Get help to buy food and milk (Healthy Start)
                         </svg>
                     </a>
                 </li>
-                <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
+                <li class="nhsuk-header__navigation-item">
                     <a class="nhsuk-header__navigation-link" href="claim-history">
                         Claim timeline
                         <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
@@ -110,9 +110,10 @@ Get help to buy food and milk (Healthy Start)
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="claim-list">Home</a></li>
-        <li class="nhsuk-breadcrumb__item">Claim timeline</li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="payments">Payments</a></li>
+        <li class="nhsuk-breadcrumb__item">Make a payment</li>
       </ol>
-      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="claim">Back to home</a></p>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="claim">Back to payments</a></p>
     </div>
 </nav>
 
@@ -123,96 +124,28 @@ Get help to buy food and milk (Healthy Start)
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-        <h1 class="nhsuk-heading-xl">Claim timeline</h1>
-        <div class="nhsuk-card nhsuk-u-margin-bottom-4">
-            <div class="nhsuk-card__content">
+        <h1 class="nhsuk-heading-xl">Make a payment</h1>
+
+        <div class="nhsuk-care-card nhsuk-care-card--non-urgent">
+            <div class="nhsuk-care-card__heading-container">
+                <h3 class="nhsuk-care-card__heading"><span role="text">Amount to pay</span></h3>
+                <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+            </div>
+            <div class="nhsuk-care-card__content">
 
 
-                <table role="table" class="nhsuk-table-responsive">
-                    <thead role="rowgroup" class="nhsuk-table__head">
-                      <tr role="row">
-                        <th role="columnheader" class="nhsuk-u-padding-top-0" scope="col">
-                          Date
-                        </th>
-                        <th role="columnheader" class="nhsuk-u-padding-top-0" scope="col">
-                          Activity
-                        </th>
-                        <th role="columnheader" class="nhsuk-u-padding-top-0" scope="col">
-                          User
-                        </th>
-                        <th role="columnheader" class="nhsuk-u-padding-top-0" scope="col">
-                           Details
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody class="nhsuk-table__body">
-                      <tr role="row" class="nhsuk-table__row">
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Date </span>11 November 2020
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Activity </span>Payment
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">User </span>System
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Details </span>£49.60 paid into bank account
-                          </td>
-                      </tr>
-                      <tr role="row" class="nhsuk-table__row">
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Date </span>19 October 2020
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Activity </span>Bank details change
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">User </span>Jo Oliver (Dynamics)
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Details </span>Sort code changed from '98-76-54' to '12-34-56'
-                          </td>
-                      </tr>
-                      <tr role="row" class="nhsuk-table__row">
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Date </span>11 October 2020
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Activity </span>Eligibility change
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">User </span>System
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Details </span>Benefit changed to 'Child Tax Credit'
-                          </td>
-                      </tr>
-                      <tr role="row" class="nhsuk-table__row">
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Date </span>29 April 2020
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Activity </span>Claim created
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">User </span>System
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Details </span>
-                          </td>
-                      </tr>                    
-                    </tbody>
-                  </table>
+                    <div class="nhsuk-form-group" style="position: relative;">
+                        <label class="nhsuk-label" for="firstname">
+                            Total amount
+                        </label>
+                        <span class="symbol">£</span>
+                        <input class="nhsuk-input--currency nhsuk-input--width-10" id="firstname" name="firstname" type="text" autocomplete="given-name" style="padding-left: 25px;">
+                    </div>
 
+                    <p><a href="payments" class="nhsuk-button nhsuk-button--primary nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">Submit</a></p>
 
-                  
-
-
-
-
-
-
+        
+        
 
             </div>
         </div>
