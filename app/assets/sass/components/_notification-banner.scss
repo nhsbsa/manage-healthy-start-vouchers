@@ -1,0 +1,26 @@
+.govuk-notification-banner {
+    font-weight: 400;
+    margin-bottom: 30px;
+    border: 5px solid #1d70b8;
+    background-color: #1d70b8;
+}
+.govuk-notification-banner__header {
+    padding: 2px 15px 5px;
+    border-bottom: 1px solid transparent;
+}
+.govuk-notification-banner__title {
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.govuk-notification-banner__content {
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #fff;
+}
+.govuk-notification-banner__heading {
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    padding: 0;
+}

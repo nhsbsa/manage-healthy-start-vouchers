@@ -1827,3 +1827,174 @@ router.post('/v10/check-answers', function (req, res) {
     res.redirect('/v10/terms-and-conditions')    
 
 })
+
+
+// ****************************************
+// Get help to buy food and milk (Healthy Start) (VERSION 15)
+// ****************************************
+
+// Capture NHSMail address (Login)
+router.post('/v15/nhs-login', function (req, res) {
+
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === ""){
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v15/home')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v15/home')
+  }
+  else {
+    res.redirect('/v15/home')
+  }
+  
+})
+
+// Search
+router.post('/v15/search', function (req, res) {
+
+  var searchlastName = req.session.data['searchlastname']
+  var searchpostCode = req.session.data['searchpostcode']
+
+  // To find a match search for:
+  // Last name: Bilal
+  // Postcode: NE15 8NY / NE158NY
+
+  if (!searchlastName || !searchpostCode) {
+    res.redirect('/v15/home-error')
+  } else if ((searchlastName.includes('Bilal')) && (searchpostCode.includes('NE15 8NY') || searchpostCode.includes('NE158NY'))) {
+    res.redirect('/v15/result-found')
+  } else {
+    res.redirect('/v15/result-not-found')
+  }
+
+})
+
+// Search > Add
+router.post('/v15/search-add', function (req, res) {
+
+  var searchadd = req.session.data['searchadd']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v15/personal-details')
+  } else if (searchadd == 'no') {
+    res.redirect('/v15/home')
+  }
+  else {
+    res.redirect('/v15/result-not-found')
+  }
+
+})
+
+// Capture new applicant (Personal Details)
+router.post('/v15/personal-details', function (req, res) {
+
+  // Name
+
+  var firstName = req.session.data['firstname']
+  var lastName = req.session.data['lastname']
+
+  // Date of birth
+
+  var dateofbirthDay = req.session.data['dateofbirthday']
+  var dateofbirthMonth = req.session.data['dateofbirthmonth']
+  var dateofbirthYear = req.session.data['dateofbirthyear']
+
+  // Expected due date
+
+  var duedateDay = req.session.data['duedateday']
+  var duedateMonth = req.session.data['duedatemonth']
+  var duedateYear = req.session.data['duedateyear']
+
+  // Address
+
+  var addressLine1 = req.session.data['addressline1']
+  var addressLine2 = req.session.data['addressline2']
+  var townCity = req.session.data['towncity']
+  var postCode = req.session.data['postcode']
+
+  // National insurance number, telephone number and email address (all optional)
+
+  var nationalinsuranceNumber = req.session.data['nationalinsurancenumber']
+  var telephoneNumber = req.session.data['telephonenumber']
+  var emailAddress = req.session.data['emailaddress']
+
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+
+  // Calculate Age
+
+    var ageToday = new Date(Date.now());
+    var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
+    var ageDate =  new Date(ageToday - dob.getTime())
+    var temp = ageDate.getFullYear();
+    var yrs = Math.abs(temp - 1970);
+
+    req.session.data['age'] = yrs;
+    
+    console.log(yrs)
+
+    // Calculate Due Date
+
+    var today = moment();
+    var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
+    var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
+
+    if (dueDate < today || dueDate > fulltermPregnancy){
+      req.session.data['duedateInvalid'] = "INELIGIBLE";
+      res.redirect('/v15/personal-details-error')
+    } else if (yrs >= "18") {
+      res.redirect('/v15/personal-details-error')
+    } else {
+      res.redirect('/v15/bank-details')
+    }
+
+  } else {
+    res.redirect('/v15/personal-details-error')
+  }
+
+})
+
+// Capture new applicant (Bank Details)
+router.post('/v15/bank-details', function (req, res) {
+
+  // Bank Details
+
+  var accountName = req.session.data['accountname']
+  var sortCode = req.session.data['sortcode']
+  var accountNumber = req.session.data['accountnumber']
+
+  if (accountName && sortCode && accountNumber){
+    res.redirect('/v15/check-answers')    
+  }
+  else {
+    res.redirect('/v15/bank-details-error')
+  }
+
+})
+
+// Capture new applicant (Bank Details)
+router.post('/v15/check-answers', function (req, res) {
+
+    res.redirect('/v15/terms-and-conditions')    
+
+})
+
+router.post('/v15/add-child', (req, res) => {
+  const childFirstName = req.session.data['child-first-name']
+  const childLastName = req.session.data['child-last-name']
+
+  const childdobday = req.session.data['child-dob-day']
+  const childdobmonth = req.session.data['child-dob-month']
+  const childdobyear = req.session.data['child-dob-year']
+
+  const childDOB = childdobday + '/' + childdobmonth + '/' + childdobyear
+
+  if (childFirstName && childLastName && childDOB){
+    res.redirect('/v15/eligibility')
+  } else if (childFirstName == "Sarah" || childFirstName == "Bobby" || childFirstName == "John") {
+    res.redirect('/v15/eligibility-update-children-add-error')
+  } else {
+    res.redirect('/v15/eligibility-update-children-add')
+  }
+})
