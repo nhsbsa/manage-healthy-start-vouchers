@@ -138,12 +138,36 @@ Get help to buy food and milk (Healthy Start)
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
+        
+
         <h1 class="nhsuk-heading-xl">Update eligibility</h1>
 
 
 
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
+
+            {# Option 1 #}
+            {# <div class="panel panel-border-wide alert-default">
+                <h2 class="nhsuk-heading-s nhsuk-u-padding-top-3">
+                Child details removed
+                </h2>
+                <p>To confirm the removal of this childs detail, choose to save and continue at the bottom of this screen</p>
+            </div> #}
+
+            {# option 2 #}
+            {# <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                    Are you sure you want remove John Smith?
+                </h2>
+                <div class="nhsuk-error-summary__body">
+                    <p>
+                    Removing a child will result in changes to their Healthy Start allowance.
+                    </p>
+                    <a href="eligibility-update-children"><button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-4">Cancel</button></a>
+                    <a href="eligibility-child-removed"><button class="nhsuk-button nhsuk-button-red nhsuk-u-margin-bottom-2">Yes, delete</button></a>
+                </div>
+            </div> #}
 
 
 
@@ -284,74 +308,10 @@ Get help to buy food and milk (Healthy Start)
                                 </dd>
 
                             </div>
-                            
+                                                        
                         </dl>
 
-                        <dl class="nhsuk-summary-list">
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                First name
-                                </dt>
-                                <dd class="nhsuk-summary-list__value">
-                                <input class="nhsuk-input" id="child-first-name-3" name="example" type="text" value="John">
-                                </dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                Last name
-                                </dt>
-                                <dd class="nhsuk-summary-list__value">
-                                <input class="nhsuk-input" id="example" name="example" type="text" value="Smith">
-                                </dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                Date of birth
-                                </dt>
-                                <dd class="nhsuk-summary-list__value">
-                                    <div class="nhsuk-date-input" id="example">
-                                        <div class="nhsuk-date-input__item">
-                                            <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                                                Day
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric" value="14">
-                                            </div>
-                                        </div>
-                                        <div class="nhsuk-date-input__item">
-                                            <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
-                                                Month
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric" value="01">
-                                            </div>
-                                        </div>
-                                        <div class="nhsuk-date-input__item">
-                                            <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
-                                                Year
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric" value="2019">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row nhsuk-summary-list--no-border">
-                                <dd class="nhsuk-summary-list__value">
-                                <a href="eligibility-update-children-remove" class="nhsuk-link">Remove child</a>
-                                </dd>
-
-                            </div>
-                            
-                        </dl>
+                        
 
                     </fieldset>
 
@@ -362,7 +322,7 @@ Get help to buy food and milk (Healthy Start)
             </div>
         </div>
 
-        <p class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><a href="eligibility"
+        <p class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><a href="eligibility-child-removed"
                 class="nhsuk-button">Save and submit</a></p>
 
         <p class="nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><a href="eligibility">Cancel</a></p>
