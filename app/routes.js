@@ -1990,10 +1990,10 @@ router.post('/v15/add-child', (req, res) => {
 
   const childDOB = childdobday + '/' + childdobmonth + '/' + childdobyear
 
-  if (childFirstName && childLastName && childDOB){
-    res.redirect('/v15/eligibility')
-  } else if (childFirstName == "Sarah" || childFirstName == "Bobby" || childFirstName == "John") {
+  if (childFirstName == "Sarah" || childFirstName == "Bobby" || childFirstName == "John") {
     res.redirect('/v15/eligibility-update-children-add-error')
+  } else if (childFirstName && childLastName && childDOB){
+    res.redirect('/v15/eligibility')
   } else {
     res.redirect('/v15/eligibility-update-children-add')
   }

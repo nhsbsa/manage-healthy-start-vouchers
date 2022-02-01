@@ -218,6 +218,19 @@ Get help to buy food and milk (Healthy Start)
                             <a href="eligibility-update-children#child-first-name-3">Change</a>
                         </td>
                         </tr>
+                        {# {% if (data['child-first-name']) and (data['child-last-name']) %}
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Name </span>{{ data['child-first-name'] }} {{ data['child-last-name'] }}
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Date of birth </span>date here
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <a href="eligibility-update-children#child-first-name-3">Change</a>
+                                </td>
+                            </tr>
+                        {% endif %} #}
                     </tbody>
                 </table>
 
