@@ -1998,3 +1998,33 @@ router.post('/v15/add-child', (req, res) => {
     res.redirect('/v15/eligibility-update-children-add')
   }
 })
+
+
+// router.post('/v15/test-array', (req, res) => {
+  
+//   var checkboxes = req.session.data['example-array']
+
+// if (checkboxes == 'email', 'text', 'post' || checkboxes == 'email', 'text', 'post') {
+//   res.redirect('/v15/eligibility')
+// }
+
+
+//   console.log(checkboxes);
+
+
+// })
+
+
+// router.post('/nationality', (req, res) => {
+  
+//   var nationality = req.session.data['nationality']
+
+// if (nationality == 'UK', 'Irish', 'Other' || nationality == 'UK', 'Other') {
+//   res.redirect('/path-to-page')
+// }
+
+
+//   console.log(checkboxes);
+
+
+// })
