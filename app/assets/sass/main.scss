@@ -1038,3 +1038,14 @@ span.symbol {
 .nhsbsa-u-padding-left-2 {
   padding-left: 20px!important;
 }
+
+// Header log out button override style
+
+.nhsuk-header__menu-toggle {
+  display: block;
+  color: $color_nhsuk-white;
+}
+// Header log out (Hover state)
+.nhsuk-header__menu-toggle:hover, .nhsuk-header__menu-toggle:visited {
+color: $color_nhsuk-white
+}
