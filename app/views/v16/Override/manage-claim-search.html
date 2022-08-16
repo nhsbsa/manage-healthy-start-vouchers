@@ -57,30 +57,56 @@ Get help to buy food and milk (Healthy Start)
                 <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Claim timeline</a></li>
             </ul>
         </nav>
---><p class="nhsuk-caption-l nhsuk-u-margin-bottom-5">
-    Manage claims
-</p>
+-->
+<p class="nhsuk-caption-l nhsuk-u-margin-bottom-5">Manage claims</p>
 <h1><span role="text">Search <span class="nhsuk-caption-xl nhsuk-caption--bottom"><span
                 class="nhsuk-u-visually-hidden">-</span> </span></span></h1>
 
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="example">
-                    Last name
-                  </label>
-                  <input class="nhsuk-input nhsuk-u-width-one-half" id="last-name" name="last-name" type="text">
-                </div>
 
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="example">
-                    Postcode
-                  </label>
-                  <input class="nhsuk-input nhsuk-u-width-one-half" id="postcode" name="postcode" type="text">
-                </div>
+                <div class="nhsuk-card" style="background: #d8dde0; margin-top: 0;">
+                  <div class="nhsuk-card__content">
+
+                    <form novalidate="novalidate" action="/v9/search" method="post">
+
+                      <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-half">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="searchlastname">
+                              Last name
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-full" id="searchlastname" name="searchlastname" type="text">
+                          </div>
+                        </div>
+                        <div class="nhsuk-grid-column-one-half">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="searchpostcode">
+                              Postcode
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-full" id="searchpostcode" name="searchpostcode" type="text">
+                          </div>
+                        </div>
+                      </div>
+          
+                      <div class="nhsuk-grid-row">
+          
+                        <div class="nhsuk-grid-column-full">
+          
+                         
+          
+                        </div>
+                      </div>
+          
+                    </form>
               
 
                 <p><a href="manage-claim-search-results" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Search</a>
 
                   <a href="manage-claim-search" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Advanced Search</a></p>
+
+                </div>
+              </div>
+
+              
 
                   
 {% endblock %}
