@@ -110,97 +110,108 @@ Get help to buy food and milk (Healthy Start)
           
           <br></br>
 
-          
-          <div class="govuk-tabs" data-module="govuk-tabs">
-            <h2 class="govuk-tabs__title">
-              
-            </h2>
-            <ul class="govuk-tabs__list">
-              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                <a class="govuk-tabs__tab" href="">
-                  Claim
-                </a>
-              </li>
-              <li class="govuk-tabs__list-item">
-                <a class="govuk-tabs__tab" href="">
-                  Eligibility
-                </a>
-              </li>
-              <li class="govuk-tabs__list-item">
-                <a class="govuk-tabs__tab" href="">
-                  Claim timeline
-                </a>
-              </li>
+          <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+
+            <h2 class="nhsuk-tabs__title">Contents</h2>
+        
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected" id="claim-tab">
+                    <a class="nhsuk-tabs__tab" href="#claim">Claim</a>
+                </li>
+                <li class="nhsuk-tabs__list-item" id="eligibility-tab">
+                    <a class="nhsuk-tabs__tab" href="#eligibility">Eligibility</a>
+                </li>
+                <li class="nhsuk-tabs__list-item" id="payments-tab">
+                    <a class="nhsuk-tabs__tab" href="#payments">Payments</a>
+                </li>
+                <li class="nhsuk-tabs__list-item" id="timeline-tab">
+                    <a class="nhsuk-tabs__tab" href="#timeline">Claim timeline</a>
+                </li>
             </ul>
-            <div class="govuk-tabs__panel" id="past-day">
-              <h2 class="govuk-heading-l">Claim status</h2>
-              <table class="govuk-table">
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Claim status</th>
-                    <th scope="col" class="govuk-table__header">Claim reference</th>
-                    <th scope="col" class="govuk-table__header">Claim submitted</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <td class="nhsuk-table__cell">
-                        <strong class="nhsuk-tag nhsuk-tag--blue">
-                  Status: Pending
-                </strong></td>
-                <td class="govuk-table__cell">HDJ2123F</td>
-          <td class="govuk-table__cell">09 August 2022</td>
-                  </tr>
-                </tbody>
-              </table>
-          
+        
+            <div class="nhsuk-tabs__panel" id="claim">
+                <h2 class="nhsuk-card__heading nhsuk-heading-l nhsuk-u-margin-bottom-3">Claim details</h2>
+                <div class="govuk-tabs__panel" id="past-day">
+                  <h2 class="govuk-heading-l"></h2>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Claim status</th>
+                        <th scope="col" class="govuk-table__header">Claim reference</th>
+                        <th scope="col" class="govuk-table__header">Claim submitted</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="nhsuk-table__cell">
+                            <strong class="nhsuk-tag nhsuk-tag--blue">
+                      Pending
+                    </strong></td>
+                    <td class="govuk-table__cell">HDJ2123F</td>
+              <td class="govuk-table__cell">09 August 2022</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              
+                </div>
             </div>
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
-              <h2 class="govuk-heading-l">Eligibility</h2>
-              <table class="govuk-table">
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Claim status</th>
-                    <th scope="col" class="govuk-table__header">Claim reference</th>
-                    <th scope="col" class="govuk-table__header">Claim submitted</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <td class="nhsuk-table__cell">
-                        <strong class="nhsuk-tag nhsuk-tag--blue">
-                  Status: Pending
-                </strong>
-                  </tr>
-                </tbody>
-              </table>
-          
+        
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="eligibility">
+                <h2 class="nhsuk-card__heading nhsuk-heading-l nhsuk-u-margin-bottom-3">Eligibility</h2>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+                  <h2 class="govuk-heading-l"></h2>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Claim status</th>
+                        <th scope="col" class="govuk-table__header">Claim reference</th>
+                        <th scope="col" class="govuk-table__header">Claim submitted</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="nhsuk-table__cell">
+                            <strong class="nhsuk-tag nhsuk-tag--blue">
+                      Pending
+                    </strong>
+                      </tr>
+                    </tbody>
+                  </table>
+              
+                </div>
             </div>
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
-              <h2 class="govuk-heading-l">Claim timeline</h2>
-              <table class="govuk-table">
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Claim status</th>
-                    <th scope="col" class="govuk-table__header">Claim reference</th>
-                    <th scope="col" class="govuk-table__header">Claim submitted</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <td class="nhsuk-table__cell">
-                        <strong class="nhsuk-tag nhsuk-tag--blue">
-                  Status: Pending
-                </strong></td>
-                  </tr>
-                </tbody>
-              </table>
-          
+        
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="payments">
+                <h2 class="nhsuk-card__heading nhsuk-heading-l nhsuk-u-margin-bottom-3">Payments</h2>
+                <p>Payments text goes here</p>
             </div>
-            
-          </div>
-
-
+        
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="timeline">
+                <h2 class="nhsuk-card__heading nhsuk-heading-l nhsuk-u-margin-bottom-3">Claim timeline</h2>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+                  <h2 class="govuk-heading-l"></h2>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Claim status</th>
+                        <th scope="col" class="govuk-table__header">Claim reference</th>
+                        <th scope="col" class="govuk-table__header">Claim submitted</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="nhsuk-table__cell">
+                            <strong class="nhsuk-tag nhsuk-tag--blue">
+                      Pending
+                    </strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              
+                </div>
+            </div>
+        
+        </div>
 
         <div class="nhsuk-review-date nhsuk-u-margin-top-0">
             <p class="nhsuk-body-s">

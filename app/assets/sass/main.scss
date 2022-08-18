@@ -1049,3 +1049,245 @@ span.symbol {
 .nhsuk-header__menu-toggle:hover, .nhsuk-header__menu-toggle:visited {
 color: $color_nhsuk-white
 }
+
+
+// Hub
+
+.beta-hub-main-topic .beta-card__content {
+  padding-right: 75px
+}
+
+.beta-hub-main-topic .beta-hub-arrow {
+  display: block;
+  margin-top: -8px;
+  position: absolute;
+  right: 24px;
+  top: 50%
+}
+
+.beta-icon__chevron-right-circle {
+  fill: #005eb8
+}
+
+
+// NHS Tabs
+
+.nhsuk-tabs {
+  margin-top: 4px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tabs {
+      margin-top: 4px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tabs {
+      margin-bottom: 40px;
+  }
+}
+
+.nhsuk-tabs__title {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212b32;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tabs__title {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.47368;
+  }
+}
+
+@media print {
+  .nhsuk-tabs__title {
+      font-size: 14pt;
+      line-height: 1.15;
+  }
+}
+
+.nhsuk-tabs__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tabs__list {
+      margin-bottom: 40px;
+  }
+}
+
+.nhsuk-tabs__list-item {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-left: 32px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tabs__list-item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.47368;
+  }
+}
+
+@media print {
+  .nhsuk-tabs__list-item {
+      font-size: 14pt;
+      line-height: 1.15;
+  }
+}
+
+.nhsuk-tabs__list-item:before {
+  color: #212b32;
+  content: '\2014 ';
+  margin-left: -nhsuk-spacing(5);
+  padding-right: 4px;
+}
+
+.nhsuk-tabs__tab {
+  color: #005eb8;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.nhsuk-tabs__tab:visited {
+  color: #330072;
+}
+
+.nhsuk-tabs__tab:hover {
+  color: #7C2855;
+  text-decoration: none;
+}
+
+.nhsuk-tabs__tab:focus {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+}
+
+.nhsuk-tabs__tab:focus:hover {
+  text-decoration: none;
+}
+
+.nhsuk-tabs__tab:focus:visited {
+  color: #212b32;
+}
+
+.nhsuk-tabs__tab:focus .nhsuk-icon {
+  fill: #212b32;
+}
+
+.nhsuk-tabs__tab:active {
+  color: #002f5c;
+}
+
+.nhsuk-tabs__panel {
+  margin-bottom: 48px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tabs__panel {
+      margin-bottom: 56px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .js-enabled .nhsuk-tabs__list {
+      margin-bottom: 0;
+      border-bottom: 1px solid #d8dde0;
+  }
+
+  .js-enabled .nhsuk-tabs__list:after {
+      clear: both;
+      content: '';
+      display: block;
+  }
+
+  .js-enabled .nhsuk-tabs__title {
+      display: none;
+  }
+
+  .js-enabled .nhsuk-tabs__list-item {
+      position: relative;
+      margin-right: 4px;
+      margin-bottom: 0;
+      margin-left: 0;
+      padding: 14px 24px;
+      float: left;
+      background-color: #d8dde0;
+      text-align: center;
+  }
+
+  .js-enabled .nhsuk-tabs__list-item:before {
+      content: none;
+  }
+
+  .js-enabled .nhsuk-tabs__list-item--selected {
+      position: relative;
+      margin-top: -nhsuk-spacing(1);
+      margin-bottom: -1px;
+      padding-top: 15px;
+      padding-right: 23px;
+      padding-bottom: 17px;
+      padding-left: 23px;
+      border: 1px solid #d8dde0;
+      border-bottom: 0;
+      background-color: #FFF;
+  }
+
+  .js-enabled .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+      text-decoration: none;
+  }
+
+  .js-enabled .nhsuk-tabs__tab {
+      margin-bottom: 0;
+  }
+
+  .js-enabled .nhsuk-tabs__tab:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  }
+
+  .js-enabled .nhsuk-tabs__panel {
+      margin-bottom: 0;
+      padding: 40px 24px;
+      border: 1px solid #d8dde0;
+      border-top: 0;
+      border-bottom-width: 4px;
+      background: #FFF;
+  }
+}
+
+@media (min-width: 40.0625em) and (min-width: 40.0625em) {
+  .js-enabled .nhsuk-tabs__panel {
+      margin-bottom: 0;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .js-enabled .nhsuk-tabs__panel> :last-child {
+      margin-bottom: 0;
+  }
+
+  .js-enabled .nhsuk-tabs__panel--hidden {
+      display: none;
+  }
+}
