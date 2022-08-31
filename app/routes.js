@@ -2229,14 +2229,42 @@ router.post('/v16/add-child', (req, res) => {
 
 // })
 
-router.post('/v16/override/manage-claim-search', function (req, res) {
+router.post('/v16/dynamics-sign-in', function (req, res) {
 
-  var searchlastName = req.session.data['searchlastname']
+  var email = req.session.data['email']
+  var password = req.session.data['password']
+
+  if (email && password) {
+    res.redirect('/v16/dashboard')
+  }
+  else {
+    res.redirect('/v16/dynamics-sign-in')
+  }
+})
+
+
+router.post('/v16/sign-in', function (req, res) {
+
+  var email = req.session.data['email']
+  var password = req.session.data['password']
+
+  if (email && password) {
+    res.redirect('/v16/dashboard')
+  }
+  else {
+    res.redirect('/v16/sign-in')
+  }
+})
+
+router.post('/v16/manage-claim-search', function (req, res) {
+
+  var searchlastname = req.session.data['searchlastname']
   var searchpostcode = req.session.data['searchpostcode']
 
   if (searchlastname && searchpostcode) {
-    res.redirect('/v16/override/manage-claim-search-results')
+    res.redirect('/v16/manage-claim-search-results')
   }
   else {
-    res.redirect('/v16/override/manage-claim-search-no-results')
+    res.redirect('/v16/manage-claim-search-no-results')
   }
+})
