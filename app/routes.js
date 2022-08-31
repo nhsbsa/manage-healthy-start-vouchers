@@ -2228,3 +2228,15 @@ router.post('/v16/add-child', (req, res) => {
 
 
 // })
+
+router.post('/v16/override/manage-claim-search', function (req, res) {
+
+  var searchlastName = req.session.data['searchlastname']
+  var searchpostcode = req.session.data['searchpostcode']
+
+  if (searchlastname && searchpostcode) {
+    res.redirect('/v16/override/manage-claim-search-results')
+  }
+  else {
+    res.redirect('/v16/override/manage-claim-search-no-results')
+  }
