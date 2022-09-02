@@ -33,7 +33,7 @@
 {%- from 'textarea/macro.njk' import textarea %}
     
 <!DOCTYPE html>
-<!--[if lt IE 9]><html class="ie8" lang="en"><![endif]--><!--[if IE 9]><html class="ie9" lang="en"><![endif]--><!--[if gt IE 9]><!--><html lang="en" style="{{ html_style }}"><!--<![endif]-->
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,6 +52,9 @@
       <link href="/css/main.css" rel="stylesheet">
     {% endblock %}
 
+    {% block customStyles %}
+    {% endblock %}
+
     <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 
     {% block headIcons %}
@@ -66,6 +69,9 @@
     <meta name="msapplication-wide310x150logo" content="/nhsuk-frontend/assets/favicons/widetile-310x150.png">
     <meta name="msapplication-square310x310logo" content="/nhsuk-frontend/assets/favicons/largetile-310x310.png">
     {% endblock %}
+
+    {% block head %}{% endblock %}
+    
   </head>
 
   <body class="{{ bodyClasses }}">
