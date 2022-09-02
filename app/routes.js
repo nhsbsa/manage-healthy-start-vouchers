@@ -2268,3 +2268,20 @@ router.post('/v16/manage-claim-search', function (req, res) {
     res.redirect('/v16/manage-claim-search-no-results')
   }
 })
+
+
+// Search > No Results
+router.post('/v16/manage-claim-search-no-results', function (req, res) {
+
+  var searchadd = req.session.data['searchadd']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v16.create-claim-personal-details')
+  } else if (searchadd == 'no') {
+    res.redirect('/v16/manage-claim-search')
+  }
+  else {
+    res.redirect('/v16/dashboard')
+  }
+
+})
