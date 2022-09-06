@@ -159,9 +159,7 @@ router.post('/v8/terms-and-conditions', function (req, res) {
 
 
 
-// Add your routes here - above the module.exports line
 
-module.exports = router;
 
 // CONSTANTS
 
@@ -2270,18 +2268,22 @@ router.post('/v16/manage-claim-search', function (req, res) {
 })
 
 
-// Search > No Results
+// Search > Add
 router.post('/v16/manage-claim-search-no-results', function (req, res) {
 
-  var searchadd = req.session.data['searchadd']
+  var searchadd = req.session.data['addperson']
 
   if (searchadd == 'yes'){
-    res.redirect('/v16.create-claim-personal-details')
+    res.redirect('/v16/create-claim-personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v16/manage-claim-search')
   }
   else {
-    res.redirect('/v16/dashboard')
+    res.redirect('/v16/manage-claim-search-no-results')
   }
 
 })
+
+// Add your routes here - above the module.exports line
+
+module.exports = router;

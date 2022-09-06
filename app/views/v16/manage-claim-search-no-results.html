@@ -69,7 +69,8 @@ Get help to buy food and milk (Healthy Start)
 <h1 class="nhsuk-u-margin-bottom-4">No results found</h1>
 
 <p class="nhsuk-body-l">We found no Healthy Start applicants with those details.</p>
-                
+
+<form novalidate="novalidate" action="/v16/manage-claim-search-no-results" method="POST">
                 <div class="nhsuk-form-group">
 
                   <fieldset class="nhsuk-fieldset">
@@ -82,14 +83,14 @@ Get help to buy food and milk (Healthy Start)
                     <div class="nhsuk-radios nhsuk-radios--inline">
                 
                       <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="yes" name="yes" type="radio" value="yes">
+                        <input class="nhsuk-radios__input" id="yes" name="addperson" type="radio" value="yes">
                         <label class="nhsuk-label nhsuk-radios__label" for="yes">
                           Yes
                         </label>
                       </div>
                 
                       <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="no" name="no" type="radio" value="no">
+                        <input class="nhsuk-radios__input" id="no" name="addperson" type="radio" value="no">
                         <label class="nhsuk-label nhsuk-radios__label" for="no">
                           No
                         </label>
@@ -99,8 +100,10 @@ Get help to buy food and milk (Healthy Start)
                   </fieldset>
                 
                 </div>
+                <button class="nhsuk-button" type="submit">Continue</button>
+              </form>
 
-                <p><a href="create-claim-personal-details" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Continue</a></p>
+  
 
 
 {% endblock %}
