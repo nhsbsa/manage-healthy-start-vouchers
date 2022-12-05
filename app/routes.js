@@ -10,7 +10,8 @@ if (process.env.NOTIFYAPIKEY) {
 // External dependencies
 const express = require('express');
 const router = express.Router();
-const moment = require('moment')
+const moment = require('moment');
+const e = require('express');
 
 // ****************************************
 // NOTIFICATIONS
@@ -2247,7 +2248,7 @@ router.post('/v16/sign-in', function (req, res) {
   var password = req.session.data['password']
 
   if (email && password) {
-    res.redirect('/v16/dashboard')
+    res.redirect('/v16/manage-claim-search')
   }
   else {
     res.redirect('/v16/sign-in')
@@ -2283,6 +2284,130 @@ router.post('/v16/manage-claim-search-no-results', function (req, res) {
   }
 
 })
+
+
+router.post('/v17/sign-in', function (req, res) {
+
+  var email = req.session.data['email']
+  var password = req.session.data['password']
+
+  if (email && password) {
+    res.redirect('/v17/manage-claim-search')
+  }
+  else {
+    res.redirect('/v17/sign-in')
+  }
+})
+
+router.post('/v17/manage-claim-search', function (req, res) {
+
+  var searchlastname = req.session.data['searchlastname']
+  var searchpostcode = req.session.data['searchpostcode']
+
+  if (searchlastname && searchpostcode) {
+    res.redirect('/v17/manage-claim-search-results')
+  }
+  else {
+    res.redirect('/v17/manage-claim-search-no-results')
+  }
+})
+
+
+// Search > Add
+router.post('/v17/manage-claim-search-no-results', function (req, res) {
+
+  var searchadd = req.session.data['addperson']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v17/create-claim-personal-details')
+  } else if (searchadd == 'no') {
+    res.redirect('/v17/manage-claim-search')
+  }
+  else {
+    res.redirect('/v17/manage-claim-search-no-results')
+  }
+
+})
+
+router.post('/v17/search-add', function (req, res) {
+
+  var searchadd = req.session.data['searchadd']
+
+  if (searchadd == 'yes'){
+    res.redirect('/v17/personal-details')
+  } else if (searchadd == 'no') {
+    res.redirect('/v17/home')
+  }
+  else {
+    res.redirect('/v17/result-not-found')
+  }
+
+})
+
+// Pending claim override.
+router.post('/v17/manage-claim-pending-override', function (req, res) {
+
+// this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
+  var pendingOverride = req.session.data['override']
+
+
+if (pendingOverride === 'yes') {
+  res.redirect('/v17/manage-claim-pending-override-warning')
+} else if (pendingOverride === 'no'){
+  res.redirect('/v17/manage-claim-pending-claim-details')
+} else {
+  res.redirect('/v17/manage-claim-pending-override')
+}
+
+})
+
+// Pending claim override warning.
+router.post('/v17/manage-claim-pending-override-warning', function (req, res) {
+
+  // this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
+    var pendingOverride = req.session.data['warning']
+  
+  
+  if (pendingOverride === 'yes') {
+    res.redirect('/v17/application-successful')
+  } else if (pendingOverride === 'no'){
+    res.redirect('/v17/manage-claim-pending-claim-details')
+  } else {
+    res.redirect('/v17/manage-claim-pending-override-warning')
+  }
+  
+  })
+
+// Active search
+  router.post('/v17/manage-claim-search-active', function (req, res) {
+
+    var searchlastname = req.session.data['searchlastnamea']
+    var searchpostcode = req.session.data['searchpostcodea']
+  
+    if (searchlastname && searchpostcode) {
+      res.redirect('/v17/manage-claim-search-results-active')
+    }
+    else {
+      res.redirect('/v17/manage-claim-search-no-results-active')
+    }
+  })
+
+  
+
+// router.post('/v17/manage-claim-pending-override', function (req, res) {
+
+//     var pendingOverride = req.session.data['override']
+  
+  
+//   if (pendingOverride === 'yes') {
+//     res.redirect('/v17/screen-1')
+//   } else if (pendingOverride === 'no'){
+//     res.redirect('/v17/screen-2')
+//   } else {
+//     res.redirect('/v17/return-to-same-screen')
+//   }
+  
+//   })
 
 // Add your routes here - above the module.exports line
 

@@ -38,7 +38,7 @@ Get help to buy food and milk (Healthy Start)
         <div class="nhsuk-width-container">
             <ol class="nhsuk-breadcrumb__list">
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-no-results">Search results</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Create claim (successful)</a></li>
             </ol>
             <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
         </div>
@@ -57,52 +57,44 @@ Get help to buy food and milk (Healthy Start)
                 <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Claim timeline</a></li>
             </ul>
         </nav>
---><div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="manage-claim-search">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-    </svg>
-    Go back</a>
+-->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+<div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+  <div class="nhsuk-card__content">
+    <h1 class="nhsuk-panel__title" style="color: white;">Application successful</h1><span class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">You’re entitled to <strong>{% if data['lessThanTenWeeksPregnant'] == true %}£3.10{% else %}£6.20{% endif %}</strong> a week.<br>
+      Your first payment will be <strong>{% if data['lessThanTenWeeksPregnant'] == true %}£12.40{% else %}£24.80{% endif %}</strong>.</span>
+        <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
+          Reference number:<br><strong>HDJ2123F</strong>
+        </div>
+      </h1>
+  </div>
 </div>
 
-<h1 class="nhsuk-u-margin-bottom-4">No results found</h1>
+<h3>What happens next</h3>
+<p>We’ve sent you more information about your payment.</p>
+<p>You should get your card by post within 5 to 10 working days. It’ll already have your first payment on it and will come with instructions on how to activate and use it.</p>
+<p>Money will be added to your card every 4 weeks.</p>
 
-<p class="nhsuk-body-l">We found no Healthy Start applicants with those details.</p>
+<h3>Any problems</h3>
+<p>If you do not get your card, there’s a change in circumstances or you think a mistake has been made, you can contact us by:</p>
 
-<form novalidate="novalidate" action="/v16/manage-claim-search-no-results" method="POST">
-                <div class="nhsuk-form-group">
-
-                  <fieldset class="nhsuk-fieldset">
-                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                      <h1 class="nhsuk-fieldset__heading">
-                        Would you like to create an application for this person?
-                      </h1>
-                    </legend>
-                
-                    <div class="nhsuk-radios nhsuk-radios--inline">
-                
-                      <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="yes" name="addperson" type="radio" value="yes">
-                        <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                          Yes
-                        </label>
-                      </div>
-                
-                      <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="no" name="addperson" type="radio" value="no">
-                        <label class="nhsuk-label nhsuk-radios__label" for="no">
-                          No
-                        </label>
-                      </div>
-                
-                    </div>
-                  </fieldset>
-                
-                </div>
-                <button class="nhsuk-button" type="submit">Continue</button>
-              </form>
-
-  
+<div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>Telephone: 0300 330 7010</p>
+    <p>This phone line is available Monday to Friday, 8am to 6pm (except public holidays).</p>
+    <p><a href="" title="link">Find out about call charges</a>.</p>
+    <p>Email: <a href="" title="link">healthy.start@nhsbsa.nhs.uk</a></p>
+    <p>We aim to respond to your email within 2 working days.</p>
+  </div>
 
 
+</div>
+</div>
+
+<p><a href="manage-claim-search-active" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Home</a></p>
+
+</div>
 {% endblock %}

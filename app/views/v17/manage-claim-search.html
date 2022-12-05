@@ -42,7 +42,7 @@ Get help to buy food and milk (Healthy Start)
       <ol class="nhsuk-breadcrumb__list">
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="sign-in">Sign in</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Manage
-            claims</a></li>
+            applications</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -62,24 +62,49 @@ Get help to buy food and milk (Healthy Start)
             </ul>
         </nav>
 -->
-    <h1><span><span class="nhsuk-caption-l nhsuk-caption--top">Manage claims portal <span
+    <h1><span><span class="nhsuk-caption-l nhsuk-caption--top">Manage applications<span
             class="nhsuk-u-visually-hidden">-</span></span></span> Search</h1>
 
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>Make sure the applicants last name is an exact match with their benefits record.</p>
+            </div>
 
     <div class="nhsuk-card" style="background: #d8dde0; margin-top: 0;">
       <div class="nhsuk-card__content">
 
-        <form novalidate="novalidate" action="/v16/manage-claim-search" method="post">
+        <form novalidate="novalidate" action="/v17/manage-claim-search" method="post">
 
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-half">
               <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchfirstname">
+                  First name
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-full" id="searchfirstname" name="searchfirstname" type="text">
+              </div>
+            </div>
+
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="searchlastname">
-                  Last name
+                  Surname
                 </label>
                 <input class="nhsuk-input nhsuk-u-width-full" id="searchlastname" name="searchlastname" type="text">
               </div>
             </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchdob">
+                  Date of birth
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-full" id="searchdob" name="searchdob" type="text">
+              </div>
+            </div>
+
             <div class="nhsuk-grid-column-one-half">
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="searchpostcode">

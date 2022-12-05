@@ -31,7 +31,6 @@ Get help to buy food and milk (Healthy Start)
             </div>
       </div>
 
-      
 
     </div>
 
@@ -42,8 +41,8 @@ Get help to buy food and milk (Healthy Start)
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="dashboard">Dashboard</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Manage claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Manage applications</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results">Search results</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-pending-claim-details">Anita Bilal</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
@@ -54,26 +53,17 @@ Get help to buy food and milk (Healthy Start)
 
 {% block content %}
 
-<style>
-    @media (min-width: 61.875em) {
-  
-    html {
-            background: none;
-    }
-  
-    footer, .app-ogl-footer {
-        display: none;
-    }
-    
-    }
-  </style>
-
-
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="manage-claim-search-results-pending-results">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
         <!--
         <nav class="nhsuk-sub-navigation">
             <ul class="nhsuk-sub-navigation__list">
@@ -91,9 +81,10 @@ Get help to buy food and milk (Healthy Start)
     </span>
   </h3>
   <p><ul class="nhsuk-list nhsuk-list--bullet">
-    <li>proof of their identity (birth / marriage certificate, driving licence or immigration visa)</li>
+    <p>You need ((at least one of / all of)) the following pieces of evidence:</p>
+    <li>proof of their identity (birth or marriage certificate, driving licence or immigration visa)</li>
     <li>proof of their eligibility (benefit awards notice)</li>
-    <li>proof of their children’s eligibility (birth certificate)</li>
+    <li>proof of their children's eligibility (birth certificate)</li>
   </ul></p>
 </div>
 
@@ -121,33 +112,29 @@ Get help to buy food and milk (Healthy Start)
           
             <ul class="nhsuk-tabs__list">
               <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-                <a class="nhsuk-tabs__tab" href="#tab-one">Claim</a>
+                <a class="nhsuk-tabs__tab" href="#tab-one">Application</a>
               </li>
               <li class="nhsuk-tabs__list-item">
                 <a class="nhsuk-tabs__tab" href="#tab-two">Eligibility</a>
-              </li>
-             
-              <li class="nhsuk-tabs__list-item">
-                <a class="nhsuk-tabs__tab" href="#tab-four">Claim history</a>
               </li>
               
             </ul>
           
             <div class="nhsuk-tabs__panel" id="tab-one">
 
-                <h2 class="nhsuk-card__heading nhsuk-heading-l nhsuk-u-margin-bottom-3">Claim details</h2>
+                <h2 class="nhsuk-card__heading nhsuk-heading-l nhsuk-u-margin-bottom-3">Application details</h2>
                 <dl class="nhsuk-summary-list">
 
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Claim status
+                      Application status
                     </dt>
                       <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--blue">Pending</strong>
                   </div>
                 
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Claim reference
+                      Application reference
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       HDJ2123F
@@ -156,7 +143,7 @@ Get help to buy food and milk (Healthy Start)
                 
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Claim submitted
+                      Application submitted
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       22 August 2022
@@ -209,7 +196,7 @@ Get help to buy food and milk (Healthy Start)
                         <span class="nhsuk-table-responsive__heading">How much? </span>21 December 2022
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Change </span><a href="">Change</a>
+                        <span class="nhsuk-table-responsive__heading">Change </span><a href=""></a>
                       </td>
                     </tr>
                    
@@ -242,7 +229,7 @@ Get help to buy food and milk (Healthy Start)
                         <span class="nhsuk-table-responsive__heading">Date of birth </span>14 January 2022
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading"> </span><a href="">Change</a>
+                        <span class="nhsuk-table-responsive__heading"> </span><a href=""></a>
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
@@ -253,7 +240,7 @@ Get help to buy food and milk (Healthy Start)
                         <span class="nhsuk-table-responsive__heading">Date of birth </span>14 January 2021
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading"> </span><a href="">Change</a>
+                        <span class="nhsuk-table-responsive__heading"> </span><a href=""></a>
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
@@ -264,7 +251,7 @@ Get help to buy food and milk (Healthy Start)
                         <span class="nhsuk-table-responsive__heading">Date of birth </span>14 January 2020
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading"> </span><a href="">Change</a>
+                        <span class="nhsuk-table-responsive__heading"> </span><a href=""></a>
                       </td>
                     </tr>
                   </tbody>
@@ -272,9 +259,7 @@ Get help to buy food and milk (Healthy Start)
 
                 <br>
 
-                <button class="nhsuk-button nhsuk-button--secondary" type="submit">
-                  Add a child
-                </button>
+
 
             </div>
           

@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start)
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <form action="/v17/sign-in" method="post">
+
+
+      <fieldset class="nhsuk-fieldset">
+        <h1><span><span class="nhsuk-caption-l nhsuk-caption--top"><span
+                class="nhsuk-u-visually-hidden">-</span></span></span>Agent sign in</h1>
+
+                <p class="nhsuk-body">Use your NHSmail address to sign in.</p>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-town">
+            Email
+          </label>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            (name@nhs.net)
+          </div>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-county">
+            Password
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="password" name="password" type="text">
+        </div>
+
+      </fieldset>
+
+      <button class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-7" type="submit">
+        Sign in
+      </button>
+
+    </form>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Forgottten your password?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>This service uses your NHSmail account.</p>
+        <p>If you have forgotten your password, contact your local administrator or IT helpdesk.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- <aside class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-related-nav">
+            <h2 class="nhsuk-related-nav__heading">
+                Help for healthcare professionals
+            </h2>
+            <nav role="navigation" class="nhsuk-related-nav__nav-section">
+                <ul class="nhsuk-related-nav__list">
+
+
+                    <li class="nhsuk-related-nav__item">
+                        <a class="nhsuk-related-nav__link" href="help">
+                            Common issues
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </nav>
+        </div>
+    </aside> -->
+
+</div>
+{% endblock %}
