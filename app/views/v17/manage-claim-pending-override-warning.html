@@ -44,9 +44,10 @@ Get help to buy food and milk (Healthy Start)
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-pending-claim-details">Application details</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-pending-override">Manage
-          application (Override)</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results">Search results</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-pending-results">Anita Bilal</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-pending-claim-details">HDJ2123F</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
   </div>
@@ -85,18 +86,9 @@ Get help to buy food and milk (Healthy Start)
         Go back</a>
     </div>
 
-    <h1><span><span class="nhsuk-caption-l nhsuk-caption--top">Manage application <span
-            class="nhsuk-u-visually-hidden">-</span></span></span> Override</h1>
 
-    <div class="nhsuk-warning-callout">
-      <h3 class="nhsuk-warning-callout__label">
-        <span role="text">
-          <span class="nhsuk-u-visually-hidden">Important: </span>
-          Approve application
-        </span>
-      </h3>
-      <p>Are you sure you want to approve this application? Click override application to accept the application.</p>
-    </div>
+<h1>Are you sure you want to approve this application?</h1>
+
     <!-- form goes here -->
     <form action="/v17/manage-claim-pending-override-warning" method="POST">
       <div class="nhsuk-form-group">
@@ -104,11 +96,11 @@ Get help to buy food and milk (Healthy Start)
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Override application?
+              
             </h1>
           </legend>
 
-          <div class="nhsuk-radios">
+          <div class="nhsuk-radios nhsuk-radios--inline">
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="warning" name="warning" type="radio" value="yes">
@@ -129,7 +121,9 @@ Get help to buy food and milk (Healthy Start)
 
       </div>
 
-      <button class="nhsuk-button" type="submit">Override application</button>
+
+
+      <button class="nhsuk-button" type="submit">Confirm</button>
 
 
     </form>
