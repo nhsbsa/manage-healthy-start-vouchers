@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Get help to buy food and milk (Healthy Start)
+Manage Get help to buy food and milk (Healthy Start) applications
 {% endblock %}
 <!-- Header goes inside the header block -->
 <!-- More info and code for the header can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/header -->
@@ -18,7 +18,7 @@ Get help to buy food and milk (Healthy Start)
         </svg>
 
         <span class="nhsuk-header__service-name">
-          Get help to buy food and milk (Healthy Start)
+          Manage Get help to buy food and milk (Healthy Start) applications
         </span>
       </a>
     </div>
@@ -86,7 +86,7 @@ Get help to buy food and milk (Healthy Start)
             <div class="nhsuk-grid-column-one-half">
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="searchlastname">
-                  Surname
+                  Last name
                 </label>
                 <input class="nhsuk-input nhsuk-u-width-full" id="searchlastname" name="searchlastname" type="text">
               </div>
@@ -99,6 +99,9 @@ Get help to buy food and milk (Healthy Start)
                 <label class="nhsuk-label" for="searchdob">
                   Date of birth
                 </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, 01 01 1999
+                </div>
                 <input class="nhsuk-input nhsuk-u-width-full" id="searchdob" name="searchdob" type="text">
               </div>
             </div>
@@ -108,6 +111,9 @@ Get help to buy food and milk (Healthy Start)
                 <label class="nhsuk-label" for="searchpostcode">
                   Postcode
                 </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, NR33 4GB
+                </div>
                 <input class="nhsuk-input nhsuk-u-width-full" id="searchpostcode" name="searchpostcode" type="text">
               </div>
             </div>
@@ -117,12 +123,15 @@ Get help to buy food and milk (Healthy Start)
 
             <div class="nhsuk-grid-column-full">
 
-              <div class="nhsuk-form-group">
-                <button class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-0" type="submit">
+              <div class="nhsuk-button-group">
+                <button class="nhsuk-button" type="submit">
                   Search
                 </button>
-
+                <button class="nhsuk-button nhsuk-button--secondary" type="reset">
+                  Clear search
+                </button>
               </div>
+              
 
             </div>
           </div>
