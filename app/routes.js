@@ -2301,6 +2301,7 @@ router.post('/v17/sign-in', function (req, res) {
 
 router.post('/v17/manage-claim-search', function (req, res) {
 
+  var searchfirstname = req.session.data['searchfirstname']
   var searchlastname = req.session.data['searchlastname']
   var searchpostcode = req.session.data['searchpostcode']
 
