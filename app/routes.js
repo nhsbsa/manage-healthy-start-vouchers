@@ -2285,7 +2285,7 @@ router.post('/v16/manage-claim-search-no-results', function (req, res) {
 
 })
 
-
+// Sign in
 router.post('/v17/sign-in', function (req, res) {
 
   var email = req.session.data['email']
@@ -2299,17 +2299,22 @@ router.post('/v17/sign-in', function (req, res) {
   }
 })
 
+// Search
 router.post('/v17/manage-claim-search', function (req, res) {
 
   var searchfirstname = req.session.data['searchfirstname']
   var searchlastname = req.session.data['searchlastname']
-  var searchpostcode = req.session.data['searchpostcode']
 
-  if (searchlastname && searchpostcode) {
-    res.redirect('/v17/manage-claim-search-results')
-  }
-  else {
-    res.redirect('/v17/manage-claim-search-no-results')
+  if (searchfirstname == 'Anita' && searchlastname == 'Bilal'){
+      res.redirect('/v17/manage-claim-search-ANITA-BILAL') // PENDING
+  } else if (searchfirstname == 'Sarah' && searchlastname == 'Green') {
+      res.redirect('/v17/manage-claim-search-SARAH-GREEN') // ACTIVE
+  } else if (searchfirstname == 'Simon' && searchlastname == 'Woods') {
+      res.redirect('/v17/manage-claim-search-SIMON-WOODS') // PENDING EXPIRY
+  } else if (searchfirstname == 'John' && searchlastname == 'Smith') {
+      res.redirect('/v17/manage-claim-search-JOHN-SMITH') // EXPIRED
+  } else {
+      res.redirect('/v17/manage-claim-search-no-results')
   }
 })
 
