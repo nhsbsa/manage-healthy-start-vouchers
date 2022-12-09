@@ -45,9 +45,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-JOHN-SMITH">Search results</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-JOHN-SMITH">John Smith</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-JOHN-SMITH-claim-details">XHA19476D</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-universal-credit">Universal Credit</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
   </div>
@@ -76,7 +74,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
         </nav>
 -->
     <div class="nhsuk-back-link">
-      <a class="nhsuk-back-link__link" href="manage-claim-JOHN-SMITH-claim-details">
+      <a class="nhsuk-back-link__link" href="">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -86,93 +84,67 @@ Manage Get help to buy food and milk (Healthy Start) applications
         Go back</a>
     </div>
 
-    <form action="/v17/manage-claim-JOHN-SMITH-override" method="POST">
 
+<h1>Universal Credit</h1>
+
+<p>Benefit info to be created by Kim.</p>
+
+    <!-- form goes here -->
+    <form action="/v17/manage-claim-universal-credit" method="POST">
       <div class="nhsuk-form-group">
 
-        <fieldset class="nhsuk-fieldset">
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Select which benefit the applicant is recieving.
+              Application override period.
             </h1>
           </legend>
-
-          <div class="nhsuk-radios">
-
+      
+          <div class="nhsuk-hint" id="contact-hint">
+            Select one option
+          </div>
+      
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="universalcredit" name="type-of-benefit-4" type="radio"
-                value="universalcredit">
-              <label class="nhsuk-label nhsuk-radios__label" for="universalcredit">
-                Universal Credit
+              <input class="nhsuk-radios__input" id="yes" name="universalcredit" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                Override application for 3 months
               </label>
             </div>
+      
 
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="incomesupport" name="type-of-benefit-4" type="radio"
-                value="incomesupport">
-              <label class="nhsuk-label nhsuk-radios__label" for="incomesupport">
-                Income Support
+              <input class="nhsuk-radios__input" id="other" name="universalcredit" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="other">
+                Other
               </label>
             </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="pensioncredit" name="type-of-benefit-4" type="radio"
-                value="pensioncredit">
-              <label class="nhsuk-label nhsuk-radios__label" for="pensioncredit">
-                Pension Credit
-              </label>
+      
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+      
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="phone">
+                  Number of weeks (between 1 and 12)
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-2" id="phone" name="phone" type="text">
+              </div>
+      
             </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="incomebasedjsa" name="type-of-benefit-4" type="radio"
-                value="incomebasedjsa">
-              <label class="nhsuk-label nhsuk-radios__label" for="incomebasedjsa">
-                Income Based JSA
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="incomebasedesa" name="type-of-benefit-4" type="radio"
-                value="incomebasedesa">
-              <label class="nhsuk-label nhsuk-radios__label" for="incomebasedesa">
-                Income Based ESA
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="childtaxcredit" name="type-of-benefit-4" type="radio"
-                value="childtaxcredit">
-              <label class="nhsuk-label nhsuk-radios__label" for="childtaxcredit">
-                Child Tax Credit
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="workingtaxcredit" name="type-of-benefit-4" type="radio"
-                value="workingtaxcredit">
-              <label class="nhsuk-label nhsuk-radios__label" for="workingtaxcredit">
-                Working Tax Credit Run On
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="pregnantandunder18" name="type-of-benefit-4" type="radio"
-                value="pregnantandunder18">
-              <label class="nhsuk-label nhsuk-radios__label" for="pregnantandunder18">
-                Pregnant And Under 18
-              </label>
-            </div>
-
+      
           </div>
         </fieldset>
-
+      
       </div>
 
-      <button class="nhsuk-button" type="submit">Continue</button>
+
+
+     
+      <p><a href="application-successful" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Override claim</a></p>
 
 
     </form>
-
 
   </div>
 </div>
