@@ -93,12 +93,16 @@ Manage Get help to buy food and milk (Healthy Start) applications
 
       <div class="nhsuk-form-group">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <fieldset class="nhsuk-fieldset" aria-describedby="reason-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
             <h1 class="nhsuk-fieldset__heading">
-              Select which benefit the applicant is recieving.
+              What is the override reason?
             </h1>
           </legend>
+
+          <div class="nhsuk-hint" id="reason-hint">
+            Select one option
+          </div>
 
           <div class="nhsuk-radios">
 
@@ -108,38 +112,31 @@ Manage Get help to buy food and milk (Healthy Start) applications
               <label class="nhsuk-label nhsuk-radios__label" for="universalcredit">
                 Universal Credit
               </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="incomesupport" name="type-of-benefit" type="radio"
-                value="incomesupport">
-              <label class="nhsuk-label nhsuk-radios__label" for="incomesupport">
-                Income Support
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="pensioncredit" name="type-of-benefit" type="radio"
-                value="pensioncredit">
-              <label class="nhsuk-label nhsuk-radios__label" for="pensioncredit">
-                Pension Credit
-              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Take-home pay for their last Universal Credit period was £408 or less
+              </div>
             </div>
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="incomebasedjsa" name="type-of-benefit" type="radio"
                 value="incomebasedjsa">
               <label class="nhsuk-label nhsuk-radios__label" for="incomebasedjsa">
-                Income Based JSA
+                Jobseeker’s Allowance (JSA)
               </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets Income-based Jobseeker’s Allowance (JSA)
+              </div>
             </div>
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="incomebasedesa" name="type-of-benefit" type="radio"
                 value="incomebasedesa">
               <label class="nhsuk-label nhsuk-radios__label" for="incomebasedesa">
-                Income Based ESA
+                Employment and Support Allowance (ESA)
               </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets Income-related Employment and Support Allowance (ESA)
+              </div>
             </div>
 
             <div class="nhsuk-radios__item">
@@ -148,13 +145,38 @@ Manage Get help to buy food and milk (Healthy Start) applications
               <label class="nhsuk-label nhsuk-radios__label" for="childtaxcredit">
                 Child Tax Credit
               </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Household income is £16,190 or less
+              </div>
             </div>
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="workingtaxcredit" name="type-of-benefit" type="radio"
                 value="workingtaxcredit">
               <label class="nhsuk-label nhsuk-radios__label" for="workingtaxcredit">
-                Working Tax Credit Run On
+                Working Tax Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Family get the 4 week 'run-on' payment
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pensioncredit" name="type-of-benefit" type="radio"
+                value="pensioncredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="pensioncredit">
+                Pension Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets 'child addition' payment
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomesupport" name="type-of-benefit" type="radio"
+                value="incomesupport">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomesupport">
+                Income Support
               </label>
             </div>
 

@@ -41,16 +41,64 @@ Manage Get help to buy food and milk (Healthy Start) applications
   </div>
 </header>
 
+{% if data['searchlastname'] == "Bilal" %}
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-working-tax-credit">Working Tax Credit</a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
-  </div>
-</nav>
-
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-ANITA-BILAL">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-ANITA-BILAL">Anita Bilal</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-ANITA-BILAL-claim-details">HDJ2123F</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+{% elseif data['searchlastname'] == "Green" %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-SARAH-GREEN">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-SARAH-GREEN">Sarah Green</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-SARAH-GREEN-claim-details">ABC1234D</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+{% elseif data['searchlastname'] == "Woods" %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-SIMON-WOODS">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-SIMON-WOODS">Simon Woods</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-SIMON-WOODS-claim-details">YTJ76291Z</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+{% elseif data['searchlastname'] == "Smith" %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-JOHN-SMITH">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-JOHN-SMITH">John Smith</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-JOHN-SMITH-claim-details">XHA19476D</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+{% else %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -74,7 +122,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
         </nav>
 -->
     <div class="nhsuk-back-link">
-      <a class="nhsuk-back-link__link" href="">
+      <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -85,66 +133,69 @@ Manage Get help to buy food and milk (Healthy Start) applications
     </div>
 
 
-<h1>Working Tax Credit</h1>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
 
-<p>Benefit info to be created by Kim.</p>
+        <!-- form goes here -->
+        <form action="/v17/confirm-override" method="POST">
+          <div class="nhsuk-form-group">
 
-    <!-- form goes here -->
-    <form action="/v17/manage-claim-universal-credit" method="POST">
-      <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                  How long do you want to override the claim for?
+                </h1>
+              </legend>
 
-        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              Application override period.
-            </h1>
-          </legend>
-      
-          <div class="nhsuk-hint" id="contact-hint">
-            Select one option
-          </div>
-      
-          <div class="nhsuk-radios nhsuk-radios--conditional">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="yes" name="universalcredit" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                Override application for 3 months
-              </label>
-            </div>
-      
-
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="other" name="universalcredit" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="other">
-                Other
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-      
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="phone">
-                  Number of weeks (between 1 and 12)
-                </label>
-                <input class="nhsuk-input nhsuk-input--width-2" id="phone" name="phone" type="text">
+              <div class="nhsuk-hint" id="contact-hint">
+                Select one option
               </div>
-      
-            </div>
-      
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="yes" name="universalcredit" type="radio" value="email"
+                    aria-controls="conditional-contact-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                    12 weeks (standard period)
+                  </label>
+                </div>
+
+
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="other" name="universalcredit" type="radio" value="phone"
+                    aria-controls="conditional-contact-2" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="other">
+                    Other
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="phone">
+                      Number of weeks (between 1 and 12)
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-2" id="phone" name="phone" type="text">
+                  </div>
+
+                </div>
+
+              </div>
+            </fieldset>
+
           </div>
-        </fieldset>
-      
+
+
+
+
+          <p><a class="nhsuk-button" href="application-successful">Confirm and submit</a></p>
+
+        </form>
+
       </div>
-
-
-
-     
-      <p><a href="application-successful" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Override claim</a></p>
-
-
-    </form>
+    </div>
 
   </div>
 </div>

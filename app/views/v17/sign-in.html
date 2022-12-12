@@ -12,11 +12,15 @@ Get help to buy food and milk (Healthy Start)
     <form action="/v17/sign-in" method="post">
 
 
-      <fieldset class="nhsuk-fieldset">
-        <h1><span><span class="nhsuk-caption-l nhsuk-caption--top"><span
-                class="nhsuk-u-visually-hidden">-</span></span></span>Agent sign in</h1>
+      <fieldset class="nhsuk-fieldset" aria-describedby="signin-hint">
 
-                <p class="nhsuk-body">Use your NHSmail address to sign in. For example name@nhs.net.</p>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
+            Agent sign in
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Use your NHSmail address to sign in. For example name@nhs.net.</div>
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town">
