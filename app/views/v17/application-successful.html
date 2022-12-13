@@ -126,7 +126,11 @@ Manage Get help to buy food and milk (Healthy Start) applications
       </h1>
   </div>
 </div>
-<p>This application has been overridden until 28 February 2023 (12 weeks).</p>
+<p>This application has been overridden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
+
+
+
+
 <h3>What happens next</h3>
 <p>We’ll send the applicant more information about their payment.</p>
 <p>They should get their card within 5 to 10 working days. It’ll already have their first payment on it and will come with instructions on how to activate and use it.</p>

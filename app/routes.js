@@ -2506,34 +2506,54 @@ if (typeofbenefit === 'universalcredit') {
 
 
 
-// Universal Credit
+// Confirm Override
 router.post('/v17/confirm-override', function (req, res) {
 
-  var universalcredit = req.session.data['universalcredit']
+  var overrideLength = req.session.data['overrideLength']
   var typeofbenefit = req.session.data['type-of-benefit']
+  var overrideWeeks = req.session.data['overrideWeeks']
   
-  if (universalcredit === 'yes') {
+  if (overrideLength === 'standard') {
+
+    // SET DATE TO TODAY PLUS 12 WEEKS
+    req.session.data['length'] = moment().add(12, 'weeks').format("D MMMM YYYY")
+    req.session.data['weeks'] = "12 weeks";
+
     res.redirect('/v17/application-successful')
-  } else if (universalcredit === 'other'){
+
+  } else if (overrideLength === 'other'){
+
+    // SET DATE TO TODAY PLUS NUMBER OF WEEKS SPECIFIED
+    req.session.data['length'] = moment().add(overrideWeeks, 'weeks').format("D MMMM YYYY");
+
+    if (overrideWeeks > 1){
+      req.session.data['weeks'] = overrideWeeks + " weeks";
+    } else {
+      req.session.data['weeks'] = overrideWeeks + " week";
+    }
+
     res.redirect('/v17/application-successful')
-  } else if (typeofbenefit === 'universalcredit') {
-      res.redirect('/v17/manage-claim-universal-credit')
-  } else if (typeofbenefit === 'incomesupport'){
-      res.redirect('/v17/manage-claim-income-support')
-  } else if (typeofbenefit === 'pensioncredit'){
-      res.redirect('/v17/manage-claim-pension-credit')
-  } else if (typeofbenefit === 'incomebasedjsa'){
-      res.redirect('/v17/manage-claim-income-based-jsa')
-  } else if (typeofbenefit === 'incomebasedesa'){
-      res.redirect('/v17/manage-claim-income-based-esa')
-  } else if (typeofbenefit === 'childtaxcredit'){
-      res.redirect('/v17/manage-claim-child-tax-credit')
-  } else if (typeofbenefit === 'workingtaxcredit'){
-      res.redirect('/v17/manage-claim-working-tax-credit')
-  } else if (typeofbenefit === 'pregnantandunder18'){
-      res.redirect('/v17/manage-claim-pregnant')
+
   } else {
-    res.redirect('/v17/manage-claim-universal-credit')
+
+    if (typeofbenefit === 'universalcredit') {
+      res.redirect('/v17/manage-claim-universal-credit')
+    } else if (typeofbenefit === 'incomesupport'){
+      res.redirect('/v17/manage-claim-income-support')
+    } else if (typeofbenefit === 'pensioncredit'){
+      res.redirect('/v17/manage-claim-pension-credit')
+    } else if (typeofbenefit === 'incomebasedjsa'){
+      res.redirect('/v17/manage-claim-income-based-jsa')
+    } else if (typeofbenefit === 'incomebasedesa'){
+      res.redirect('/v17/manage-claim-income-based-esa')
+    } else if (typeofbenefit === 'childtaxcredit'){
+      res.redirect('/v17/manage-claim-child-tax-credit')
+    } else if (typeofbenefit === 'workingtaxcredit'){
+      res.redirect('/v17/manage-claim-working-tax-credit')
+    } else if (typeofbenefit === 'pregnantandunder18'){
+      res.redirect('/v17/manage-claim-pregnant')
+    }
+
   }
   
   })

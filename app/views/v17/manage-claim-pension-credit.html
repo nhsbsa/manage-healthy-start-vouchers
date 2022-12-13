@@ -159,7 +159,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
               <div class="nhsuk-radios nhsuk-radios--conditional">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="yes" name="universalcredit" type="radio" value="email"
+                  <input class="nhsuk-radios__input" id="yes" name="overrideLength" type="radio" value="standard"
                     aria-controls="conditional-contact-1" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-radios__label" for="yes">
                     12 weeks (standard period)
@@ -169,7 +169,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
 
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="other" name="universalcredit" type="radio" value="phone"
+                  <input class="nhsuk-radios__input" id="other" name="overrideLength" type="radio" value="other"
                     aria-controls="conditional-contact-2" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-radios__label" for="other">
                     Other
@@ -179,10 +179,10 @@ Manage Get help to buy food and milk (Healthy Start) applications
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
 
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="phone">
+                    <label class="nhsuk-label" for="overrideWeeks">
                       Number of weeks (between 1 and 12)
                     </label>
-                    <input class="nhsuk-input nhsuk-input--width-2" id="phone" name="phone" type="text">
+                    <input class="nhsuk-input nhsuk-input--width-2" id="overrideWeeks" name="overrideWeeks" type="text" pattern="[0-9]*" inputmode="numeric">
                   </div>
 
                 </div>
@@ -195,7 +195,9 @@ Manage Get help to buy food and milk (Healthy Start) applications
 
 
 
-          <p><a class="nhsuk-button" href="application-successful">Confirm and submit</a></p>
+          <button class="nhsuk-button" type="submit">
+            Confirm and submit
+          </button>
 
         </form>
 
