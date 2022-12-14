@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Get help to buy food and milk (Healthy Start)
+Manage Get help to buy food and milk (Healthy Start) applications
 {% endblock %}
 <!-- Header goes inside the header block -->
 <!-- More info and code for the header can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/header -->
@@ -15,7 +15,7 @@ Get help to buy food and milk (Healthy Start)
         </svg>
 
         <span class="nhsuk-header__service-name">
-          Get help to buy food and milk (Healthy Start)
+          Manage Get help to buy food and milk (Healthy Start) applications
         </span>
       </a>
     </div>
@@ -37,10 +37,9 @@ Get help to buy food and milk (Healthy Start)
     <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
         <div class="nhsuk-width-container">
             <ol class="nhsuk-breadcrumb__list">
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="dashboard">Dashboard</a></li>
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Manage claims</a></li>
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results">Search results</a></li>
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-pending-results">Anita Bilal</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-SARAH-GREEN">Search results</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-SARAH-GREEN">Sarah Green</a></li>
             </ol>
             <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
         </div>
@@ -51,7 +50,13 @@ Get help to buy food and milk (Healthy Start)
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-        
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="manage-claim-search-SARAH-GREEN">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
         <!--
         <nav class="nhsuk-sub-navigation">
             <ul class="nhsuk-sub-navigation__list">
@@ -61,7 +66,7 @@ Get help to buy food and milk (Healthy Start)
                 <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Claim timeline</a></li>
             </ul>
         </nav>
---><h1>Anita Bilal</h1>
+--><h1>Sarah Green</h1>
 
                 <div class="nhsuk-grid-row">
                   <div class="nhsuk-grid-column-full">
@@ -86,7 +91,7 @@ Get help to buy food and milk (Healthy Start)
                                           Last updated
                                       </th>
                                       <th role="columnheader" class="nhsuk-u-padding-top-0" scope="col">
-                                          Assisted claim
+                                          Override
                                       </th>
                                     </tr>
                                   </thead>
@@ -96,42 +101,23 @@ Get help to buy food and milk (Healthy Start)
               
                                     <tr role="row" class="nhsuk-table__row">
                                       <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Reference </span><a href="manage-claim-pending-claim-details">HDJ2123F</a>
+                                          <span class="nhsuk-table-responsive__heading">Reference </span><a href="manage-claim-SARAH-GREEN-claim-details">ABC1234D</a>
                                         </td>
                                         <td role="cell" class="nhsuk-table__cell">
                                           <span class="nhsuk-table-responsive__heading">Application date </span>11 November 2020
                                         </td>
-                                      <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">
-                                            Pending
-                                          </strong>
+                                        <td class="nhsuk-table__cell">
+                                          <span class="nhsuk-u-visually-hidden">Application status is </span><strong
+                                            class="nhsuk-tag">Active</strong>
                                         </td>
                                       <td role="cell" class="nhsuk-table__cell">
                                           <span class="nhsuk-table-responsive__heading">Last updated </span>11 November 2020
                                         </td>
                                         <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Assisted claim </span>Yes
+                                          <span class="nhsuk-table-responsive__heading">Override </span>Yes
                                         </td>
                                     </tr>
-                                    <tr role="row" class="nhsuk-table__row">
-                                      <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Reference </span><a href="#">YTJ76291Z</a>
-                                        </td>
-                                        <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Application date </span>22 August 2018
-                                        </td>
-                                      <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">
-                                            Expired
-                                          </strong>
-                                        </td>
-                                      <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Last updated </span>22 August 2018
-                                        </td>
-                                        <td role="cell" class="nhsuk-table__cell">
-                                          <span class="nhsuk-table-responsive__heading">Assisted claim </span>No
-                                        </td>
-                                    </tr>
+
                                     <tr role="row" class="nhsuk-table__row">
                                       <td role="cell" class="nhsuk-table__cell">
                                           <span class="nhsuk-table-responsive__heading">Reference </span><a href="#">XHA19476D</a>
