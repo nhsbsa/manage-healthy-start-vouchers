@@ -2665,7 +2665,7 @@ router.post('/v18/manage-claim-pending-override-warning', function (req, res) {
   
   
   if (pendingOverride === 'yes') {
-    res.redirect('/v18/application-successful')
+    res.redirect('/v18/review-and-confirm-override')
   } else if (pendingOverride === 'no'){
     res.redirect('/v18/manage-claim-pending-claim-details')
   } else {
@@ -2809,7 +2809,7 @@ router.post('/v18/confirm-override', function (req, res) {
     req.session.data['length'] = moment().add(12, 'weeks').format("D MMMM YYYY")
     req.session.data['weeks'] = "12 weeks";
 
-    res.redirect('/v18/application-successful')
+    res.redirect('/v18/review-and-confirm-override')
 
   } else if (overrideLength === 'other'){
 
@@ -2822,7 +2822,7 @@ router.post('/v18/confirm-override', function (req, res) {
       req.session.data['weeks'] = overrideWeeks + " week";
     }
 
-    res.redirect('/v18/application-successful')
+    res.redirect('/v18/review-and-confirm-override')
 
   } else {
 
