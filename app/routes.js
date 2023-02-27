@@ -2688,6 +2688,44 @@ router.post('/v18/manage-claim-search-active', function (req, res) {
   }
 })
 
+// Do you undersatnd
+
+router.post('/v18/before-you-start-ANITA-BILAL', function (req, res) {
+
+  const DoYouUnderstand = req.session.data['do-you-understand']
+
+  if (DoYouUnderstand == 'yes') {
+    res.redirect('/v18/manage-claim-ANITA-BILAL-override');
+  } else {
+    res.redirect('/v18/before-you-start-ANITA-BILAL');
+  }
+
+})
+
+router.post('/v18/before-you-start-SARAH-GREEN', function (req, res) {
+
+  const DoYouUnderstand = req.session.data['do-you-understand']
+
+  if (DoYouUnderstand == 'yes') {
+    res.redirect('/v18/manage-claim-SARAH-GREEN-override');
+  } else {
+    res.redirect('/v18/before-you-start-SARAH-GREEN');
+  }
+
+})
+
+router.post('/v18/before-you-start-SIMON-WOODS', function (req, res) {
+
+  const DoYouUnderstand = req.session.data['do-you-understand']
+
+  if (DoYouUnderstand == 'yes') {
+    res.redirect('/v18/manage-claim-SIMON-WOODS-override');
+  } else {
+    res.redirect('/v18/before-you-start-SIMON-WOODS');
+  }
+
+})
+
 
 
 // Select claims
@@ -2963,6 +3001,20 @@ router.post('/v18/confirm-override', function (req, res) {
 
 })
 
+// Do you want to continue
+
+router.post('/v18/review-and-confirm-override', function (req, res) {
+
+  const DoYouWantToContinue = req.session.data['do-you-want-to-continue']
+
+  if (DoYouWantToContinue == 'yes') {
+    res.redirect('/v18/application-successful');
+  } else {
+    res.redirect('/v18/review-and-confirm-override');
+  }
+
+})
+
 // router.post('/v18/manage-claim-pending-override', function (req, res) {
 
 //     var pendingOverride = req.session.data['override']
@@ -3091,6 +3143,44 @@ router.post('/v19/manage-claim-search-active', function (req, res) {
   else {
     res.redirect('/v19/manage-claim-search-no-results-active')
   }
+})
+
+// Do you undersatnd
+
+router.post('/v19/before-you-start-ANITA-BILAL', function (req, res) {
+
+  const DoYouUnderstand = req.session.data['do-you-understand']
+
+  if (DoYouUnderstand == 'yes') {
+    res.redirect('/v19/manage-claim-ANITA-BILAL-override');
+  } else {
+    res.redirect('/v19/before-you-start-ANITA-BILAL');
+  }
+
+})
+
+router.post('/v19/before-you-start-SARAH-GREEN', function (req, res) {
+
+  const DoYouUnderstand = req.session.data['do-you-understand']
+
+  if (DoYouUnderstand == 'yes') {
+    res.redirect('/v19/manage-claim-SARAH-GREEN-override');
+  } else {
+    res.redirect('/v19/before-you-start-SARAH-GREEN');
+  }
+
+})
+
+router.post('/v19/before-you-start-SIMON-WOODS', function (req, res) {
+
+  const DoYouUnderstand = req.session.data['do-you-understand']
+
+  if (DoYouUnderstand == 'yes') {
+    res.redirect('/v19/manage-claim-SIMON-WOODS-override');
+  } else {
+    res.redirect('/v19/before-you-start-SIMON-WOODS');
+  }
+
 })
 
 
@@ -3364,6 +3454,20 @@ router.post('/v19/confirm-override', function (req, res) {
       res.redirect('/v19/manage-claim-pregnant')
     }
 
+  }
+
+})
+
+// Do you want to continue
+
+router.post('/v19/review-and-confirm-override', function (req, res) {
+
+  const DoYouWantToContinue = req.session.data['do-you-want-to-continue']
+
+  if (DoYouWantToContinue == 'yes') {
+    res.redirect('/v19/application-successful');
+  } else {
+    res.redirect('/v19/review-and-confirm-override');
   }
 
 })

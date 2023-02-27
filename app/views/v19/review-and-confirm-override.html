@@ -153,49 +153,45 @@ Manage Get help to buy food and milk (Healthy Start) applications
 
       <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-6">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>This application will be overriden on {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
+        <p>This application will be overriden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
       </div>
 
-      <div class="nhsuk-form-group">
+      <form action="/v19/review-and-confirm-override" method="post">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              Do you want to continue?
-            </h1>
-          </legend>
+        <div class="nhsuk-form-group">
 
-          <div class="nhsuk-hint" id="contact-hint">
-            Once you override a claim, you cannot go back and change it.
-          </div>
-      
-          <div class="nhsuk-radios nhsuk-radios--inline">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-                Yes
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                No
-              </label>
-            </div>
-      
-          </div>
-        </fieldset>
-      
-      </div>
+            <fieldset class="nhsuk-fieldset">
 
-    </fieldset>
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                    Do you want to continue?
+                </h1>
+            </legend>
+            <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Once you override a claim, you cannot go back and change it.</div>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="yes" name="do-you-want-to-continue" type="radio" value="yes">
+                        <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="no" name="do-you-want-to-continue" type="radio" value="no">
+                        <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+            Continue
+        </button>
+
+    </form>
+  
   </div>
-</div>
-
-<p><a href="application-successful" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Confirm and submit</a>
-</p>
-
-</div>
 {% endblock %}

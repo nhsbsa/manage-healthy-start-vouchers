@@ -111,36 +111,42 @@ Manage Get help to buy food and milk (Healthy Start) applications
 </div>
 
 
-<form action="v18/before-you-start-SARAH-GREEN" method="post">
-  <fieldset class="nhsuk-fieldset">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-      <h1 class="nhsuk-fieldset__heading">
-        Do you understand?
-      </h1>
-    </legend>
+<form action="/v18/before-you-start-SARAH-GREEN" method="post">
 
-    <div class="nhsuk-radios nhsuk-radios--inline">
+  <div class="nhsuk-form-group">
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-inline-1" name="add-file2" type="radio" value="yes">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-          Yes
-        </label>
-      </div>
+      <fieldset class="nhsuk-fieldset">
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-inline-2" name="add-file2" type="radio" value="no">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-          No
-        </label>
-      </div>
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+              Do you understand?
+          </h1>
+      </legend>
 
-    </div>
-  </fieldset>
-
-<p><a href="manage-claim-SARAH-GREEN-override" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Continue</a></p>
+          <div class="nhsuk-radios nhsuk-radios--inline">
+              <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="yes" name="do-you-understand" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                      Yes
+                  </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="no" name="do-you-understand" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="no">
+                      No
+                  </label>
+              </div>
+          </div>
+      </fieldset>
 
   </div>
+
+  <button class="nhsuk-button" type="submit">
+      Continue
+  </button>
+
+</form>
+
 </div>
 
 {% endblock %}
