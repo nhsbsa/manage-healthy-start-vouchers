@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Manage Get help to buy food and milk (Healthy Start) applications
+{% endblock %}
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/header -->
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo"><a class="nhsuk-header__link nhsuk-header__link--service " href="/"
+        aria-label="NHS homepage">
+
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+          <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" fill="#fff"
+            d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6">
+          </path>
+        </svg>
+
+        <span class="nhsuk-header__service-name">
+          Manage Get help to buy food and milk (Healthy Start) applications
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+
+      <div class="nhsuk-header__menu">
+        <div class="nhsuk-header__menu">
+          <a href="sign-in" class="nhsuk-header__menu-toggle" id="log-out">Sign out</a>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  {% if data['searchlastname'] == "Bilal" %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-ANITA-BILAL">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-results-ANITA-BILAL">Anita Bilal</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-ANITA-BILAL-claim-details">HDJ2123F</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+  {% elseif data['searchlastname'] == "Green" %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-SARAH-GREEN">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-results-SARAH-GREEN">Sarah Green</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-SARAH-GREEN-claim-details">ABC1234D</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+  {% elseif data['searchlastname'] == "Woods" %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-SIMON-WOODS">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-results-SIMON-WOODS">Simon Woods</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-SIMON-WOODS-claim-details">YTJ76291Z</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+  {% elseif data['searchlastname'] == "Smith" %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-JOHN-SMITH">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-results-JOHN-SMITH">John Smith</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-JOHN-SMITH-claim-details">XHA19476D</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+  {% else %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+  {% endif %}
+
+</header>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!--
+        <nav class="nhsuk-sub-navigation">
+            <ul class="nhsuk-sub-navigation__list">
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link" aria-current="page">Claim details</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Eligibility</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Payments</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Claim timeline</a></li>
+            </ul>
+        </nav>
+-->
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+            <h1 class="nhsuk-panel__title" style="color: white;">Override successful</h1><span
+              class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">The applicant is
+              entitled to <strong>£X.XX</strong> a week.<br>
+              Their first payment will be <strong>£XX.XX</strong>.</span>
+            <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
+              Reference number:<br><strong>HDJ2123F</strong>
+            </div>
+            </h1>
+          </div>
+        </div>
+        <p>This application has been overridden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){%
+          else %}7 March 2023 (12 weeks){% endif %}.</p>
+
+        <h3>What you need to do next</h3>
+        <ul>
+          <li>Go back to the applicant's contact record in Dynamics.</li>
+          <li>Attach any supporting evidence.</li>
+          <li>Add a note that includes the claim reference number.</li>
+          <li>Add the date that the override ends to the note.</li>
+        </ul>
+
+        <h3>What happens next</h3>
+        <p>We’ll send the applicant more information about their payment.</p>
+        <p>They should get their card within 5 to 10 working days. It’ll already have their first payment on it and will
+          come with instructions on how to activate and use it.</p>
+        <p>Money will be added to their card every 4 weeks.</p>
+
+
+      </div>
+    </div>
+
+    <p><a href="manage-claim-search" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Return to
+        search</a></p>
+
+  </div>
+  {% endblock %}
