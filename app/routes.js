@@ -23,7 +23,7 @@ router.post('/v5/terms-and-conditions', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var firstName = req.session.data['firstname']
 
-  if (emailAddress != ""){
+  if (emailAddress != "") {
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
       // page in GOV.UK Notify. It's not a secret so it's fine to put it
@@ -32,12 +32,12 @@ router.post('/v5/terms-and-conditions', function (req, res) {
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       emailAddress, {
-        personalisation: {
-          'firstName': firstName
-        }
+      personalisation: {
+        'firstName': firstName
       }
+    }
     );
-    res.redirect('/v5/confirmation-over-10-weeks') 
+    res.redirect('/v5/confirmation-over-10-weeks')
   }
   else if (telephoneNumber != "") {
     notify.sendSms(
@@ -48,10 +48,10 @@ router.post('/v5/terms-and-conditions', function (req, res) {
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       telephoneNumber, {
-        personalisation: {
-          'firstName': firstName
-        }
+      personalisation: {
+        'firstName': firstName
       }
+    }
     );
     res.redirect('/v5/confirmation-over-10-weeks')
   }
@@ -67,7 +67,7 @@ router.post('/v7/terms-and-conditions', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var firstName = req.session.data['firstname']
 
-  if (emailAddress != ""){
+  if (emailAddress != "") {
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
       // page in GOV.UK Notify. It's not a secret so it's fine to put it
@@ -76,12 +76,12 @@ router.post('/v7/terms-and-conditions', function (req, res) {
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       emailAddress, {
-        personalisation: {
-          'firstName': firstName
-        }
+      personalisation: {
+        'firstName': firstName
       }
+    }
     );
-    res.redirect('/v7/confirmation-over-10-weeks') 
+    res.redirect('/v7/confirmation-over-10-weeks')
   }
   else if (telephoneNumber != "") {
     notify.sendSms(
@@ -92,10 +92,10 @@ router.post('/v7/terms-and-conditions', function (req, res) {
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       telephoneNumber, {
-        personalisation: {
-          'firstName': firstName
-        }
+      personalisation: {
+        'firstName': firstName
       }
+    }
     );
     res.redirect('/v7/confirmation-over-10-weeks')
   }
@@ -111,7 +111,7 @@ router.post('/v8/terms-and-conditions', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var firstName = req.session.data['firstname']
 
-  if (emailAddress != ""){
+  if (emailAddress != "") {
     notify.sendEmail(
       // this long string is the template ID, copy it from the template
       // page in GOV.UK Notify. It's not a secret so it's fine to put it
@@ -120,12 +120,12 @@ router.post('/v8/terms-and-conditions', function (req, res) {
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       emailAddress, {
-        personalisation: {
-          'firstName': firstName
-        }
+      personalisation: {
+        'firstName': firstName
       }
+    }
     );
-    res.redirect('/v8/confirmation-over-10-weeks') 
+    res.redirect('/v8/confirmation-over-10-weeks')
   }
   else if (telephoneNumber != "") {
     notify.sendSms(
@@ -136,10 +136,10 @@ router.post('/v8/terms-and-conditions', function (req, res) {
       // `emailAddress` here needs to match the name of the form field in
       // your HTML page
       telephoneNumber, {
-        personalisation: {
-          'firstName': firstName
-        }
+      personalisation: {
+        'firstName': firstName
       }
+    }
     );
     res.redirect('/v8/confirmation-over-10-weeks')
   }
@@ -173,19 +173,19 @@ const today = new Date(Date.now());
 // Capture NHSMail address (Login)
 router.post('/v1/nhs-login', function (req, res) {
 
-    var nhsLogin = req.session.data['nhs-mail-address']
-  
-    if (nhsLogin === ""){
-      req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
-      res.redirect('/v1/index')
-    }
-    else if (nhsLogin) {
-      res.redirect('/v1/index')
-    }
-    else {
-      res.redirect('/v1/index')
-    }
-    
+  var nhsLogin = req.session.data['nhs-mail-address']
+
+  if (nhsLogin === "") {
+    req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
+    res.redirect('/v1/index')
+  }
+  else if (nhsLogin) {
+    res.redirect('/v1/index')
+  }
+  else {
+    res.redirect('/v1/index')
+  }
+
 })
 
 // ****************************************
@@ -197,7 +197,7 @@ router.post('/v2/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v2/home')
   }
@@ -207,7 +207,7 @@ router.post('/v2/nhs-login', function (req, res) {
   else {
     res.redirect('/v2/home')
   }
-  
+
 })
 
 // // Find address
@@ -267,39 +267,39 @@ router.post('/v2/pregnant-or-children', function (req, res) {
     else if (pregnantorchildren.toString() == 'pregnant,children') {
       res.redirect('/v2/add-applicant-step3')
     }
-    
+
   } else {
     res.redirect('/v2/add-applicant-step2')
   }
 
 })
 
-        // Are you pregnant? > Due Date
+// Are you pregnant? > Due Date
 
-        router.post('/v2/due-date', function (req, res) {
+router.post('/v2/due-date', function (req, res) {
 
-          var duedateday = req.session.data['duedateday']
-          var duedatemonth = req.session.data['duedatemonth']
-          var duedateyear = req.session.data['duedateyear']
+  var duedateday = req.session.data['duedateday']
+  var duedatemonth = req.session.data['duedatemonth']
+  var duedateyear = req.session.data['duedateyear']
 
-          var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
-          var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
-    
-          if (duedateday && duedatemonth && duedateyear) {
+  var duedate = moment(duedateyear + '-' + duedatemonth + '-' + duedateday);
+  var fulltermpregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks
 
-            if (duedate > fulltermpregnancy) { // If due date is later than 32 weeks from today they are less than 10 weeks pregnant
-              res.redirect('/v2/add-applicant-step3-error')
-            } else {
-              res.redirect('/v2/CORRECT')
-            }
+  if (duedateday && duedatemonth && duedateyear) {
 
-          }
-          else {
-            res.redirect('/v2/add-applicant-step3')
-          }
-  
-      
-      })
+    if (duedate > fulltermpregnancy) { // If due date is later than 32 weeks from today they are less than 10 weeks pregnant
+      res.redirect('/v2/add-applicant-step3-error')
+    } else {
+      res.redirect('/v2/CORRECT')
+    }
+
+  }
+  else {
+    res.redirect('/v2/add-applicant-step3')
+  }
+
+
+})
 
 // ****************************************
 // Get help to buy food and milk (Healthy Start) (VERSION 3)
@@ -310,7 +310,7 @@ router.post('/v3/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v3/home')
   }
@@ -320,7 +320,7 @@ router.post('/v3/nhs-login', function (req, res) {
   else {
     res.redirect('/v3/home')
   }
-  
+
 })
 
 // // Find address
@@ -380,7 +380,7 @@ router.post('/v3/pregnant-or-children', function (req, res) {
     else if (pregnantorchildren.toString() == 'pregnant,children') {
       res.redirect('/v3/add-applicant-step3')
     }
-    
+
   } else {
     res.redirect('/v3/add-applicant-step2')
   }
@@ -398,20 +398,20 @@ router.post('/v3/date-of-birth', function (req, res) {
   var dateofbirthyear = req.session.data['dateofbirthyear']
 
   var dob = new Date(dateofbirthyear, dateofbirthmonth, dateofbirthday);
-  var ageDate =  new Date(today - dob.getTime())
+  var ageDate = new Date(today - dob.getTime())
   var temp = ageDate.getFullYear();
   var yrs = Math.abs(temp - 1970);
 
-  req.session.data['age'] = yrs; 
+  req.session.data['age'] = yrs;
 
 
   if (dateofbirthday && dateofbirthmonth && dateofbirthyear) {
 
-      if (yrs >= 16 && yrs < 18) {
-        res.redirect('/v3/do-they-get-vouchers')
-      } else {
-        res.redirect('/v3/not-currently-eligible-dob')
-      }
+    if (yrs >= 16 && yrs < 18) {
+      res.redirect('/v3/do-they-get-vouchers')
+    } else {
+      res.redirect('/v3/not-currently-eligible-dob')
+    }
 
   }
   else {
@@ -487,7 +487,7 @@ router.post('/v3/due-date', function (req, res) {
   var fourtytwoweeksfromtoday = moment().add(42, 'weeks');
 
   req.session.data['preggers'] = moment(temp).format('Do MMMM YYYY');
-  
+
   if (duedateday && duedatemonth && duedateyear) { // If a date has been entered...
 
     if (duedate > fourtytwoweeksfromtoday) { // If due date is greater than 42 weeks from today...
@@ -641,7 +641,7 @@ router.post('/v4/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v4/home')
   }
@@ -651,7 +651,7 @@ router.post('/v4/nhs-login', function (req, res) {
   else {
     res.redirect('/v4/home')
   }
-  
+
 })
 
 // // Find address
@@ -711,7 +711,7 @@ router.post('/v4/pregnant-or-children', function (req, res) {
     else if (pregnantorchildren.toString() == 'pregnant,children') {
       res.redirect('/v4/add-applicant-step3')
     }
-    
+
   } else {
     res.redirect('/v4/add-applicant-step2')
   }
@@ -729,20 +729,20 @@ router.post('/v4/date-of-birth', function (req, res) {
   var dateofbirthyear = req.session.data['dateofbirthyear']
 
   var dob = new Date(dateofbirthyear, dateofbirthmonth, dateofbirthday);
-  var ageDate =  new Date(today - dob.getTime())
+  var ageDate = new Date(today - dob.getTime())
   var temp = ageDate.getFullYear();
   var yrs = Math.abs(temp - 1970);
 
-  req.session.data['age'] = yrs; 
+  req.session.data['age'] = yrs;
 
 
   if (dateofbirthday && dateofbirthmonth && dateofbirthyear) {
 
-      if (yrs >= 16 && yrs < 18) {
-        res.redirect('/v4/do-they-get-vouchers')
-      } else {
-        res.redirect('/v4/not-currently-eligible-dob')
-      }
+    if (yrs >= 16 && yrs < 18) {
+      res.redirect('/v4/do-they-get-vouchers')
+    } else {
+      res.redirect('/v4/not-currently-eligible-dob')
+    }
 
   }
   else {
@@ -818,7 +818,7 @@ router.post('/v4/due-date', function (req, res) {
   var fourtytwoweeksfromtoday = moment().add(42, 'weeks');
 
   req.session.data['preggers'] = moment(temp).format('Do MMMM YYYY');
-  
+
   if (duedateday && duedatemonth && duedateyear) { // If a date has been entered...
 
     if (duedate > fourtytwoweeksfromtoday) { // If due date is greater than 42 weeks from today...
@@ -976,11 +976,11 @@ router.post('/v4/eligibility', function (req, res) {
   var dateofbirthyear = req.session.data['dateofbirthyear']
 
   var dob = new Date(dateofbirthyear, dateofbirthmonth, dateofbirthday);
-  var ageDate =  new Date(today - dob.getTime())
+  var ageDate = new Date(today - dob.getTime())
   var temp = ageDate.getFullYear();
   var yrs = Math.abs(temp - 1970);
 
-  req.session.data['age'] = yrs; 
+  req.session.data['age'] = yrs;
 
   if (vouchers === "no" && scotland === "no" && pregnant === "yes" && yrs >= 16 && yrs < 18) {
     res.redirect('/v4/details')
@@ -1009,7 +1009,7 @@ router.post('/v5/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v5/home')
   }
@@ -1019,7 +1019,7 @@ router.post('/v5/nhs-login', function (req, res) {
   else {
     res.redirect('/v5/home')
   }
-  
+
 })
 
 // Search
@@ -1042,7 +1042,7 @@ router.post('/v5/search', function (req, res) {
     res.redirect('/v5/result-found')
   } else if (searchlastName.includes('Bilal')) {
     res.redirect('/v5/result-found')
-  } else if (searchpostCode.includes('NE15 8NY')){
+  } else if (searchpostCode.includes('NE15 8NY')) {
     res.redirect('/v5/result-found')
   } else if (searchpostCode.includes('NE158NY')) {
     res.redirect('/v5/result-found')
@@ -1057,7 +1057,7 @@ router.post('/v5/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v5/search-confirmation')
   } else if (searchadd == 'no') {
     res.redirect('/v5/home')
@@ -1101,8 +1101,8 @@ router.post('/v5/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
-    res.redirect('/v5/terms-and-conditions')    
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
+    res.redirect('/v5/terms-and-conditions')
   }
   else {
     res.redirect('/v5/personal-details-error')
@@ -1119,7 +1119,7 @@ router.post('/v6/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v6/home')
   }
@@ -1129,7 +1129,7 @@ router.post('/v6/nhs-login', function (req, res) {
   else {
     res.redirect('/v6/home')
   }
-  
+
 })
 
 // Search
@@ -1152,7 +1152,7 @@ router.post('/v6/search', function (req, res) {
     res.redirect('/v6/result-found')
   } else if (searchlastName.includes('Bilal')) {
     res.redirect('/v6/result-found')
-  } else if (searchpostCode.includes('NE15 8NY')){
+  } else if (searchpostCode.includes('NE15 8NY')) {
     res.redirect('/v6/result-found')
   } else if (searchpostCode.includes('NE158NY')) {
     res.redirect('/v6/result-found')
@@ -1167,7 +1167,7 @@ router.post('/v6/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v6/search-confirmation')
   } else if (searchadd == 'no') {
     res.redirect('/v6/home')
@@ -1211,8 +1211,8 @@ router.post('/v6/new-applicant', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
-    res.redirect('/v6/terms-and-conditions')    
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
+    res.redirect('/v6/terms-and-conditions')
   }
   else {
     res.redirect('/v6/new-applicant-error')
@@ -1229,7 +1229,7 @@ router.post('/v7/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v7/home')
   }
@@ -1239,7 +1239,7 @@ router.post('/v7/nhs-login', function (req, res) {
   else {
     res.redirect('/v7/home')
   }
-  
+
 })
 
 // Search
@@ -1262,7 +1262,7 @@ router.post('/v7/search', function (req, res) {
     res.redirect('/v7/result-found')
   } else if (searchlastName.includes('Bilal')) {
     res.redirect('/v7/result-found')
-  } else if (searchpostCode.includes('NE15 8NY')){
+  } else if (searchpostCode.includes('NE15 8NY')) {
     res.redirect('/v7/result-found')
   } else if (searchpostCode.includes('NE158NY')) {
     res.redirect('/v7/result-found')
@@ -1277,7 +1277,7 @@ router.post('/v7/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v7/search-confirmation')
   } else if (searchadd == 'no') {
     res.redirect('/v7/home')
@@ -1321,18 +1321,18 @@ router.post('/v7/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
 
-  // Calculate Age
+    // Calculate Age
 
     var ageToday = new Date(Date.now());
     var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-    var ageDate =  new Date(ageToday - dob.getTime())
+    var ageDate = new Date(ageToday - dob.getTime())
     var temp = ageDate.getFullYear();
     var yrs = Math.abs(temp - 1970);
 
     req.session.data['age'] = yrs;
-    
+
     console.log(yrs)
 
     // Calculate Due Date
@@ -1341,7 +1341,7 @@ router.post('/v7/personal-details', function (req, res) {
     var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
     var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-    if (dueDate < today || dueDate > fulltermPregnancy){
+    if (dueDate < today || dueDate > fulltermPregnancy) {
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v7/personal-details-error')
     } else if (yrs >= "18") {
@@ -1365,8 +1365,8 @@ router.post('/v7/bank-details', function (req, res) {
   var sortCode = req.session.data['sortcode']
   var accountNumber = req.session.data['accountnumber']
 
-  if (accountName && sortCode && accountNumber){
-    res.redirect('/v7/terms-and-conditions')    
+  if (accountName && sortCode && accountNumber) {
+    res.redirect('/v7/terms-and-conditions')
   }
   else {
     res.redirect('/v7/bank-details-error')
@@ -1383,7 +1383,7 @@ router.post('/v8/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v8/home')
   }
@@ -1393,7 +1393,7 @@ router.post('/v8/nhs-login', function (req, res) {
   else {
     res.redirect('/v8/home')
   }
-  
+
 })
 
 // Search
@@ -1421,7 +1421,7 @@ router.post('/v8/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v8/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v8/home')
@@ -1465,18 +1465,18 @@ router.post('/v8/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
 
-  // Calculate Age
+    // Calculate Age
 
     var ageToday = new Date(Date.now());
     var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-    var ageDate =  new Date(ageToday - dob.getTime())
+    var ageDate = new Date(ageToday - dob.getTime())
     var temp = ageDate.getFullYear();
     var yrs = Math.abs(temp - 1970);
 
     req.session.data['age'] = yrs;
-    
+
     console.log(yrs)
 
     // Calculate Due Date
@@ -1485,7 +1485,7 @@ router.post('/v8/personal-details', function (req, res) {
     var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
     var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-    if (dueDate < today || dueDate > fulltermPregnancy){
+    if (dueDate < today || dueDate > fulltermPregnancy) {
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v8/personal-details-error')
     } else if (yrs >= "18") {
@@ -1509,8 +1509,8 @@ router.post('/v8/bank-details', function (req, res) {
   var sortCode = req.session.data['sortcode']
   var accountNumber = req.session.data['accountnumber']
 
-  if (accountName && sortCode && accountNumber){
-    res.redirect('/v8/check-answers')    
+  if (accountName && sortCode && accountNumber) {
+    res.redirect('/v8/check-answers')
   }
   else {
     res.redirect('/v8/bank-details-error')
@@ -1521,7 +1521,7 @@ router.post('/v8/bank-details', function (req, res) {
 // Capture new applicant (Bank Details)
 router.post('/v8/check-answers', function (req, res) {
 
-    res.redirect('/v8/terms-and-conditions')    
+  res.redirect('/v8/terms-and-conditions')
 
 })
 
@@ -1534,7 +1534,7 @@ router.post('/v9/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v9/home')
   }
@@ -1544,7 +1544,7 @@ router.post('/v9/nhs-login', function (req, res) {
   else {
     res.redirect('/v9/home')
   }
-  
+
 })
 
 // Search
@@ -1572,7 +1572,7 @@ router.post('/v9/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v9/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v9/home')
@@ -1616,18 +1616,18 @@ router.post('/v9/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
 
-  // Calculate Age
+    // Calculate Age
 
     var ageToday = new Date(Date.now());
     var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-    var ageDate =  new Date(ageToday - dob.getTime())
+    var ageDate = new Date(ageToday - dob.getTime())
     var temp = ageDate.getFullYear();
     var yrs = Math.abs(temp - 1970);
 
     req.session.data['age'] = yrs;
-    
+
     console.log(yrs)
 
     // Calculate Due Date
@@ -1636,7 +1636,7 @@ router.post('/v9/personal-details', function (req, res) {
     var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
     var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-    if (dueDate < today || dueDate > fulltermPregnancy){
+    if (dueDate < today || dueDate > fulltermPregnancy) {
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v9/personal-details-error')
     } else if (yrs >= "18") {
@@ -1660,8 +1660,8 @@ router.post('/v9/bank-details', function (req, res) {
   var sortCode = req.session.data['sortcode']
   var accountNumber = req.session.data['accountnumber']
 
-  if (accountName && sortCode && accountNumber){
-    res.redirect('/v9/check-answers')    
+  if (accountName && sortCode && accountNumber) {
+    res.redirect('/v9/check-answers')
   }
   else {
     res.redirect('/v9/bank-details-error')
@@ -1672,7 +1672,7 @@ router.post('/v9/bank-details', function (req, res) {
 // Capture new applicant (Bank Details)
 router.post('/v9/check-answers', function (req, res) {
 
-    res.redirect('/v9/terms-and-conditions')    
+  res.redirect('/v9/terms-and-conditions')
 
 })
 
@@ -1685,7 +1685,7 @@ router.post('/v10/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v10/home')
   }
@@ -1695,7 +1695,7 @@ router.post('/v10/nhs-login', function (req, res) {
   else {
     res.redirect('/v10/home')
   }
-  
+
 })
 
 // Search
@@ -1723,7 +1723,7 @@ router.post('/v10/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v10/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v10/home')
@@ -1767,18 +1767,18 @@ router.post('/v10/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
 
-  // Calculate Age
+    // Calculate Age
 
     var ageToday = new Date(Date.now());
     var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-    var ageDate =  new Date(ageToday - dob.getTime())
+    var ageDate = new Date(ageToday - dob.getTime())
     var temp = ageDate.getFullYear();
     var yrs = Math.abs(temp - 1970);
 
     req.session.data['age'] = yrs;
-    
+
     console.log(yrs)
 
     // Calculate Due Date
@@ -1787,7 +1787,7 @@ router.post('/v10/personal-details', function (req, res) {
     var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
     var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-    if (dueDate < today || dueDate > fulltermPregnancy){
+    if (dueDate < today || dueDate > fulltermPregnancy) {
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v10/personal-details-error')
     } else if (yrs >= "18") {
@@ -1811,8 +1811,8 @@ router.post('/v10/bank-details', function (req, res) {
   var sortCode = req.session.data['sortcode']
   var accountNumber = req.session.data['accountnumber']
 
-  if (accountName && sortCode && accountNumber){
-    res.redirect('/v10/check-answers')    
+  if (accountName && sortCode && accountNumber) {
+    res.redirect('/v10/check-answers')
   }
   else {
     res.redirect('/v10/bank-details-error')
@@ -1823,7 +1823,7 @@ router.post('/v10/bank-details', function (req, res) {
 // Capture new applicant (Bank Details)
 router.post('/v10/check-answers', function (req, res) {
 
-    res.redirect('/v10/terms-and-conditions')    
+  res.redirect('/v10/terms-and-conditions')
 
 })
 
@@ -1837,7 +1837,7 @@ router.post('/v15/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v15/home')
   }
@@ -1847,7 +1847,7 @@ router.post('/v15/nhs-login', function (req, res) {
   else {
     res.redirect('/v15/home')
   }
-  
+
 })
 
 // Search
@@ -1875,7 +1875,7 @@ router.post('/v15/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v15/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v15/home')
@@ -1919,18 +1919,18 @@ router.post('/v15/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
 
-  // Calculate Age
+    // Calculate Age
 
     var ageToday = new Date(Date.now());
     var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-    var ageDate =  new Date(ageToday - dob.getTime())
+    var ageDate = new Date(ageToday - dob.getTime())
     var temp = ageDate.getFullYear();
     var yrs = Math.abs(temp - 1970);
 
     req.session.data['age'] = yrs;
-    
+
     console.log(yrs)
 
     // Calculate Due Date
@@ -1939,7 +1939,7 @@ router.post('/v15/personal-details', function (req, res) {
     var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
     var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-    if (dueDate < today || dueDate > fulltermPregnancy){
+    if (dueDate < today || dueDate > fulltermPregnancy) {
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v15/personal-details-error')
     } else if (yrs >= "18") {
@@ -1963,8 +1963,8 @@ router.post('/v15/bank-details', function (req, res) {
   var sortCode = req.session.data['sortcode']
   var accountNumber = req.session.data['accountnumber']
 
-  if (accountName && sortCode && accountNumber){
-    res.redirect('/v15/check-answers')    
+  if (accountName && sortCode && accountNumber) {
+    res.redirect('/v15/check-answers')
   }
   else {
     res.redirect('/v15/bank-details-error')
@@ -1975,7 +1975,7 @@ router.post('/v15/bank-details', function (req, res) {
 // Capture new applicant (Bank Details)
 router.post('/v15/check-answers', function (req, res) {
 
-    res.redirect('/v15/terms-and-conditions')    
+  res.redirect('/v15/terms-and-conditions')
 
 })
 
@@ -1991,7 +1991,7 @@ router.post('/v15/add-child', (req, res) => {
 
   if (childFirstName == "Sarah" || childFirstName == "Bobby" || childFirstName == "John") {
     res.redirect('/v15/eligibility-update-children-add-error')
-  } else if (childFirstName && childLastName && childDOB){
+  } else if (childFirstName && childLastName && childDOB) {
     res.redirect('/v15/eligibility')
   } else {
     res.redirect('/v15/eligibility-update-children-add')
@@ -2000,7 +2000,7 @@ router.post('/v15/add-child', (req, res) => {
 
 
 // router.post('/v15/test-array', (req, res) => {
-  
+
 //   var checkboxes = req.session.data['example-array']
 
 // if (checkboxes == 'email', 'text', 'post' || checkboxes == 'email', 'text', 'post') {
@@ -2015,7 +2015,7 @@ router.post('/v15/add-child', (req, res) => {
 
 
 // router.post('/nationality', (req, res) => {
-  
+
 //   var nationality = req.session.data['nationality']
 
 // if (nationality == 'UK', 'Irish', 'Other' || nationality == 'UK', 'Other') {
@@ -2037,7 +2037,7 @@ router.post('/v16/nhs-login', function (req, res) {
 
   var nhsLogin = req.session.data['nhs-mail-address']
 
-  if (nhsLogin === ""){
+  if (nhsLogin === "") {
     req.session.data['nhs-mail-address'] = "joe.bloggs@nhs.net";
     res.redirect('/v16/home')
   }
@@ -2047,7 +2047,7 @@ router.post('/v16/nhs-login', function (req, res) {
   else {
     res.redirect('/v16/home')
   }
-  
+
 })
 
 // Search
@@ -2075,7 +2075,7 @@ router.post('/v16/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v16/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v16/home')
@@ -2119,18 +2119,18 @@ router.post('/v16/personal-details', function (req, res) {
   var telephoneNumber = req.session.data['telephonenumber']
   var emailAddress = req.session.data['emailaddress']
 
-  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode){
+  if (firstName && lastName && dateofbirthDay && dateofbirthMonth && dateofbirthYear && duedateDay && duedateMonth && duedateYear && addressLine1 && postCode) {
 
-  // Calculate Age
+    // Calculate Age
 
     var ageToday = new Date(Date.now());
     var dob = new Date(dateofbirthYear, dateofbirthMonth, dateofbirthDay);
-    var ageDate =  new Date(ageToday - dob.getTime())
+    var ageDate = new Date(ageToday - dob.getTime())
     var temp = ageDate.getFullYear();
     var yrs = Math.abs(temp - 1970);
 
     req.session.data['age'] = yrs;
-    
+
     console.log(yrs)
 
     // Calculate Due Date
@@ -2139,7 +2139,7 @@ router.post('/v16/personal-details', function (req, res) {
     var dueDate = moment(duedateYear + '-' + duedateMonth + '-' + duedateDay);
     var fulltermPregnancy = moment().add(32, 'weeks'); // 42 weeks from today is a full term pregnancy - 10 weeks    
 
-    if (dueDate < today || dueDate > fulltermPregnancy){
+    if (dueDate < today || dueDate > fulltermPregnancy) {
       req.session.data['duedateInvalid'] = "INELIGIBLE";
       res.redirect('/v16/personal-details-error')
     } else if (yrs >= "18") {
@@ -2163,8 +2163,8 @@ router.post('/v16/bank-details', function (req, res) {
   var sortCode = req.session.data['sortcode']
   var accountNumber = req.session.data['accountnumber']
 
-  if (accountName && sortCode && accountNumber){
-    res.redirect('/v16/check-answers')    
+  if (accountName && sortCode && accountNumber) {
+    res.redirect('/v16/check-answers')
   }
   else {
     res.redirect('/v16/bank-details-error')
@@ -2175,7 +2175,7 @@ router.post('/v16/bank-details', function (req, res) {
 // Capture new applicant (Bank Details)
 router.post('/v16/check-answers', function (req, res) {
 
-    res.redirect('/v16/terms-and-conditions')    
+  res.redirect('/v16/terms-and-conditions')
 
 })
 
@@ -2191,7 +2191,7 @@ router.post('/v16/add-child', (req, res) => {
 
   if (childFirstName == "Sarah" || childFirstName == "Bobby" || childFirstName == "John") {
     res.redirect('/v16/eligibility-update-children-add-error')
-  } else if (childFirstName && childLastName && childDOB){
+  } else if (childFirstName && childLastName && childDOB) {
     res.redirect('/v16/eligibility')
   } else {
     res.redirect('/v16/eligibility-update-children-add')
@@ -2200,7 +2200,7 @@ router.post('/v16/add-child', (req, res) => {
 
 
 // router.post('/v16/test-array', (req, res) => {
-  
+
 //   var checkboxes = req.session.data['example-array']
 
 // if (checkboxes == 'email', 'text', 'post' || checkboxes == 'email', 'text', 'post') {
@@ -2215,7 +2215,7 @@ router.post('/v16/add-child', (req, res) => {
 
 
 // router.post('/nationality', (req, res) => {
-  
+
 //   var nationality = req.session.data['nationality']
 
 // if (nationality == 'UK', 'Irish', 'Other' || nationality == 'UK', 'Other') {
@@ -2274,7 +2274,7 @@ router.post('/v16/manage-claim-search-no-results', function (req, res) {
 
   var searchadd = req.session.data['addperson']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v16/create-claim-personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v16/manage-claim-search')
@@ -2305,16 +2305,16 @@ router.post('/v17/manage-claim-search', function (req, res) {
   var searchfirstname = req.session.data['searchfirstname'].toUpperCase().trimEnd()
   var searchlastname = req.session.data['searchlastname'].toUpperCase().trimEnd()
 
-  if (searchfirstname == 'ANITA' && searchlastname == 'BILAL'){
-      res.redirect('/v17/manage-claim-search-ANITA-BILAL') // PENDING
+  if (searchfirstname == 'ANITA' && searchlastname == 'BILAL') {
+    res.redirect('/v17/manage-claim-search-ANITA-BILAL') // PENDING
   } else if (searchfirstname == 'SARAH' && searchlastname == 'GREEN') {
-      res.redirect('/v17/manage-claim-search-SARAH-GREEN') // ACTIVE
+    res.redirect('/v17/manage-claim-search-SARAH-GREEN') // ACTIVE
   } else if (searchfirstname == 'SIMON' && searchlastname == 'WOODS') {
-      res.redirect('/v17/manage-claim-search-SIMON-WOODS') // PENDING EXPIRY
+    res.redirect('/v17/manage-claim-search-SIMON-WOODS') // PENDING EXPIRY
   } else if (searchfirstname == 'JOHN' && searchlastname == 'SMITH') {
-      res.redirect('/v17/manage-claim-search-JOHN-SMITH') // EXPIRED
+    res.redirect('/v17/manage-claim-search-JOHN-SMITH') // EXPIRED
   } else {
-      res.redirect('/v17/manage-claim-search-no-results')
+    res.redirect('/v17/manage-claim-search-no-results')
   }
 })
 
@@ -2324,7 +2324,7 @@ router.post('/v17/manage-claim-search-no-results', function (req, res) {
 
   var searchadd = req.session.data['addperson']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v17/create-claim-personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v17/manage-claim-search')
@@ -2339,7 +2339,7 @@ router.post('/v17/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v17/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v17/home')
@@ -2353,17 +2353,17 @@ router.post('/v17/search-add', function (req, res) {
 // Pending claim override.
 router.post('/v17/manage-claim-pending-override', function (req, res) {
 
-// this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
+  // this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
   var pendingOverride = req.session.data['override']
 
 
-if (pendingOverride === 'yes') {
-  res.redirect('/v17/manage-claim-pending-override-warning')
-} else if (pendingOverride === 'no'){
-  res.redirect('/v17/manage-claim-pending-claim-details')
-} else {
-  res.redirect('/v17/manage-claim-pending-override')
-}
+  if (pendingOverride === 'yes') {
+    res.redirect('/v17/manage-claim-pending-override-warning')
+  } else if (pendingOverride === 'no') {
+    res.redirect('/v17/manage-claim-pending-claim-details')
+  } else {
+    res.redirect('/v17/manage-claim-pending-override')
+  }
 
 })
 
@@ -2371,56 +2371,56 @@ if (pendingOverride === 'yes') {
 router.post('/v17/manage-claim-pending-override-warning', function (req, res) {
 
   // this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
-    var pendingOverride = req.session.data['warning']
-  
-  
+  var pendingOverride = req.session.data['warning']
+
+
   if (pendingOverride === 'yes') {
     res.redirect('/v17/application-successful')
-  } else if (pendingOverride === 'no'){
+  } else if (pendingOverride === 'no') {
     res.redirect('/v17/manage-claim-pending-claim-details')
   } else {
     res.redirect('/v17/manage-claim-pending-override-warning')
   }
-  
-  })
+
+})
 
 // Active search
-  router.post('/v17/manage-claim-search-active', function (req, res) {
+router.post('/v17/manage-claim-search-active', function (req, res) {
 
-    var searchlastname = req.session.data['searchlastnamea']
-    var searchpostcode = req.session.data['searchpostcodea']
-  
-    if (searchlastname && searchpostcode) {
-      res.redirect('/v17/manage-claim-search-results-active')
-    }
-    else {
-      res.redirect('/v17/manage-claim-search-no-results-active')
-    }
-  })
+  var searchlastname = req.session.data['searchlastnamea']
+  var searchpostcode = req.session.data['searchpostcodea']
 
-  
+  if (searchlastname && searchpostcode) {
+    res.redirect('/v17/manage-claim-search-results-active')
+  }
+  else {
+    res.redirect('/v17/manage-claim-search-no-results-active')
+  }
+})
+
+
 
 // Select claims
 router.post('/v17/manage-claim-ANITA-BILAL-override', function (req, res) {
 
-    var typeofbenefit = req.session.data['type-of-benefit']
-  
-  
+  var typeofbenefit = req.session.data['type-of-benefit']
+
+
   if (typeofbenefit === 'universalcredit') {
     res.redirect('/v17/manage-claim-universal-credit')
-  } else if (typeofbenefit === 'incomesupport'){
+  } else if (typeofbenefit === 'incomesupport') {
     res.redirect('/v17/manage-claim-income-support')
-  } else if (typeofbenefit === 'pensioncredit'){
+  } else if (typeofbenefit === 'pensioncredit') {
     res.redirect('/v17/manage-claim-pension-credit')
-  } else if (typeofbenefit === 'incomebasedjsa'){
+  } else if (typeofbenefit === 'incomebasedjsa') {
     res.redirect('/v17/manage-claim-income-based-jsa')
-  } else if (typeofbenefit === 'incomebasedesa'){
+  } else if (typeofbenefit === 'incomebasedesa') {
     res.redirect('/v17/manage-claim-income-based-esa')
-  } else if (typeofbenefit === 'childtaxcredit'){
+  } else if (typeofbenefit === 'childtaxcredit') {
     res.redirect('/v17/manage-claim-child-tax-credit')
-  } else if (typeofbenefit === 'workingtaxcredit'){
+  } else if (typeofbenefit === 'workingtaxcredit') {
     res.redirect('/v17/manage-claim-working-tax-credit')
-  } else if (typeofbenefit === 'pregnantandunder18'){
+  } else if (typeofbenefit === 'pregnantandunder18') {
     res.redirect('/v17/manage-claim-pregnant')
   }
 
@@ -2432,23 +2432,23 @@ router.post('/v17/manage-claim-SARAH-GREEN-override', function (req, res) {
   var typeofbenefit = req.session.data['type-of-benefit']
 
 
-if (typeofbenefit === 'universalcredit') {
-  res.redirect('/v17/manage-claim-universal-credit')
-} else if (typeofbenefit === 'incomesupport'){
-  res.redirect('/v17/manage-claim-income-support')
-} else if (typeofbenefit === 'pensioncredit'){
-  res.redirect('/v17/manage-claim-pension-credit')
-} else if (typeofbenefit === 'incomebasedjsa'){
-  res.redirect('/v17/manage-claim-income-based-jsa')
-} else if (typeofbenefit === 'incomebasedesa'){
-  res.redirect('/v17/manage-claim-income-based-esa')
-} else if (typeofbenefit === 'childtaxcredit'){
-  res.redirect('/v17/manage-claim-child-tax-credit')
-} else if (typeofbenefit === 'workingtaxcredit'){
-  res.redirect('/v17/manage-claim-working-tax-credit')
-} else if (typeofbenefit === 'pregnantandunder18'){
-  res.redirect('/v17/manage-claim-pregnant')
-}
+  if (typeofbenefit === 'universalcredit') {
+    res.redirect('/v17/manage-claim-universal-credit')
+  } else if (typeofbenefit === 'incomesupport') {
+    res.redirect('/v17/manage-claim-income-support')
+  } else if (typeofbenefit === 'pensioncredit') {
+    res.redirect('/v17/manage-claim-pension-credit')
+  } else if (typeofbenefit === 'incomebasedjsa') {
+    res.redirect('/v17/manage-claim-income-based-jsa')
+  } else if (typeofbenefit === 'incomebasedesa') {
+    res.redirect('/v17/manage-claim-income-based-esa')
+  } else if (typeofbenefit === 'childtaxcredit') {
+    res.redirect('/v17/manage-claim-child-tax-credit')
+  } else if (typeofbenefit === 'workingtaxcredit') {
+    res.redirect('/v17/manage-claim-working-tax-credit')
+  } else if (typeofbenefit === 'pregnantandunder18') {
+    res.redirect('/v17/manage-claim-pregnant')
+  }
 
 })
 
@@ -2458,23 +2458,23 @@ router.post('/v17/manage-claim-SIMON-WOODS-override', function (req, res) {
   var typeofbenefit = req.session.data['type-of-benefit']
 
 
-if (typeofbenefit === 'universalcredit') {
-  res.redirect('/v17/manage-claim-universal-credit')
-} else if (typeofbenefit === 'incomesupport'){
-  res.redirect('/v17/manage-claim-income-support')
-} else if (typeofbenefit === 'pensioncredit'){
-  res.redirect('/v17/manage-claim-pension-credit')
-} else if (typeofbenefit === 'incomebasedjsa'){
-  res.redirect('/v17/manage-claim-income-based-jsa')
-} else if (typeofbenefit === 'incomebasedesa'){
-  res.redirect('/v17/manage-claim-income-based-esa')
-} else if (typeofbenefit === 'childtaxcredit'){
-  res.redirect('/v17/manage-claim-child-tax-credit')
-} else if (typeofbenefit === 'workingtaxcredit'){
-  res.redirect('/v17/manage-claim-working-tax-credit')
-} else if (typeofbenefit === 'pregnantandunder18'){
-  res.redirect('/v17/manage-claim-pregnant')
-}
+  if (typeofbenefit === 'universalcredit') {
+    res.redirect('/v17/manage-claim-universal-credit')
+  } else if (typeofbenefit === 'incomesupport') {
+    res.redirect('/v17/manage-claim-income-support')
+  } else if (typeofbenefit === 'pensioncredit') {
+    res.redirect('/v17/manage-claim-pension-credit')
+  } else if (typeofbenefit === 'incomebasedjsa') {
+    res.redirect('/v17/manage-claim-income-based-jsa')
+  } else if (typeofbenefit === 'incomebasedesa') {
+    res.redirect('/v17/manage-claim-income-based-esa')
+  } else if (typeofbenefit === 'childtaxcredit') {
+    res.redirect('/v17/manage-claim-child-tax-credit')
+  } else if (typeofbenefit === 'workingtaxcredit') {
+    res.redirect('/v17/manage-claim-working-tax-credit')
+  } else if (typeofbenefit === 'pregnantandunder18') {
+    res.redirect('/v17/manage-claim-pregnant')
+  }
 
 })
 
@@ -2484,23 +2484,23 @@ router.post('/v17/manage-claim-JOHN-SMITH-override', function (req, res) {
   var typeofbenefit = req.session.data['type-of-benefit']
 
 
-if (typeofbenefit === 'universalcredit') {
-  res.redirect('/v17/manage-claim-universal-credit')
-} else if (typeofbenefit === 'incomesupport'){
-  res.redirect('/v17/manage-claim-income-support')
-} else if (typeofbenefit === 'pensioncredit'){
-  res.redirect('/v17/manage-claim-pension-credit')
-} else if (typeofbenefit === 'incomebasedjsa'){
-  res.redirect('/v17/manage-claim-income-based-jsa')
-} else if (typeofbenefit === 'incomebasedesa'){
-  res.redirect('/v17/manage-claim-income-based-esa')
-} else if (typeofbenefit === 'childtaxcredit'){
-  res.redirect('/v17/manage-claim-child-tax-credit')
-} else if (typeofbenefit === 'workingtaxcredit'){
-  res.redirect('/v17/manage-claim-working-tax-credit')
-} else if (typeofbenefit === 'pregnantandunder18'){
-  res.redirect('/v17/manage-claim-pregnant')
-}
+  if (typeofbenefit === 'universalcredit') {
+    res.redirect('/v17/manage-claim-universal-credit')
+  } else if (typeofbenefit === 'incomesupport') {
+    res.redirect('/v17/manage-claim-income-support')
+  } else if (typeofbenefit === 'pensioncredit') {
+    res.redirect('/v17/manage-claim-pension-credit')
+  } else if (typeofbenefit === 'incomebasedjsa') {
+    res.redirect('/v17/manage-claim-income-based-jsa')
+  } else if (typeofbenefit === 'incomebasedesa') {
+    res.redirect('/v17/manage-claim-income-based-esa')
+  } else if (typeofbenefit === 'childtaxcredit') {
+    res.redirect('/v17/manage-claim-child-tax-credit')
+  } else if (typeofbenefit === 'workingtaxcredit') {
+    res.redirect('/v17/manage-claim-working-tax-credit')
+  } else if (typeofbenefit === 'pregnantandunder18') {
+    res.redirect('/v17/manage-claim-pregnant')
+  }
 
 })
 
@@ -2512,7 +2512,7 @@ router.post('/v17/confirm-override', function (req, res) {
   var overrideLength = req.session.data['overrideLength']
   var typeofbenefit = req.session.data['type-of-benefit']
   var overrideWeeks = req.session.data['overrideWeeks']
-  
+
   if (overrideLength === 'standard') {
 
     // SET DATE TO TODAY PLUS 12 WEEKS
@@ -2521,12 +2521,12 @@ router.post('/v17/confirm-override', function (req, res) {
 
     res.redirect('/v17/application-successful')
 
-  } else if (overrideLength === 'other'){
+  } else if (overrideLength === 'other') {
 
     // SET DATE TO TODAY PLUS NUMBER OF WEEKS SPECIFIED
     req.session.data['length'] = moment().add(overrideWeeks, 'weeks').format("D MMMM YYYY");
 
-    if (overrideWeeks > 1){
+    if (overrideWeeks > 1) {
       req.session.data['weeks'] = overrideWeeks + " weeks";
     } else {
       req.session.data['weeks'] = overrideWeeks + " week";
@@ -2538,31 +2538,31 @@ router.post('/v17/confirm-override', function (req, res) {
 
     if (typeofbenefit === 'universalcredit') {
       res.redirect('/v17/manage-claim-universal-credit')
-    } else if (typeofbenefit === 'incomesupport'){
+    } else if (typeofbenefit === 'incomesupport') {
       res.redirect('/v17/manage-claim-income-support')
-    } else if (typeofbenefit === 'pensioncredit'){
+    } else if (typeofbenefit === 'pensioncredit') {
       res.redirect('/v17/manage-claim-pension-credit')
-    } else if (typeofbenefit === 'incomebasedjsa'){
+    } else if (typeofbenefit === 'incomebasedjsa') {
       res.redirect('/v17/manage-claim-income-based-jsa')
-    } else if (typeofbenefit === 'incomebasedesa'){
+    } else if (typeofbenefit === 'incomebasedesa') {
       res.redirect('/v17/manage-claim-income-based-esa')
-    } else if (typeofbenefit === 'childtaxcredit'){
+    } else if (typeofbenefit === 'childtaxcredit') {
       res.redirect('/v17/manage-claim-child-tax-credit')
-    } else if (typeofbenefit === 'workingtaxcredit'){
+    } else if (typeofbenefit === 'workingtaxcredit') {
       res.redirect('/v17/manage-claim-working-tax-credit')
-    } else if (typeofbenefit === 'pregnantandunder18'){
+    } else if (typeofbenefit === 'pregnantandunder18') {
       res.redirect('/v17/manage-claim-pregnant')
     }
 
   }
-  
-  })
+
+})
 
 // router.post('/v17/manage-claim-pending-override', function (req, res) {
 
 //     var pendingOverride = req.session.data['override']
-  
-  
+
+
 //   if (pendingOverride === 'yes') {
 //     res.redirect('/v17/screen-1')
 //   } else if (pendingOverride === 'no'){
@@ -2570,7 +2570,7 @@ router.post('/v17/confirm-override', function (req, res) {
 //   } else {
 //     res.redirect('/v17/return-to-same-screen')
 //   }
-  
+
 //   })
 
 // Add your routes here - above the module.exports line
@@ -2595,16 +2595,16 @@ router.post('/v18/manage-claim-search', function (req, res) {
   var searchfirstname = req.session.data['searchfirstname'].toUpperCase().trimEnd()
   var searchlastname = req.session.data['searchlastname'].toUpperCase().trimEnd()
 
-  if (searchfirstname == 'ANITA' && searchlastname == 'BILAL'){
-      res.redirect('/v18/manage-claim-search-ANITA-BILAL') // PENDING
+  if (searchfirstname == 'ANITA' && searchlastname == 'BILAL') {
+    res.redirect('/v18/manage-claim-search-ANITA-BILAL') // PENDING
   } else if (searchfirstname == 'SARAH' && searchlastname == 'GREEN') {
-      res.redirect('/v18/manage-claim-search-SARAH-GREEN') // ACTIVE
+    res.redirect('/v18/manage-claim-search-SARAH-GREEN') // ACTIVE
   } else if (searchfirstname == 'SIMON' && searchlastname == 'WOODS') {
-      res.redirect('/v18/manage-claim-search-SIMON-WOODS') // PENDING EXPIRY
+    res.redirect('/v18/manage-claim-search-SIMON-WOODS') // PENDING EXPIRY
   } else if (searchfirstname == 'JOHN' && searchlastname == 'SMITH') {
-      res.redirect('/v18/manage-claim-search-JOHN-SMITH') // EXPIRED
+    res.redirect('/v18/manage-claim-search-JOHN-SMITH') // EXPIRED
   } else {
-      res.redirect('/v18/manage-claim-search-no-results')
+    res.redirect('/v18/manage-claim-search-no-results')
   }
 })
 
@@ -2614,7 +2614,7 @@ router.post('/v18/manage-claim-search-no-results', function (req, res) {
 
   var searchadd = req.session.data['addperson']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v18/create-claim-personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v18/manage-claim-search')
@@ -2629,7 +2629,7 @@ router.post('/v18/search-add', function (req, res) {
 
   var searchadd = req.session.data['searchadd']
 
-  if (searchadd == 'yes'){
+  if (searchadd == 'yes') {
     res.redirect('/v18/personal-details')
   } else if (searchadd == 'no') {
     res.redirect('/v18/home')
@@ -2643,17 +2643,17 @@ router.post('/v18/search-add', function (req, res) {
 // Pending claim override.
 router.post('/v18/manage-claim-pending-override', function (req, res) {
 
-// this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
+  // this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
   var pendingOverride = req.session.data['override']
 
 
-if (pendingOverride === 'yes') {
-  res.redirect('/v18/manage-claim-pending-override-warning')
-} else if (pendingOverride === 'no'){
-  res.redirect('/v18/manage-claim-pending-claim-details')
-} else {
-  res.redirect('/v18/manage-claim-pending-override')
-}
+  if (pendingOverride === 'yes') {
+    res.redirect('/v18/manage-claim-pending-override-warning')
+  } else if (pendingOverride === 'no') {
+    res.redirect('/v18/manage-claim-pending-claim-details')
+  } else {
+    res.redirect('/v18/manage-claim-pending-override')
+  }
 
 })
 
@@ -2661,57 +2661,85 @@ if (pendingOverride === 'yes') {
 router.post('/v18/manage-claim-pending-override-warning', function (req, res) {
 
   // this variable is getting the data from the radio buttons (name="contact") and storing the value into pendingOverride
-    var pendingOverride = req.session.data['warning']
-  
-  
+  var pendingOverride = req.session.data['warning']
+
+
   if (pendingOverride === 'yes') {
     res.redirect('/v18/review-and-confirm-override')
-  } else if (pendingOverride === 'no'){
+  } else if (pendingOverride === 'no') {
     res.redirect('/v18/manage-claim-pending-claim-details')
   } else {
     res.redirect('/v18/manage-claim-pending-override-warning')
   }
-  
-  })
+
+})
 
 // Active search
-  router.post('/v18/manage-claim-search-active', function (req, res) {
+router.post('/v18/manage-claim-search-active', function (req, res) {
 
-    var searchlastname = req.session.data['searchlastnamea']
-    var searchpostcode = req.session.data['searchpostcodea']
-  
-    if (searchlastname && searchpostcode) {
-      res.redirect('/v18/manage-claim-search-results-active')
-    }
-    else {
-      res.redirect('/v18/manage-claim-search-no-results-active')
-    }
-  })
+  var searchlastname = req.session.data['searchlastnamea']
+  var searchpostcode = req.session.data['searchpostcodea']
 
-  
+  if (searchlastname && searchpostcode) {
+    res.redirect('/v18/manage-claim-search-results-active')
+  }
+  else {
+    res.redirect('/v18/manage-claim-search-no-results-active')
+  }
+})
+
+
 
 // Select claims
 router.post('/v18/manage-claim-ANITA-BILAL-override', function (req, res) {
 
-    var typeofbenefit = req.session.data['type-of-benefit']
-  
-  
+  var typeofbenefit = req.session.data['type-of-benefit']
+  var typeofbenefitSTRING = typeofbenefit.toString();
+
   if (typeofbenefit === 'universalcredit') {
     res.redirect('/v18/manage-claim-universal-credit')
-  } else if (typeofbenefit === 'incomesupport'){
+  } else if (typeofbenefit === 'incomesupport') {
     res.redirect('/v18/manage-claim-income-support')
-  } else if (typeofbenefit === 'pensioncredit'){
+  } else if (typeofbenefit === 'pensioncredit') {
     res.redirect('/v18/manage-claim-pension-credit')
-  } else if (typeofbenefit === 'incomebasedjsa'){
+  } else if (typeofbenefit === 'incomebasedjsa') {
     res.redirect('/v18/manage-claim-income-based-jsa')
-  } else if (typeofbenefit === 'incomebasedesa'){
+  } else if (typeofbenefit === 'incomebasedesa') {
     res.redirect('/v18/manage-claim-income-based-esa')
-  } else if (typeofbenefit === 'childtaxcredit'){
+  } else if (typeofbenefit === 'childtaxcredit') {
     res.redirect('/v18/manage-claim-child-tax-credit')
-  } else if (typeofbenefit === 'workingtaxcredit'){
+  } else if (typeofbenefit === 'workingtaxcredit') {
     res.redirect('/v18/manage-claim-working-tax-credit')
-  } else if (typeofbenefit === 'pregnantandunder18'){
+  } else if (typeofbenefit === 'pregnantandunder18') {
     res.redirect('/v18/manage-claim-pregnant')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pensioncredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'workingtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefitSTRING == 'universalcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefitSTRING == 'incomesupport,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else {
+    res.redirect('/v18/manage-claim-ANITA-BILAL-override')
   }
 
 })
@@ -2720,25 +2748,54 @@ router.post('/v18/manage-claim-ANITA-BILAL-override', function (req, res) {
 router.post('/v18/manage-claim-SARAH-GREEN-override', function (req, res) {
 
   var typeofbenefit = req.session.data['type-of-benefit']
+  var typeofbenefitSTRING = typeofbenefit.toString();
 
 
-if (typeofbenefit === 'universalcredit') {
-  res.redirect('/v18/manage-claim-universal-credit')
-} else if (typeofbenefit === 'incomesupport'){
-  res.redirect('/v18/manage-claim-income-support')
-} else if (typeofbenefit === 'pensioncredit'){
-  res.redirect('/v18/manage-claim-pension-credit')
-} else if (typeofbenefit === 'incomebasedjsa'){
-  res.redirect('/v18/manage-claim-income-based-jsa')
-} else if (typeofbenefit === 'incomebasedesa'){
-  res.redirect('/v18/manage-claim-income-based-esa')
-} else if (typeofbenefit === 'childtaxcredit'){
-  res.redirect('/v18/manage-claim-child-tax-credit')
-} else if (typeofbenefit === 'workingtaxcredit'){
-  res.redirect('/v18/manage-claim-working-tax-credit')
-} else if (typeofbenefit === 'pregnantandunder18'){
-  res.redirect('/v18/manage-claim-pregnant')
-}
+  if (typeofbenefit === 'universalcredit') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefit === 'incomesupport') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else if (typeofbenefit === 'pensioncredit') {
+    res.redirect('/v18/manage-claim-pension-credit')
+  } else if (typeofbenefit === 'incomebasedjsa') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefit === 'incomebasedesa') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefit === 'childtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefit === 'workingtaxcredit') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefit === 'pregnantandunder18') {
+    res.redirect('/v18/manage-claim-pregnant')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pensioncredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'workingtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefitSTRING == 'universalcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefitSTRING == 'incomesupport,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else {
+    res.redirect('/v18/manage-claim-SARAH-GREEN-override')
+  }
 
 })
 
@@ -2746,25 +2803,54 @@ if (typeofbenefit === 'universalcredit') {
 router.post('/v18/manage-claim-SIMON-WOODS-override', function (req, res) {
 
   var typeofbenefit = req.session.data['type-of-benefit']
+  var typeofbenefitSTRING = typeofbenefit.toString();
 
 
-if (typeofbenefit === 'universalcredit') {
-  res.redirect('/v18/manage-claim-universal-credit')
-} else if (typeofbenefit === 'incomesupport'){
-  res.redirect('/v18/manage-claim-income-support')
-} else if (typeofbenefit === 'pensioncredit'){
-  res.redirect('/v18/manage-claim-pension-credit')
-} else if (typeofbenefit === 'incomebasedjsa'){
-  res.redirect('/v18/manage-claim-income-based-jsa')
-} else if (typeofbenefit === 'incomebasedesa'){
-  res.redirect('/v18/manage-claim-income-based-esa')
-} else if (typeofbenefit === 'childtaxcredit'){
-  res.redirect('/v18/manage-claim-child-tax-credit')
-} else if (typeofbenefit === 'workingtaxcredit'){
-  res.redirect('/v18/manage-claim-working-tax-credit')
-} else if (typeofbenefit === 'pregnantandunder18'){
-  res.redirect('/v18/manage-claim-pregnant')
-}
+  if (typeofbenefit === 'universalcredit') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefit === 'incomesupport') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else if (typeofbenefit === 'pensioncredit') {
+    res.redirect('/v18/manage-claim-pension-credit')
+  } else if (typeofbenefit === 'incomebasedjsa') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefit === 'incomebasedesa') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefit === 'childtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefit === 'workingtaxcredit') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefit === 'pregnantandunder18') {
+    res.redirect('/v18/manage-claim-pregnant')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pensioncredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'workingtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefitSTRING == 'universalcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefitSTRING == 'incomesupport,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else {
+    res.redirect('/v18/manage-claim-SIMON-WOODS-override')
+  }
 
 })
 
@@ -2772,25 +2858,54 @@ if (typeofbenefit === 'universalcredit') {
 router.post('/v18/manage-claim-JOHN-SMITH-override', function (req, res) {
 
   var typeofbenefit = req.session.data['type-of-benefit']
+  var typeofbenefitSTRING = typeofbenefit.toString();
 
 
-if (typeofbenefit === 'universalcredit') {
-  res.redirect('/v18/manage-claim-universal-credit')
-} else if (typeofbenefit === 'incomesupport'){
-  res.redirect('/v18/manage-claim-income-support')
-} else if (typeofbenefit === 'pensioncredit'){
-  res.redirect('/v18/manage-claim-pension-credit')
-} else if (typeofbenefit === 'incomebasedjsa'){
-  res.redirect('/v18/manage-claim-income-based-jsa')
-} else if (typeofbenefit === 'incomebasedesa'){
-  res.redirect('/v18/manage-claim-income-based-esa')
-} else if (typeofbenefit === 'childtaxcredit'){
-  res.redirect('/v18/manage-claim-child-tax-credit')
-} else if (typeofbenefit === 'workingtaxcredit'){
-  res.redirect('/v18/manage-claim-working-tax-credit')
-} else if (typeofbenefit === 'pregnantandunder18'){
-  res.redirect('/v18/manage-claim-pregnant')
-}
+  if (typeofbenefit === 'universalcredit') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefit === 'incomesupport') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else if (typeofbenefit === 'pensioncredit') {
+    res.redirect('/v18/manage-claim-pension-credit')
+  } else if (typeofbenefit === 'incomebasedjsa') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefit === 'incomebasedesa') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefit === 'childtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefit === 'workingtaxcredit') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefit === 'pregnantandunder18') {
+    res.redirect('/v18/manage-claim-pregnant')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedjsa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-jsa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,childtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'incomebasedesa,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-based-esa')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,workingtaxcredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pensioncredit') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'childtaxcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-child-tax-credit')
+  } else if (typeofbenefitSTRING == 'workingtaxcredit,incomesupport') {
+    res.redirect('/v18/manage-claim-working-tax-credit')
+  } else if (typeofbenefitSTRING == 'universalcredit,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-universal-credit')
+  } else if (typeofbenefitSTRING == 'incomesupport,pregnantandunder18') {
+    res.redirect('/v18/manage-claim-income-support')
+  } else {
+    res.redirect('/v18/manage-claim-JOHN-SMITH-override')
+  }
 
 })
 
@@ -2802,7 +2917,7 @@ router.post('/v18/confirm-override', function (req, res) {
   var overrideLength = req.session.data['overrideLength']
   var typeofbenefit = req.session.data['type-of-benefit']
   var overrideWeeks = req.session.data['overrideWeeks']
-  
+
   if (overrideLength === 'standard') {
 
     // SET DATE TO TODAY PLUS 12 WEEKS
@@ -2811,12 +2926,12 @@ router.post('/v18/confirm-override', function (req, res) {
 
     res.redirect('/v18/review-and-confirm-override')
 
-  } else if (overrideLength === 'other'){
+  } else if (overrideLength === 'other') {
 
     // SET DATE TO TODAY PLUS NUMBER OF WEEKS SPECIFIED
     req.session.data['length'] = moment().add(overrideWeeks, 'weeks').format("D MMMM YYYY");
 
-    if (overrideWeeks > 1){
+    if (overrideWeeks > 1) {
       req.session.data['weeks'] = overrideWeeks + " weeks";
     } else {
       req.session.data['weeks'] = overrideWeeks + " week";
@@ -2828,31 +2943,31 @@ router.post('/v18/confirm-override', function (req, res) {
 
     if (typeofbenefit === 'universalcredit') {
       res.redirect('/v18/manage-claim-universal-credit')
-    } else if (typeofbenefit === 'incomesupport'){
+    } else if (typeofbenefit === 'incomesupport') {
       res.redirect('/v18/manage-claim-income-support')
-    } else if (typeofbenefit === 'pensioncredit'){
+    } else if (typeofbenefit === 'pensioncredit') {
       res.redirect('/v18/manage-claim-pension-credit')
-    } else if (typeofbenefit === 'incomebasedjsa'){
+    } else if (typeofbenefit === 'incomebasedjsa') {
       res.redirect('/v18/manage-claim-income-based-jsa')
-    } else if (typeofbenefit === 'incomebasedesa'){
+    } else if (typeofbenefit === 'incomebasedesa') {
       res.redirect('/v18/manage-claim-income-based-esa')
-    } else if (typeofbenefit === 'childtaxcredit'){
+    } else if (typeofbenefit === 'childtaxcredit') {
       res.redirect('/v18/manage-claim-child-tax-credit')
-    } else if (typeofbenefit === 'workingtaxcredit'){
+    } else if (typeofbenefit === 'workingtaxcredit') {
       res.redirect('/v18/manage-claim-working-tax-credit')
-    } else if (typeofbenefit === 'pregnantandunder18'){
+    } else if (typeofbenefit === 'pregnantandunder18') {
       res.redirect('/v18/manage-claim-pregnant')
     }
 
   }
-  
-  })
+
+})
 
 // router.post('/v18/manage-claim-pending-override', function (req, res) {
 
 //     var pendingOverride = req.session.data['override']
-  
-  
+
+
 //   if (pendingOverride === 'yes') {
 //     res.redirect('/v18/screen-1')
 //   } else if (pendingOverride === 'no'){
@@ -2860,7 +2975,7 @@ router.post('/v18/confirm-override', function (req, res) {
 //   } else {
 //     res.redirect('/v18/return-to-same-screen')
 //   }
-  
+
 //   })
 
 // Add your routes here - above the module.exports line
