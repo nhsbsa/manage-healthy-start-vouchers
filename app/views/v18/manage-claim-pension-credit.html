@@ -150,30 +150,14 @@ Manage Get help to buy food and milk (Healthy Start) applications
             
 
               <div class="nhsuk-hint" id="contact-hint">
-                Select one option
+                Select between 1 and 52 weeks
               </div>
 
-              <div class="nhsuk-radios nhsuk-radios--conditional">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="other" name="overrideLength" type="radio" value="other"
-                    aria-controls="conditional-contact-2" aria-expanded="false">
-                  <label class="nhsuk-label nhsuk-radios__label" for="other">
-                    Select number of weeks
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="overrideWeeks">
-                      Number of weeks (between 1 and 12)
-                    </label>
-                    <input class="nhsuk-input nhsuk-input--width-2" id="overrideWeeks" name="overrideWeeks" type="text" pattern="[0-9]*" inputmode="numeric">
-                  </div>
-
-                </div>
-
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="overrideWeeks">
+                  Number of weeks
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-2" id="overrideWeeks" name="overrideWeeks" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </fieldset>
 
