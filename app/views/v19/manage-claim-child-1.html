@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Manage Get help to buy food and milk (Healthy Start) applications
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1><span role="text">Sarah Smith's Eligibility <span class="nhsuk-caption-xl nhsuk-caption--bottom"><span
+                        class="nhsuk-u-visually-hidden">-</span>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+                <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    Evidence needed
+                </span>
+            </h3>
+            <p>They need the following piece of evidence:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>proof of their children's eligibility (birth certificate)</li>
+            </ul>
+            <p>Do not accept the child without this evidence. If you do so without this evidence, you put the NHS
+                Business Services Authority in breach of contract with the card provider.</p>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Can you provide more detail?
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+                Provide more detail in the case that you aren't able to accept the child
+            </div>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5"
+                aria-describedby="example-hint"></textarea>
+        </div>
+
+
+
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h1 class="nhsuk-fieldset__heading">
+                    Do you want to accept this child?
+                </h1>
+            </legend>
+
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="yes" name="add-file3" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                        Yes
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no" name="add-file3" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                        No
+                    </label>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <button class="nhsuk-button nhsuk-u-margin-top-3" type="submit">
+            Continue
+        </button>
+
+
+
+    </div>
+
+
+
+</div>
+{% endblock %}
