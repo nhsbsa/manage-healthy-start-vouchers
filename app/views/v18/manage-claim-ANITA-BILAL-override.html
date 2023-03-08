@@ -104,12 +104,12 @@ Manage Get help to buy food and milk (Healthy Start) applications
             Select all that apply
           </div>
 
-          <div class="nhsuk-checkboxes">
+          <div class="nhsuk-radios">
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="universalcredit" name="type-of-benefit" type="checkbox"
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="universalcredit" name="type-of-benefit" type="radio"
                 value="universalcredit">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="universalcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="universalcredit">
                 Universal Credit
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint">
@@ -117,32 +117,10 @@ Manage Get help to buy food and milk (Healthy Start) applications
               </div>
             </div>
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="incomebasedjsa" name="type-of-benefit" type="checkbox"
-                value="incomebasedjsa">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="incomebasedjsa">
-                Income-based Jobseeker’s Allowance (IBJSA)
-              </label>
-              <div class="nhsuk-hint nhsuk-radios__hint">
-                Gets Income-based Jobseeker’s Allowance (IBJSA)
-              </div>
-            </div>
-
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="incomebasedesa" name="type-of-benefit" type="checkbox"
-                value="incomebasedesa">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="incomebasedesa">
-                Employment and Support Allowance (ESA) and pregnant
-              </label>
-              <div class="nhsuk-hint nhsuk-radios__hint">
-                Gets Income-related Employment and Support Allowance (ESA) and is pregnant
-              </div>
-            </div>
-
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="childtaxcredit" name="type-of-benefit" type="checkbox"
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="childtaxcredit" name="type-of-benefit" type="radio"
                 value="childtaxcredit">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="childtaxcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="childtaxcredit">
                 Child Tax Credit
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint">
@@ -150,21 +128,32 @@ Manage Get help to buy food and milk (Healthy Start) applications
               </div>
             </div>
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="workingtaxcredit" name="type-of-benefit" type="checkbox"
-                value="workingtaxcredit">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="workingtaxcredit">
-                Working Tax Credit
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomebasedjsa" name="type-of-benefit" type="radio"
+                value="incomebasedjsa">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomebasedjsa">
+                Income-based Jobseeker’s Allowance (IBJSA)
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint">
-                Family get the 4 week 'run-on' payment
+                Gets Income-based Jobseeker’s Allowance (IBJSA)
               </div>
             </div>
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="pensioncredit" name="type-of-benefit" type="checkbox"
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomebasedesa" name="type-of-benefit" type="radio"
+                value="incomebasedesa">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomebasedesa">
+                Employment and Support Allowance (ESA) and pregnant
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets Income-related Employment and Support Allowance (ESA) and is pregnant
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pensioncredit" name="type-of-benefit" type="radio"
                 value="pensioncredit">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="pensioncredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="pensioncredit">
                 Pension Credit
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint">
@@ -172,20 +161,31 @@ Manage Get help to buy food and milk (Healthy Start) applications
               </div>
             </div>
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="incomesupport" name="type-of-benefit" type="checkbox"
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomesupport" name="type-of-benefit" type="radio"
                 value="incomesupport">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="incomesupport">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomesupport">
                 Income Support
               </label>
             </div>
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="pregnantandunder18" name="type-of-benefit" type="checkbox"
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pregnantandunder18" name="type-of-benefit" type="radio"
                 value="pregnantandunder18">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="pregnantandunder18">
+              <label class="nhsuk-label nhsuk-radios__label" for="pregnantandunder18">
                 Under 18 and pregnant
               </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="workingtaxcredit" name="type-of-benefit" type="radio"
+                value="workingtaxcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="workingtaxcredit">
+                Working Tax Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Family get the 4 week 'run-on' payment
+              </div>
             </div>
 
           </div>
