@@ -3036,52 +3036,24 @@ router.post('/v19/before-you-start-SIMON-WOODS', function (req, res) {
 router.post('/v19/manage-claim-ANITA-BILAL-override', function (req, res) {
 
   var typeofbenefit = req.session.data['type-of-benefit']
-  var typeofbenefitSTRING = typeofbenefit.toString();
+
 
   if (typeofbenefit === 'universalcredit') {
-    res.redirect('/v19/manage-claim-universal-credit')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'incomesupport') {
-    res.redirect('/v19/manage-claim-income-support')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'pensioncredit') {
-    res.redirect('/v19/manage-claim-pension-credit')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'incomebasedjsa') {
-    res.redirect('/v19/manage-claim-income-based-jsa')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'incomebasedesa') {
-    res.redirect('/v19/manage-claim-income-based-esa')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'childtaxcredit') {
-    res.redirect('/v19/manage-claim-child-tax-credit')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'workingtaxcredit') {
-    res.redirect('/v19/manage-claim-working-tax-credit')
+    res.redirect('/v19/manage-claim-override-length')
   } else if (typeofbenefit === 'pregnantandunder18') {
-    res.redirect('/v19/manage-claim-pregnant')
-  } else if (typeofbenefitSTRING == 'incomebasedjsa,childtaxcredit') {
-    res.redirect('/v19/manage-claim-income-based-jsa')
-  } else if (typeofbenefitSTRING == 'incomebasedjsa,workingtaxcredit') {
-    res.redirect('/v19/manage-claim-income-based-jsa')
-  } else if (typeofbenefitSTRING == 'incomebasedjsa,pregnantandunder18') {
-    res.redirect('/v19/manage-claim-income-based-jsa')
-  } else if (typeofbenefitSTRING == 'incomebasedesa,childtaxcredit') {
-    res.redirect('/v19/manage-claim-income-based-esa')
-  } else if (typeofbenefitSTRING == 'incomebasedesa,workingtaxcredit') {
-    res.redirect('/v19/manage-claim-income-based-esa')
-  } else if (typeofbenefitSTRING == 'incomebasedesa,pregnantandunder18') {
-    res.redirect('/v19/manage-claim-income-based-esa')
-  } else if (typeofbenefitSTRING == 'childtaxcredit,workingtaxcredit') {
-    res.redirect('/v19/manage-claim-child-tax-credit')
-  } else if (typeofbenefitSTRING == 'childtaxcredit,incomesupport') {
-    res.redirect('/v19/manage-claim-child-tax-credit')
-  } else if (typeofbenefitSTRING == 'childtaxcredit,pensioncredit') {
-    res.redirect('/v19/manage-claim-child-tax-credit')
-  } else if (typeofbenefitSTRING == 'childtaxcredit,pregnantandunder18') {
-    res.redirect('/v19/manage-claim-child-tax-credit')
-  } else if (typeofbenefitSTRING == 'workingtaxcredit,incomesupport') {
-    res.redirect('/v19/manage-claim-working-tax-credit')
-  } else if (typeofbenefitSTRING == 'universalcredit,pregnantandunder18') {
-    res.redirect('/v19/manage-claim-universal-credit')
-  } else if (typeofbenefitSTRING == 'incomesupport,pregnantandunder18') {
-    res.redirect('/v19/manage-claim-income-support')
-  } else {
-    res.redirect('/v19/manage-claim-ANITA-BILAL-override')
+    res.redirect('/v19/manage-claim-override-length')
   }
 
 })
@@ -3252,55 +3224,16 @@ router.post('/v19/manage-claim-JOHN-SMITH-override', function (req, res) {
 })
 
 
-
 // Confirm Override
 router.post('/v19/confirm-override', function (req, res) {
 
-  var overrideLength = req.session.data['overrideLength']
-  var typeofbenefit = req.session.data['type-of-benefit']
   var overrideWeeks = req.session.data['overrideWeeks']
 
-  if (overrideLength === 'standard') {
-
-    // SET DATE TO TODAY PLUS 12 WEEKS
-    req.session.data['length'] = moment().add(12, 'weeks').format("D MMMM YYYY")
-    req.session.data['weeks'] = "12 weeks";
-
-    res.redirect('/v19/review-and-confirm-override')
-
-  } else if (overrideLength === 'other') {
-
-    // SET DATE TO TODAY PLUS NUMBER OF WEEKS SPECIFIED
-    req.session.data['length'] = moment().add(overrideWeeks, 'weeks').format("D MMMM YYYY");
-
-    if (overrideWeeks > 1) {
-      req.session.data['weeks'] = overrideWeeks + " weeks";
-    } else {
-      req.session.data['weeks'] = overrideWeeks + " week";
-    }
-
-    res.redirect('/v19/review-and-confirm-override')
-
+  if (overrideWeeks >= 1 && overrideWeeks <= 52) {
+    req.session.data['weeks'] = overrideWeeks + " weeks";
+    res.redirect('/v19/review-and-confirm-override');
   } else {
-
-    if (typeofbenefit === 'universalcredit') {
-      res.redirect('/v19/manage-claim-universal-credit')
-    } else if (typeofbenefit === 'incomesupport') {
-      res.redirect('/v19/manage-claim-income-support')
-    } else if (typeofbenefit === 'pensioncredit') {
-      res.redirect('/v19/manage-claim-pension-credit')
-    } else if (typeofbenefit === 'incomebasedjsa') {
-      res.redirect('/v19/manage-claim-income-based-jsa')
-    } else if (typeofbenefit === 'incomebasedesa') {
-      res.redirect('/v19/manage-claim-income-based-esa')
-    } else if (typeofbenefit === 'childtaxcredit') {
-      res.redirect('/v19/manage-claim-child-tax-credit')
-    } else if (typeofbenefit === 'workingtaxcredit') {
-      res.redirect('/v19/manage-claim-working-tax-credit')
-    } else if (typeofbenefit === 'pregnantandunder18') {
-      res.redirect('/v19/manage-claim-pregnant')
-    }
-
+    res.redirect('/v19/manage-claim-override-length');
   }
 
 })

@@ -156,39 +156,35 @@ Manage Get help to buy food and milk (Healthy Start) applications
         <p>This application will be overriden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
       </div>
 
-      <form action="/v19/review-and-confirm-override" method="post">
+      <form action="/v18/review-and-confirm-override" method="post">
 
         <div class="nhsuk-form-group">
 
-            <fieldset class="nhsuk-fieldset">
+          <fieldset class="nhsuk-fieldset">
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                <h1 class="nhsuk-fieldset__heading">
-                    Do you want to continue?
-                </h1>
+              <h2 class="nhsuk-heading-l">
+                    Agree and confirm override
+                </h2>
             </legend>
             <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Once you override a claim, you cannot go back and change it.</div>
 
-                <div class="nhsuk-radios nhsuk-radios--inline">
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="yes" name="do-you-want-to-continue" type="radio" value="yes">
-                        <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="no" name="do-you-want-to-continue" type="radio" value="no">
-                        <label class="nhsuk-label nhsuk-radios__label" for="no">
-                            No
-                        </label>
-                    </div>
-                </div>
+            <div class="nhsuk-checkboxes">
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="yes" name="do-you-want-to-continue" type="checkbox" value="yes">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  I agree to override this claim
+                </label>
+              </div>
+
+                
             </fieldset>
 
         </div>
 
         <button class="nhsuk-button" type="submit">
-            Continue
+            Confirm and submit
         </button>
 
     </form>
