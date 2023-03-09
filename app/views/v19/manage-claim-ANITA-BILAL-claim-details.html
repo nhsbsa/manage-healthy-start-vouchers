@@ -93,7 +93,8 @@ Manage Get help to buy food and milk (Healthy Start) applications
       </h3>
       <p>They need the following pieces of evidence:</p>
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>proof of their identity (birth or marriage certificate, valid passport, valid driving licence or immigration visa)</li>
+        <li>proof of their identity (birth or marriage certificate, valid passport, valid driving licence or immigration
+          visa)</li>
         <li>proof of their eligibility (benefit awards notice)</li>
         <li>proof of their children's eligibility (birth certificate)</li>
       </ul>
@@ -233,18 +234,29 @@ Manage Get help to buy food and milk (Healthy Start) applications
                 <span class="nhsuk-table-responsive__heading">Date of birth </span>14 January 2022
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Status</span> <strong class="nhsuk-tag">Active</strong>
+                <span class="nhsuk-table-responsive__heading">Status</span>
+                {% if data['manage-child'] == 'Complete' %}
+                <strong class="nhsuk-tag app-task-list__tag">Accepted</strong>
+                {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Active</strong>
+                {% endif %}
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Name </span><a href="manage-claim-child-2">Robert Smith</a>
+                <span class="nhsuk-table-responsive__heading">Name </span><a href="manage-claim-child-2">Robert
+                  Smith</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Date of birth </span>14 January 2021
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Status</span> <strong class="nhsuk-tag">Active</strong>
+                <span class="nhsuk-table-responsive__heading">Status</span>
+                {% if data['manage-child'] == 'Complete' %}
+                <strong class="nhsuk-tag app-task-list__tag">Pending</strong>
+                {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Active</strong>
+                {% endif %}
               </td>
             </tr>
           </tbody>
@@ -530,7 +542,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
     </div>
 
     <p><a href="before-you-start-ANITA-BILAL" class="nhsuk-button">Override application</a></p>
-    
+
 
   </div>
 </div>
