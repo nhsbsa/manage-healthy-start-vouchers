@@ -3256,12 +3256,17 @@ router.post('/v19/review-and-confirm-override', function (req, res) {
 
 router.post('/v19/manage-claim-child-1', function (req, res) {
 
-  const anotherFile = req.session.data['add-file1']
+  const addChild = req.session.data['add-child-1']
 
-  if (anotherFile === 'yes') {
-    req.session.data["manage-child"] = "Complete";
+  console.log('RUNNING HERE')
+
+  if (addChild === 'yes') {
+    console.log('RUNNING THIS')
+    req.session.data["manage-child-1"] = "Complete";
     res.redirect('/v19/manage-claim-child-1')
-  } else if (anotherFile === 'no') {
+  } else if (addChild === 'no') {
+    console.log('RUNNING THERE')
+    req.session.data["manage-child-1"] = "pending";
     res.redirect('/v19/manage-claim-ANITA-BILAL-claim-details')
   } else {
     res.redirect('/v19/manage-claim-child-1')
@@ -3276,9 +3281,9 @@ router.post('/v19/manage-claim-child-2', function (req, res) {
   const anotherFile = req.session.data['add-file1']
 
   if (anotherFile === 'yes') {
-    res.redirect('/v19/manage-claim-child-2')
+    req.session.data["manage-child-2"] = "accepted";
+    res.redirect('/v19/manage-claim-ANITA-BILAL-claim-details')
   } else if (anotherFile === 'no') {
-    req.session.data["manage-child"] = "Complete";
     res.redirect('/v19/manage-claim-ANITA-BILAL-claim-details')
   } else {
     res.redirect('/v19/manage-claim-child-2')
