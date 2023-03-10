@@ -66,7 +66,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
             href="manage-claim-SARAH-GREEN-claim-details">ABC1234D</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="review-and-confirm-override">Review
-          and confirm</a></li>
+            and confirm</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -83,7 +83,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
             href="manage-claim-SIMON-WOODS-claim-details">YTJ76291Z</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="review-and-confirm-override">Review
-          and confirm</a></li>
+            and confirm</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -100,7 +100,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
             href="manage-claim-JOHN-SMITH-claim-details">XHA19476D</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="review-and-confirm-override">Review
-          and confirm</a></li>
+            and confirm</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -131,65 +131,70 @@ Manage Get help to buy food and milk (Healthy Start) applications
             </ul>
         </nav>
 -->
-<div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-      aria-hidden="true" height="24" width="24">
-      <path
-        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-      </path>
-    </svg>
-    Go back</a>
-</div>
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
-    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-        <h1 class="nhsuk-fieldset__heading">
-          Review and confirm override
-        </h1>
-      </legend>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+              Review and confirm override
+            </h1>
+          </legend>
 
-      <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-6">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>This application will be overriden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
-        <p>The following child will be accepted: Robert Smith </p>
-        <p>The following child will remain pending: Sarah Smith </p>
-      </div>
+          <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-6">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <ul>
+              <li>This application will be overriden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks']
+                }}){% else %}7 March 2023 (12 weeks){% endif %}.</li>
+              <li>The following child will be accepted: Robert Smith </li>
+              <li>The following child will remain pending: Sarah Smith </li>
+            </ul>
+          </div>
 
-      <form action="/v18/review-and-confirm-override" method="post">
+          <form action="/v18/review-and-confirm-override" method="post">
 
-        <div class="nhsuk-form-group">
+            <div class="nhsuk-form-group">
 
-          <fieldset class="nhsuk-fieldset">
+              <fieldset class="nhsuk-fieldset">
 
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-              <h2 class="nhsuk-heading-l">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                  <h2 class="nhsuk-heading-l">
                     Agree and confirm override
-                </h2>
-            </legend>
-            <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Once you override a claim, you cannot go back and change it.</div>
+                  </h2>
+                </legend>
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Once you override a claim, you cannot
+                  go back and change it.</div>
 
-            <div class="nhsuk-checkboxes">
+                <div class="nhsuk-checkboxes">
 
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="yes" name="do-you-want-to-continue" type="checkbox" value="yes">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                  I agree to override this claim
-                </label>
-              </div>
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="yes" name="do-you-want-to-continue" type="checkbox"
+                      value="yes">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                      I agree to override this claim
+                    </label>
+                  </div>
 
-                
-            </fieldset>
 
-        </div>
+              </fieldset>
 
-        <p><a href="application-successful" class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Confirm and submit
-        </a></p>
+            </div>
 
-    </form>
-  
-  </div>
-{% endblock %}
+            <p><a href="application-successful" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Confirm and submit
+              </a></p>
+
+          </form>
+
+      </div>
+      {% endblock %}
