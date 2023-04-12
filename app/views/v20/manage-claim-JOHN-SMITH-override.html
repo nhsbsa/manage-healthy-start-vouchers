@@ -1,0 +1,202 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Manage Get help to buy food and milk (Healthy Start) applications
+{% endblock %}
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/header -->
+{% block header %}
+
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo"><a class="nhsuk-header__link nhsuk-header__link--service " href="/"
+        aria-label="NHS homepage">
+
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+          <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" fill="#fff"
+            d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6">
+          </path>
+        </svg>
+
+        <span class="nhsuk-header__service-name">
+          Manage Get help to buy food and milk (Healthy Start) applications
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+
+      <div class="nhsuk-header__menu">
+        <div class="nhsuk-header__menu">
+          <a href="sign-in" class="nhsuk-header__menu-toggle" id="log-out">Sign out</a>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</header>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-JOHN-SMITH">Search results</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-JOHN-SMITH">John Smith</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-JOHN-SMITH-claim-details">XHA19476D</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+
+    <!--
+        <nav class="nhsuk-sub-navigation">
+            <ul class="nhsuk-sub-navigation__list">
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link" aria-current="page">Claim details</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Eligibility</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Payments</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Claim timeline</a></li>
+            </ul>
+        </nav>
+-->
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="manage-claim-JOHN-SMITH-claim-details">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <form action="/v20/manage-claim-JOHN-SMITH-override" method="POST">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="nationality-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What is the override reason?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-hint" id="nationality-hint">
+            Select one option
+          </div>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="universalcredit" name="type-of-benefit" type="radio"
+                value="universalcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="universalcredit">
+                Universal Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Take-home pay for their last Universal Credit period was £408 or less
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="childtaxcredit" name="type-of-benefit" type="radio"
+                value="childtaxcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="childtaxcredit">
+                Child Tax Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Household income is £16,190 or less
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomebasedjsa" name="type-of-benefit" type="radio"
+                value="incomebasedjsa">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomebasedjsa">
+                Income-based Jobseeker’s Allowance (IBJSA)
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets Income-based Jobseeker’s Allowance (IBJSA)
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomebasedesa" name="type-of-benefit" type="radio"
+                value="incomebasedesa">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomebasedesa">
+                Employment and Support Allowance (ESA) and pregnant
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets Income-related Employment and Support Allowance (ESA) and is pregnant
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pensioncredit" name="type-of-benefit" type="radio"
+                value="pensioncredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="pensioncredit">
+                Pension Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Gets 'child addition' payment
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="incomesupport" name="type-of-benefit" type="radio"
+                value="incomesupport">
+              <label class="nhsuk-label nhsuk-radios__label" for="incomesupport">
+                Income Support
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pregnantandunder18" name="type-of-benefit" type="radio"
+                value="pregnantandunder18">
+              <label class="nhsuk-label nhsuk-radios__label" for="pregnantandunder18">
+                Under 18 and pregnant
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="workingtaxcredit" name="type-of-benefit" type="radio"
+                value="workingtaxcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="workingtaxcredit">
+                Working Tax Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Family get the 4 week 'run-on' payment
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button>
+
+
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

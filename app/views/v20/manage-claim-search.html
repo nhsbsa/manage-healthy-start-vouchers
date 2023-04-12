@@ -1,0 +1,200 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Manage Get help to buy food and milk (Healthy Start) applications
+{% endblock %}
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/header -->
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo"><a class="nhsuk-header__link nhsuk-header__link--service " href="/"
+        aria-label="NHS homepage">
+
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+          <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" fill="#fff"
+            d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6">
+          </path>
+        </svg>
+
+        <span class="nhsuk-header__service-name">
+          Manage Get help to buy food and milk (Healthy Start) applications
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+
+      <div class="nhsuk-header__menu">
+        <div class="nhsuk-header__menu">
+          <a href="sign-in" class="nhsuk-header__menu-toggle" id="log-out">Sign out</a>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
+    </div>
+  </nav>
+</header>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!--
+        <nav class="nhsuk-sub-navigation">
+            <ul class="nhsuk-sub-navigation__list">
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link" aria-current="page">Claim details</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Eligibility</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Payments</a></li>
+                <li class="nhsuk-sub-navigation__item"><a href="#" class="nhsuk-sub-navigation__link">Claim timeline</a></li>
+            </ul>
+        </nav>
+-->
+    <h1><span><span class="nhsuk-caption-l nhsuk-caption--top">Manage applications<span
+            class="nhsuk-u-visually-hidden">-</span></span></span> Search for contact</h1>
+            <p>You must enter details into at least one field to search for a contact.</p>
+
+    <div class="nhsuk-card" style="background: #d8dde0; margin-top: 0;">
+      <div class="nhsuk-card__content">
+
+        <form novalidate="novalidate" action="/v20/manage-claim-search" method="post">
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchfirstname">
+                  First name
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-full" id="searchfirstname" name="searchfirstname" type="text">
+              </div>
+            </div>
+
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchlastname">
+                  Last name
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-full" id="searchlastname" name="searchlastname" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchreferencenumber">
+                  Claim reference number
+                </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, ABC1234D
+                </div>
+                <input class="nhsuk-input nhsuk-u-width-full" id="searchreferencenumber" name="searchreferencenumber" type="text">
+              </div>
+            </div>
+
+
+              <div class="nhsuk-grid-column-one-half">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="searchreferencenumber">
+                    National Insurance Number
+                  </label>
+                  <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                    For example, QQ 12 34 56 C
+                  </div>
+                  <input class="nhsuk-input nhsuk-u-width-full" id="searchreferencenumber" name="searchreferencenumber" type="text">
+                </div>
+              </div>
+            
+
+            <div class="nhsuk-grid-column-one-half">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchpostcode">
+                  Postcode
+                </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, NR33 4GB
+                </div>
+                <input class="nhsuk-input nhsuk-u-width-full" id="searchpostcode" name="searchpostcode" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="searchdob">
+                  Date of birth
+                </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, 30 01 1999
+                </div>
+                <div class="nhsuk-date-input" id="searchdob">
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="searchdob">
+                        Day
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                        Month
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                        Year
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-grid-column-full">
+
+              <div class="nhsuk-button-group">
+                <button class="nhsuk-button nhsuk-u-margin-right-3" type="submit">
+                  Search
+                </button>
+                <button class="nhsuk-button nhsuk-button--secondary" type="reset">
+                  Clear search
+                </button>
+              </div>
+              
+
+            </div>
+          </div>
+
+        </form>
+
+
+      </div>
+    </div>
+
+
+
+
+    {% endblock %}
