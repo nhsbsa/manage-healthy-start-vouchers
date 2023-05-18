@@ -90,27 +90,38 @@ Manage Get help to buy food and milk (Healthy Start) applications
 
       <div class="nhsuk-form-group">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+        <fieldset class="nhsuk-fieldset" aria-describedby="nationality-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
               What is the override reason?
             </h1>
           </legend>
 
-          <div class="nhsuk-hint" id="reason-hint">
+          <div class="nhsuk-hint" id="nationality-hint">
             Select one option
           </div>
 
           <div class="nhsuk-radios">
 
             <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="childtaxcredit" name="type-of-benefit" type="radio"
+                value="childtaxcredit">
+              <label class="nhsuk-label nhsuk-radios__label" for="childtaxcredit">
+                Child Tax Credit
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint">
+                Household income is £16,190 or less
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="incomebasedjsa" name="type-of-benefit" type="radio"
                 value="incomebasedjsa">
               <label class="nhsuk-label nhsuk-radios__label" for="incomebasedjsa">
-                Jobseeker’s Allowance (JSA)
+                Income-based Jobseeker’s Allowance (IBJSA)
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint">
-                Gets Income-based Jobseeker’s Allowance (JSA)
+                Gets Income-based Jobseeker’s Allowance (IBJSA)
               </div>
             </div>
 
@@ -122,17 +133,6 @@ Manage Get help to buy food and milk (Healthy Start) applications
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint">
                 Gets Income-related Employment and Support Allowance (ESA) and is pregnant
-              </div>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="childtaxcredit" name="type-of-benefit" type="radio"
-                value="childtaxcredit">
-              <label class="nhsuk-label nhsuk-radios__label" for="childtaxcredit">
-                Child Tax Credit
-              </label>
-              <div class="nhsuk-hint nhsuk-radios__hint">
-                Household income is £16,190 or less
               </div>
             </div>
 
