@@ -7825,6 +7825,178 @@ b {
   padding: 0;
 }
 
+.govuk-pagination {
+  display: flex;
+  margin-top: 20px;
+}
+
+.govuk-pagination__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.govuk-pagination__item,
+.govuk-pagination__next,
+.govuk-pagination__prev {
+  box-sizing: border-box;
+  position: relative;
+  min-width: 45px;
+  min-height: 45px;
+  padding: 8px 16px;
+  float: left;
+}
+.govuk-pagination__item:hover,
+.govuk-pagination__next:hover,
+.govuk-pagination__prev:hover {
+  background-color: #f3f2f1;
+}
+
+.govuk-pagination__item {
+  display: none;
+  text-align: center;
+}
+@media (min-width: 40.0625em) {
+  .govuk-pagination__item {
+    display: block;
+  }
+}
+
+.govuk-pagination__prev,
+.govuk-pagination__next {
+  font-weight: bold;
+}
+.govuk-pagination__prev .govuk-pagination__link,
+.govuk-pagination__next .govuk-pagination__link {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.govuk-pagination__prev {
+  padding-left: 0;
+}
+
+.govuk-pagination__next {
+  padding-right: 0;
+}
+
+.govuk-pagination__item--current,
+.govuk-pagination__item--ellipses,
+.govuk-pagination__item:first-child,
+.govuk-pagination__item:last-child {
+  display: block;
+}
+
+.govuk-pagination__item--current {
+  font-weight: 700;
+  outline: 1px solid rgba(0, 0, 0, 0);
+  background-color: #005eb8;
+}
+.govuk-pagination__item--current:hover {
+  outline: 1px solid rgba(0, 0, 0, 0);
+  background-color: #005eb8;
+}
+.govuk-pagination__item--current .govuk-pagination__link {
+  color: #FFFFFF;
+}
+
+.govuk-pagination__item--ellipses {
+  font-weight: bold;
+}
+.govuk-pagination__item--ellipses:hover {
+  background-color: transparent;
+}
+
+.govuk-pagination__link {
+  display: block;
+  min-width: 16px;
+}
+@media screen {
+  .govuk-pagination__link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.govuk-pagination__link:focus .govuk-pagination__icon {
+  color: #ffeb3b;
+}
+.govuk-pagination__link:focus .govuk-pagination__link-label {
+  text-decoration: none;
+}
+.govuk-pagination__link:focus .govuk-pagination__link-title--decorated {
+  text-decoration: none;
+}
+
+.govuk-pagination__link-label {
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.govuk-pagination__icon {
+  fill: currentcolor;
+  forced-color-adjust: auto;
+}
+
+.govuk-pagination__icon--prev {
+  margin-right: 16px;
+}
+
+.govuk-pagination__icon--next {
+  margin-left: 16px;
+}
+
+.govuk-pagination--block {
+  display: block;
+}
+.govuk-pagination--block .govuk-pagination__item {
+  padding: 16px;
+  float: none;
+}
+.govuk-pagination--block .govuk-pagination__next,
+.govuk-pagination--block .govuk-pagination__prev {
+  padding-left: 0;
+  float: none;
+}
+.govuk-pagination--block .govuk-pagination__next {
+  padding-right: 16px;
+}
+.govuk-pagination--block .govuk-pagination__next .govuk-pagination__icon {
+  margin-left: 0;
+}
+.govuk-pagination--block .govuk-pagination__prev + .govuk-pagination__next {
+  border-top: 1px solid;
+}
+.govuk-pagination--block .govuk-pagination__link,
+.govuk-pagination--block .govuk-pagination__link-title {
+  display: inline;
+}
+.govuk-pagination--block .govuk-pagination__link-title:after {
+  content: "";
+  display: block;
+}
+.govuk-pagination--block .govuk-pagination__link {
+  text-align: left;
+}
+.govuk-pagination--block .govuk-pagination__link:focus .govuk-pagination__link-label {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+}
+.govuk-pagination--block .govuk-pagination__link:not(:focus) {
+  text-decoration: none;
+}
+.govuk-pagination--block .govuk-pagination__icon {
+  margin-right: 8px;
+}
+
 /*
 NHS BSA - SIDEBAR
 */
