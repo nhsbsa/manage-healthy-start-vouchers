@@ -181,11 +181,19 @@ Manage Get help to buy food and milk (Healthy Start) applications
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Qualifying benefit </span><strong>Qualifying
-                  benefit</strong>
+                <span class="nhsuk-table-responsive__heading">Qualifying benefit </span><strong><a href="manage-claim-benefit">Qualifying
+                  benefit</a></strong>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">How much? </span>Income-based Jobseeker's Allowance (JSA)
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status</span>
+                {% if data['manage-benefit'] == 'accepted' %}
+                <strong class="nhsuk-tag">Accepted</strong>
+                {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Not Matched</strong>
+                {% endif %}
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Change </span>

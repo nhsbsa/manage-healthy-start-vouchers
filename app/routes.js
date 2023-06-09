@@ -3266,6 +3266,25 @@ router.post('/v19/review-and-confirm-override', function (req, res) {
 
 })
 
+// Manage Benefit
+
+router.post('/v19/manage-claim-benefit', function (req, res) {
+
+  const anotherFile = req.session.data['add-benefit-1']
+
+  if (anotherFile === 'yes') {
+    req.session.data["manage-benefit"] = "accepted";
+    res.redirect('/v19/manage-claim-ANITA-BILAL-claim-details')
+  } else if (anotherFile === 'no') {
+    res.redirect('/v19/manage-claim-ANITA-BILAL-claim-details')
+  } else {
+    res.redirect('/v19/manage-benefit')
+  }
+  
+  res.redirect('/v19/manage-claim-ANITA-BILAL-claim-details')
+
+})
+
 // Manage Child
 
 router.post('/v19/manage-claim-child-1', function (req, res) {
