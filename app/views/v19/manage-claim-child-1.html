@@ -5,10 +5,20 @@ Manage Get help to buy food and milk (Healthy Start) applications
 {% endblock %}
 
 {% block content %}
+
+<div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="manage-claim-ANITA-BILAL-claim-details">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1><span role="text">Sarah Smith's Eligibility <span class="nhsuk-caption-xl nhsuk-caption--bottom"><span
+        <h1><span role="text">Sarah Smith's eligibility <span class="nhsuk-caption-xl nhsuk-caption--bottom"><span
                         class="nhsuk-u-visually-hidden">-</span>
 
     </div>
@@ -23,23 +33,59 @@ Manage Get help to buy food and milk (Healthy Start) applications
                     Evidence needed
                 </span>
             </h3>
-            <p>They need the following piece of evidence:</p>
+            <p>They need the following piece of evidence that shows proof of:</p>
             <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>proof of their children's eligibility (birth certificate)</li>
+                <li>this child's eligibility (birth certificate)</li>
             </ul>
-            <p>Do not accept the child without this evidence. If you do so without this evidence, you put the NHS
-                Business Services Authority in breach of contract with the card provider.</p>
         </div>
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="example">
-                Can you provide more detail?
             </label>
             <div class="nhsuk-hint" id="example-hint">
-                Provide more detail in the case that you aren't able to accept the child
+                Select the reason if you are unable to accept this child.
             </div>
-            <textarea class="nhsuk-textarea" id="example" name="example" rows="5"
-                aria-describedby="example-hint"></textarea>
+            <div class="nhsuk-form-group">
+
+                <div class="nhsuk-radios">
+            
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
+                      The image has missing information - for example, the child's name or date of birth
+                    </label>
+                  </div>
+            
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+                      The name on the document does not match the name of the child
+                    </label>
+                  </div>
+            
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                      The date of birth on the document shows that the child is too old to get Healthy Start payments
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                      The image is blurry or out of focus
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                      Other
+                    </label>
+                  </div>
+            
+                </div>
+              </div>
         </div>
 
         <form action="/v19/manage-claim-child-1" method="post">
