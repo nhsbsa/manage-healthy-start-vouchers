@@ -145,13 +145,13 @@ Manage Get help to buy food and milk (Healthy Start) applications
     <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
         <h1 class="nhsuk-fieldset__heading">
-          Review and confirm override
+          Review override
         </h1>
       </legend>
 
       <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-6">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>This application will be overriden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
+        <p>This application will be overridden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){% else %}7 March 2023 (12 weeks){% endif %}.</p>
       </div>
 
       <form action="/v20/review-and-confirm-override" method="post">
