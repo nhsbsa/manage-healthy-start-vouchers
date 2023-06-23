@@ -48,7 +48,7 @@ Manage Get help to buy food and milk (Healthy Start) applications
             </div>
             <div class="nhsuk-form-group">
 
-                <div class="nhsuk-radios">
+                <div class="nhsuk-radios nhsuk-radios--conditional">
             
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes">
@@ -86,11 +86,20 @@ Manage Get help to buy food and milk (Healthy Start) applications
                   </div>
 
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
-                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                    <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                    <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                       Other
                     </label>
                   </div>
+            
+                  <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+            
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="email">
+                        Enter reason
+                      </label>
+                      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                    </div>
             
                 </div>
               </div>
