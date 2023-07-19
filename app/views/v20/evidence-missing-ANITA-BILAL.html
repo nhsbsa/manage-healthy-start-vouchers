@@ -89,78 +89,63 @@ Manage Get help to buy food and milk (Healthy Start) applications
             </svg>
             Go back</a>
         </div>
-
-
-
-
-
-        <div class="nhsuk-warning-callout">
-          <h3 class="nhsuk-warning-callout__label">
-            <span role="text">
-              <span class="nhsuk-u-visually-hidden">Important: </span>
-              Important
-            </span>
-          </h3>
-          <p>Before you override this application, make sure you've seen proof of the applicant's:</p>
-          <ul>
-            <li>identity (birth or marriage certificate, valid passport, valid driving licence or immigration visa)</li>
-            <li>eligibility (benefit award notice)</li>
-            <li>children's eligibility (birth certificate)</li>
-          </ul>
-        </div>
-
-        <form action="/v20/before-you-start-ANITA-BILAL" method="post">
+        
+        <form>
 
           <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset">
-
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
-                  Do you want to override this claim?
+        
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  What type of evidence is missing?
                 </h1>
               </legend>
-              <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Do not continue without this evidence.
-                Without this evidence, you put the NHS Business Services Authority in breach of contract with the card
-                provider.</div>
-
-              <div class="nhsuk-form-group">
-
-                <div class="nhsuk-radios">
-
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="yes" name="do-you-understand" type="radio" value="yes">
-                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
-                      Yes, all the evidence is correct
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="maybe" name="do-you-understand" type="radio" value="maybe">
-                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-                      No, some evidence is missing or incorrect
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="no" name="do-you-understand" type="radio" value="no">
-                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
-                      No, applicant is not eligible for Healthy Start
-                    </label>
-                  </div>
-
+        
+              <div class="nhsuk-hint" id="example-hint">
+                Select all options that apply.
+              </div>
+        
+              <div class="nhsuk-checkboxes">
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Proof of identity
+                  </label>
                 </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Proof of eligibility
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Children's identity
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Proof of address
+                  </label>
+                </div>
+        
               </div>
             </fieldset>
-
+        
           </div>
 
           <button class="nhsuk-button" type="submit">
-            Continue
+              Continue
           </button>
 
-        </form>
+      </form>
+    
+    </div>
 
-      </div>
-
-      {% endblock %}
+    {% endblock %}

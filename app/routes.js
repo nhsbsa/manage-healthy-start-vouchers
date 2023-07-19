@@ -3464,6 +3464,10 @@ router.post('/v20/before-you-start-ANITA-BILAL', function (req, res) {
 
   if (DoYouUnderstand == 'yes') {
     res.redirect('/v20/manage-claim-ANITA-BILAL-override');
+  } else if (DoYouUnderstand == 'maybe') {
+    res.redirect('/v20/evidence-missing-ANITA-BILAL');
+  } else if (DoYouUnderstand == 'no') {
+    res.redirect('/v20/not-eligible-ANITA-BILAL')
   } else {
     res.redirect('/v20/before-you-start-ANITA-BILAL');
   }
