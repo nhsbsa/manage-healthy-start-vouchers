@@ -79,44 +79,37 @@ Manage Get help to buy food and milk (Healthy Start) applications
             </ul>
         </nav>
 -->
-        <div class="nhsuk-back-link">
-          <a class="nhsuk-back-link__link" href="manage-claim-ANITA-BILAL-claim-details">
-            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-              aria-hidden="true" height="24" width="24">
-              <path
-                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-              </path>
-            </svg>
-            Go back</a>
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-card" style="background: #b80000; margin-top: 0;">
+      <div class="nhsuk-card__content">
+        <h1 class="nhsuk-panel__title" style="color: white;">Application Rejected</h1><span
+          class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">The applicant is
+          not entitiled to the get help to buy milk and food (Healthy Start)<br></span>
+        <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
+          Reference number:<br><strong>HDJ2123F</strong>
         </div>
-
-        <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="150">
-
-          <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--l" for="more-detail">
-                Can you provide more detail?
-              </label>
-            </h1>
-            <div class="nhsuk-hint" id="more-detail-hint">
-              Provide more information in the textarea below.
-            </div>
-            <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-          </div>
-        
-          <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">
-            You can enter up to 150 characters
-          </div>
-        
-        </div>
-
-          <a href="not-eligible-preview-page">      
-          <button class="nhsuk-button" type="submit">
-              Continue
-          </button>
-          </a> 
-      </form>
-    
+        </h1>
+      </div>
     </div>
+    <p>This application has been overridden until {% if data['length']%}{{ data['length'] }} ({{ data['weeks'] }}){%
+      else %}7 March 2023 (12 weeks){% endif %}.</p>
 
-    {% endblock %}
+    <h3>What you need to do next</h3>
+    <ul>
+      <li>Go back to the applicant's contact record in Dynamics.</li>
+      <li>Attach any supporting evidence.</li>
+      <li>Add a note that includes the claim reference number.</li>
+      <li>Add the date that the override ends to the note.</li>
+    </ul>
+
+    <h3>What happens next</h3>
+    <p>We’ll send the applicant more information about their payment.</p>
+    <p>They should get their card within 5 to 10 working days. It’ll already have their first payment on it and will
+      come with instructions on how to activate and use it.</p>
+    <p>Money will be added to their card every 4 weeks.</p>
+
+</div>
+
+</div>
+{% endblock %}
