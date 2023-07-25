@@ -3609,14 +3609,12 @@ router.post('/v20/manage-claim-JOHN-SMITH-override', function (req, res) {
 // Confirm Override
 router.post('/v20/confirm-override', function (req, res) {
 
-  var overrideWeeks = req.session.data['overrideWeeks']
+  const benefitDay = req.session.data['benefit-day']
+  const benefitMonth = req.session.data['benefit-month']
+  const benefitYear  = req.session.data['benefit-year']
 
-  if (overrideWeeks >= 1 && overrideWeeks <= 52) {
-    req.session.data['weeks'] = overrideWeeks + " weeks";
-    res.redirect('/v20/review-and-confirm-override');
-  } else {
-    res.redirect('/v20/manage-claim-override-length');
-  }
+  res.redirect('/v20/review-and-confirm-override')
+
 
 })
 

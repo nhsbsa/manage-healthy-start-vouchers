@@ -90,74 +90,33 @@ Manage Get help to buy food and milk (Healthy Start) applications
             Go back</a>
         </div>
 
-        <form>
+        <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="150">
 
           <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What evidence cannot be accepted?
-                </h1>
-              </legend>
-
-              <div class="nhsuk-hint" id="example-hint">
-                Select all evidence that is missing, incomplete, incorrect or unclear.
-              </div>
-
-              <div class="nhsuk-checkboxes">
-
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="example">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                    Proof of identity
-                  </label>
-                </div>
-
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="example">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                    Proof of eligibility
-                  </label>
-                </div>
-
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                    value="example">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    Children's identity
-                  </label>
-                </div>
-
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                    value="example">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    Proof of address
-                  </label>
-                </div>
-
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                    value="example">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    One or more pieces of secondary proof of address
-                  </label>
-                </div>
-
-              </div>
-            </fieldset>
-
+            <h1 class="nhsuk-label-wrapper">
+              <label class="nhsuk-label nhsuk-label--l" for="more-detail">
+                Explain why you cannot accept this evidence
+              </label>
+            </h1>
+            <div class="nhsuk-hint" id="more-detail-hint">
+              This information you enter here will be sent to the applicant so they understand why some of their documents were not accepted.
+            </div>
+            <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
+        
+          <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">
+            You can enter up to 150 characters
+          </div>
+        
+        </div>
 
-          <a href="evidence-missing-reason">
-            <button class="nhsuk-button" type="submit">
+          <a href="evidence-missing-preview">      
+          <button class="nhsuk-button" type="submit">
               Continue
-            </button>
-          </a>
+          </button>
+          </a> 
+      </form>
+    
+    </div>
 
-        </form>
-
-      </div>
-
-      {% endblock %}
+    {% endblock %}

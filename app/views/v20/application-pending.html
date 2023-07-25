@@ -42,12 +42,14 @@ Manage Get help to buy food and milk (Healthy Start) applications
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search">Search</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-ANITA-BILAL">Search results</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-search-results-ANITA-BILAL">Anita Bilal</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-ANITA-BILAL-claim-details">HDJ2123F</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="before-you-start-ANITA-BILAL">Evidence check</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-ANITA-BILAL-override">Override reason</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="manage-claim-override-length">Override length</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-ANITA-BILAL">Search results</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-search-results-ANITA-BILAL">Anita Bilal</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            href="manage-claim-ANITA-BILAL-claim-details">HDJ2123F</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -63,8 +65,8 @@ Manage Get help to buy food and milk (Healthy Start) applications
             href="manage-claim-search-results-SARAH-GREEN">Sarah Green</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
             href="manage-claim-SARAH-GREEN-claim-details">ABC1234D</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="review-and-confirm-override">Review
-          and confirm</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -80,8 +82,8 @@ Manage Get help to buy food and milk (Healthy Start) applications
             href="manage-claim-search-results-SIMON-WOODS">Simon Woods</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
             href="manage-claim-SIMON-WOODS-claim-details">YTJ76291Z</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="review-and-confirm-override">Review
-          and confirm</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -97,8 +99,8 @@ Manage Get help to buy food and milk (Healthy Start) applications
             href="manage-claim-search-results-JOHN-SMITH">John Smith</a></li>
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
             href="manage-claim-JOHN-SMITH-claim-details">XHA19476D</a></li>
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="review-and-confirm-override">Review
-          and confirm</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="application-successful">Override
+            successful</a></li>
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href=""></a></p>
     </div>
@@ -129,102 +131,25 @@ Manage Get help to buy food and milk (Healthy Start) applications
             </ul>
         </nav>
 -->
-<div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-      aria-hidden="true" height="24" width="24">
-      <path
-        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-      </path>
-    </svg>
-    Go back</a>
-</div>
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
-    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-        <h1 class="nhsuk-fieldset__heading">
-          Review and override
-        </h1>
-      </legend>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
 
-      <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-6">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>This application will be overridden until {{ data['benefit-day']}} <span class="convert-month">{{ data['benefit-month'] }}</span> {{ data['benefit-year'] }}.</p>
-        <p>Before you override the claim, confirm you have seen:</p>
-        <div class="nhsuk-checkboxes">
-
-          <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-              Proof of identity
-            </label>
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+            <h1 class="nhsuk-panel__title" style="color: white;">Application Pending</h1><span
+              class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">We need more information from the applicant<br>
+            <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
+              Reference number:<br><strong>HDJ2123F</strong>
+            </div>
+            </h1>
           </div>
-  
-          <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-              Proof of eligibility
-            </label>
-          </div>
-  
-          <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-              Proof of each child's eligibility
-            </label>
-          </div>
-
-          <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-              One documents showing primary proof of address
-            </label>
-          </div>
-
-          <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-              2 documents showing secondary proof of address
-            </label>
-          </div>
-  
         </div>
+        <p>This application is still pending until they resubmit the evidence we've asked for.</p>
+        <p>A copy of the notification has been added to the applicant's Dynamics record.</p>
+
       </div>
+    </div>
 
-      <form action="/v20/review-and-confirm-override" method="post">
-
-        <div class="nhsuk-form-group">
-
-          <fieldset class="nhsuk-fieldset">
-
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-              <h2 class="nhsuk-heading-l">
-                    Confirm override
-                </h2>
-            </legend>
-            <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="signin-hint">Once you override a claim, you cannot go back and change it.</div>
-
-            <div class="nhsuk-checkboxes">
-
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="yes" name="do-you-want-to-continue" type="checkbox" value="yes">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                  I agree to override this claim
-                </label>
-              </div>
-
-                
-            </fieldset>
-
-        </div>
-
-        <button class="nhsuk-button" type="submit">
-            Confirm and submit
-        </button>
-
-    </form>
-  
   </div>
-{% endblock %}
+  {% endblock %}
