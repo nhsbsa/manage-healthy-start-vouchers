@@ -3632,6 +3632,14 @@ router.post('/v20/review-and-confirm-override', function (req, res) {
 
 })
 
+// Evidence missing
+
+router.post('/v20/evidence-missing-ANITA-BILAL', function (req, res) {
+
+  res.redirect('/v20/evidence-missing-reason');
+
+})
+
 // router.post('/v20/manage-claim-pending-override', function (req, res) {
 
 //     var pendingOverride = req.session.data['override']
