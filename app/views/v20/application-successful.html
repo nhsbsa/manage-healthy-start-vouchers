@@ -138,29 +138,22 @@ Manage Get help to buy food and milk (Healthy Start) applications
         <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
           <div class="nhsuk-card__content">
             <h1 class="nhsuk-panel__title" style="color: white;">Override successful</h1><span
-              class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">The applicant is
-              entitled to <strong>£X.XX</strong> a week.<br>
-              Their first payment will be <strong>£XX.XX</strong>.</span>
+              class="nhsuk-caption-xl nhsuk-caption--bottom" style="text-align: center; color: white;">The applicant will be overridden until <strong>his application will be overridden until {{ data['benefit-day']}} <span class="convert-month">{{ data['benefit-month'] }}</span> {{ data['benefit-year'] }}.</strong><br>
             <div class="nhsuk-panel__body nhsuk-u-margin-top-5" style="color: white;">
               Reference number:<br><strong>HDJ2123F</strong>
             </div>
             </h1>
           </div>
         </div>
-        <p>This application will be overridden until {{ data['benefit-day']}} <span class="convert-month">{{ data['benefit-month'] }}</span> {{ data['benefit-year'] }}.</p>
 
         <h3>What you need to do next</h3>
-        <ol>
-          <li>Go back to the applicant's contact record in <a href=''>Dynamics.</a></li>
-          <li>Check all the supporting evidence.</li>
-          <li>Add a note that includes the date that the override ends.</li>
-        </ol>
+        <p>Copy and past the following information into the applicants <a href=''>Dynamics.</a> record:</p>
+        <p><strong>This application will be overridden until {{ data['benefit-day']}} <span class="convert-month">{{ data['benefit-month'] }}</span> {{ data['benefit-year'] }}.</strong></p>
+        <p><strong>The override ends on this date because ((OVERRIDE END REASON))</strong></p>
 
         <h3>What happens next</h3>
-        <p>We’ll send the applicant more information about their payment.</p>
-        <p>They should get their card within 5 to 10 working days. It’ll already have their first payment on it and will
-          come with instructions on how to activate and use it.</p>
-        <p>Money will be added to their card every 4 weeks.</p>
+        <p>We’ve sent the applicant a notification to let them know they'll start getting payments.</p>
+        <p>They should get their card within 5 to 10 working days.</p>
 
 
       </div>
