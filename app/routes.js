@@ -3640,6 +3640,14 @@ router.post('/v20/evidence-missing-ANITA-BILAL', function (req, res) {
 
 })
 
+//Not eligible
+
+router.post('/v20/not-eligible-ANITA-BILAL', function (req, res) {
+
+  res.redirect('/v20/not-eligible-preview-page');
+
+})
+
 // router.post('/v20/manage-claim-pending-override', function (req, res) {
 
 //     var pendingOverride = req.session.data['override']

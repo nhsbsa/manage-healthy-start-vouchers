@@ -90,31 +90,79 @@ Manage Get help to buy food and milk (Healthy Start) applications
             Go back</a>
         </div>
 
-        <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="150">
+        <form action="/v20/not-eligible-ANITA-BILAL" method="post">
 
           <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--l" for="more-detail">
-                Explain why the applicant is not eligible
-              </label>
-            </h1>
-            <div class="nhsuk-hint" id="more-detail-hint">
-              This information you enter here will be sent to the applicant so they understand why their application was unsuccessful.
-            </div>
-            <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-          </div>
         
-          <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">
-            You can enter up to 150 characters
-          </div>
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Tell the applicant why they are not eligible
+                </h1>
+              </legend>
         
-        </div>
+              <div class="nhsuk-hint" id="example-hint">
+                The reasons you select will appear in an email to the applicant so they understand why their application was unsuccessful.
+              </div>
+        
+              <div class="nhsuk-checkboxes">
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    The child(ren) you've applied for are aged 4 or older.
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    You get Child Tax Credit but your annual household income is over £16,190.
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    You get Contribution-based Jobseeker's Allowance.
+                  </label>
+                </div>
 
-          <a href="not-eligible-preview-page">      
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    You get Contribution-based Employment and Suppoirt Allowance.
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    You get Income-related Employment and Support Allowance but you are not currently pregnant.
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    You get Pension Credit but do not also get the 'child addition'.
+                  </label>
+                </div>
+
+                <div class="nhsuk-hint" id="example-hint">
+                  We'll send this information to the applicant so they understand how to resubmit their evidence.
+                </div>
+        
+              </div>
+            </fieldset>
+        
+          </div>
+        
+        
+   
           <button class="nhsuk-button" type="submit">
               Continue
           </button>
-          </a> 
       </form>
     
     </div>
