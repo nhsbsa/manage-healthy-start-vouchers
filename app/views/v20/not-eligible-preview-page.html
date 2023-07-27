@@ -90,22 +90,38 @@ Manage Get help to buy food and milk (Healthy Start) applications
             Go back</a>
         </div>
 
-        <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="150">
-
-          <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--l" for="more-detail">
-                Get ready to send
-              </label>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Get ready to send
             </h1>
-            <div class="nhsuk-hint" id="more-detail-hint">
-              Check the information in the email. This is what we'll send the applicant to tell them why their application was unsuccessful.
-            </div>
-            <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </legend>
+        
+          <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
+            Check the information in the email. This is what we'll send the applicant to tell them why their application was unsuccessful.
           </div>
-        
-        
+        </fieldset>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <p class="nhsuk-card__description">Dear ((first name)) ((last name)).</p>
+            <p>The evidence you sent us shows that you are not eligible for the NHS Healthy Start scheme.</p>
+            <h3 class="nhsuk-card__heading">Why your application was unsuccessful</h3>
+            <p class="nhsuk-card__description">((selected checkbox))</p>
+            <p>((selected checkbox))</p>
+            <h3 class="nhsuk-card__heading">If you think there's been a mistake</h3>
+            <p class="nhsuk-card__description">If you do not agree with the reasons why your application was unsuccessful, you can contact us by:</p>
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>Telephone: 0300 330 7010</p>
+              <p>Monday to Friday, 8am to 6pm (execpt public holidays). This call will be charged at the local rate.</p>
+              <p>Email: healthy.start@nhsbsa.nhs.uk</p>
+              <p>We aim to respond within 2 working days.</p>
+            </div>
+            <h3 class="nhsuk-card__heading">The Healthy Start team</h3>
+          </div>
         </div>
+        
 
         <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
           Edit
