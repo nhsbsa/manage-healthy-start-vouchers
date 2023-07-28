@@ -138,72 +138,42 @@ Manage Get help to buy food and milk (Healthy Start) applications
       </path>
     </svg>
     Go back</a>
-</div>
+</div>      
 
-<form action="/v20/review-and-confirm-override" method="post">
+      <form action="/v20/review-and-confirm-override-final" method="post">
 
-  <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group">
 
-    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Review and override
-        </h1>
-      </legend>
-
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>This application will be overridden until {{ data['benefit-day']}} <span class="convert-month">{{ data['benefit-month'] }}</span> {{ data['benefit-year'] }}.</strong></p>
-        <p><strong>Before you override this  claim, confirm you have seen:</strong></p>
-        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-    
-          <div class="nhsuk-checkboxes">
-    
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                Proof of identity
-              </label>
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Confirm override
+              </h1>
+            </legend>
+      
+            <div class="nhsuk-hint" id="example-hint">
+              Once you override a claim, you cannot go back and change it
             </div>
-    
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                Proof of eligibility
-              </label>
+      
+            <div class="nhsuk-checkboxes">
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  I agree to override this claim
+                </label>
+              </div>
+      
             </div>
-    
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                Proof of each child's eligibility
-              </label>
-            </div>
-
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                One document showing primary proof of address
-              </label>
-            </div>
-
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                2 documents showing secondary proof of address
-              </label>
-            </div>
-    
-          </div>
-        </fieldset>
-      </div>
-
+          </fieldset>
+      
+        </div>
 
         <button class="nhsuk-button" type="submit">
-            Confirm
+            Submit
         </button>
 
-</form>
+    </form>
   
   </div>
 {% endblock %}

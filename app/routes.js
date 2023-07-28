@@ -3503,26 +3503,7 @@ router.post('/v20/before-you-start-SIMON-WOODS', function (req, res) {
 // Select claims
 router.post('/v20/manage-claim-ANITA-BILAL-override', function (req, res) {
 
-  var typeofbenefit = req.session.data['type-of-benefit']
-
-
-  if (typeofbenefit === 'universalcredit') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'incomesupport') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'pensioncredit') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'incomebasedjsa') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'incomebasedesa') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'childtaxcredit') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'workingtaxcredit') {
-    res.redirect('/v20/manage-claim-override-length')
-  } else if (typeofbenefit === 'pregnantandunder18') {
-    res.redirect('/v20/manage-claim-override-length')
-  }
+  res.redirect('/v20/manage-claim-override-length');
 
 })
 
@@ -3622,13 +3603,7 @@ router.post('/v20/confirm-override', function (req, res) {
 
 router.post('/v20/review-and-confirm-override', function (req, res) {
 
-  const DoYouWantToContinue = req.session.data['do-you-want-to-continue']
-
-  if (DoYouWantToContinue == 'yes') {
-    res.redirect('/v20/application-successful');
-  } else {
-    res.redirect('/v20/review-and-confirm-override');
-  }
+  res.redirect('/v20/review-and-confirm-override-final');
 
 })
 
@@ -3645,6 +3620,14 @@ router.post('/v20/evidence-missing-ANITA-BILAL', function (req, res) {
 router.post('/v20/not-eligible-ANITA-BILAL', function (req, res) {
 
   res.redirect('/v20/not-eligible-preview-page');
+
+})
+
+//Confirm override
+
+router.post('/v20/review-and-confirm-override-final', function (req, res) {
+
+  res.redirect('/v20/application-successful');
 
 })
 
