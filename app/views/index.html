@@ -82,7 +82,7 @@
   </summary>
   <div class="nhsuk-details__text">
     <h2 class="nhsuk-heading-l">Management Portal
-      <span class="nhsuk-caption-l nhsuk-caption--bottom">Early Versions</span>
+      <span class="nhsuk-caption-l nhsuk-caption--bottom">Hard and Soft Reject Prototype</span>
     </h2>
     <hr>
     <details class="nhsuk-details nhsuk-expander">
@@ -131,11 +131,14 @@
       </div>
     </details>
     <hr>
+    <h3 class="nhsuk-heading-m">Background:</h3>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>The background behind this prototype was to create a version of the claim management prototype where we could determine a process for an application that will not be overridden (ie. is declined) as this was not in place</li>
+      <li>Click <a href="https://miro.com/app/board/uXjVM2Arws4=/">here</a> to view the user flow</li>
+    </ul>
     <h3 class="nhsuk-heading-m">What we created:</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
-      <li>User journey from unsuccessful application to needing an override</li>
-      <li>Override functionality for ccs agents</li>
-      <li>Agents journey for override functionality</li>
+      <li>Within the prototype there are three paths, the first being the happy path which is similar to the normal path within the Claim Management Portal (MVP). The second path is the soft reject, where agents can give a soft rejection on applications that require more information in order to receive an accepted application in the future. While the third and final path is a hard reject, where agents can reject an entire application that isn’t eligible to receive Healthy Start.</li>
     </ul>
     <hr>
     <div class="nhsuk-action-link nhsuk-u-margin-bottom-3"></div>
@@ -155,7 +158,7 @@
   </summary>
   <div class="nhsuk-details__text">
     <h2 class="nhsuk-heading-l">Management Portal
-      <span class="nhsuk-caption-l nhsuk-caption--bottom">Early Versions</span>
+      <span class="nhsuk-caption-l nhsuk-caption--bottom">Partial Child Matches</span>
     </h2>
     <hr>
     <details class="nhsuk-details nhsuk-expander">
@@ -204,11 +207,15 @@
       </div>
     </details>
     <hr>
+    <h3 class="nhsuk-heading-m">Background:</h3>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>The current service decision is that if there are any partial children matches e.g. 1 child is found on the API, but another isn’t, then we should pend the whole claim and seek further evidence. However, there is the potential for this decision to change so that we pay for the child that we have matched, and seek further evidence for the missing child.</li>
+      <li>This prototype was made to investigate what potential changes we would need to make to the Claim Management Portal in order to allow for this to happen.</li>
+      <li>Click <a href="https://miro.com/app/board/uXjVOkDHKHY=/?moveToWidget=3458764555284970227&cot=14">here</a> to view the user flow</li>
+    </ul>
     <h3 class="nhsuk-heading-m">What we created:</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
-      <li>User journey from unsuccessful application to needing an override</li>
-      <li>Override functionality for ccs agents</li>
-      <li>Agents journey for override functionality</li>
+      <li>We designed a prototype that would allow agents to individually accept or pend an applicant’s benefit claim which if pended would lead to the entire application put on pending as applicants need to be on one of the acceptable benefit claims in order to be eligible to receive Healthy Start. Through the prototype, agents are also able to accept or pend children individually based on if they were able to locate them through the API. Thus allowing for the applicant to receive money for that child(ren) that were found, while we wait for further evidence to be able to accept the remaining child(ren) left on pending.</li>
     </ul>
     <hr>
     <div class="nhsuk-action-link nhsuk-u-margin-bottom-3"></div>
@@ -238,7 +245,7 @@
         </summary>
         <div class="nhsuk-details__text">
           <h2 class="nhsuk-heading-l">Management Portal
-            <span class="nhsuk-caption-l nhsuk-caption--bottom">Early Versions</span>
+            <span class="nhsuk-caption-l nhsuk-caption--bottom">MVP</span>
           </h2>
           <hr>
           <details class="nhsuk-details nhsuk-expander">
@@ -287,12 +294,21 @@
             </div>
           </details>
           <hr>
-          <h3 class="nhsuk-heading-m">What we created:</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>User journey from unsuccessful application to needing an override</li>
-            <li>Override functionality for ccs agents</li>
-            <li>Agents journey for override functionality</li>
-          </ul>
+          <h3 class="nhsuk-heading-m">Background:</h3>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>As it stands, unless eligibility data from HMRC / DWP suggests that a person is eligible - we are unable to issue people with a Healthy Start card via our digital service.</li>
+      <li>In the short term, our agreed process has always been to manage these claims outside of the system via the back office i.e. We would assess each persons eligibility and if they were eligible, we would issue a card and top up it up every 4 weeks via AllPay's card portal.</li>
+      <li>Unfortunately it has come to light recently that we are unable to issue these people with a card via AllPay’s card portal and instead we can only issue cards via an API request.</li>
+      <li>We have agreed with DHSC in the short term that we can use bank payments instead i.e. We assess each persons eligibility and if they are eligible, we send them their first bank payment and then we pay them another bank payment every 4 weeks.</li>
+      <li>At the beginning of the project, it was the BSA’s long term ambition for all services to begin using Microsoft Dynamics to manage users of their service. Because of this, Healthy Start partnered with a contractor called Tisski to enable us to build this functionality within Microsoft Dynamics using a Power App.</li>
+      <li>Since then, when we have needed any new functionality adding to the Power App, progress has often been slow and costly. Therefore it’s highly likely that to build the functionality required above within Microsoft Dynamics would face something similar - time that the service doesn’t have.</li>
+      <li>One solution which has been discussed is to begin moving away from using Microsoft Dynamics to manage a beneficiaries claim, and instead use a separate interface. An interface where it would not only be quicker and cheaper to make changes, but also much better from an accessibility perspective as well.</li>
+      <li>Click <a href="https://miro.com/app/board/uXjVOkDHKHY=/">here</a> to view the user flow</li>
+    </ul>
+    <h3 class="nhsuk-heading-m">What we created:</h3>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Designed was the Claim Management Portal which was made to allow NHS Business Service Authority agents to issue eligible clerical cases and to issue applicants with a card, depending that they are eligible to be recipients of Healthy Start services.</li>
+    </ul>
           <hr>
           <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
             <a class="nhsuk-action-link__link" href="v16/start"><svg aria-hidden="true"
