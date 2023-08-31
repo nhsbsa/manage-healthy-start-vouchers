@@ -3503,7 +3503,7 @@ router.post('/v20/before-you-start-SIMON-WOODS', function (req, res) {
 // Select claims
 router.post('/v20/manage-claim-ANITA-BILAL-override', function (req, res) {
 
-  res.redirect('/v20/manage-claim-override-length');
+  res.redirect('/v20/review-and-confirm-override');
 
 })
 
